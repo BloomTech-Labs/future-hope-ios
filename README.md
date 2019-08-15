@@ -9,6 +9,14 @@
 
 ## Usage
 
+
+
+
+[CocoaPods - Getting Started](https://guides.cocoapods.org/using/getting-started.html)
+
+
+
+
 -  Clone repo, cd into repo
 
 ```
@@ -19,7 +27,7 @@ vim Podfile //you can also usue text editor
 
 ```
 
--  Add Pods for Future-Hope
+-  Add Pods for Future-Hope ( Podfile should look like this)
 ```
 # Uncomment the next line to define a global platform for your project
   platform :ios, '12.0'
@@ -35,6 +43,7 @@ target 'Future-Hope' do
 end
 
 //
+
 ```
  - save, quit and install, open the workspace
 
