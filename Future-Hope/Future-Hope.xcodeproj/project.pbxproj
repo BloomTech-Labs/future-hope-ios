@@ -11,9 +11,9 @@
 		E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA7230606DB001536AC /* AppDelegate.swift */; };
 		E8839EAA230606DB001536AC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA9230606DB001536AC /* SignInViewController.swift */; };
 		E8839EAD230606DB001536AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EAB230606DB001536AC /* Main.storyboard */; };
-		E8839EAF230606DE001536AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8839EAE230606DE001536AC /* Assets.xcassets */; };
 		E8839EB2230606DE001536AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EB0230606DE001536AC /* LaunchScreen.storyboard */; };
-		E8839EBA23060D19001536AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8839EB923060D19001536AC /* GoogleService-Info.plist */; };
+		E8839EBC23062ECF001536AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8839EBB23062ECF001536AC /* GoogleService-Info.plist */; };
+		E8839EC0230632A1001536AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8839EBF230632A1001536AC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,10 +23,10 @@
 		E8839EA7230606DB001536AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8839EA9230606DB001536AC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E8839EAC230606DB001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E8839EAE230606DE001536AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8839EB1230606DE001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8839EB3230606DE001536AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8839EB923060D19001536AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8839EBB23062ECF001536AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8839EBF230632A1001536AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.release.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +56,6 @@
 				263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */,
 				FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,13 +80,13 @@
 		E8839EA6230606DB001536AC /* Future-Hope */ = {
 			isa = PBXGroup;
 			children = (
+				E8839EBF230632A1001536AC /* Assets.xcassets */,
 				E8839EA7230606DB001536AC /* AppDelegate.swift */,
 				E8839EA9230606DB001536AC /* SignInViewController.swift */,
 				E8839EAB230606DB001536AC /* Main.storyboard */,
-				E8839EAE230606DE001536AC /* Assets.xcassets */,
 				E8839EB0230606DE001536AC /* LaunchScreen.storyboard */,
+				E8839EBB23062ECF001536AC /* GoogleService-Info.plist */,
 				E8839EB3230606DE001536AC /* Info.plist */,
-				E8839EB923060D19001536AC /* GoogleService-Info.plist */,
 			);
 			path = "Future-Hope";
 			sourceTree = "<group>";
@@ -153,8 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8839EB2230606DE001536AC /* LaunchScreen.storyboard in Resources */,
-				E8839EBA23060D19001536AC /* GoogleService-Info.plist in Resources */,
-				E8839EAF230606DE001536AC /* Assets.xcassets in Resources */,
+				E8839EBC23062ECF001536AC /* GoogleService-Info.plist in Resources */,
+				E8839EC0230632A1001536AC /* Assets.xcassets in Resources */,
 				E8839EAD230606DB001536AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

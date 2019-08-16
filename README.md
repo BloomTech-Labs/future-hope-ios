@@ -12,7 +12,7 @@
 
 -  Clone repo, cd into repo
 
-```bash
+```
 cd Future-Hope
 
 pod init
