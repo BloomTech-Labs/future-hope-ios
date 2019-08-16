@@ -25,7 +25,10 @@ xcuserdata
 *.ipa
 
 # CocoaPods
-Pods/
+Pods/Frameworks
+Pods/Pods
+Pods/Products
+Pods/Target\ Support\ Files/
 
 .DS_Store
 
