@@ -25,12 +25,9 @@ open Future-Hope.xcworkspace
 
 
 
-
-
-
-
 PRs accepted.
 
 ## License
 
 MIT © Richard McRichface
+
