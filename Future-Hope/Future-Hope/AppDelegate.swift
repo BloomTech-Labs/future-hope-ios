@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +18,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		FirebaseApp.configure()
+		GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+		GIDSignIn.sharedInstance()?.delegate = self
 		return true
 	}
-
-
-
 }
 
+
+
+extension AppDelegate: GIDSignInDelegate {
+	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+		if let error = error {
+			NSLog("Error with GidSignIN: \(error)")
+			return
+		}
+		guard let auth = user.authentication else { return }
+		let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+		
+		Auth.auth().signIn(with: credentials) { _, error in
+			if let error = error {
+				NSLog("Error with GidSignIN: \(error)")
+				return
+			}
+			
+			print("logged in")
+		}
+		
+	}
+	
+	func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+		// disconect logic
+	}
+	
+	
+	
+}

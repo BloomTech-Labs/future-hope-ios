@@ -16,7 +16,7 @@
 cd Future-Hope
 
 pod init
-vim Podfile //you can also usue text editor
+vim Podfile //you can also use text editor
 
 ```
 
