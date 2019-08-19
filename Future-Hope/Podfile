@@ -8,11 +8,18 @@ target 'Future-Hope' do
   use_frameworks!
 
   # Pods for Future-Hope
-
+	
+	# Firebase
+	
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
 	pod 'GoogleSignIn'
+	
+	# Material Desing
+	pod 'MaterialComponents/TextFields'
+	pod 'MaterialComponents/Buttons'
+	
 	
 
 end

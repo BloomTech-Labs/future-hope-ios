@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
+		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
 		E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA7230606DB001536AC /* AppDelegate.swift */; };
-		E8839EAA230606DB001536AC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA9230606DB001536AC /* SignInViewController.swift */; };
 		E8839EAD230606DB001536AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EAB230606DB001536AC /* Main.storyboard */; };
 		E8839EB2230606DE001536AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EB0230606DE001536AC /* LaunchScreen.storyboard */; };
 		E8839EC0230632A1001536AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8839EBF230632A1001536AC /* Assets.xcassets */; };
@@ -19,9 +19,9 @@
 /* Begin PBXFileReference section */
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E8839EA4230606DB001536AC /* Future-Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Future-Hope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8839EA7230606DB001536AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8839EA9230606DB001536AC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ../SignInViewController.swift; sourceTree = "<group>"; };
 		E8839EAC230606DB001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8839EB1230606DE001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8839EB3230606DE001536AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		E8E4ACDB2307361B00C7EF1B /* View Controllers  */ = {
 			isa = PBXGroup;
 			children = (
-				E8839EA9230606DB001536AC /* SignInViewController.swift */,
+				E87C3B42230AFC9E00161EFE /* SignInViewController.swift */,
 			);
 			path = "View Controllers ";
 			sourceTree = "<group>";
@@ -184,6 +184,9 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -199,6 +202,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -261,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8839EAA230606DB001536AC /* SignInViewController.swift in Sources */,
+				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
 				E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

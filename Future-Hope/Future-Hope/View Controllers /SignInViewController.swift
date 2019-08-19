@@ -2,11 +2,13 @@
 //  SignInViewController.swift
 //  Future-Hope
 //
-//  Created by Hector Steven on 8/16/19.
+//  Created by Hector Steven on 8/19/19.
 //  Copyright © 2019 Hector Steven. All rights reserved.
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class SignInViewController: UIViewController {
 
