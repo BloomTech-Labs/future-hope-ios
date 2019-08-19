@@ -48,8 +48,8 @@ extension AppDelegate: GIDSignInDelegate {
 	
 	func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
 		if let error = error {
-			print("disconnect error: \(error)")
-			return 
+			NSLog("disconnect error: \(error)")
+			return
 		}
 	}
 	
