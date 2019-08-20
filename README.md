@@ -6,7 +6,7 @@
 
  - [CocoaPods - Getting Started](https://guides.cocoapods.org/using/getting-started.html)
 
->  Clone repo, cd into repo, install
+>  Clone repo, cd into Future-Hope, install
 ```
 cd Future-Hope
 pod install
