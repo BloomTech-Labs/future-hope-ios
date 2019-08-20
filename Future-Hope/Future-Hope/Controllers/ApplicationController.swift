@@ -13,7 +13,7 @@ class ApplicationController {
 	
 	
 	
-	func simpleStyleSheeepAllert(with title: String, message: String?) -> UIAlertController{
+	func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
 		let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
 		ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
 		

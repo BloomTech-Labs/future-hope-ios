@@ -18,7 +18,6 @@ import MaterialComponents.MaterialTextFields
 
 class SignInViewController: UIViewController{
 	
-	let appController = ApplicationController()
 	
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
@@ -63,7 +62,7 @@ class SignInViewController: UIViewController{
 			if let error = error {
 				NSLog("Error with Auth Sign In email/password: \(error)")
 				
-				let ac = self.appController.simpleStyleSheeepAllert(with: "Error With email/password", message: nil)
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: nil)
 				self.present(ac, animated: true)
 			}
 			

@@ -23,20 +23,29 @@ class EmailSignUpViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 	
 	@IBAction func submitButtonPressed(_ sender: MDCButton) {
+		
+		print("submit")
 		guard let fullName = fullNameTextField.text,
 			let email = emailTextFields.text,
 			let password = passwordTextField.text,
 			let confirmPassword = confirmPasswordTextField.text else { return }
 		
 		
+		
+		
+		
 		if password != confirmPassword {
-			//Throw action sheet error
-			
+			let alertController = ApplicationController().simpleActionSheetAllert(with: "passwords do not match", message: nil)
+			present(alertController, animated: true)
 			return
+		}
+		
+		if !passwordIsSafe(with: password) {
+			let alertController = ApplicationController().simpleActionSheetAllert(with: "please use a safe password", message: "password must be 6 characters")
+			present(alertController, animated: true)
 		}
 		
 		
@@ -44,19 +53,29 @@ class EmailSignUpViewController: UIViewController {
 			if let error = error {
 				//Throw  action sheet error
 				NSLog("Error with email/password signIn: \(error)")
+				let alertController = ApplicationController().simpleActionSheetAllert(with: "Error with Sign Up", message: "Please Try Again!")
+				self.present(alertController, animated: true)
+				
 				return
 			}
 			
-			// send user data to firestore
-			
 			print("\(fullName) - \(email) - \(password)")
 			
-			//segue to app
+			// MARK: send user data to firestore and new view
+			// MARK: segue to app
 			
 		}
 	}
 	
 	@IBAction func cancelButtonPressed(_ sender: MDCButton) {
 		navigationController?.popViewController(animated: true)
+	}
+	
+	
+	private func passwordIsSafe(with password: String) -> Bool {
+		
+		// Mark: Check for valid password
+		
+		return true
 	}
 }
