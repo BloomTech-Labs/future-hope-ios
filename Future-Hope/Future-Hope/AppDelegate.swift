@@ -41,7 +41,6 @@ extension AppDelegate: GIDSignInDelegate {
 				return
 			}
 			// send user data to db
-			
 			print("logged in")
 		}
 		
