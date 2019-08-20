@@ -37,6 +37,8 @@ class SignInViewController: UIViewController{
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
 				print(user)
+				
+				// segue into app
 			}
 			
 		})

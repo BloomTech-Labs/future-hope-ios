@@ -40,6 +40,7 @@ extension AppDelegate: GIDSignInDelegate {
 				NSLog("Error with GidSignIN: \(error)")
 				return
 			}
+			// send user data to db
 			
 			print("logged in")
 		}
