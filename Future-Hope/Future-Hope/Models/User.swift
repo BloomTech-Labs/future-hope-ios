@@ -16,7 +16,7 @@ class User {
 	init(fullName: String, email: String) {
 		self.fullName = fullName
 		self.email = email
-	}
+	}	
 	
 	
 }

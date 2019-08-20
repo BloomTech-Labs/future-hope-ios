@@ -10,6 +10,8 @@
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
 		E87C3B45230C5B5200161EFE /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B44230C5B5200161EFE /* EmailSignUpViewController.swift */; };
+		E87C3B4A230C8EB700161EFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* User.swift */; };
+		E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B4E230C99C800161EFE /* ApplicationController.swift */; };
 		E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA7230606DB001536AC /* AppDelegate.swift */; };
 		E8839EAD230606DB001536AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EAB230606DB001536AC /* Main.storyboard */; };
 		E8839EB2230606DE001536AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EB0230606DE001536AC /* LaunchScreen.storyboard */; };
@@ -22,6 +24,8 @@
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E87C3B44230C5B5200161EFE /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		E87C3B49230C8EB700161EFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E87C3B4E230C99C800161EFE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		E8839EA4230606DB001536AC /* Future-Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Future-Hope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8839EA7230606DB001536AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8839EAC230606DB001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +85,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E87C3B4B230C8F0300161EFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E87C3B49230C8EB700161EFE /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E87C3B50230C99F400161EFE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E87C3B4E230C99C800161EFE /* ApplicationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		E8839E9B230606DB001536AC = {
 			isa = PBXGroup;
 			children = (
@@ -103,19 +123,21 @@
 			isa = PBXGroup;
 			children = (
 				E8839EA7230606DB001536AC /* AppDelegate.swift */,
-				E8E4ACDB2307361B00C7EF1B /* SignUpLogInViews */,
+				E87C3B50230C99F400161EFE /* Controllers */,
+				E87C3B4B230C8F0300161EFE /* Models */,
+				E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */,
 				E87C3B47230C68D700161EFE /* Resources */,
 			);
 			path = "Future-Hope";
 			sourceTree = "<group>";
 		};
-		E8E4ACDB2307361B00C7EF1B /* SignUpLogInViews */ = {
+		E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */ = {
 			isa = PBXGroup;
 			children = (
 				E87C3B42230AFC9E00161EFE /* SignInViewController.swift */,
 				E87C3B44230C5B5200161EFE /* EmailSignUpViewController.swift */,
 			);
-			path = SignUpLogInViews;
+			path = OnBoardingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E87C3B4A230C8EB700161EFE /* User.swift in Sources */,
 				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
 				E87C3B45230C5B5200161EFE /* EmailSignUpViewController.swift in Sources */,
 				E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */,
+				E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

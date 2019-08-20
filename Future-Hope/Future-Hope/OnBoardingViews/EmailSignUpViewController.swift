@@ -34,7 +34,7 @@ class EmailSignUpViewController: UIViewController {
 		
 		
 		if password != confirmPassword {
-			//Throw action shee error
+			//Throw action sheet error
 			
 			return
 		}

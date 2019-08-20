@@ -18,6 +18,8 @@ import MaterialComponents.MaterialTextFields
 
 class SignInViewController: UIViewController{
 	
+	let appController = ApplicationController()
+	
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
 	
@@ -31,13 +33,18 @@ class SignInViewController: UIViewController{
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		emailTextField.delegate = self
+		passwordTextField.delegate = self
+		
 		GIDSignIn.sharedInstance()?.presentingViewController = self
 		
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
 				print(user)
 				
-				// segue into app
+				// MARK: segue into app
+				
 			}
 			
 		})
@@ -47,8 +54,30 @@ class SignInViewController: UIViewController{
 
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
 		print("logged in with email/password")
+		guard let email = emailTextField.text,
+			let password = passwordTextField.text else { return }
+		
+		
+		
+		Auth.auth().signIn(withEmail: email, password: password) { _, error in
+			if let error = error {
+				NSLog("Error with Auth Sign In email/password: \(error)")
+				
+				let ac = self.appController.simpleStyleSheeepAllert(with: "Error With email/password", message: nil)
+				self.present(ac, animated: true)
+			}
+			
+			// MARK: segue to app
+			
+		}
+		
+		
+		
 	
 	}
+	
+	
+	
 	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		
@@ -58,3 +87,15 @@ class SignInViewController: UIViewController{
 
 }
 
+
+
+extension SignInViewController: UITextFieldDelegate {
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		view.endEditing(true)
+	}
+	
+	
+	
+	
+}
