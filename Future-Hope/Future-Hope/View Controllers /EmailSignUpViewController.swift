@@ -7,24 +7,29 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialTextFields
+import MaterialComponents.MaterialButtons
 
 class EmailSignUpViewController: UIViewController {
 
+	
+	@IBOutlet var fullNameTextField: MDCTextField!
+	@IBOutlet var emailTextFields: MDCTextField!
+	@IBOutlet var passwordTextField: MDCTextField!
+	@IBOutlet var confirmPasswordTextField: MDCTextField!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	
+	@IBAction func submitButtonPressed(_ sender: MDCButton) {
+		//submit to auth
+	}
+	
+	
+	@IBAction func cancelButtonPressed(_ sender: MDCButton) {
+		navigationController?.popViewController(animated: true)
+	}
+	
 }

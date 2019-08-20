@@ -144,12 +144,18 @@
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="ONd-0X-pxE" eventType="touchUpInside" id="FKC-Gd-zcd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LZ-8A-IOf" customClass="MDCRaisedButton">
                                         <rect key="frame" x="0.0" y="292" width="374" height="30"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="ONd-0X-pxE" eventType="touchUpInside" id="aTU-VV-cld"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -162,6 +168,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EAu-Q9-pv5"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="tz5-6E-56G" id="JWh-ug-eLI"/>
+                        <outlet property="emailTextFields" destination="9pC-v4-mrm" id="Mru-qN-6tp"/>
+                        <outlet property="fullNameTextField" destination="dEw-D3-tDP" id="Q5B-9k-k7z"/>
+                        <outlet property="passwordTextField" destination="rSF-8c-RTb" id="vbT-XR-80a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ta6-MR-lbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
