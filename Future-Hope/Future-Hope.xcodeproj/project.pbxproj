@@ -61,6 +61,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E87C3B47230C68D700161EFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8839EAB230606DB001536AC /* Main.storyboard */,
+				E8839EB0230606DE001536AC /* LaunchScreen.storyboard */,
+				E8839EBF230632A1001536AC /* Assets.xcassets */,
+				E8E4ACD92307345E00C7EF1B /* GoogleService-Info.plist */,
+				E8839EB3230606DE001536AC /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E8839E9B230606DB001536AC = {
 			isa = PBXGroup;
 			children = (
@@ -82,24 +94,20 @@
 		E8839EA6230606DB001536AC /* Future-Hope */ = {
 			isa = PBXGroup;
 			children = (
-				E8839EBF230632A1001536AC /* Assets.xcassets */,
 				E8839EA7230606DB001536AC /* AppDelegate.swift */,
-				E8E4ACDB2307361B00C7EF1B /* View Controllers  */,
-				E8839EAB230606DB001536AC /* Main.storyboard */,
-				E8839EB0230606DE001536AC /* LaunchScreen.storyboard */,
-				E8E4ACD92307345E00C7EF1B /* GoogleService-Info.plist */,
-				E8839EB3230606DE001536AC /* Info.plist */,
+				E8E4ACDB2307361B00C7EF1B /* SignUpLogInViews */,
+				E87C3B47230C68D700161EFE /* Resources */,
 			);
 			path = "Future-Hope";
 			sourceTree = "<group>";
 		};
-		E8E4ACDB2307361B00C7EF1B /* View Controllers  */ = {
+		E8E4ACDB2307361B00C7EF1B /* SignUpLogInViews */ = {
 			isa = PBXGroup;
 			children = (
 				E87C3B42230AFC9E00161EFE /* SignInViewController.swift */,
 				E87C3B44230C5B5200161EFE /* EmailSignUpViewController.swift */,
 			);
-			path = "View Controllers ";
+			path = SignUpLogInViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,7 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "Future-Hope/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Future-Hope/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,7 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "Future-Hope/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Future-Hope/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

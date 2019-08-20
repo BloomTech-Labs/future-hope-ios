@@ -10,7 +10,6 @@ import UIKit
 
 import Firebase
 
-
 import MaterialComponents.MaterialTextFields
 import MaterialComponents.MaterialButtons
 

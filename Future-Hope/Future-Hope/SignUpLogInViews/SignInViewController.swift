@@ -10,7 +10,7 @@ import UIKit
 
 // Firebase
 import Firebase
-import FirebaseAuth
+
 import GoogleSignIn
 
 // Material
