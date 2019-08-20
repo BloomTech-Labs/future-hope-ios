@@ -18,16 +18,29 @@ import MaterialComponents.MaterialTextFields
 
 class SignInViewController: UIViewController{
 	
-	
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
 	
+	var handle: AuthStateDidChangeListenerHandle?
 	
+	deinit {
+		if let handle = handle {
+			Auth.auth().removeStateDidChangeListener(handle)
+		}
+	}
 	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		GIDSignIn.sharedInstance()?.presentingViewController = self
+		
+		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+			if let user = user {
+				print(user)
+			}
+			
+		})
+		
 		
     }
 
