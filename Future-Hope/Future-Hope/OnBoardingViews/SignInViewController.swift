@@ -12,6 +12,7 @@ import UIKit
 import Firebase
 
 import GoogleSignIn
+import FBSDKCoreKit
 
 // Material
 import MaterialComponents.MaterialTextFields
@@ -54,7 +55,12 @@ class SignInViewController: UIViewController{
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
 		print("logged in with email/password")
 		guard let email = emailTextField.text,
-			let password = passwordTextField.text else { return }
+			let password = passwordTextField.text,
+			!email.isEmpty || !password.isEmpty  else {
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
+				self.present(ac, animated: true)
+				return
+		}
 		
 		
 		
@@ -62,7 +68,7 @@ class SignInViewController: UIViewController{
 			if let error = error {
 				NSLog("Error with Auth Sign In email/password: \(error)")
 				
-				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: nil)
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Please try Again!")
 				self.present(ac, animated: true)
 			}
 			
@@ -75,6 +81,13 @@ class SignInViewController: UIViewController{
 	
 	}
 	
+//	func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//		if let error = error {
+//			print(error.localizedDescription)
+//			return
+//		}
+//
+//	}
 	
 	
 	

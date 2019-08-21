@@ -21,21 +21,30 @@ class EmailSignUpViewController: UIViewController {
 	@IBOutlet var passwordTextField: MDCTextField!
 	@IBOutlet var confirmPasswordTextField: MDCTextField!
 	
-    override func viewDidLoad() {
+
+	override func viewDidLoad() {
         super.viewDidLoad()
     }
 	
+	// test cred
+	// One100?!
+	
+	
+	
 	@IBAction func submitButtonPressed(_ sender: MDCButton) {
 		
-		print("submit")
+		
 		guard let fullName = fullNameTextField.text,
 			let email = emailTextFields.text,
 			let password = passwordTextField.text,
 			let confirmPassword = confirmPasswordTextField.text else { return }
 		
 		
-		
-		
+		if fullName.isEmpty {
+			let alertController = ApplicationController().simpleActionSheetAllert(with: "full name is empty", message: nil)
+			present(alertController, animated: true)
+			return
+		}
 		
 		if password != confirmPassword {
 			let alertController = ApplicationController().simpleActionSheetAllert(with: "passwords do not match", message: nil)
@@ -46,13 +55,14 @@ class EmailSignUpViewController: UIViewController {
 		if !passwordIsSafe(with: password) {
 			let alertController = ApplicationController().simpleActionSheetAllert(with: "please use a safe password", message: "password must be 6 characters")
 			present(alertController, animated: true)
+			return
 		}
 		
 		
-		Auth.auth().signIn(withEmail: email, password: password) { _, error in
+		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
 			if let error = error {
-				//Throw  action sheet error
-				NSLog("Error with email/password signIn: \(error)")
+				
+				print("Error with email/password signIn: \(error) \n authResult: \(authResult.debugDescription) ")
 				let alertController = ApplicationController().simpleActionSheetAllert(with: "Error with Sign Up", message: "Please Try Again!")
 				self.present(alertController, animated: true)
 				

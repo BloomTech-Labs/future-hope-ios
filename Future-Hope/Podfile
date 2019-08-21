@@ -15,6 +15,7 @@ target 'Future-Hope' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
 	pod 'GoogleSignIn'
+	pod 'FBSDKLoginKit'
 	
 	# Material Desing
 	pod 'MaterialComponents/TextFields'
