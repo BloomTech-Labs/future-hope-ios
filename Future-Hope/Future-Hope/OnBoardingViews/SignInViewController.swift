@@ -31,7 +31,10 @@ class SignInViewController: UIViewController{
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+		setupViews()
+    }
+	
+	private func setupViews() {
 		emailTextField.delegate = self
 		passwordTextField.delegate = self
 		GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -42,8 +45,8 @@ class SignInViewController: UIViewController{
 				// MARK: segue into app
 			}
 		})
-    }
-
+	}
+	
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
 		guard let email = emailTextField.text,
 			let password = passwordTextField.text else { return }
@@ -65,9 +68,6 @@ class SignInViewController: UIViewController{
 			print("signed in with  \(email)")
 		}
 	}
-	
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
 }
 
 

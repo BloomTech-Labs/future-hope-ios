@@ -25,23 +25,17 @@ class EmailSignUpViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
-		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Test", style: .plain, target: self, action: #selector(Test))
+//		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Test", style: .plain, target: self, action: #selector(Test))
 		
     }
 	
-	@objc func Test() {
-		fullNameTextField.text = "Hector Vill"
-		emailTextFields.text = "hectorsvill@gmail.com"
-		passwordTextField.text = "Pass1234"
-		confirmPasswordTextField.text = "Pass1234"
-		
-	}
-	
-	
-	// test cred
-	// One100?!
-	
-	
+//	@objc func Test() {
+//		fullNameTextField.text = "Hector Vill"
+//		emailTextFields.text = "hectorsvill@gmail.com"
+//		passwordTextField.text = "Pass1234"
+//		confirmPasswordTextField.text = "Pass1234"
+//
+//	}
 	
 	@IBAction func submitButtonPressed(_ sender: MDCButton) {
 		
@@ -77,6 +71,9 @@ class EmailSignUpViewController: UIViewController {
 		navigationController?.popViewController(animated: true)
 	}
 	
+}
+
+extension EmailSignUpViewController{
 	
 	private func checkTextIsSafe(fullName: String, password: String, confirmPassword: String) -> Bool{
 		if fullName.isEmpty {
@@ -92,10 +89,8 @@ class EmailSignUpViewController: UIViewController {
 			present(alertController, animated: true)
 			return false
 		}
-		
 		return true
 	}
-	
 	
 	private func passwordIsSafe(with password: String) -> Bool {
 		// Mark: Check for valid passwor
@@ -104,4 +99,15 @@ class EmailSignUpViewController: UIViewController {
 		}
 		return true
 	}
+	
+	private func gooToMainView() {
+//		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? ViewController else {
+//			print("homeVC was not found!")
+//			return
+//		}
+//		view.window?.rootViewController = homeVC
+//		view.window?.makeKeyAndVisible()
+	}
+	
+	
 }
