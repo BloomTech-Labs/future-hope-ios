@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
 
 
 @UIApplicationMain
@@ -23,8 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		GIDSignIn.sharedInstance()?.delegate = self
 		return true
 	}
+	
 }
-
+//func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//	if let error = error {
+//		print(error.localizedDescription)
+//		return
+//	}
+//	// ...
+//}
 
 
 extension AppDelegate: GIDSignInDelegate {
@@ -54,6 +62,6 @@ extension AppDelegate: GIDSignInDelegate {
 		}
 	}
 	
-	
+
 	
 }

@@ -24,7 +24,19 @@ class EmailSignUpViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+		
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Test", style: .plain, target: self, action: #selector(Test))
+		
     }
+	
+	@objc func Test() {
+		fullNameTextField.text = "Hector Vill"
+		emailTextFields.text = "hectorsvill@gmail.com"
+		passwordTextField.text = "Pass1234"
+		confirmPasswordTextField.text = "Pass1234"
+		
+	}
+	
 	
 	// test cred
 	// One100?!
@@ -39,31 +51,15 @@ class EmailSignUpViewController: UIViewController {
 			let password = passwordTextField.text,
 			let confirmPassword = confirmPasswordTextField.text else { return }
 		
-		
-		if fullName.isEmpty {
-			let alertController = ApplicationController().simpleActionSheetAllert(with: "full name is empty", message: nil)
-			present(alertController, animated: true)
+		if !checkTextIsSafe(fullName: fullName, password: password, confirmPassword: confirmPassword) {
 			return
 		}
-		
-		if password != confirmPassword {
-			let alertController = ApplicationController().simpleActionSheetAllert(with: "passwords do not match", message: nil)
-			present(alertController, animated: true)
-			return
-		}
-		
-		if !passwordIsSafe(with: password) {
-			let alertController = ApplicationController().simpleActionSheetAllert(with: "please use a safe password", message: "password must be 6 characters")
-			present(alertController, animated: true)
-			return
-		}
-		
-		
-		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+
+		Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
 			if let error = error {
 				
-				print("Error with email/password signIn: \(error) \n authResult: \(authResult.debugDescription) ")
-				let alertController = ApplicationController().simpleActionSheetAllert(with: "Error with Sign Up", message: "Please Try Again!")
+				NSLog("Error with Auth Sign In email/password: \(error)\n With authResult: \(authResult.debugDescription)")
+				let alertController = ApplicationController().simpleActionSheetAllert(with: "Error Loging In with email/password with Sign Up", message: "Please Try Again!")
 				self.present(alertController, animated: true)
 				
 				return
@@ -82,10 +78,30 @@ class EmailSignUpViewController: UIViewController {
 	}
 	
 	
+	private func checkTextIsSafe(fullName: String, password: String, confirmPassword: String) -> Bool{
+		if fullName.isEmpty {
+			let alertController = ApplicationController().simpleActionSheetAllert(with: "full name is empty", message: nil)
+			present(alertController, animated: true)
+			return false
+		}else if password != confirmPassword {
+			let alertController = ApplicationController().simpleActionSheetAllert(with: "passwords do not match", message: nil)
+			present(alertController, animated: true)
+			return false
+		}else if !passwordIsSafe(with: password) {
+			let alertController = ApplicationController().simpleActionSheetAllert(with: "please use a safe password", message: "password must be 6 characters")
+			present(alertController, animated: true)
+			return false
+		}
+		
+		return true
+	}
+	
+	
 	private func passwordIsSafe(with password: String) -> Bool {
-		
-		// Mark: Check for valid password
-		
+		// Mark: Check for valid passwor
+		if password.count < 6 {
+			return  false
+		}
 		return true
 	}
 }

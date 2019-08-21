@@ -53,31 +53,26 @@ class SignInViewController: UIViewController{
     }
 
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
-		print("logged in with email/password")
 		guard let email = emailTextField.text,
-			let password = passwordTextField.text,
-			!email.isEmpty || !password.isEmpty  else {
-				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
-				self.present(ac, animated: true)
-				return
-		}
+			let password = passwordTextField.text else { return }
 		
 		
+//		if email.isEmpty || password.isEmpty {
+//				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
+//				self.present(ac, animated: true)
+//				return
+//		}
 		
-		Auth.auth().signIn(withEmail: email, password: password) { _, error in
+		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
 			if let error = error {
-				NSLog("Error with Auth Sign In email/password: \(error)")
+				NSLog("Error with Auth Sign In email/password: \(error)\n With authResult: \(authResult.debugDescription)")
 				
 				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Please try Again!")
 				self.present(ac, animated: true)
 			}
-			
 			// MARK: segue to app
 			
 		}
-		
-		
-		
 	
 	}
 	
@@ -92,11 +87,7 @@ class SignInViewController: UIViewController{
 	
 	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		
-		
     }
-	
-
 }
 
 
@@ -106,8 +97,5 @@ extension SignInViewController: UITextFieldDelegate {
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		view.endEditing(true)
 	}
-	
-	
-	
 	
 }
