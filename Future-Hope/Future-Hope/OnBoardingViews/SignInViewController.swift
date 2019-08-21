@@ -41,10 +41,10 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupViews()
+		
     }
 	
-	@IBAction func FacebookFirebaseLogin(_ sender: Any) {
-		
+	@IBAction func facebookLogInButtonPressed(_ sender: FBLoginButton) {
 		LoginManager().logIn(permissions: [.publicProfile, .email], viewController: self) { result in
 			switch result {
 			case .success(granted: _, declined: _, token: _):
@@ -56,7 +56,7 @@ class SignInViewController: UIViewController {
 			}
 		}
 	}
-
+	
 	private func firebaseFacebookLogIn() {
 		let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
 		

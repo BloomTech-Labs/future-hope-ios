@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
 		GIDSignIn.sharedInstance()?.delegate = self
 		//FBSDK
-		ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+		//ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 		return true
 	}
 	
