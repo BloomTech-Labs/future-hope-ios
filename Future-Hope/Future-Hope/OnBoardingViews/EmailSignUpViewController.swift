@@ -66,7 +66,7 @@ class EmailSignUpViewController: UIViewController {
 			}
 			
 			print("\(fullName) - \(email) - \(password)")
-			
+			// MARK: Save to User Defaults
 			// MARK: send user data to firestore and new view
 			// MARK: segue to app
 			

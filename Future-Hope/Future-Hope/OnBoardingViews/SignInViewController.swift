@@ -18,8 +18,6 @@ import FBSDKCoreKit
 import MaterialComponents.MaterialTextFields
 
 class SignInViewController: UIViewController{
-	
-	
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
 	
@@ -36,55 +34,37 @@ class SignInViewController: UIViewController{
 		
 		emailTextField.delegate = self
 		passwordTextField.delegate = self
-		
 		GIDSignIn.sharedInstance()?.presentingViewController = self
 		
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
 				print(user)
-				
 				// MARK: segue into app
-				
 			}
-			
 		})
-		
-		
     }
 
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
 		guard let email = emailTextField.text,
 			let password = passwordTextField.text else { return }
 		
-		
-//		if email.isEmpty || password.isEmpty {
-//				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
-//				self.present(ac, animated: true)
-//				return
-//		}
+		if email.isEmpty || password.isEmpty {
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
+				self.present(ac, animated: true)
+				return
+		}
 		
 		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
 			if let error = error {
 				NSLog("Error with Auth Sign In email/password: \(error)\n With authResult: \(authResult.debugDescription)")
-				
 				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Please try Again!")
 				self.present(ac, animated: true)
+				return
 			}
 			// MARK: segue to app
-			
+			print("signed in with  \(email)")
 		}
-	
 	}
-	
-//	func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-//		if let error = error {
-//			print(error.localizedDescription)
-//			return
-//		}
-//
-//	}
-	
-	
 	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
@@ -97,5 +77,4 @@ extension SignInViewController: UITextFieldDelegate {
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		view.endEditing(true)
 	}
-	
 }
