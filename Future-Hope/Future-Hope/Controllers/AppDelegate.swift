@@ -9,9 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-import FirebaseCore
-import FBSDKLoginKit
-
+import FBSDKCoreKit
 
 
 @UIApplicationMain
@@ -24,9 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		FirebaseApp.configure()
 		GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
 		GIDSignIn.sharedInstance()?.delegate = self
+		//FBSDK
+		ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 		return true
 	}
 	
+	func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+		return ApplicationDelegate.shared.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+	}
+
 }
 
 

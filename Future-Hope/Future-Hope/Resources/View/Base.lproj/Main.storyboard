@@ -18,23 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SDq-dE-a6S">
-                                <rect key="frame" x="20" y="96" width="374" height="332"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="r4T-dy-DN8">
+                                <rect key="frame" x="20" y="96" width="374" height="284"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pqG-oY-6hV" customClass="MDCTextField">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wz3-bR-0Tc" customClass="MDCTextField">
-                                        <rect key="frame" x="0.0" y="60" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="42" width="374" height="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1h2-gq-6xh" customClass="MDCRaisedButton">
-                                        <rect key="frame" x="0.0" y="110" width="374" height="42"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1h2-gq-6xh" customClass="MDCRaisedButton">
+                                        <rect key="frame" x="0.0" y="84" width="374" height="38"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0X-Zi-rz0" customClass="MDCRaisedButton">
-                                        <rect key="frame" x="0.0" y="168" width="374" height="42"/>
+                                        <rect key="frame" x="0.0" y="130" width="374" height="38"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <state key="normal" title="Email Signup">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,27 +54,39 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-cu-CNN" customClass="GIDSignInButton">
-                                        <rect key="frame" x="0.0" y="226" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="176" width="374" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="830-P7-KTf"/>
+                                            <constraint firstAttribute="height" constant="50" id="L2N-jB-acj"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAf-9q-X8D" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="0.0" y="282" width="374" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-KG-2Mu" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="0.0" y="234" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="biP-gq-0a3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="FacebookFirebaseLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLB-3h-xs7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="SDq-dE-a6S" secondAttribute="height" multiplier="187:166" id="fOd-ts-uVd"/>
+                                    <constraint firstItem="1h2-gq-6xh" firstAttribute="height" secondItem="N0X-Zi-rz0" secondAttribute="height" id="BF2-lh-hK1"/>
+                                    <constraint firstItem="wz3-bR-0Tc" firstAttribute="height" secondItem="pqG-oY-6hV" secondAttribute="height" id="Mb6-FO-IkQ"/>
+                                    <constraint firstItem="wz3-bR-0Tc" firstAttribute="top" secondItem="pqG-oY-6hV" secondAttribute="bottom" constant="8" symbolic="YES" id="NVz-wa-Uiy"/>
+                                    <constraint firstAttribute="width" secondItem="r4T-dy-DN8" secondAttribute="height" multiplier="187:142" id="SqJ-5a-kQv"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.9510807966" green="0.9510807966" blue="0.9510807966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SDq-dE-a6S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="8d2-CN-Kd4"/>
-                            <constraint firstItem="SDq-dE-a6S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="A6M-rB-LtI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SDq-dE-a6S" secondAttribute="trailing" constant="20" id="KXu-00-XS1"/>
+                            <constraint firstItem="r4T-dy-DN8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YRT-UK-DNe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r4T-dy-DN8" secondAttribute="trailing" constant="20" id="fgc-bc-dgB"/>
+                            <constraint firstItem="r4T-dy-DN8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="t36-CQ-vIn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

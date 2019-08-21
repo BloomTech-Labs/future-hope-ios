@@ -7,17 +7,26 @@
 //
 
 import UIKit
-
-// Firebase
 import Firebase
+import FirebaseAuth
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
+import FBSDKCoreKit
+
 
 import GoogleSignIn
-import FBSDKCoreKit
+
 
 // Material
 import MaterialComponents.MaterialTextFields
 
-class SignInViewController: UIViewController{
+class SignInViewController: UIViewController {
+	
+	
+	
+	
+	
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
 	
@@ -34,18 +43,52 @@ class SignInViewController: UIViewController{
 		setupViews()
     }
 	
+	@IBAction func FacebookFirebaseLogin(_ sender: Any) {
+		
+		LoginManager().logIn(permissions: [.publicProfile, .email], viewController: self) { result in
+			switch result {
+			case .success(granted: _, declined: _, token: _):
+				self.firebaseFacebookLogIn()
+			case .failed(let err):
+				print("Failed with: \(err)")
+			case .cancelled:
+				print("Canceled! ")
+			}
+		}
+	}
+
+	private func firebaseFacebookLogIn() {
+		let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+		
+		Auth.auth().signIn(with: credential) { (authResult, error) in
+			if let error = error {
+				NSLog("Error with facebook Auth: \(error) \n authResult: \(authResult.debugDescription)")
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With FaceBool LogIn", message: "Please try Again!")
+				self.present(ac, animated: true)
+				return
+			}
+			
+			self.segueToApp()
+			print("FaceBook loggedIn with authResult: \(authResult.debugDescription)")
+			
+			if let user = Auth.auth().currentUser {
+				print("Logged in as: ", user.displayName!)
+			}
+		}
+	}
+	
 	private func setupViews() {
 		emailTextField.delegate = self
 		passwordTextField.delegate = self
 		GIDSignIn.sharedInstance()?.presentingViewController = self
-		
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
 				print(user)
-				// MARK: segue into app
+				self.segueToApp()
 			}
 		})
 	}
+
 	
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
 		guard let email = emailTextField.text,
@@ -64,10 +107,18 @@ class SignInViewController: UIViewController{
 				self.present(ac, animated: true)
 				return
 			}
-			// MARK: segue to app
+			
+			self.segueToApp()
 			print("signed in with  \(email)")
 		}
 	}
+	
+	
+	private func segueToApp() {
+		// // MARK: segue to app
+	}
+	
+
 }
 
 

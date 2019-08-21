@@ -10,9 +10,13 @@ import Foundation
 
 class ModelsController {
 	
+	let user: User
 	
+	init(user: User) {
+		self.user = user
+	}
 	
-	
+	 
 	
 	
 }
