@@ -24,22 +24,9 @@ class EmailSignUpViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-		
-//		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Test", style: .plain, target: self, action: #selector(Test))
-		
     }
 	
-//	@objc func Test() {
-//		fullNameTextField.text = "Hector Vill"
-//		emailTextFields.text = "hectorsvill@gmail.com"
-//		passwordTextField.text = "Pass1234"
-//		confirmPasswordTextField.text = "Pass1234"
-//
-//	}
-	
 	@IBAction func submitButtonPressed(_ sender: MDCButton) {
-		
-		
 		guard let fullName = fullNameTextField.text,
 			let email = emailTextFields.text,
 			let password = passwordTextField.text,
