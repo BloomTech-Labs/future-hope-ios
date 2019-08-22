@@ -9,10 +9,6 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-import FirebaseCore
-import FBSDKLoginKit
-
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		GIDSignIn.sharedInstance()?.delegate = self
 		return true
 	}
-	
 }
+
 
 
 extension AppDelegate: GIDSignInDelegate {
@@ -44,19 +40,16 @@ extension AppDelegate: GIDSignInDelegate {
 				NSLog("Error with GidSignIN: \(error)")
 				return
 			}
-			// send user data to db
+			
 			print("logged in")
 		}
 		
 	}
 	
 	func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-		if let error = error {
-			NSLog("disconnect error: \(error)")
-			return
-		}
+		// disconect logic
 	}
 	
-
+	
 	
 }
