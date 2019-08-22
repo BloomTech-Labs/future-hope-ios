@@ -15,7 +15,6 @@ import MaterialComponents.MaterialButtons
 
 class EmailSignUpViewController: UIViewController {
 
-	
 	@IBOutlet var fullNameTextField: MDCTextField!
 	@IBOutlet var emailTextFields: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
@@ -95,6 +94,4 @@ extension EmailSignUpViewController{
 //		view.window?.rootViewController = homeVC
 //		view.window?.makeKeyAndVisible()
 	}
-	
-	
 }

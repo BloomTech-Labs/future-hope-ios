@@ -104,7 +104,6 @@ class SignInViewController: UIViewController {
 		}
 	}
 	
-	
 	private func segueToApp() {
 		// // MARK: segue to app
 	}
