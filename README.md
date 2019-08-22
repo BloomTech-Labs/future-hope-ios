@@ -4,18 +4,14 @@
 ## Install
 
 
-[CocoaPods - Getting Started](https://guides.cocoapods.org/using/getting-started.html)
+ - [CocoaPods - Getting Started](https://guides.cocoapods.org/using/getting-started.html)
 
-
-s
-
->  Clone repo, cd into repo, install
-
+>  Clone repo, cd into Future-Hope, install
+```
 cd Future-Hope
-pod init
 pod install
 open Future-Hope.xcworkspace
-
+```
 
 
 ## Usage
@@ -30,4 +26,5 @@ PRs accepted.
 ## License
 
 MIT © Richard McRichface
+
 
