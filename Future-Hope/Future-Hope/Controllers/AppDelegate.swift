@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		FirebaseApp.configure()
 		GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
 		GIDSignIn.sharedInstance()?.delegate = self
-		//FBSDK
-//		ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+		// Mark: FBSDK Loging Delegate - Not sure if required for later use
+		//ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 		return true
 	}
 	

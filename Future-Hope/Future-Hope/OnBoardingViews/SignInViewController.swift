@@ -13,20 +13,11 @@ import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
 import FBSDKCoreKit
-
-
 import GoogleSignIn
-
-
-// Material
 import MaterialComponents.MaterialTextFields
 
 class SignInViewController: UIViewController {
-	
-	
-	
-	
-	
+
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
 	
