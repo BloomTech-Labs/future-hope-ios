@@ -17,6 +17,4 @@ class User {
 		self.fullName = fullName
 		self.email = email
 	}	
-	
-	
 }

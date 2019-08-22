@@ -9,13 +9,7 @@
 import UIKit
 
 class ApplicationController {
-	
-	
-	
-	
-	
-	
-	
+
 	func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
 		let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
 		ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))

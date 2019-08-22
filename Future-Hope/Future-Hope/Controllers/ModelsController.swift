@@ -15,8 +15,4 @@ class ModelsController {
 	init(user: User) {
 		self.user = user
 	}
-	
-	 
-	
-	
 }
