@@ -18,36 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-KG-2Mu" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="0.0" y="402" width="414" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Facebook Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="facebookLogInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9Z-gX-KNf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0X-Zi-rz0" customClass="MDCRaisedButton">
-                                <rect key="frame" x="0.0" y="344" width="414" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <state key="normal" title="Email Signup">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1h2-gq-6xh" customClass="MDCRaisedButton">
-                                <rect key="frame" x="0.0" y="282" width="414" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stz-Kb-saO"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hMc-Lh-g6T">
+                                <rect key="frame" x="0.0" y="259" width="414" height="232"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1h2-gq-6xh" customClass="MDCRaisedButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stz-Kb-saO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0X-Zi-rz0" customClass="MDCRaisedButton">
+                                        <rect key="frame" x="0.0" y="62" width="414" height="46"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <state key="normal" title="Email Signup">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCe-bP-1Z7" customClass="GIDSignInButton">
+                                        <rect key="frame" x="0.0" y="124" width="414" height="46"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-KG-2Mu" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="0.0" y="186" width="414" height="46"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Facebook Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="facebookLogInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9Z-gX-KNf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hMc-Lh-g6T" secondAttribute="height" multiplier="207:116" id="9Qs-Rs-zKN"/>
+                                </constraints>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n4D-bM-E5M" userLabel="Email Stack View">
                                 <rect key="frame" x="20" y="108" width="374" height="59.5"/>
                                 <subviews>
@@ -78,7 +87,7 @@
                                         <rect key="frame" x="0.0" y="29.5" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -87,9 +96,12 @@
                         <constraints>
                             <constraint firstItem="F3f-tO-1ju" firstAttribute="top" secondItem="n4D-bM-E5M" secondAttribute="bottom" constant="16" id="E8r-AZ-o05"/>
                             <constraint firstItem="n4D-bM-E5M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KVK-9i-71F"/>
+                            <constraint firstItem="hMc-Lh-g6T" firstAttribute="top" secondItem="F3f-tO-1ju" secondAttribute="bottom" constant="16" id="MiW-Yr-QVk"/>
                             <constraint firstItem="n4D-bM-E5M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="YcP-qd-50h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F3f-tO-1ju" secondAttribute="trailing" constant="20" id="ZNw-Ks-kbH"/>
+                            <constraint firstItem="hMc-Lh-g6T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Zts-YI-47G"/>
                             <constraint firstItem="F3f-tO-1ju" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eO8-Wk-hkk"/>
+                            <constraint firstItem="hMc-Lh-g6T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q47-jO-oF5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n4D-bM-E5M" secondAttribute="trailing" constant="20" id="tLa-dx-zE7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -390,7 +402,7 @@
                                                         <rect key="frame" x="0.0" y="29.5" width="374" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="name"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -407,7 +419,7 @@
                                                         <rect key="frame" x="0.0" y="29.5" width="374" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -424,7 +436,7 @@
                                                         <rect key="frame" x="0.0" y="29.5" width="374" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -441,7 +453,7 @@
                                                         <rect key="frame" x="0.0" y="29.5" width="374" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -461,7 +473,7 @@
                                                         <rect key="frame" x="0.0" y="28.5" width="374" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="country-name"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -478,7 +490,7 @@
                                                         <rect key="frame" x="0.0" y="29.5" width="374" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
