@@ -239,7 +239,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5F-bZ-zFT">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5F-bZ-zFT" customClass="MDCButton">
                                                         <rect key="frame" x="0.0" y="715" width="374" height="30"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -285,6 +285,16 @@
                         <viewLayoutGuide key="safeArea" id="B3b-Wk-Gnn"/>
                     </view>
                     <size key="freeformSize" width="414" height="1200"/>
+                    <connections>
+                        <outlet property="aboutTextView" destination="3io-Si-rdN" id="8nE-eO-EZK"/>
+                        <outlet property="citiTextField" destination="zip-mT-Usc" id="qXr-bo-4G4"/>
+                        <outlet property="countryTextField" destination="nna-4N-j7M" id="NXf-45-nd3"/>
+                        <outlet property="emailTextFields" destination="aYB-A9-8L5" id="4Nv-e7-IBe"/>
+                        <outlet property="fullNameTextField" destination="vge-R1-iVS" id="cKz-C3-jEp"/>
+                        <outlet property="phoneNumber" destination="1sG-2R-7ib" id="nRQ-CV-JL9"/>
+                        <outlet property="stateOrProvinceTextField" destination="rdZ-V9-DzN" id="5P1-BT-9QO"/>
+                        <outlet property="userTypeSegmented" destination="OKA-9x-WOo" id="8Pt-e2-ogT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBb-kr-Ue2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,6 +17,16 @@ class EmailSignUpViewController: UIViewController {
 
 	@IBOutlet var fullNameTextField: MDCTextField!
 	@IBOutlet var emailTextFields: MDCTextField!
+	
+	@IBOutlet var citiTextField: MDCTextField!
+	@IBOutlet var stateOrProvinceTextField: MDCTextField!
+	@IBOutlet var countryTextField: MDCTextField!
+	
+	@IBOutlet var phoneNumber: MDCTextField!
+	
+	@IBOutlet var aboutTextView: UITextView!
+	
+	@IBOutlet var userTypeSegmented: UISegmentedControl!
 	@IBOutlet var passwordTextField: MDCTextField!
 	@IBOutlet var confirmPasswordTextField: MDCTextField!
 	
