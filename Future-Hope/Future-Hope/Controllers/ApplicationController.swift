@@ -8,11 +8,24 @@
 
 import UIKit
 import Firebase
+import FirebaseCore
+
+
+
 
 class ApplicationController {
 	
 	
 	
+	
+	
+	
+}
+
+
+// Auth
+
+extension ApplicationController {
 	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
 		Auth.auth().signIn(with: credentail) { authResult, error in
 			if let error = error {
