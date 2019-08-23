@@ -8,8 +8,15 @@
 
 import Foundation
 
+enum UserType {
+	case mentor
+	case teacher
+	case admin
+}
 
 class User {
+	
+	let userType: UserType
 	let fullName: String
 	let email: String
 	let city: String
@@ -17,7 +24,8 @@ class User {
 	let country: String
 	let phoneNumber: String
 	
-	init(fullName: String, email: String, city: String, stateOrProvince: String, Country: String, phoneNumber: String) {
+	init(let userType: UserType, fullName: String, email: String, city: String, stateOrProvince: String, country: String, phoneNumber: String) {
+		self.userType = userType
 		self.fullName = fullName
 		self.email = email
 		self.city = city
