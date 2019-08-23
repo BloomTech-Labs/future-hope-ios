@@ -32,6 +32,10 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupViews()
+		//facebook logout
+		let loginManager = LoginManager()
+		loginManager.logOut()
+		
     }
 	
 	private func setupViews() {
@@ -39,6 +43,9 @@ class SignInViewController: UIViewController {
 		passwordTextField.delegate = self
 		GIDSignIn.sharedInstance()?.presentingViewController = self
 		handleAuthStateDidChange()
+		
+	
+		
 	}
 	
 	
