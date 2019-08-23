@@ -84,8 +84,6 @@ class GmailFacebookSignUpViewController: UIViewController {
 		print("sign Up with this user credentials. \(user.email) - \(user.phoneNumber)")
 		
 	}
-
-	
 }
 
 extension GmailFacebookSignUpViewController{
