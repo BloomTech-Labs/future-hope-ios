@@ -39,7 +39,7 @@ class User {
 		self.aboutme = aboutme
 	}
 	
-	func toDictionary() -> [String: Any]{
+	var toDictionary: [String: Any]{
 		return [
 			"usser_uid": user_uid,
 			"userType": userType == .mentor ? "mentor" : "teacher" ,

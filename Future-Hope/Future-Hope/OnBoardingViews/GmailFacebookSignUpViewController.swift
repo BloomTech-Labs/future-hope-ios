@@ -22,7 +22,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 	@IBOutlet var stateOrProvinceTextField: MDCTextField!
 	@IBOutlet var countryTextField: MDCTextField!
 	@IBOutlet var phoneNumberTextField: MDCTextField!
-	@IBOutlet var aboutTextView: UITextView!
+	@IBOutlet var aboutmeTextView: UITextView!
 	@IBOutlet var userTypeSegmented: UISegmentedControl!
 
 	override func viewDidLoad() {
@@ -54,9 +54,9 @@ class GmailFacebookSignUpViewController: UIViewController {
 		let email  = currentUser.email
 		let phoneNumber = currentUser.phoneNumber
 		
-		fullNameTextField.text = displayName
-		emailTextFields.text = email
-		phoneNumberTextField.text = phoneNumber
+		fullNameTextField?.text = displayName
+		emailTextFields?.text = email
+		phoneNumberTextField?.text = phoneNumber
 	}
 	
 	
@@ -67,7 +67,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let stateOrProvince = stateOrProvinceTextField.text,
 			let country = countryTextField.text,
 			let phoneNumber = phoneNumberTextField.text,
-			let aboutme = aboutTextView.text else { return }
+			let aboutme = aboutmeTextView.text else { return }
 		
 		print(userTypeSegmented.selectedSegmentIndex)
 		
