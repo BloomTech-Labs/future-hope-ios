@@ -8,14 +8,16 @@
 
 import Foundation
 
+
+
 class ModelsController {
 	
-	let user: User
 	
-	init(user: User) {
-		self.user = user
+	
+	
+	
+	func fetchCurrentUserInformation() {
+		
 	}
-	
-	
 	
 }

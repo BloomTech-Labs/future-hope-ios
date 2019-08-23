@@ -28,7 +28,27 @@ class GmailFacebookSignUpViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .done, target: self, action: #selector(logout))
+		
     }
+	
+	@objc func logout() {
+		
+		print("here")
+		ApplicationController().signOut { error in
+			if let error = error {
+				// MARK: Throw error
+				
+				NSLog("Error Signing Out: \(error)")
+				return
+			}
+		}
+		dismiss(animated: true, completion: nil)
+//		navigationController?.dismiss(animated: true, completion: nil)
+	}
+	
+	
+	
 	
 	@IBAction func submitButtonPressed(_ sender: MDCButton) {
 		guard let fullName = fullNameTextField.text,

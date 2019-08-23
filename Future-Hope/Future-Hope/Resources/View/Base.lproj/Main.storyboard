@@ -49,9 +49,6 @@
                                         <state key="normal" title="Email Signup">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="ef7-sY-hF8" kind="show" id="POd-LX-pkI"/>
-                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-cu-CNN" customClass="GIDSignInButton">
                                         <rect key="frame" x="0.0" y="176" width="374" height="50"/>
@@ -94,7 +91,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="pqG-oY-6hV" id="gKS-Ue-M43"/>
                         <outlet property="passwordTextField" destination="wz3-bR-0Tc" id="LbJ-4w-I4n"/>
-                        <segue destination="ef7-sY-hF8" kind="show" id="fMD-zd-5S5"/>
+                        <segue destination="ef7-sY-hF8" kind="show" identifier="GMailFacebookSegue" id="iu9-rH-E7K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -322,7 +319,4 @@
             <point key="canvasLocation" x="37.681159420289859" y="18.75"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="POd-LX-pkI"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -75,6 +75,12 @@ class SignInViewController: UIViewController {
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
 				print(user)
+				
+				// MARK: Note that this app is signed into facebook at start up and you must sign out.
+				// MARK: Get current user information wit user object
+				
+				
+				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 				self.segueToApp()
 			}
 		})
