@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="18.75"/>
         </scene>
-        <!--Email Sign Up View Controller-->
+        <!--Gmail Facebook Sign Up View Controller-->
         <scene sceneID="4mP-PQ-CV3">
             <objects>
-                <viewController id="ef7-sY-hF8" customClass="EmailSignUpViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ef7-sY-hF8" customClass="GmailFacebookSignUpViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kwY-Nz-ufh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,7 +291,7 @@
                         <outlet property="countryTextField" destination="nna-4N-j7M" id="NXf-45-nd3"/>
                         <outlet property="emailTextFields" destination="aYB-A9-8L5" id="4Nv-e7-IBe"/>
                         <outlet property="fullNameTextField" destination="vge-R1-iVS" id="cKz-C3-jEp"/>
-                        <outlet property="phoneNumber" destination="1sG-2R-7ib" id="nRQ-CV-JL9"/>
+                        <outlet property="phoneNumberTextField" destination="1sG-2R-7ib" id="nRQ-CV-JL9"/>
                         <outlet property="stateOrProvinceTextField" destination="rdZ-V9-DzN" id="5P1-BT-9QO"/>
                         <outlet property="userTypeSegmented" destination="OKA-9x-WOo" id="8Pt-e2-ogT"/>
                     </connections>

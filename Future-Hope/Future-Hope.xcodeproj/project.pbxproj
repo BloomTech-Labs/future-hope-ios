@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
-		E87C3B45230C5B5200161EFE /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B44230C5B5200161EFE /* EmailSignUpViewController.swift */; };
+		E87C3B45230C5B5200161EFE /* GmailFacebookSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */; };
 		E87C3B4A230C8EB700161EFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* User.swift */; };
 		E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B4E230C99C800161EFE /* ApplicationController.swift */; };
 		E87C3B54230CC7EA00161EFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */; };
@@ -24,7 +24,7 @@
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		E87C3B44230C5B5200161EFE /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailFacebookSignUpViewController.swift; sourceTree = "<group>"; };
 		E87C3B49230C8EB700161EFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E87C3B4E230C99C800161EFE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				E87C3B42230AFC9E00161EFE /* SignInViewController.swift */,
-				E87C3B44230C5B5200161EFE /* EmailSignUpViewController.swift */,
+				E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */,
 			);
 			path = OnBoardingViews;
 			sourceTree = "<group>";
@@ -334,7 +334,7 @@
 			files = (
 				E87C3B4A230C8EB700161EFE /* User.swift in Sources */,
 				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
-				E87C3B45230C5B5200161EFE /* EmailSignUpViewController.swift in Sources */,
+				E87C3B45230C5B5200161EFE /* GmailFacebookSignUpViewController.swift in Sources */,
 				E87C3B56230DAD5400161EFE /* ModelsController.swift in Sources */,
 				E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */,
 				E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */,
