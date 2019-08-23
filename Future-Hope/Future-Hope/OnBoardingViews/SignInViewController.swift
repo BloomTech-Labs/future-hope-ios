@@ -32,14 +32,6 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupViews()
-		
-//		ApplicationController().signOut { error in
-//			if let error = error {
-//				NSLog("error: \(error)")
-//			}
-//		}
-		
-		
     }
 	
 	private func setupViews() {
@@ -47,7 +39,6 @@ class SignInViewController: UIViewController {
 		passwordTextField.delegate = self
 		GIDSignIn.sharedInstance()?.presentingViewController = self
 		handleAuthStateDidChange()
-		
 	}
 	
 	
@@ -55,11 +46,8 @@ class SignInViewController: UIViewController {
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
 				print(user)
-				
 				// MARK: Note that this app is signed into facebook at start up and you must sign out.
 				// MARK: Get current user information wit user object
-				
-				
 				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 				self.segueToApp()
 			}

@@ -14,16 +14,6 @@ class ModelsController {
 	private (set) var user: User?
 	
 	
-	func fetchUserData() {
-		guard let currentUser = Auth.auth().currentUser else { return }
-		
-		let name = currentUser.displayName
-		let email  = currentUser.email
-		
-		
-		
-		let phoneNumber= currentUser.phoneNumber
-		
-	}
+	
 	
 }

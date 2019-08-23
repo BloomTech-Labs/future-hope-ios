@@ -31,13 +31,13 @@ class ApplicationController {
 		let fireAuth = Auth.auth()
 		do{
 			try fireAuth.signOut()
+			NSLog("SignOut Success!")
 			completion(nil)
 		}catch {
 			NSLog("Error signing out with :\(error)")
 			completion(error)
 		}
 	}
-	
 	
 	func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
 		let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
