@@ -33,19 +33,26 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 		setupViews()
 		
+//		ApplicationController().signOut { error in
+//			if let error = error {
+//				NSLog("error: \(error)")
+//			}
+//		}
+		
+		
     }
 	
 	@IBAction func facebookLogInButtonPressed(_ sender: FBLoginButton) {
-		LoginManager().logIn(permissions: [.publicProfile, .email], viewController: self) { result in
-			switch result {
-			case .success(granted: _, declined: _, token: _):
-				self.firebaseFacebookLogIn()
-			case .failed(let err):
-				print("Failed with: \(err)")
-			case .cancelled:
-				print("Canceled! ")
-			}
-		}
+//		LoginManager().logIn(permissions: [.publicProfile], viewController: self) { result in
+//			switch result {
+//			case .success(granted: _, declined: _, token: _):
+//				self.firebaseFacebookLogIn()
+//			case .failed(let err):
+//				print("Failed with: \(err)")
+//			case .cancelled:
+//				print("Canceled! ")
+//			}
+//		}
 	}
 	
 	private func firebaseFacebookLogIn() {

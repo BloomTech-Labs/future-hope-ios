@@ -33,8 +33,7 @@ class GmailFacebookSignUpViewController: UIViewController {
     }
 	
 	@objc func logout() {
-		
-		print("here")
+		// Mark: Remove This! Only for Testing!
 		ApplicationController().signOut { error in
 			if let error = error {
 				// MARK: Throw error

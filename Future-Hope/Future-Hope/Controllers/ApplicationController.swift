@@ -10,8 +10,21 @@ import UIKit
 import Firebase
 
 class ApplicationController {
-
 	
+	
+	
+	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
+		Auth.auth().signIn(with: credentail) { authResult, error in
+			if let error = error {
+				NSLog("\t->>>>>>>>> Error with Auth sign in with credential: \(error)\nauthResult\(authResult.debugDescription)")
+				completion(error)
+				return
+			}
+		
+			NSLog("Auth comple with: \(authResult.debugDescription)")
+			completion(nil)
+		}
+	}
 	
 	func signOut(completion: @escaping (Error?) -> Void) {
 		
