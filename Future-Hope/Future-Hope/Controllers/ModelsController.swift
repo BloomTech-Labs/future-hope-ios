@@ -14,10 +14,4 @@ class ModelsController {
 	
 	
 	
-	
-	
-	func fetchCurrentUserInformation() {
-		
-	}
-	
 }
