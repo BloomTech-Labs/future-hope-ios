@@ -42,6 +42,31 @@ class SignInViewController: UIViewController {
 		
     }
 	
+	private func setupViews() {
+		emailTextField.delegate = self
+		passwordTextField.delegate = self
+		GIDSignIn.sharedInstance()?.presentingViewController = self
+		handleAuthStateDidChange()
+		
+	}
+	
+	
+	private func handleAuthStateDidChange() {
+		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+			if let user = user {
+				print(user)
+				
+				// MARK: Note that this app is signed into facebook at start up and you must sign out.
+				// MARK: Get current user information wit user object
+				
+				
+				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
+				self.segueToApp()
+			}
+		})
+	}
+	
+	
 	@IBAction func facebookLogInButtonPressed(_ sender: FBLoginButton) {
 //		LoginManager().logIn(permissions: [.publicProfile], viewController: self) { result in
 //			switch result {
@@ -75,23 +100,7 @@ class SignInViewController: UIViewController {
 		}
 	}
 	
-	private func setupViews() {
-		emailTextField.delegate = self
-		passwordTextField.delegate = self
-		GIDSignIn.sharedInstance()?.presentingViewController = self
-		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
-			if let user = user {
-				print(user)
-				
-				// MARK: Note that this app is signed into facebook at start up and you must sign out.
-				// MARK: Get current user information wit user object
-				
-				
-				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
-				self.segueToApp()
-			}
-		})
-	}
+	
 
 	
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
