@@ -44,10 +44,7 @@ class SignInViewController: UIViewController {
 	
 	private func handleAuthStateDidChange() {
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
-			if let user = user {
-				print(user)
-				// MARK: Note that this app is signed into facebook at start up and you must sign out.
-				// MARK: Get current user information wit user object
+			if let _ = user {
 				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 				self.segueToApp()
 			}
@@ -88,9 +85,6 @@ class SignInViewController: UIViewController {
 		}
 	}
 	
-	
-
-	
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
 		guard let email = emailTextField.text,
 			let password = passwordTextField.text else { return }
@@ -116,6 +110,12 @@ class SignInViewController: UIViewController {
 	
 	private func segueToApp() {
 		// // MARK: segue to app
+		
+		/////
+		
+		///
+		
+		/////
 	}
 }
 

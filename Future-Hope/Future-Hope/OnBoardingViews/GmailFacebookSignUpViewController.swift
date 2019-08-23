@@ -25,18 +25,14 @@ class GmailFacebookSignUpViewController: UIViewController {
 	@IBOutlet var aboutTextView: UITextView!
 	@IBOutlet var userTypeSegmented: UISegmentedControl!
 
-	
-
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
 		setupViews()
 	}
-	
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
@@ -73,13 +69,19 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let phoneNumber = phoneNumberTextField.text,
 			let aboutme = aboutTextView.text else { return }
 		
+		print(userTypeSegmented.tag)
+		
 		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
 			let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
 			present(ac, animated: true)
 			return
 		}
 		
+		let user = User(user_uid: UUID().uuidString, userType: .mentor, fullName: fullName, email: email, city: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutme: aboutme)
+		
 		// MARK: if User submits send data to firestore
+		
+		print("sign Up with this user credentials. \(user)")
 		
 	}
 
