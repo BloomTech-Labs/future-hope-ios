@@ -10,6 +10,7 @@ import UIKit
 
 import Firebase
 
+
 import MaterialComponents.MaterialTextFields
 import MaterialComponents.MaterialButtons
 
@@ -77,24 +78,9 @@ class GmailFacebookSignUpViewController: UIViewController {
 			present(ac, animated: true)
 			return
 		}
-		print("submit")
-
-//		Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//			if let error = error {
-//
-//				NSLog("Error with Auth Sign In email/password: \(error)\n With authResult: \(authResult.debugDescription)")
-//				let alertController = ApplicationController().simpleActionSheetAllert(with: "Error Loging In with email/password with Sign Up", message: "Please Try Again!")
-//				self.present(alertController, animated: true)
-//
-//				return
-//			}
 		
-//			print("\(fullName) - \(email) - \(password)")
-			// MARK: Save to User Defaults
-			// MARK: send user data to firestore and new view
-			// MARK: segue to app
-			
-//		}
+		// MARK: if User submits send data to firestore
+		
 	}
 
 	
