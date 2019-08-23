@@ -69,7 +69,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let phoneNumber = phoneNumberTextField.text,
 			let aboutme = aboutTextView.text else { return }
 		
-		print(userTypeSegmented.tag)
+		print(userTypeSegmented.selectedSegmentIndex)
 		
 		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
 			let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
@@ -81,7 +81,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 		
 		// MARK: if User submits send data to firestore
 		
-		print("sign Up with this user credentials. \(user)")
+		print("sign Up with this user credentials. \(user.email) - \(user.phoneNumber)")
 		
 	}
 
