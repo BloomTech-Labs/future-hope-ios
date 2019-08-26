@@ -26,6 +26,14 @@
 				<string>com.googleusercontent.apps.586160685845-d4pd0d3keo2umcrnbcppatle7qf32gab</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.586160685845-d4pd0d3keo2umcrnbcppatle7qf32gab</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -52,6 +60,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
