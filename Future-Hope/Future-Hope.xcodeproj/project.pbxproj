@@ -8,17 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
+<<<<<<< HEAD
+		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
+		E87C3B45230C5B5200161EFE /* GmailFacebookSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */; };
+		E87C3B4A230C8EB700161EFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* User.swift */; };
+		E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B4E230C99C800161EFE /* ApplicationController.swift */; };
+		E87C3B54230CC7EA00161EFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */; };
+		E87C3B56230DAD5400161EFE /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B55230DAD5400161EFE /* ModelsController.swift */; };
+=======
+>>>>>>> Staging
 		E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA7230606DB001536AC /* AppDelegate.swift */; };
 		E8839EAA230606DB001536AC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA9230606DB001536AC /* SignInViewController.swift */; };
 		E8839EAD230606DB001536AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EAB230606DB001536AC /* Main.storyboard */; };
 		E8839EB2230606DE001536AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EB0230606DE001536AC /* LaunchScreen.storyboard */; };
 		E8839EC0230632A1001536AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8839EBF230632A1001536AC /* Assets.xcassets */; };
+<<<<<<< HEAD
+		E8CB24D7230FBA8C003C0B8C /* FireStoreReferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CB24D6230FBA8C003C0B8C /* FireStoreReferenceManager.swift */; };
+=======
 		E8E4ACDA2307345E00C7EF1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8E4ACD92307345E00C7EF1B /* GoogleService-Info.plist */; };
+>>>>>>> Staging
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
+		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailFacebookSignUpViewController.swift; sourceTree = "<group>"; };
+		E87C3B49230C8EB700161EFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E87C3B4E230C99C800161EFE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
+		E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E87C3B55230DAD5400161EFE /* ModelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsController.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> Staging
 		E8839EA4230606DB001536AC /* Future-Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Future-Hope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8839EA7230606DB001536AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8839EA9230606DB001536AC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ../SignInViewController.swift; sourceTree = "<group>"; };
@@ -26,7 +48,11 @@
 		E8839EB1230606DE001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8839EB3230606DE001536AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8839EBF230632A1001536AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		E8CB24D6230FBA8C003C0B8C /* FireStoreReferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreReferenceManager.swift; sourceTree = "<group>"; };
+=======
 		E8E4ACD92307345E00C7EF1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+>>>>>>> Staging
 		FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.release.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +85,47 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+		E87C3B47230C68D700161EFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E87C3B48230C6B3600161EFE /* View */,
+				E8839EBF230632A1001536AC /* Assets.xcassets */,
+				E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */,
+				E8839EB3230606DE001536AC /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E87C3B48230C6B3600161EFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8839EAB230606DB001536AC /* Main.storyboard */,
+				E8839EB0230606DE001536AC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E87C3B4B230C8F0300161EFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E87C3B49230C8EB700161EFE /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E87C3B50230C99F400161EFE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E87C3B4E230C99C800161EFE /* ApplicationController.swift */,
+				E87C3B55230DAD5400161EFE /* ModelsController.swift */,
+				E8CB24D6230FBA8C003C0B8C /* FireStoreReferenceManager.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+=======
+>>>>>>> Staging
 		E8839E9B230606DB001536AC = {
 			isa = PBXGroup;
 			children = (
@@ -82,19 +149,42 @@
 			children = (
 				E8839EBF230632A1001536AC /* Assets.xcassets */,
 				E8839EA7230606DB001536AC /* AppDelegate.swift */,
+<<<<<<< HEAD
+				E8CB24D5230F3EA2003C0B8C /* MainViewControllers */,
+				E87C3B50230C99F400161EFE /* Controllers */,
+				E87C3B4B230C8F0300161EFE /* Models */,
+				E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */,
+				E87C3B47230C68D700161EFE /* Resources */,
+=======
 				E8E4ACDB2307361B00C7EF1B /* View Controllers  */,
 				E8839EAB230606DB001536AC /* Main.storyboard */,
 				E8839EB0230606DE001536AC /* LaunchScreen.storyboard */,
 				E8E4ACD92307345E00C7EF1B /* GoogleService-Info.plist */,
 				E8839EB3230606DE001536AC /* Info.plist */,
+>>>>>>> Staging
 			);
 			path = "Future-Hope";
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+		E8CB24D5230F3EA2003C0B8C /* MainViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainViewControllers;
+			sourceTree = "<group>";
+		};
+		E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */ = {
+			isa = PBXGroup;
+			children = (
+				E87C3B42230AFC9E00161EFE /* SignInViewController.swift */,
+				E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */,
+=======
 		E8E4ACDB2307361B00C7EF1B /* View Controllers  */ = {
 			isa = PBXGroup;
 			children = (
 				E8839EA9230606DB001536AC /* SignInViewController.swift */,
+>>>>>>> Staging
 			);
 			path = "View Controllers ";
 			sourceTree = "<group>";
@@ -261,7 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				E87C3B4A230C8EB700161EFE /* User.swift in Sources */,
+				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
+				E87C3B45230C5B5200161EFE /* GmailFacebookSignUpViewController.swift in Sources */,
+				E87C3B56230DAD5400161EFE /* ModelsController.swift in Sources */,
+				E8CB24D7230FBA8C003C0B8C /* FireStoreReferenceManager.swift in Sources */,
+=======
 				E8839EAA230606DB001536AC /* SignInViewController.swift in Sources */,
+>>>>>>> Staging
 				E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
