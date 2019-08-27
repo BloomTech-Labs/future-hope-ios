@@ -663,7 +663,6 @@
                         <outlet property="phoneNumberTextField" destination="CfB-ad-PoB" id="dYo-Ff-4d4"/>
                         <outlet property="stateOrProvinceTextField" destination="sFn-OK-6sx" id="DIf-mO-tPc"/>
                         <outlet property="userTypeSegmented" destination="7zi-UY-me2" id="yjw-UF-Nlc"/>
-                        <segue destination="5vc-8B-7Hj" kind="show" id="Llb-hu-d4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBb-kr-Ue2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -984,7 +983,6 @@
                         <outlet property="phoneNumberTextField" destination="QXF-YN-fTk" id="KPQ-2p-R1x"/>
                         <outlet property="stateOrProvinceTextField" destination="LAy-3A-wVW" id="sXW-MD-cNa"/>
                         <outlet property="userTypeSegmented" destination="b1g-oj-OKH" id="lgF-T9-igJ"/>
-                        <segue destination="5vc-8B-7Hj" kind="show" id="722-17-8S0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEh-yV-huM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -992,7 +990,4 @@
             <point key="canvasLocation" x="2574" y="35"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="722-17-8S0"/>
-    </inferredMetricsTieBreakers>
 </document>

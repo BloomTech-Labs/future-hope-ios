@@ -142,10 +142,10 @@
 			children = (
 				E81B6B002314694900A2BD0A /* AppDelegate.swift */,
 				E81B6B5C2315056900A2BD0A /* MainViewController.swift */,
+				E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */,
 				E81B6B592314FF2500A2BD0A /* SlideOutMenu */,
 				E87C3B50230C99F400161EFE /* Controllers */,
 				E87C3B4B230C8F0300161EFE /* Models */,
-				E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */,
 				E87C3B47230C68D700161EFE /* Resources */,
 			);
 			path = "Future-Hope";
