@@ -120,10 +120,65 @@
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="18.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Side Panel View Controller-->
+        <scene sceneID="7tx-6T-tmd">
+            <objects>
+                <viewController id="S55-9g-NnM" customClass="SidePanelViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHP-dq-GJG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTm-2N-g1B">
+                                <rect key="frame" x="0.0" y="44" width="414" height="177"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NTm-2N-g1B" secondAttribute="height" multiplier="138:59" id="rL5-sb-Vfp"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gl7-Og-0Io">
+                                <rect key="frame" x="0.0" y="221" width="414" height="675"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SlideOutCell" textLabel="c6U-b1-jfk" style="IBUITableViewCellStyleDefault" id="i6Q-le-ooV">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i6Q-le-ooV" id="qf0-sF-yMN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c6U-b1-jfk">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gl7-Og-0Io" firstAttribute="trailing" secondItem="ApF-S6-zY8" secondAttribute="trailing" id="Fst-Zh-iEB"/>
+                            <constraint firstAttribute="bottom" secondItem="gl7-Og-0Io" secondAttribute="bottom" id="PJh-lK-pbO"/>
+                            <constraint firstItem="gl7-Og-0Io" firstAttribute="leading" secondItem="ApF-S6-zY8" secondAttribute="leading" id="Rmh-J3-vy2"/>
+                            <constraint firstItem="gl7-Og-0Io" firstAttribute="top" secondItem="NTm-2N-g1B" secondAttribute="bottom" id="igr-T1-gPh"/>
+                            <constraint firstItem="NTm-2N-g1B" firstAttribute="top" secondItem="ApF-S6-zY8" secondAttribute="top" id="nOZ-2f-7yp"/>
+                            <constraint firstItem="NTm-2N-g1B" firstAttribute="leading" secondItem="ApF-S6-zY8" secondAttribute="leading" id="qWG-4V-moW"/>
+                            <constraint firstItem="NTm-2N-g1B" firstAttribute="trailing" secondItem="ApF-S6-zY8" secondAttribute="trailing" id="zIc-jQ-wpz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ApF-S6-zY8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgY-Cv-dfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1306" y="1897"/>
+        </scene>
+        <!--Main View Controller-->
         <scene sceneID="g3e-se-ZgE">
             <objects>
-                <viewController id="5vc-8B-7Hj" sceneMemberID="viewController">
+                <viewController id="5vc-8B-7Hj" customClass="MainViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i8K-ux-CVx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgz-qY-SzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="920"/>
+            <point key="canvasLocation" x="-333" y="1884"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0a7-A9-aHe">
@@ -608,6 +663,7 @@
                         <outlet property="phoneNumberTextField" destination="CfB-ad-PoB" id="dYo-Ff-4d4"/>
                         <outlet property="stateOrProvinceTextField" destination="sFn-OK-6sx" id="DIf-mO-tPc"/>
                         <outlet property="userTypeSegmented" destination="7zi-UY-me2" id="yjw-UF-Nlc"/>
+                        <segue destination="5vc-8B-7Hj" kind="show" id="Llb-hu-d4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBb-kr-Ue2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -928,6 +984,7 @@
                         <outlet property="phoneNumberTextField" destination="QXF-YN-fTk" id="KPQ-2p-R1x"/>
                         <outlet property="stateOrProvinceTextField" destination="LAy-3A-wVW" id="sXW-MD-cNa"/>
                         <outlet property="userTypeSegmented" destination="b1g-oj-OKH" id="lgF-T9-igJ"/>
+                        <segue destination="5vc-8B-7Hj" kind="show" id="722-17-8S0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEh-yV-huM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -935,4 +992,7 @@
             <point key="canvasLocation" x="2574" y="35"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="722-17-8S0"/>
+    </inferredMetricsTieBreakers>
 </document>
