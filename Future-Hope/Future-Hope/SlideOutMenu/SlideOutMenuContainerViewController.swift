@@ -8,11 +8,15 @@
 
 import UIKit
 
+protocol  SlideOutMenuContainerViewControllerDelegate{
+	func didSelectIndex(_ indexPath: IndexPath)
+}
+
+
 class SlideOutMenuContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
 
