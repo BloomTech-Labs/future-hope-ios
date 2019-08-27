@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lZl-T2-KTm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5vc-8B-7Hj">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,16 +120,17 @@
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="18.75"/>
         </scene>
-        <!--Side Panel View Controller-->
+        <!--Slide Out Menu Container View Controller-->
         <scene sceneID="7tx-6T-tmd">
             <objects>
-                <viewController id="S55-9g-NnM" customClass="SidePanelViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="S55-9g-NnM" customClass="SlideOutMenuContainerViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JHP-dq-GJG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTm-2N-g1B">
                                 <rect key="frame" x="0.0" y="44" width="414" height="177"/>
+                                <color key="backgroundColor" red="0.9510807966" green="0.9510807966" blue="0.9510807966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NTm-2N-g1B" secondAttribute="height" multiplier="138:59" id="rL5-sb-Vfp"/>
                                 </constraints>
@@ -170,6 +171,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ApF-S6-zY8"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="gl7-Og-0Io" id="5xk-Co-DhE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgY-Cv-dfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,7 +186,7 @@
                     <view key="view" contentMode="scaleToFill" id="i8K-ux-CVx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HS0-3J-1r4"/>
                     </view>
                 </viewController>
