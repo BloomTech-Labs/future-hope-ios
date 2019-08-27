@@ -12,6 +12,7 @@
 		E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */; };
 		E81B6B062314725000A2BD0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81B6B042314725000A2BD0A /* LaunchScreen.storyboard */; };
 		E81B6B0A2314737900A2BD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81B6B092314737900A2BD0A /* Assets.xcassets */; };
+		E81B6B582314FF1D00A2BD0A /* SlideOutMenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B572314FF1D00A2BD0A /* SlideOutMenuContainerViewController.swift */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
 		E87C3B4A230C8EB700161EFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* User.swift */; };
 		E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B4E230C99C800161EFE /* ApplicationController.swift */; };
@@ -28,6 +29,7 @@
 		E81B6B052314725000A2BD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../../Desktop/labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		E81B6B092314737900A2BD0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
 		E81B6B0E2314742500A2BD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E81B6B572314FF1D00A2BD0A /* SlideOutMenuContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuContainerViewController.swift; sourceTree = "<group>"; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E87C3B49230C8EB700161EFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E87C3B4E230C99C800161EFE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 				FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E81B6B592314FF2500A2BD0A /* SlideOutMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E81B6B572314FF1D00A2BD0A /* SlideOutMenuContainerViewController.swift */,
+			);
+			path = SlideOutMenu;
 			sourceTree = "<group>";
 		};
 		E87C3B47230C68D700161EFE /* Resources */ = {
@@ -126,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E81B6B002314694900A2BD0A /* AppDelegate.swift */,
+				E81B6B592314FF2500A2BD0A /* SlideOutMenu */,
 				E87C3B50230C99F400161EFE /* Controllers */,
 				E87C3B4B230C8F0300161EFE /* Models */,
 				E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */,
@@ -324,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81B6B582314FF1D00A2BD0A /* SlideOutMenuContainerViewController.swift in Sources */,
 				E87C3B4A230C8EB700161EFE /* User.swift in Sources */,
 				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
 				E87C3B56230DAD5400161EFE /* ModelsController.swift in Sources */,
