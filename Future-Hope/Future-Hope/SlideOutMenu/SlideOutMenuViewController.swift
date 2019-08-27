@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol SlideOutMenuContainerViewControllerDelegate{
+protocol SlideOutMenuViewControllerDelegate{
 	func didSelectIndex(_ indexPath: IndexPath)
 }
 
-class SlideOutMenuContainerViewController: UIViewController {
+class SlideOutMenuViewController: UIViewController {
 	@IBOutlet var tableView: UITableView!
 	
-	var delegate: SlideOutMenuContainerViewControllerDelegate?
+	var delegate: SlideOutMenuViewControllerDelegate?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class SlideOutMenuContainerViewController: UIViewController {
     }
 }
 
-extension SlideOutMenuContainerViewController: UITableViewDataSource {
+extension SlideOutMenuViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 10
 	}
@@ -36,7 +36,7 @@ extension SlideOutMenuContainerViewController: UITableViewDataSource {
 }
 
 
-extension SlideOutMenuContainerViewController: UITableViewDelegate {
+extension SlideOutMenuViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		delegate?.didSelectIndex(indexPath)
 	}
