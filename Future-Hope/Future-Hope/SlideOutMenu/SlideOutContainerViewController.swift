@@ -11,8 +11,8 @@ import UIKit
 class SlideOutContainerViewController: UIViewController {
 
 	enum SlideOutState {
-		case bothCollapsed
-		case leftPanelExpanded
+		case panelCollapsed
+		case panelExpanded
 	}
 	
 	
