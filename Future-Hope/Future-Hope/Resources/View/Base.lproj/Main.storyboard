@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="18.75"/>
         </scene>
-        <!--Slide Out Menu Container View Controller-->
+        <!--Slide Out Menu View Controller-->
         <scene sceneID="7tx-6T-tmd">
             <objects>
-                <viewController id="S55-9g-NnM" customClass="SlideOutMenuContainerViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="S55-9g-NnM" customClass="SlideOutMenuViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JHP-dq-GJG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
                         <viewLayoutGuide key="safeArea" id="ApF-S6-zY8"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="gl7-Og-0Io" id="5xk-Co-DhE"/>
+                        <outlet property="tableView" destination="gl7-Og-0Io" id="QM3-0c-gh5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgY-Cv-dfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,13 +186,28 @@
                     <view key="view" contentMode="scaleToFill" id="i8K-ux-CVx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMW-l6-PdR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Future Hope School" id="MIn-y6-kmy">
+                                        <barButtonItem key="leftBarButtonItem" title="Burger" id="TrZ-te-XnC">
+                                            <connections>
+                                                <action selector="SldieOutMenuButtonPressed:" destination="5vc-8B-7Hj" id="FSu-Cp-JEV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HS0-3J-1r4"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgz-qY-SzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-333" y="1884"/>
+            <point key="canvasLocation" x="-333.33333333333337" y="1883.7053571428571"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0a7-A9-aHe">
@@ -992,6 +1007,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEh-yV-huM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2574" y="35"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LFw-Dl-1Qs">
+            <objects>
+                <viewController id="n7Z-PO-xcW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k2h-MA-5wB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Udl-F4-MO5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0j-AB-ucE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="1884"/>
         </scene>
     </scenes>
 </document>

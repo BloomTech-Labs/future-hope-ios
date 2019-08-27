@@ -23,8 +23,9 @@ class MainViewController: UIViewController {
     }
 	
 	
+	@IBAction func SldieOutMenuButtonPressed(_ sender: Any) {
+		print("Slide out!")
 	
-	
-
+	}
 
 }
