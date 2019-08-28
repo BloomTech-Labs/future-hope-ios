@@ -16,6 +16,8 @@ import MaterialComponents.MaterialButtons
 
 class GmailFacebookSignUpViewController: UIViewController {
 
+	var currentAuthUser: User?
+	
 	@IBOutlet var fullNameTextField: MDCTextField!
 	@IBOutlet var emailTextFields: MDCTextField!
 	@IBOutlet var citiTextField: MDCTextField!
@@ -47,12 +49,12 @@ class GmailFacebookSignUpViewController: UIViewController {
 	}
 	
 	private func setupViews() {
-		guard let currentUser = Auth.auth().currentUser else { return }
+		currentAuthUser = ApplicationController().fetchCurrentAuthenticatedUser()
 		
-//		let user_uid = currentUser.uid
-		let displayName = currentUser.displayName
-		let email  = currentUser.email
-		let phoneNumber = currentUser.phoneNumber
+		let displayName = currentAuthUser?.displayName
+		let email  = currentAuthUser?.email
+		let phoneNumber = currentAuthUser?.phoneNumber
+		
 		
 		fullNameTextField?.text = displayName
 		emailTextFields?.text = email
@@ -67,22 +69,41 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let stateOrProvince = stateOrProvinceTextField.text,
 			let country = countryTextField.text,
 			let phoneNumber = phoneNumberTextField.text,
-			let aboutme = aboutmeTextView.text else { return }
+			let aboutme = aboutmeTextView.text,
+			let	uid = currentAuthUser?.uid,
+			let url = currentAuthUser?.photoURL	else  { return }
 		
-		print(userTypeSegmented.selectedSegmentIndex)
+		let userType: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
 		
-		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
+		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince,
+							country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
 			let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
 			present(ac, animated: true)
 			return
 		}
 		
-		let user = User(user_uid: UUID().uuidString, userType: .mentor, fullName: fullName, email: email, city: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutme: aboutme)
 		
-		// MARK: if User submits send data to firestore
+		let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true,
+									   city: citi, country: country, email: email,
+									   fullName: fullName, phoneNumber: phoneNumber,
+									   photoUrl: url, stateProvince: stateOrProvince,
+									   uid: uid, userType: userType)
 		
-		print("sign Up with this user credentials. \(user.email) - \(user.phoneNumber)")
 		
+		FireStoreController().addUserToFireStore(with: signedInUser) { error in
+			if let error = error {
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Network Error", message: "Please Try Again 🧐")
+				self.present(ac, animated: true)
+				NSLog("Error adding user to firestore: \(error)")
+				return
+			}
+			
+//			self.performSegue(withIdentifier: "SegueToMain", sender: self)
+			self.gooToMainView()
+		}
+		
+		
+
 	}
 }
 
@@ -101,11 +122,11 @@ extension GmailFacebookSignUpViewController{
 	}
 	
 	private func gooToMainView() {
-//		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? ViewController else {
-//			print("homeVC was not found!")
-//			return
-//		}
-//		view.window?.rootViewController = homeVC
-//		view.window?.makeKeyAndVisible()
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? MainViewController else {
+			print("homeVC was not found!")
+			return
+		}
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
 	}
 }

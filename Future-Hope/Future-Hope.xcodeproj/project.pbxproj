@@ -8,51 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
-<<<<<<< HEAD
+		E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B002314694900A2BD0A /* AppDelegate.swift */; };
+		E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */; };
+		E81B6B062314725000A2BD0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81B6B042314725000A2BD0A /* LaunchScreen.storyboard */; };
+		E81B6B0A2314737900A2BD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81B6B092314737900A2BD0A /* Assets.xcassets */; };
+		E81B6B582314FF1D00A2BD0A /* SlideOutMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B572314FF1D00A2BD0A /* SlideOutMenuViewController.swift */; };
+		E81B6B5D2315056900A2BD0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B5C2315056900A2BD0A /* MainViewController.swift */; };
+		E81B6B612315132B00A2BD0A /* SlideOutContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B602315132B00A2BD0A /* SlideOutContainerViewController.swift */; };
+		E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86133C423163FDA00F1611B /* FireStoreController.swift */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
-		E87C3B45230C5B5200161EFE /* GmailFacebookSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */; };
-		E87C3B4A230C8EB700161EFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* User.swift */; };
+		E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* CurrentUser.swift */; };
 		E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B4E230C99C800161EFE /* ApplicationController.swift */; };
 		E87C3B54230CC7EA00161EFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */; };
-		E87C3B56230DAD5400161EFE /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B55230DAD5400161EFE /* ModelsController.swift */; };
-=======
->>>>>>> Staging
-		E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA7230606DB001536AC /* AppDelegate.swift */; };
-		E8839EAA230606DB001536AC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8839EA9230606DB001536AC /* SignInViewController.swift */; };
 		E8839EAD230606DB001536AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EAB230606DB001536AC /* Main.storyboard */; };
-		E8839EB2230606DE001536AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EB0230606DE001536AC /* LaunchScreen.storyboard */; };
-		E8839EC0230632A1001536AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8839EBF230632A1001536AC /* Assets.xcassets */; };
-<<<<<<< HEAD
-		E8CB24D7230FBA8C003C0B8C /* FireStoreReferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CB24D6230FBA8C003C0B8C /* FireStoreReferenceManager.swift */; };
-=======
-		E8E4ACDA2307345E00C7EF1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8E4ACD92307345E00C7EF1B /* GoogleService-Info.plist */; };
->>>>>>> Staging
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-<<<<<<< HEAD
+		E81B6B002314694900A2BD0A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GmailFacebookSignUpViewController.swift; sourceTree = "<group>"; };
+		E81B6B052314725000A2BD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../../Desktop/labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		E81B6B092314737900A2BD0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
+		E81B6B0E2314742500A2BD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E81B6B572314FF1D00A2BD0A /* SlideOutMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuViewController.swift; sourceTree = "<group>"; };
+		E81B6B5C2315056900A2BD0A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E81B6B602315132B00A2BD0A /* SlideOutContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutContainerViewController.swift; sourceTree = "<group>"; };
+		E86133C423163FDA00F1611B /* FireStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreController.swift; sourceTree = "<group>"; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailFacebookSignUpViewController.swift; sourceTree = "<group>"; };
-		E87C3B49230C8EB700161EFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E87C3B49230C8EB700161EFE /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		E87C3B4E230C99C800161EFE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E87C3B55230DAD5400161EFE /* ModelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsController.swift; sourceTree = "<group>"; };
-=======
->>>>>>> Staging
 		E8839EA4230606DB001536AC /* Future-Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Future-Hope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8839EA7230606DB001536AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8839EA9230606DB001536AC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ../SignInViewController.swift; sourceTree = "<group>"; };
 		E8839EAC230606DB001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E8839EB1230606DE001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E8839EB3230606DE001536AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8839EBF230632A1001536AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		E8CB24D6230FBA8C003C0B8C /* FireStoreReferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreReferenceManager.swift; sourceTree = "<group>"; };
-=======
-		E8E4ACD92307345E00C7EF1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
->>>>>>> Staging
 		FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.release.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,14 +73,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
+		E81B6B592314FF2500A2BD0A /* SlideOutMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E81B6B572314FF1D00A2BD0A /* SlideOutMenuViewController.swift */,
+				E81B6B602315132B00A2BD0A /* SlideOutContainerViewController.swift */,
+			);
+			path = SlideOutMenu;
+			sourceTree = "<group>";
+		};
 		E87C3B47230C68D700161EFE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E87C3B48230C6B3600161EFE /* View */,
-				E8839EBF230632A1001536AC /* Assets.xcassets */,
+				E81B6B0E2314742500A2BD0A /* Info.plist */,
 				E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */,
-				E8839EB3230606DE001536AC /* Info.plist */,
+				E81B6B092314737900A2BD0A /* Assets.xcassets */,
+				E87C3B48230C6B3600161EFE /* View */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -101,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E8839EAB230606DB001536AC /* Main.storyboard */,
-				E8839EB0230606DE001536AC /* LaunchScreen.storyboard */,
+				E81B6B042314725000A2BD0A /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,7 +105,7 @@
 		E87C3B4B230C8F0300161EFE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E87C3B49230C8EB700161EFE /* User.swift */,
+				E87C3B49230C8EB700161EFE /* CurrentUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,14 +114,11 @@
 			isa = PBXGroup;
 			children = (
 				E87C3B4E230C99C800161EFE /* ApplicationController.swift */,
-				E87C3B55230DAD5400161EFE /* ModelsController.swift */,
-				E8CB24D6230FBA8C003C0B8C /* FireStoreReferenceManager.swift */,
+				E86133C423163FDA00F1611B /* FireStoreController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> Staging
 		E8839E9B230606DB001536AC = {
 			isa = PBXGroup;
 			children = (
@@ -147,46 +140,24 @@
 		E8839EA6230606DB001536AC /* Future-Hope */ = {
 			isa = PBXGroup;
 			children = (
-				E8839EBF230632A1001536AC /* Assets.xcassets */,
-				E8839EA7230606DB001536AC /* AppDelegate.swift */,
-<<<<<<< HEAD
-				E8CB24D5230F3EA2003C0B8C /* MainViewControllers */,
+				E81B6B002314694900A2BD0A /* AppDelegate.swift */,
+				E81B6B5C2315056900A2BD0A /* MainViewController.swift */,
+				E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */,
+				E81B6B592314FF2500A2BD0A /* SlideOutMenu */,
 				E87C3B50230C99F400161EFE /* Controllers */,
 				E87C3B4B230C8F0300161EFE /* Models */,
-				E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */,
 				E87C3B47230C68D700161EFE /* Resources */,
-=======
-				E8E4ACDB2307361B00C7EF1B /* View Controllers  */,
-				E8839EAB230606DB001536AC /* Main.storyboard */,
-				E8839EB0230606DE001536AC /* LaunchScreen.storyboard */,
-				E8E4ACD92307345E00C7EF1B /* GoogleService-Info.plist */,
-				E8839EB3230606DE001536AC /* Info.plist */,
->>>>>>> Staging
 			);
 			path = "Future-Hope";
-			sourceTree = "<group>";
-		};
-<<<<<<< HEAD
-		E8CB24D5230F3EA2003C0B8C /* MainViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MainViewControllers;
 			sourceTree = "<group>";
 		};
 		E8E4ACDB2307361B00C7EF1B /* OnBoardingViews */ = {
 			isa = PBXGroup;
 			children = (
 				E87C3B42230AFC9E00161EFE /* SignInViewController.swift */,
-				E87C3B44230C5B5200161EFE /* GmailFacebookSignUpViewController.swift */,
-=======
-		E8E4ACDB2307361B00C7EF1B /* View Controllers  */ = {
-			isa = PBXGroup;
-			children = (
-				E8839EA9230606DB001536AC /* SignInViewController.swift */,
->>>>>>> Staging
+				E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */,
 			);
-			path = "View Controllers ";
+			path = OnBoardingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +195,11 @@
 				TargetAttributes = {
 					E8839EA3230606DB001536AC = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -250,10 +226,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8839EB2230606DE001536AC /* LaunchScreen.storyboard in Resources */,
-				E8E4ACDA2307345E00C7EF1B /* GoogleService-Info.plist in Resources */,
-				E8839EC0230632A1001536AC /* Assets.xcassets in Resources */,
+				E87C3B54230CC7EA00161EFE /* GoogleService-Info.plist in Resources */,
+				E81B6B062314725000A2BD0A /* LaunchScreen.storyboard in Resources */,
 				E8839EAD230606DB001536AC /* Main.storyboard in Resources */,
+				E81B6B0A2314737900A2BD0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,9 +247,16 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Future-Hope/Pods-Future-Hope-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -286,9 +269,16 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -351,36 +341,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				E87C3B4A230C8EB700161EFE /* User.swift in Sources */,
+				E81B6B582314FF1D00A2BD0A /* SlideOutMenuViewController.swift in Sources */,
+				E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */,
 				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
-				E87C3B45230C5B5200161EFE /* GmailFacebookSignUpViewController.swift in Sources */,
-				E87C3B56230DAD5400161EFE /* ModelsController.swift in Sources */,
-				E8CB24D7230FBA8C003C0B8C /* FireStoreReferenceManager.swift in Sources */,
-=======
-				E8839EAA230606DB001536AC /* SignInViewController.swift in Sources */,
->>>>>>> Staging
-				E8839EA8230606DB001536AC /* AppDelegate.swift in Sources */,
+				E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */,
+				E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */,
+				E81B6B5D2315056900A2BD0A /* MainViewController.swift in Sources */,
+				E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */,
+				E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */,
+				E81B6B612315132B00A2BD0A /* SlideOutContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E81B6B042314725000A2BD0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E81B6B052314725000A2BD0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		E8839EAB230606DB001536AC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E8839EAC230606DB001536AC /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E8839EB0230606DE001536AC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E8839EB1230606DE001536AC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -509,7 +498,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "Future-Hope/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Future-Hope/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,7 +518,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "Future-Hope/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Future-Hope/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
