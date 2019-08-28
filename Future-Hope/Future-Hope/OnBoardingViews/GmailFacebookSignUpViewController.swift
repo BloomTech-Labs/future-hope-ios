@@ -73,7 +73,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let	uid = currentAuthUser?.uid,
 			let url = currentAuthUser?.photoURL	else  { return }
 		
-		print(userTypeSegmented.selectedSegmentIndex)
+		let userType: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
 		
 		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince,
 							country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
@@ -82,18 +82,28 @@ class GmailFacebookSignUpViewController: UIViewController {
 			return
 		}
 		
-		// Send user to fireStore and segue to app
-		let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email,
-									   fullName: fullName, phoneNumber: phoneNumber, photoUrl: url, stateProvince: stateOrProvince, uid: uid, userType: .mentor)
+		
+		let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true,
+									   city: citi, country: country, email: email,
+									   fullName: fullName, phoneNumber: phoneNumber,
+									   photoUrl: url, stateProvince: stateOrProvince,
+									   uid: uid, userType: userType)
 		
 		
+		FireStoreController().addUserToFireStore(with: signedInUser) { error in
+			if let error = error {
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Network Error", message: "Please Try Again 🧐")
+				self.present(ac, animated: true)
+				NSLog("Error adding user to firestore: \(error)")
+				return
+			}
+			
+//			self.performSegue(withIdentifier: "SegueToMain", sender: self)
+			self.gooToMainView()
+		}
 		
-//		let user = CurrentUser(user_uid: UUID().uuidString, userType: .mentor, fullName: fullName, email: email, city: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutme: aboutme)
 		
-		// MARK: if User submits send data to firestore
-		
-//		print("sign Up with this user credentials. \(user) - \(user.phoneNumber)")
-		
+
 	}
 }
 
@@ -112,11 +122,11 @@ extension GmailFacebookSignUpViewController{
 	}
 	
 	private func gooToMainView() {
-//		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? ViewController else {
-//			print("homeVC was not found!")
-//			return
-//		}
-//		view.window?.rootViewController = homeVC
-//		view.window?.makeKeyAndVisible()
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? MainViewController else {
+			print("homeVC was not found!")
+			return
+		}
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
 	}
 }

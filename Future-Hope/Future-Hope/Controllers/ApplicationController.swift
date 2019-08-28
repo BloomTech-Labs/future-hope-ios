@@ -23,6 +23,11 @@ class ApplicationController {
 		currentlyLogedInUser = user
 	}
 	
+	
+	
+	
+	
+	
 
 }
 

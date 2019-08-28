@@ -43,7 +43,7 @@ class CurrentUser {
 		self.uid = uid
 		self.userType = userType
 	}
-	
+
 
 	var toDictionary: [String: Any]{
 		return [
@@ -57,7 +57,7 @@ class CurrentUser {
 			"photoUrl": photoUrl,
 			"stateProvince": stateProvince,
 			"uid": uid,
-			"userType": userType
+			"userType": userType == .mentor ? "mentor" : "teacher"
 			]
 	}
 	

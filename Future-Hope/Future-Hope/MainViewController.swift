@@ -9,23 +9,62 @@
 import UIKit
 
 
-protocol ToggleSlideOutMenuDelegate {
-	func toggleSlideOutMenu()
-	func collapseSidePanels()
-}
-
 class MainViewController: UIViewController {
 
-	var delegate: ToggleSlideOutMenuDelegate?
+	var currentSignedInUser: CurrentUser?
+	let futureHopeController = ApplicationController()
 	
-    override func viewDidLoad() {
+	@IBOutlet var nameTextField: UITextField!
+	
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
+		
+		
+		
     }
+
+	private func setupViews() {
+		// set user
+		guard let currentSignedInUser = currentSignedInUser else { return }
+		
+		futureHopeController.setCurrentUser(with: currentSignedInUser)
+		
+		// setup view
+	
+		
+	}
+	
+	
+	
+	
 	
 	
 	@IBAction func SldieOutMenuButtonPressed(_ sender: Any) {
 		print("Slide out!")
-	
+
 	}
 
 }
+
+
+//protocol ToggleSlideOutMenuDelegate {
+//	func toggleSlideOutMenu()
+//	func collapseSidePanels()
+//}
+//
+//class MainViewController: UIViewController {
+//
+//	var delegate: ToggleSlideOutMenuDelegate?
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
+//
+//
+//	@IBAction func SldieOutMenuButtonPressed(_ sender: Any) {
+//		print("Slide out!")
+//
+//	}
+//
+//}
