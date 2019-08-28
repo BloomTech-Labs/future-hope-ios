@@ -16,6 +16,8 @@ import MaterialComponents.MaterialButtons
 
 class GmailFacebookSignUpViewController: UIViewController {
 
+	var currentAuthUser: User?
+	
 	@IBOutlet var fullNameTextField: MDCTextField!
 	@IBOutlet var emailTextFields: MDCTextField!
 	@IBOutlet var citiTextField: MDCTextField!
@@ -47,12 +49,13 @@ class GmailFacebookSignUpViewController: UIViewController {
 	}
 	
 	private func setupViews() {
-		guard let currentUser = Auth.auth().currentUser else { return }
+		currentAuthUser = ApplicationController().fetchCurrentAuthenticatedUser()
 		
 //		let user_uid = currentUser.uid
-		let displayName = currentUser.displayName
-		let email  = currentUser.email
-		let phoneNumber = currentUser.phoneNumber
+		let displayName = currentAuthUser?.displayName
+		let email  = currentAuthUser?.email
+		let phoneNumber = currentAuthUser?.phoneNumber
+		
 		
 		fullNameTextField?.text = displayName
 		emailTextFields?.text = email
@@ -67,7 +70,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let stateOrProvince = stateOrProvinceTextField.text,
 			let country = countryTextField.text,
 			let phoneNumber = phoneNumberTextField.text,
-			let aboutme = aboutmeTextView.text else { return }
+			let aboutme = aboutmeTextView.text else  { return }
 		
 		print(userTypeSegmented.selectedSegmentIndex)
 		
@@ -77,7 +80,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 			return
 		}
 		
-		let user = User(user_uid: UUID().uuidString, userType: .mentor, fullName: fullName, email: email, city: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutme: aboutme)
+		let user = CurrentUser(user_uid: UUID().uuidString, userType: .mentor, fullName: fullName, email: email, city: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutme: aboutme)
 		
 		// MARK: if User submits send data to firestore
 		
