@@ -14,6 +14,15 @@ import FirebaseCore
 
 
 class ApplicationController {
+	
+	private (set) var currentlyLogedInUser: CurrentUser?
+	
+	
+	
+	func setCurrentUser(with user: CurrentUser) {
+		currentlyLogedInUser = user
+	}
+	
 
 }
 
