@@ -15,17 +15,27 @@ class SlideOutContainerViewController: UIViewController {
 		case panelExpanded
 	}
 	
+	var mainNavigationController: UINavigationController!
+	var mainViewController: MainViewController!
+	
+	var curentState: SlideOutState = .panelCollapsed {
+		didSet {
+			let shouldShowShadow = curentState
+			//showShadowForCCeneterViewController(ShouldShowShadow)
+		}
+	}
+	
+	var rightViewController: SlideOutMenuViewController?
+	
+	let centerPanelExpandedOffset: CGFloat = 90
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+	}
 	
 	
 	
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
 	
-	
-	
-
 }
