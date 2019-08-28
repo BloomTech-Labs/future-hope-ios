@@ -16,8 +16,6 @@ struct FireStoreController {
 
 	private static let db = Firestore.firestore()
 	
-	
-	
 	func fetchUser(uuid: String, completion: @escaping (Error?) -> ()) {
 		FireStoreController.db.collection(FireStoreController.users)
 			.document(uuid).getDocument { document, error in
@@ -32,6 +30,17 @@ struct FireStoreController {
 			
 		}
 	
+	}
+	
+	
+	func addUserToFireStore(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
+		Firestore.firestore().collection("users").document(user.uid)
+			.setData(user.toDictionary) { error in
+				if let error = error {
+					NSLog("Error seting data to firestore: \(error)")
+				}
+		}
+		
 	}
 	
 	

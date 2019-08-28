@@ -44,6 +44,7 @@ class CurrentUser {
 		self.userType = userType
 	}
 	
+
 	var toDictionary: [String: Any]{
 		return [
 			"aboutMe": aboutMe,

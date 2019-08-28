@@ -80,11 +80,11 @@ class GmailFacebookSignUpViewController: UIViewController {
 			return
 		}
 		
-		let user = CurrentUser(user_uid: UUID().uuidString, userType: .mentor, fullName: fullName, email: email, city: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutme: aboutme)
+//		let user = CurrentUser(user_uid: UUID().uuidString, userType: .mentor, fullName: fullName, email: email, city: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutme: aboutme)
 		
 		// MARK: if User submits send data to firestore
 		
-		print("sign Up with this user credentials. \(user) - \(user.phoneNumber)")
+//		print("sign Up with this user credentials. \(user) - \(user.phoneNumber)")
 		
 	}
 }
