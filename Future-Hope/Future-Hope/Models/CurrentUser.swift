@@ -54,7 +54,7 @@ class CurrentUser {
 			"email": email,
 			"fullName": fullName,
 			"phoneNumber": phoneNumber,
-			"photoUrl": photoUrl,
+			"photoUrl": photoUrl.absoluteString,
 			"stateProvince": stateProvince,
 			"uid": uid,
 			"userType": userType == .mentor ? "mentor" : "teacher"
