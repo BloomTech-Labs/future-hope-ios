@@ -32,9 +32,13 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupViews()
-		//facebook logout
-		let loginManager = LoginManager()
-		loginManager.logOut()
+		
+//		FireStoreController().fetchUser(uuid: "2ivKEsyyvKcTHWmeJp1dCdEo8fO2") { error in
+//			if let error = error {
+//				print("\(error)")
+//			}
+//		}
+		
 		
     }
 	

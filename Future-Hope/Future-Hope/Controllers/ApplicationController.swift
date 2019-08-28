@@ -23,7 +23,7 @@ class ApplicationController {
 }
 
 
-// Auth
+// MARK: Fireabse Auth Auth
 
 extension ApplicationController {
 	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
@@ -51,6 +51,28 @@ extension ApplicationController {
 			completion(error)
 		}
 	}
+	
+	
+	func fetchCurrentUser() -> User {
+		guard let currentUser = Auth.auth().currentUser else {
+			
+			
+			return
+		}
+
+		return currentUser
+	}
+	
+	
+	
+	
+}
+
+
+// MARK: AlertControllers
+
+extension ApplicationController {
+	
 	
 	func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
 		let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)

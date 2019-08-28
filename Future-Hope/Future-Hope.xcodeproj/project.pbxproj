@@ -15,11 +15,11 @@
 		E81B6B582314FF1D00A2BD0A /* SlideOutMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B572314FF1D00A2BD0A /* SlideOutMenuViewController.swift */; };
 		E81B6B5D2315056900A2BD0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B5C2315056900A2BD0A /* MainViewController.swift */; };
 		E81B6B612315132B00A2BD0A /* SlideOutContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B602315132B00A2BD0A /* SlideOutContainerViewController.swift */; };
+		E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86133C423163FDA00F1611B /* FireStoreController.swift */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
-		E87C3B4A230C8EB700161EFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* User.swift */; };
+		E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* CurrentUser.swift */; };
 		E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B4E230C99C800161EFE /* ApplicationController.swift */; };
 		E87C3B54230CC7EA00161EFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */; };
-		E87C3B56230DAD5400161EFE /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B55230DAD5400161EFE /* ModelsController.swift */; };
 		E8839EAD230606DB001536AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EAB230606DB001536AC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -34,11 +34,11 @@
 		E81B6B572314FF1D00A2BD0A /* SlideOutMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuViewController.swift; sourceTree = "<group>"; };
 		E81B6B5C2315056900A2BD0A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E81B6B602315132B00A2BD0A /* SlideOutContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutContainerViewController.swift; sourceTree = "<group>"; };
+		E86133C423163FDA00F1611B /* FireStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreController.swift; sourceTree = "<group>"; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		E87C3B49230C8EB700161EFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E87C3B49230C8EB700161EFE /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		E87C3B4E230C99C800161EFE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E87C3B55230DAD5400161EFE /* ModelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsController.swift; sourceTree = "<group>"; };
 		E8839EA4230606DB001536AC /* Future-Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Future-Hope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8839EAC230606DB001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.release.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		E87C3B4B230C8F0300161EFE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E87C3B49230C8EB700161EFE /* User.swift */,
+				E87C3B49230C8EB700161EFE /* CurrentUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E87C3B4E230C99C800161EFE /* ApplicationController.swift */,
-				E87C3B55230DAD5400161EFE /* ModelsController.swift */,
+				E86133C423163FDA00F1611B /* FireStoreController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -342,9 +342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E81B6B582314FF1D00A2BD0A /* SlideOutMenuViewController.swift in Sources */,
-				E87C3B4A230C8EB700161EFE /* User.swift in Sources */,
+				E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */,
 				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
-				E87C3B56230DAD5400161EFE /* ModelsController.swift in Sources */,
+				E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */,
 				E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */,
 				E81B6B5D2315056900A2BD0A /* MainViewController.swift in Sources */,
 				E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */,

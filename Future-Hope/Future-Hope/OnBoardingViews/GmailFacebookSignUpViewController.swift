@@ -81,7 +81,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 		
 		// MARK: if User submits send data to firestore
 		
-		print("sign Up with this user credentials. \(user.email) - \(user.phoneNumber)")
+		print("sign Up with this user credentials. \(user) - \(user.phoneNumber)")
 		
 	}
 }

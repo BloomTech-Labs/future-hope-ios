@@ -26,7 +26,7 @@ struct FireStoreController {
 			}
 			
 			if let doc = document, doc.exists {
-				guard let data  = doc.data() as? [String: Any] else { return }
+				guard let data  = doc.data() else { return }
 				print(data)
 			}
 			
