@@ -51,7 +51,6 @@ class GmailFacebookSignUpViewController: UIViewController {
 	private func setupViews() {
 		currentAuthUser = ApplicationController().fetchCurrentAuthenticatedUser()
 		
-//		let user_uid = currentUser.uid
 		let displayName = currentAuthUser?.displayName
 		let email  = currentAuthUser?.email
 		let phoneNumber = currentAuthUser?.phoneNumber
@@ -70,15 +69,24 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let stateOrProvince = stateOrProvinceTextField.text,
 			let country = countryTextField.text,
 			let phoneNumber = phoneNumberTextField.text,
-			let aboutme = aboutmeTextView.text else  { return }
+			let aboutme = aboutmeTextView.text,
+			let	uid = currentAuthUser?.uid,
+			let url = currentAuthUser?.photoURL	else  { return }
 		
 		print(userTypeSegmented.selectedSegmentIndex)
 		
-		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
+		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince,
+							country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
 			let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
 			present(ac, animated: true)
 			return
 		}
+		
+		// Send user to fireStore and segue to app
+		let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email,
+									   fullName: fullName, phoneNumber: phoneNumber, photoUrl: url, stateProvince: stateOrProvince, uid: uid, userType: .mentor)
+		
+		
 		
 //		let user = CurrentUser(user_uid: UUID().uuidString, userType: .mentor, fullName: fullName, email: email, city: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutme: aboutme)
 		
