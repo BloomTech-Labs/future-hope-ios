@@ -21,28 +21,27 @@ struct FireStoreController {
 			.document(uuid).getDocument { document, error in
 			if let error = error {
 				NSLog("Error fetching user from firestore: \(error)")
+				completion(error)
 			}
 			
 			if let doc = document, doc.exists {
 				guard let data  = doc.data() else { return }
 				print(data as [String: Any])
 			}
-			
+				
+			completion(nil)
 		}
-	
 	}
 	
 	
 	func addUserToFireStore(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
-		Firestore.firestore().collection("users").document(user.uid)
-			.setData(user.toDictionary) { error in
+		Firestore.firestore().collection(FireStoreController.users)
+			.document(user.uid).setData(user.toDictionary) { error in
 				if let error = error {
 					NSLog("Error seting data to firestore: \(error)")
+					completion(error)
 				}
+				completion(nil)
 		}
-		
 	}
-	
-	
-	
 }
