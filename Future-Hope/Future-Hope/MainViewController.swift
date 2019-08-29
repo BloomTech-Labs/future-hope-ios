@@ -14,7 +14,11 @@ class MainViewController: UIViewController {
 	var currentSignedInUser: CurrentUser?
 	let futureHopeController = ApplicationController()
 	
-	@IBOutlet var nameTextField: UITextField!
+	@IBOutlet var imageView: UIImageView!
+	@IBOutlet var namelabel: UILabel!
+	@IBOutlet var emailLabel: UILabel!
+	@IBOutlet var userTypeLabel: UILabel!
+	
 	
 	
 	override func viewDidLoad() {
@@ -25,15 +29,20 @@ class MainViewController: UIViewController {
     }
 
 	private func setupViews() {
-		// set user
 		guard let currentSignedInUser = currentSignedInUser else { return }
-		
 		futureHopeController.setCurrentUser(with: currentSignedInUser)
 		
-		// setup view
-	
+		
+		
+		
+		
+		
 		
 	}
+	
+	
+	
+	
 	
 	
 	

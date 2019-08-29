@@ -25,6 +25,22 @@ class ApplicationController {
 	
 	
 	
+	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
+		print(url.absoluteString)
+		
+		URLSession.shared.dataTask(with: url) { data, _, error in
+			if let error = error{
+				NSLog("Error fetching image: \(error)")
+				completion(nil, error)
+				return
+			}
+			
+			guard let data = data else { return }
+			completion(data, nil)
+		}.resume()
+	}
+	
+	
 	
 	
 	
