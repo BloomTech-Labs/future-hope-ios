@@ -64,11 +64,10 @@ class SignInViewController: UIViewController {
 				print("\(error)")
 				return
 			}
+			
 			DispatchQueue.main.async {
-				
 				self.gooToMainView()
 			}
-			
 		}
 	}
 	
@@ -77,6 +76,7 @@ class SignInViewController: UIViewController {
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
 				self.checkIfuserExistAndLogin(with: user.uid)
+			} else {
 				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 				self.segueToApp()
 			}
