@@ -28,9 +28,13 @@ class CurrentUser {
 	let uid: String
 	let userType: UserType
 	
+	let imageData: Data?
+	
 	init(aboutMe: String, awaitingApproval: Bool, city: String, country: String,
 		 email: String, fullName: String, phoneNumber: String, photoUrl: URL,
-		 stateProvince: String, uid: String, userType: UserType) {
+		 stateProvince: String, uid: String, userType: UserType,
+		 imageData: Data?
+				) {
 		self.aboutMe = aboutMe
 		self.awaitingApproval = awaitingApproval
 		self.city = city
@@ -42,6 +46,7 @@ class CurrentUser {
 		self.stateProvince = stateProvince
 		self.uid = uid
 		self.userType = userType
+		self.imageData = imageData
 	}
 
 

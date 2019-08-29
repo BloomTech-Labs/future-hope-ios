@@ -32,6 +32,9 @@ class MainViewController: UIViewController {
 		guard let currentSignedInUser = currentSignedInUser else { return }
 		futureHopeController.setCurrentUser(with: currentSignedInUser)
 		
+		namelabel?.text = currentSignedInUser.fullName
+		emailLabel?.text = currentSignedInUser.email
+		userTypeLabel?.text = currentSignedInUser.userType == .mentor ? "mentor" : "teacher"
 		
 		
 		

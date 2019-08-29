@@ -15,7 +15,11 @@ import FirebaseCore
 
 class ApplicationController {
 	
-	private (set) var currentlyLogedInUser: CurrentUser?
+	private (set) var currentlyLogedInUser: CurrentUser? {
+		didSet {
+			//fetch image and store in data
+		}
+	}
 	
 	
 	
