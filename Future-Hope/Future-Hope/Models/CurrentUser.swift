@@ -15,7 +15,6 @@ enum UserType {
 }
 
 class CurrentUser {
-	
 	let aboutMe: String
 	let awaitingApproval: Bool
 	let city: String
@@ -49,12 +48,11 @@ class CurrentUser {
 		self.imageData = imageData
 	}
 	
-	
 	convenience init? (dictionary: [String: Any]) {
 		let aboutMe  = dictionary["aboutMe"] as! String
 		let awaitingApproval = dictionary["awaitingApproval"] as! Bool
 		let city = dictionary["city"] as! String
-		let country = dictionary["string"] as! String
+		let country = dictionary["country"] as! String
 		let email = dictionary["email"] as! String
 		let fullName = dictionary["fullName"] as! String
 		let phoneNumber = dictionary["phoneNumber"] as! String
@@ -67,9 +65,7 @@ class CurrentUser {
 		self.init(aboutMe: aboutMe, awaitingApproval: awaitingApproval, city: city, country: country,
 				  email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: photoUrl,
 				  stateProvince: stateProvince, uid: uid, userType: userType)
-		
 	}
-
 
 	var toDictionary: [String: Any]{
 		return [
@@ -86,6 +82,4 @@ class CurrentUser {
 			"userType": userType == .mentor ? "mentor" : "teacher"
 			]
 	}
-	
-	
 }

@@ -100,10 +100,14 @@ class GmailFacebookSignUpViewController: UIViewController {
 		
 			self.gooToMainView()
 		}
-	
-		
-
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+	}
+	
+	
+	
 }
 
 extension GmailFacebookSignUpViewController{
@@ -125,6 +129,8 @@ extension GmailFacebookSignUpViewController{
 			print("homeVC was not found!")
 			return
 		}
+		
+		
 		view.window?.rootViewController = homeVC
 		view.window?.makeKeyAndVisible()
 	}
