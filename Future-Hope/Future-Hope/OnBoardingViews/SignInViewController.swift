@@ -33,11 +33,11 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 		setupViews()
 		
-//		FireStoreController().fetchUser(uuid: "2ivKEsyyvKcTHWmeJp1dCdEo8fO2") { error in
-//			if let error = error {
-//				print("\(error)")
-//			}
-//		}
+		FireStoreController().fetchUser(uuid: "7fYHc7mwkcPzcBh6W3tHu1LVaL02") { error in
+			if let error = error {
+				print("\(error)")
+			}
+		}
 		
 		
     }

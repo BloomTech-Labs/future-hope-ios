@@ -46,14 +46,25 @@ struct FireStoreController {
 	}
 	
 	
-	/// returns users if exist else returns nil
-	func fetchUser(with uid: String) -> CurrentUser? {
-		
-		
-		
-		return nil
-	}
 	
+//	func fetchUser(with uid: String, completion: @escaping (CurrentUser?, Error?) -> ()){
+//		Firestore.firestore().collection(FireStoreController.users)
+//			.document(uid).getDocument { (document, error) in
+//				if let error = error {
+//					NSLog("error")
+//					completion(nil, error)
+//					return
+//				}
+//
+//				guard let document = document  else { return }
+//
+//				print(document.data())
+//
+//
+//
+//		}
+//	}
+//
 	
 	
 }
