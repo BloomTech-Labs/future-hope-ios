@@ -44,4 +44,16 @@ struct FireStoreController {
 				completion(nil)
 		}
 	}
+	
+	
+	/// returns users if exist else returns nil
+	func fetchUser(with uid: String) -> CurrentUser? {
+		
+		
+		
+		return nil
+	}
+	
+	
+	
 }

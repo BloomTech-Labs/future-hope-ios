@@ -56,6 +56,10 @@ class SignInViewController: UIViewController {
 	private func handleAuthStateDidChange() {
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let _ = user {
+				//check for acount in users
+				//log in
+				// else go to sign up
+				
 				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 				self.segueToApp()
 			}

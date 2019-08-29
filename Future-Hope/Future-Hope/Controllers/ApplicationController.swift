@@ -45,7 +45,11 @@ class ApplicationController {
 	}
 	
 	
-	
+	private func fetchUserImage() {
+		
+		
+		
+	}
 	
 	
 

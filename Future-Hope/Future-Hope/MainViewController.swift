@@ -19,7 +19,10 @@ class MainViewController: UIViewController {
 	@IBOutlet var emailLabel: UILabel!
 	@IBOutlet var userTypeLabel: UILabel!
 	
-	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		setupViews()
+	}
 	
 	override func viewDidLoad() {
         super.viewDidLoad()

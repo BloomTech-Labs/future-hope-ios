@@ -33,8 +33,8 @@ class CurrentUser {
 	init(aboutMe: String, awaitingApproval: Bool, city: String, country: String,
 		 email: String, fullName: String, phoneNumber: String, photoUrl: URL,
 		 stateProvince: String, uid: String, userType: UserType,
-		 imageData: Data?
-				) {
+		 imageData: Data? = nil
+		) {
 		self.aboutMe = aboutMe
 		self.awaitingApproval = awaitingApproval
 		self.city = city
