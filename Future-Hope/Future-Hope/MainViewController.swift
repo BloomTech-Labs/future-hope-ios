@@ -21,7 +21,21 @@ class MainViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		setupViews()
+		
+		
+		guard let user = futureHopeController.fetchCurrentAuthenticatedUser() else { return }
+		FireStoreController().fetchUser(uuid: user.uid) { user, error in
+			if let error = error {
+				NSLog("Error: \(error)")
+				return
+			}
+			
+			self.currentSignedInUser = user
+			
+			self.setupViews()
+			
+		}
+		
 	}
 	
 	override func viewDidLoad() {
@@ -33,6 +47,7 @@ class MainViewController: UIViewController {
 
 	private func setupViews() {
 		guard let currentSignedInUser = currentSignedInUser else { return }
+		
 		futureHopeController.setCurrentUser(with: currentSignedInUser)
 		
 		namelabel?.text = currentSignedInUser.fullName

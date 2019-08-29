@@ -61,7 +61,7 @@ class ApplicationController {
 extension ApplicationController {
 
 	
-	// Signout with Google credentials
+	/// Signout with Google credentials
 	func signOut(completion: @escaping (Error?) -> Void) {
 		let fireAuth = Auth.auth()
 		do{
@@ -74,7 +74,7 @@ extension ApplicationController {
 		}
 	}
 
-	// SignIn With Google credentials
+	/// SignIn With Google credentials
 	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
 		Auth.auth().signIn(with: credentail) { authResult, error in
 			if let error = error {
@@ -89,7 +89,7 @@ extension ApplicationController {
 	}
 	
 	
-	// Will fetch current user that was signed in with email/gmail/Facebook
+	/// Will fetch current user that was signed in with email/gmail/Facebook
 	func fetchCurrentAuthenticatedUser() -> User? {
 		guard let currentUser = Auth.auth().currentUser else { return nil }
 		return currentUser
