@@ -2,10 +2,9 @@
 //  MainViewController.swift
 //  Future-Hope
 //
-//  Created by Hector Steven on 8/26/19.
+//  Created by Hector Steven on 8/29/19.
 //  Copyright © 2019 Hector Steven. All rights reserved.
 //
-
 import UIKit
 
 
@@ -70,11 +69,11 @@ class MainViewController: UIViewController {
 			guard let data = data else { return }
 			
 			DispatchQueue.main.async {
-				self.imageView.image = UIImage(data: data)				
+				self.imageView.image = UIImage(data: data)
 			}
 		}
 	}
-
+	
 }
 
 
@@ -128,11 +127,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		
 		return nil
-	
+		
 	}
 	
 	
 	
 	
 }
-

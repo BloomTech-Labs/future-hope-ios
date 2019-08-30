@@ -36,7 +36,7 @@ class SignInViewController: UIViewController {
 	
 	
 	private func gooToMainView() {
-		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? UINavigationController else {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
 			print("homeVC was not found!")
 			return
 		}
