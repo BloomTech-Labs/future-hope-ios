@@ -50,10 +50,16 @@ class MainViewController: UIViewController {
 		
 		futureHopeController.setCurrentUser(with: currentSignedInUser)
 		
+		imageView.layer.cornerRadius = 10
+		
 		namelabel?.text = currentSignedInUser.fullName
 		statusLabel?.text = currentSignedInUser.awaitingApproval == true ? "awaiting approval" : "Approved"
 		userTypeLabel?.text = currentSignedInUser.userType == .mentor ? "mentor" : "teacher"
+		
 		aboutMeTextView?.text = currentSignedInUser.aboutMe
+		aboutMeTextView.layer.borderWidth = 1
+		aboutMeTextView.layer.cornerRadius = 4
+		
 		
 		futureHopeController.fetchUserImage(with: currentSignedInUser.photoUrl) { data, error in
 			if let error = error {
