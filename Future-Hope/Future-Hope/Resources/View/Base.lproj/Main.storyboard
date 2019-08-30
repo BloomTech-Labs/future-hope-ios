@@ -174,7 +174,7 @@
         <!--Profile-->
         <scene sceneID="g3e-se-ZgE">
             <objects>
-                <viewController id="5vc-8B-7Hj" customClass="MainViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5vc-8B-7Hj" customClass="ProfileSettingsViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i8K-ux-CVx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

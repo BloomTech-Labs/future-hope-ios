@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MainViewController: UIViewController {
+class ProfileSettingsViewController: UIViewController {
 	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province"]
 	var currentSignedInUser: CurrentUser?
 	let futureHopeController = ApplicationController()
@@ -77,7 +77,7 @@ class MainViewController: UIViewController {
 }
 
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 2
