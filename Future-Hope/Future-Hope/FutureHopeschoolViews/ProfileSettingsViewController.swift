@@ -8,10 +8,13 @@
 import UIKit
 
 
+extension ProfileSettingsViewController: FutureHopSchoolControllerProtocol {}
+
 class ProfileSettingsViewController: UIViewController {
+	var futureHopSchoolController: ApplicationController?
+	
 	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province"]
 	var currentSignedInUser: CurrentUser?
-	let futureHopeController = ApplicationController()
 	
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var namelabel: UILabel!
@@ -32,7 +35,7 @@ class ProfileSettingsViewController: UIViewController {
 	}
 	
 	private func fetchCurrentAuthUser() {
-		guard let user = futureHopeController.fetchCurrentAuthenticatedUser() else { return }
+		guard let user = futureHopSchoolController?.fetchCurrentAuthenticatedUser() else { return }
 		FireStoreController().fetchUser(uuid: user.uid) { user, error in
 			if let error = error {
 				NSLog("Error: \(error)")
@@ -47,7 +50,7 @@ class ProfileSettingsViewController: UIViewController {
 	private func setupViews() {
 		guard let currentSignedInUser = currentSignedInUser else { return }
 		
-		futureHopeController.setCurrentUser(with: currentSignedInUser)
+		futureHopSchoolController?.setCurrentUser(with: currentSignedInUser)
 		
 		imageView.layer.cornerRadius = 10
 		
@@ -60,7 +63,7 @@ class ProfileSettingsViewController: UIViewController {
 		aboutMeTextView.layer.cornerRadius = 4
 		
 		
-		futureHopeController.fetchUserImage(with: currentSignedInUser.photoUrl) { data, error in
+		futureHopSchoolController?.fetchUserImage(with: currentSignedInUser.photoUrl) { data, error in
 			if let error = error {
 				NSLog("Error fetching user image: \(error)")
 				return
