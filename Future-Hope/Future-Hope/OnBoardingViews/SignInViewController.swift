@@ -20,7 +20,6 @@ class SignInViewController: UIViewController {
 
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
-	
 	var handle: AuthStateDidChangeListenerHandle?
 	
 	deinit {
@@ -33,46 +32,44 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 		setupViews()
     }
-	
-	
 
-	
-	
 	private func setupViews() {
 		emailTextField.delegate = self
 		passwordTextField.delegate = self
 		GIDSignIn.sharedInstance()?.presentingViewController = self
 		handleAuthStateDidChange()
-		
-	
-		
 	}
 	
-	/// if user exist segue to app
-	private func checkIfuserExistAndLogin(with uid: String) {
+	private func checkIfuserExistAndLogin(with uid: String, completion: @escaping (Error?) -> ()) {
 		FireStoreController().fetchUser(uuid: uid) { user, error in
 			if let error = error {
 				print("\(error)")
+				completion(error)
 				return
 			}
 			
 			DispatchQueue.main.async {
 				self.gooToMainView()
 			}
+			completion(nil)
 		}
+		
 	}
 	
 	
 	private func handleAuthStateDidChange() {
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
-				self.checkIfuserExistAndLogin(with: user.uid)
-			} else {
-//				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
+				self.checkIfuserExistAndLogin(with: user.uid) { error in
+					if let error = error {
+						print("Error  : \(error)")
+						return
+					}
+				}
+				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 			}
 		})
 	}
-	
 	
 	@IBAction func facebookLogInButtonPressed(_ sender: FBLoginButton) {
 //		LoginManager().logIn(permissions: [.publicProfile], viewController: self) { result in
