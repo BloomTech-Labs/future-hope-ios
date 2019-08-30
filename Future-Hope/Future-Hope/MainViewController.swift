@@ -10,17 +10,16 @@ import UIKit
 
 
 class MainViewController: UIViewController {
-	private let settings = ["About Me", "Account Status", "city", "country","email", "phone number", "State/Province"]
+	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province"]
 	var currentSignedInUser: CurrentUser?
 	let futureHopeController = ApplicationController()
 	
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var namelabel: UILabel!
-	@IBOutlet var emailLabel: UILabel!
 	@IBOutlet var userTypeLabel: UILabel!
 	@IBOutlet var tableView: UITableView!
 	@IBOutlet var aboutMeTextView: UITextView!
-	
+	@IBOutlet var statusLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -52,7 +51,7 @@ class MainViewController: UIViewController {
 		futureHopeController.setCurrentUser(with: currentSignedInUser)
 		
 		namelabel?.text = currentSignedInUser.fullName
-		emailLabel?.text = currentSignedInUser.email
+		statusLabel?.text = currentSignedInUser.awaitingApproval == true ? "awaiting approval" : "Approved"
 		userTypeLabel?.text = currentSignedInUser.userType == .mentor ? "mentor" : "teacher"
 		aboutMeTextView?.text = currentSignedInUser.aboutMe
 		
@@ -74,14 +73,30 @@ class MainViewController: UIViewController {
 
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 2
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return section == 0 ?  "Edit Your Profile" : "Log out"
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return settings.count
+		return section == 0 ? settings.count : 1
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "dashBoardCell", for: indexPath)
-		cell.textLabel?.text = settings[indexPath.row]
-		cell.detailTextLabel?.text = getUserData(with: indexPath.row)
+		
+		if indexPath.section == 0 {
+			cell.textLabel?.text = settings[indexPath.row]
+		} else {
+			cell.textLabel?.text = "SingOut"
+		}
+		
+		
+		
 		return cell
 	}
 	
