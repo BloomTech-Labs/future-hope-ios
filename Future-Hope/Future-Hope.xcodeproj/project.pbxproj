@@ -87,8 +87,8 @@
 		E81EB6F92318DF1B006189FA /* FutureHopeschoolViews */ = {
 			isa = PBXGroup;
 			children = (
-				E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */,
 				E81EB6FA2318DFBE006189FA /* TabBarViewController.swift */,
+				E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */,
 			);
 			path = FutureHopeschoolViews;
 			sourceTree = "<group>";

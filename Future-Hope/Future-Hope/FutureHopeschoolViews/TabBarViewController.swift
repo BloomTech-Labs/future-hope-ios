@@ -8,24 +8,25 @@
 
 import UIKit
 
+protocol FutureHopSchoolControllerProtocol: AnyObject {
+	var futureHopSchoolController: ApplicationController? { set get }
+}
+
+
 class TabBarViewController: UITabBarController {
+	
+	let futureHopSchoolController = ApplicationController()
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		
+		for childVC in children {
+			if let vc = childVC as? FutureHopSchoolControllerProtocol {
+				vc.futureHopSchoolController = futureHopSchoolController
+			}
+		}
 		
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
