@@ -35,16 +35,7 @@ class SignInViewController: UIViewController {
     }
 	
 	
-	private func gooToMainView() {
-		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
-			print("homeVC was not found!")
-			return
-		}
-		
-		
-		view.window?.rootViewController = homeVC
-		view.window?.makeKeyAndVisible()
-	}
+
 	
 	
 	private func setupViews() {
@@ -77,8 +68,7 @@ class SignInViewController: UIViewController {
 			if let user = user {
 				self.checkIfuserExistAndLogin(with: user.uid)
 			} else {
-				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
-				self.segueToApp()
+//				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 			}
 		})
 	}
@@ -108,9 +98,7 @@ class SignInViewController: UIViewController {
 				return
 			}
 			
-			self.segueToApp()
-			print("FaceBook loggedIn with authResult: \(authResult.debugDescription)")
-			
+//			print("FaceBook loggedIn with authResult: \(authResult.debugDescription)")
 			if let user = Auth.auth().currentUser {
 				print("Logged in as: ", user.displayName!)
 			}
@@ -134,20 +122,16 @@ class SignInViewController: UIViewController {
 				self.present(ac, animated: true)
 				return
 			}
-			
-			self.segueToApp()
-			print("signed in with  \(email)")
 		}
 	}
 	
-	private func segueToApp() {
-		// // MARK: segue to app
-		
-		/////
-		
-		///
-		
-		/////
+	private func gooToMainView() {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
+			print("homeVC was not found!")
+			return
+		}
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
 	}
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseCore
-
+import GoogleSignIn
 
 
 
@@ -66,6 +66,7 @@ extension ApplicationController {
 		let fireAuth = Auth.auth()
 		do{
 			try fireAuth.signOut()
+			//gidSignOut()
 			NSLog("SignOut Success!")
 			completion(nil)
 		}catch {
@@ -74,6 +75,11 @@ extension ApplicationController {
 		}
 	}
 
+	private func gidSignOut() {
+		GIDSignIn.sharedInstance().signOut()
+	}
+	
+	
 	/// SignIn With Google credentials
 	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
 		Auth.auth().signIn(with: credentail) { authResult, error in

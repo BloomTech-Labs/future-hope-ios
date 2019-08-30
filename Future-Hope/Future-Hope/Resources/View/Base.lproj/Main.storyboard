@@ -564,7 +564,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uNu-Zd-EPN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lZl-T2-KTm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SignInMainVC" automaticallyAdjustsScrollViewInsets="NO" id="lZl-T2-KTm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NPy-Nu-LbI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

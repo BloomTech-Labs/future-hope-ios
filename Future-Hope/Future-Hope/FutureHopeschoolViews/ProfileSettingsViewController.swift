@@ -116,16 +116,7 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 			
 		} else if indexPath.section == 1 {
 			if indexPath.row == 0 {
-				
-				let ac = UIAlertController(title: "SignOut?", message: nil, preferredStyle: .actionSheet)
-				
-				ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-					self.signOutWithFireStore()
-				}))
-
-				ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-				
-				present(ac, animated: true)
+				self.signOutWithFireStore()
 				
 			}
 		}
@@ -152,7 +143,36 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 	
 	
 	private func signOutWithFireStore() {
-		print("sign out")
+		
+		let ac = UIAlertController(title: "SignOut", message: nil, preferredStyle: .actionSheet)
+		ac.addAction(UIAlertAction(title: "Ok", style: .default){ _ in
+			self.futureHopSchoolController?.signOut{ error in
+				if let error = error {
+					NSLog("Error Signing out: \(error)")
+					return
+				}
+				
+				DispatchQueue.main.async {
+					self.gooToMainView()
+				}
+				
+			}
+		})
+
+		ac.addAction(UIAlertAction(title: "cancel", style: .cancel))
+		present(ac, animated: true)
 	}
+	
+	private func gooToMainView() {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "SignInMainVC") as? UINavigationController else {
+			print("homeVC was not found!")
+			return
+		}
+		
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
+	}
+	
+	
 	
 }
