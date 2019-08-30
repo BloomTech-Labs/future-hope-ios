@@ -102,12 +102,34 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 		} else {
 			cell.textLabel?.text = "SingOut"
 		}
-		
-		
-		
 		return cell
 	}
 	
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if indexPath.section == 0 {
+			
+			if indexPath.row == 0 {
+				
+			}
+			
+			
+		} else if indexPath.section == 1 {
+			if indexPath.row == 0 {
+				
+				let ac = UIAlertController(title: "SignOut?", message: nil, preferredStyle: .actionSheet)
+				
+				ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+					self.signOutWithFireStore()
+				}))
+
+				ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+				
+				present(ac, animated: true)
+				
+			}
+		}
+	}
 	
 	
 	private func getUserData(with row: Int) -> String? {
@@ -125,15 +147,12 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 		}else if row == 5 {
 			return currentSignedInUser.phoneNumber
 		}
-		
-		
-		
-		
 		return nil
-		
 	}
 	
 	
-	
+	private func signOutWithFireStore() {
+		print("sign out")
+	}
 	
 }
