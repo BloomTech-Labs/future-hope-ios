@@ -15,7 +15,6 @@ enum UserType {
 }
 
 class CurrentUser {
-	
 	let aboutMe: String
 	let awaitingApproval: Bool
 	let city: String
@@ -28,9 +27,13 @@ class CurrentUser {
 	let uid: String
 	let userType: UserType
 	
+	let imageData: Data?
+	
 	init(aboutMe: String, awaitingApproval: Bool, city: String, country: String,
 		 email: String, fullName: String, phoneNumber: String, photoUrl: URL,
-		 stateProvince: String, uid: String, userType: UserType) {
+		 stateProvince: String, uid: String, userType: UserType,
+		 imageData: Data? = nil
+		) {
 		self.aboutMe = aboutMe
 		self.awaitingApproval = awaitingApproval
 		self.city = city
@@ -42,8 +45,27 @@ class CurrentUser {
 		self.stateProvince = stateProvince
 		self.uid = uid
 		self.userType = userType
+		self.imageData = imageData
 	}
-
+	
+	convenience init? (dictionary: [String: Any]) {
+		let aboutMe  = dictionary["aboutMe"] as! String
+		let awaitingApproval = dictionary["awaitingApproval"] as! Bool
+		let city = dictionary["city"] as! String
+		let country = dictionary["country"] as! String
+		let email = dictionary["email"] as! String
+		let fullName = dictionary["fullName"] as! String
+		let phoneNumber = dictionary["phoneNumber"] as! String
+		let photoUrlString = dictionary["photoUrl"] as! String
+		let photoUrl = URL(string: photoUrlString)!
+		let stateProvince = dictionary["stateProvince"] as! String
+		let uid = dictionary["uid"] as! String
+		let userType: UserType = (dictionary["userType"] as! String) == "mentor" ?  .mentor : .teacher
+		
+		self.init(aboutMe: aboutMe, awaitingApproval: awaitingApproval, city: city, country: country,
+				  email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: photoUrl,
+				  stateProvince: stateProvince, uid: uid, userType: userType)
+	}
 
 	var toDictionary: [String: Any]{
 		return [
@@ -60,6 +82,4 @@ class CurrentUser {
 			"userType": userType == .mentor ? "mentor" : "teacher"
 			]
 	}
-	
-	
 }

@@ -32,15 +32,20 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupViews()
-		
-//		FireStoreController().fetchUser(uuid: "2ivKEsyyvKcTHWmeJp1dCdEo8fO2") { error in
-//			if let error = error {
-//				print("\(error)")
-//			}
-//		}
-		
-		
     }
+	
+	
+	private func gooToMainView() {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? UINavigationController else {
+			print("homeVC was not found!")
+			return
+		}
+		
+		
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
+	}
+	
 	
 	private func setupViews() {
 		emailTextField.delegate = self
@@ -52,10 +57,26 @@ class SignInViewController: UIViewController {
 		
 	}
 	
+	/// if user exist segue to app
+	private func checkIfuserExistAndLogin(with uid: String) {
+		FireStoreController().fetchUser(uuid: uid) { user, error in
+			if let error = error {
+				print("\(error)")
+				return
+			}
+			
+			DispatchQueue.main.async {
+				self.gooToMainView()
+			}
+		}
+	}
+	
 	
 	private func handleAuthStateDidChange() {
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
-			if let _ = user {
+			if let user = user {
+				self.checkIfuserExistAndLogin(with: user.uid)
+			} else {
 				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 				self.segueToApp()
 			}

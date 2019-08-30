@@ -89,7 +89,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 									   photoUrl: url, stateProvince: stateOrProvince,
 									   uid: uid, userType: userType)
 		
-		
+
 		FireStoreController().addUserToFireStore(with: signedInUser) { error in
 			if let error = error {
 				let ac = ApplicationController().simpleActionSheetAllert(with: "Network Error", message: "Please Try Again 🧐")
@@ -97,14 +97,17 @@ class GmailFacebookSignUpViewController: UIViewController {
 				NSLog("Error adding user to firestore: \(error)")
 				return
 			}
-			
-//			self.performSegue(withIdentifier: "SegueToMain", sender: self)
+		
 			self.gooToMainView()
 		}
-		
-		
-
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+	}
+	
+	
+	
 }
 
 extension GmailFacebookSignUpViewController{
@@ -122,10 +125,12 @@ extension GmailFacebookSignUpViewController{
 	}
 	
 	private func gooToMainView() {
-		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? MainViewController else {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? UINavigationController else {
 			print("homeVC was not found!")
 			return
 		}
+		
+		
 		view.window?.rootViewController = homeVC
 		view.window?.makeKeyAndVisible()
 	}

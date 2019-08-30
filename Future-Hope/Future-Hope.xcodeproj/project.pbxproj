@@ -10,11 +10,11 @@
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
 		E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B002314694900A2BD0A /* AppDelegate.swift */; };
 		E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */; };
-		E81B6B062314725000A2BD0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81B6B042314725000A2BD0A /* LaunchScreen.storyboard */; };
-		E81B6B0A2314737900A2BD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81B6B092314737900A2BD0A /* Assets.xcassets */; };
 		E81B6B582314FF1D00A2BD0A /* SlideOutMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B572314FF1D00A2BD0A /* SlideOutMenuViewController.swift */; };
 		E81B6B5D2315056900A2BD0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B5C2315056900A2BD0A /* MainViewController.swift */; };
 		E81B6B612315132B00A2BD0A /* SlideOutContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B602315132B00A2BD0A /* SlideOutContainerViewController.swift */; };
+		E84E8BEA23181BDB000165AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84E8BE823181BDB000165AE /* LaunchScreen.storyboard */; };
+		E84E8BEC23181C82000165AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84E8BEB23181C82000165AE /* Assets.xcassets */; };
 		E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86133C423163FDA00F1611B /* FireStoreController.swift */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
 		E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* CurrentUser.swift */; };
@@ -28,12 +28,12 @@
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81B6B002314694900A2BD0A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GmailFacebookSignUpViewController.swift; sourceTree = "<group>"; };
-		E81B6B052314725000A2BD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../../Desktop/labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
-		E81B6B092314737900A2BD0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
 		E81B6B0E2314742500A2BD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E81B6B572314FF1D00A2BD0A /* SlideOutMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuViewController.swift; sourceTree = "<group>"; };
 		E81B6B5C2315056900A2BD0A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E81B6B602315132B00A2BD0A /* SlideOutContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutContainerViewController.swift; sourceTree = "<group>"; };
+		E84E8BE923181BDB000165AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../labs15/Research/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		E84E8BEB23181C82000165AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../labs15/Research/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
 		E86133C423163FDA00F1611B /* FireStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreController.swift; sourceTree = "<group>"; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E87C3B49230C8EB700161EFE /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -85,9 +85,9 @@
 		E87C3B47230C68D700161EFE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E84E8BEB23181C82000165AE /* Assets.xcassets */,
 				E81B6B0E2314742500A2BD0A /* Info.plist */,
 				E87C3B53230CC7EA00161EFE /* GoogleService-Info.plist */,
-				E81B6B092314737900A2BD0A /* Assets.xcassets */,
 				E87C3B48230C6B3600161EFE /* View */,
 			);
 			path = Resources;
@@ -96,8 +96,8 @@
 		E87C3B48230C6B3600161EFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E84E8BE823181BDB000165AE /* LaunchScreen.storyboard */,
 				E8839EAB230606DB001536AC /* Main.storyboard */,
-				E81B6B042314725000A2BD0A /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,9 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E87C3B54230CC7EA00161EFE /* GoogleService-Info.plist in Resources */,
-				E81B6B062314725000A2BD0A /* LaunchScreen.storyboard in Resources */,
+				E84E8BEA23181BDB000165AE /* LaunchScreen.storyboard in Resources */,
+				E84E8BEC23181C82000165AE /* Assets.xcassets in Resources */,
 				E8839EAD230606DB001536AC /* Main.storyboard in Resources */,
-				E81B6B0A2314737900A2BD0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,10 +356,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E81B6B042314725000A2BD0A /* LaunchScreen.storyboard */ = {
+		E84E8BE823181BDB000165AE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E81B6B052314725000A2BD0A /* Base */,
+				E84E8BE923181BDB000165AE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

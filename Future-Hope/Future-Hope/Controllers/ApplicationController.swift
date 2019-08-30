@@ -15,7 +15,11 @@ import FirebaseCore
 
 class ApplicationController {
 	
-	private (set) var currentlyLogedInUser: CurrentUser?
+	private (set) var currentlyLogedInUser: CurrentUser? {
+		didSet {
+			//fetch image and store in data
+		}
+	}
 	
 	
 	
@@ -25,7 +29,27 @@ class ApplicationController {
 	
 	
 	
+	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
+		print(url.absoluteString)
+		
+		URLSession.shared.dataTask(with: url) { data, _, error in
+			if let error = error{
+				NSLog("Error fetching image: \(error)")
+				completion(nil, error)
+				return
+			}
+			
+			guard let data = data else { return }
+			completion(data, nil)
+		}.resume()
+	}
 	
+	
+	private func fetchUserImage() {
+		
+		
+		
+	}
 	
 	
 
@@ -37,7 +61,7 @@ class ApplicationController {
 extension ApplicationController {
 
 	
-	// Signout with Google credentials
+	/// Signout with Google credentials
 	func signOut(completion: @escaping (Error?) -> Void) {
 		let fireAuth = Auth.auth()
 		do{
@@ -50,7 +74,7 @@ extension ApplicationController {
 		}
 	}
 
-	// SignIn With Google credentials
+	/// SignIn With Google credentials
 	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
 		Auth.auth().signIn(with: credentail) { authResult, error in
 			if let error = error {
@@ -65,7 +89,7 @@ extension ApplicationController {
 	}
 	
 	
-	// Will fetch current user that was signed in with email/gmail/Facebook
+	/// Will fetch current user that was signed in with email/gmail/Facebook
 	func fetchCurrentAuthenticatedUser() -> User? {
 		guard let currentUser = Auth.auth().currentUser else { return nil }
 		return currentUser
