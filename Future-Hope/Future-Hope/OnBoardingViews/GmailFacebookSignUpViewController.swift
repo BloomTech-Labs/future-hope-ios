@@ -125,7 +125,7 @@ extension GmailFacebookSignUpViewController{
 	}
 	
 	private func gooToMainView() {
-		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? UINavigationController else {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? UITabBarController else {
 			print("homeVC was not found!")
 			return
 		}
