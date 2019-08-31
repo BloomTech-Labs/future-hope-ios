@@ -68,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="259" width="414" height="232"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1h2-gq-6xh" customClass="MDCRaisedButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="66.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +78,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0X-Zi-rz0" customClass="MDCRaisedButton">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="46"/>
+                                        <rect key="frame" x="0.0" y="82.5" width="414" height="67"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <state key="normal" title="Email Signup">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,18 +87,14 @@
                                             <segue destination="F0S-ts-cdg" kind="show" id="ACk-fS-t1x"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCe-bP-1Z7" customClass="GIDSignInButton">
-                                        <rect key="frame" x="0.0" y="124" width="414" height="46"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-KG-2Mu" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="0.0" y="186" width="414" height="46"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Facebook Login">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huw-e4-4Z7" customClass="MDCRaisedButton">
+                                        <rect key="frame" x="0.0" y="165.5" width="414" height="66.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Gmail / FaceBook SignUp">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="facebookLogInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9Z-gX-KNf"/>
+                                            <segue destination="ef7-sY-hF8" kind="show" id="8au-6q-PZg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -165,7 +161,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="3Hd-O4-ylh" id="Csn-f6-nXq"/>
                         <outlet property="passwordTextField" destination="emG-BH-p8C" id="EuW-hm-Hdf"/>
-                        <segue destination="ef7-sY-hF8" kind="show" identifier="GMailFacebookSegue" id="dyu-MA-PG1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
