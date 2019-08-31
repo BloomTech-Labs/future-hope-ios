@@ -63,8 +63,8 @@ class SignInViewController: UIViewController {
 				self.checkIfuserExistAndLogin(with: user.uid) { error in
 					if let error = error {
 						print("Error  : \(error)")
-						return
 					}
+					return
 				}
 				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
 			}
