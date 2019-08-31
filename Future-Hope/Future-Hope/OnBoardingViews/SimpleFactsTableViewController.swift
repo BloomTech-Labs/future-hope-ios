@@ -16,7 +16,6 @@ class SimpleFactsTableViewController: UITableViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		//navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Exit", style: .done, target: self, action: #selector(exitButton))
     }
 	
 	@objc func exitButton() {
