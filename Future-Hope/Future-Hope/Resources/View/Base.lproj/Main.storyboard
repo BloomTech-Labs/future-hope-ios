@@ -167,65 +167,6 @@
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="18.75"/>
         </scene>
-        <!--Slide Out Menu View Controller-->
-        <scene sceneID="7tx-6T-tmd">
-            <objects>
-                <viewController id="S55-9g-NnM" customClass="SlideOutMenuViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JHP-dq-GJG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTm-2N-g1B">
-                                <rect key="frame" x="0.0" y="44" width="414" height="177"/>
-                                <color key="backgroundColor" red="0.9510807966" green="0.9510807966" blue="0.9510807966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="NTm-2N-g1B" secondAttribute="height" multiplier="138:59" id="rL5-sb-Vfp"/>
-                                </constraints>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gl7-Og-0Io">
-                                <rect key="frame" x="0.0" y="221" width="414" height="675"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SlideOutCell" textLabel="c6U-b1-jfk" style="IBUITableViewCellStyleDefault" id="i6Q-le-ooV">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i6Q-le-ooV" id="qf0-sF-yMN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c6U-b1-jfk">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="gl7-Og-0Io" firstAttribute="trailing" secondItem="ApF-S6-zY8" secondAttribute="trailing" id="Fst-Zh-iEB"/>
-                            <constraint firstAttribute="bottom" secondItem="gl7-Og-0Io" secondAttribute="bottom" id="PJh-lK-pbO"/>
-                            <constraint firstItem="gl7-Og-0Io" firstAttribute="leading" secondItem="ApF-S6-zY8" secondAttribute="leading" id="Rmh-J3-vy2"/>
-                            <constraint firstItem="gl7-Og-0Io" firstAttribute="top" secondItem="NTm-2N-g1B" secondAttribute="bottom" id="igr-T1-gPh"/>
-                            <constraint firstItem="NTm-2N-g1B" firstAttribute="top" secondItem="ApF-S6-zY8" secondAttribute="top" id="nOZ-2f-7yp"/>
-                            <constraint firstItem="NTm-2N-g1B" firstAttribute="leading" secondItem="ApF-S6-zY8" secondAttribute="leading" id="qWG-4V-moW"/>
-                            <constraint firstItem="NTm-2N-g1B" firstAttribute="trailing" secondItem="ApF-S6-zY8" secondAttribute="trailing" id="zIc-jQ-wpz"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ApF-S6-zY8"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="gl7-Og-0Io" id="QM3-0c-gh5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cgY-Cv-dfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1306" y="1897"/>
-        </scene>
         <!--Main View Controller-->
         <scene sceneID="g3e-se-ZgE">
             <objects>
@@ -355,11 +296,12 @@
                         <outlet property="statusLabel" destination="4UW-0l-jCS" id="qxM-Sa-bvJ"/>
                         <outlet property="tableView" destination="glC-hy-roy" id="FsD-jf-mAM"/>
                         <outlet property="userTypeLabel" destination="tqo-4H-A3s" id="Lpa-c2-CFa"/>
+                        <segue destination="ycz-yh-j5J" kind="show" id="iPQ-G7-jDJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgz-qY-SzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2730.434782608696" y="991.74107142857133"/>
+            <point key="canvasLocation" x="2072" y="1340"/>
         </scene>
         <!--Gmail Facebook Sign Up View Controller-->
         <scene sceneID="4mP-PQ-CV3">
@@ -936,21 +878,6 @@
             </objects>
             <point key="canvasLocation" x="1719" y="-587"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="LFw-Dl-1Qs">
-            <objects>
-                <viewController id="n7Z-PO-xcW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="k2h-MA-5wB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Udl-F4-MO5"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0j-AB-ucE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="658" y="1884"/>
-        </scene>
         <!--Item 2-->
         <scene sceneID="Zge-Nu-TqF">
             <objects>
@@ -965,7 +892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gA-dl-hbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2704" y="2291"/>
+            <point key="canvasLocation" x="1958" y="3173"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="os1-TL-0JJ">
@@ -981,7 +908,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRf-8S-HYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2704" y="1642"/>
+            <point key="canvasLocation" x="3871" y="2453"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ze9-zI-Wj2">
@@ -994,13 +921,16 @@
                     </tabBar>
                     <connections>
                         <segue destination="yHE-4Q-ZbM" kind="relationship" relationship="viewControllers" id="xIb-Wz-E6c"/>
-                        <segue destination="5vc-8B-7Hj" kind="relationship" relationship="viewControllers" id="aeH-K6-aSi"/>
                         <segue destination="hcn-Er-i8s" kind="relationship" relationship="viewControllers" id="ujF-N0-1Uc"/>
+                        <segue destination="5vc-8B-7Hj" kind="relationship" relationship="viewControllers" id="aeH-K6-aSi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qka-TQ-EUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786" y="1967"/>
+            <point key="canvasLocation" x="1251" y="2435"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iPQ-G7-jDJ"/>
+    </inferredMetricsTieBreakers>
 </document>
