@@ -20,7 +20,9 @@ class SimpleFactsTableViewController: UITableViewController {
     }
 	
 	@objc func exitButton() {
-		navigationController?.dismiss(animated: true)
+		print("here")
+		
+		navigationController?.popViewController(animated: true)
 	}
 	
 
