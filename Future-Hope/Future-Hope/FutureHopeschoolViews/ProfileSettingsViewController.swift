@@ -2,17 +2,19 @@
 //  MainViewController.swift
 //  Future-Hope
 //
-//  Created by Hector Steven on 8/26/19.
+//  Created by Hector Steven on 8/29/19.
 //  Copyright © 2019 Hector Steven. All rights reserved.
 //
-
 import UIKit
 
 
-class MainViewController: UIViewController {
+extension ProfileSettingsViewController: FutureHopSchoolControllerProtocol {}
+
+class ProfileSettingsViewController: UIViewController {
+	var futureHopSchoolController: ApplicationController?
+	
 	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province"]
 	var currentSignedInUser: CurrentUser?
-	let futureHopeController = ApplicationController()
 	
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var namelabel: UILabel!
@@ -33,7 +35,7 @@ class MainViewController: UIViewController {
 	}
 	
 	private func fetchCurrentAuthUser() {
-		guard let user = futureHopeController.fetchCurrentAuthenticatedUser() else { return }
+		guard let user = futureHopSchoolController?.fetchCurrentAuthenticatedUser() else { return }
 		FireStoreController().fetchUser(uuid: user.uid) { user, error in
 			if let error = error {
 				NSLog("Error: \(error)")
@@ -48,7 +50,7 @@ class MainViewController: UIViewController {
 	private func setupViews() {
 		guard let currentSignedInUser = currentSignedInUser else { return }
 		
-		futureHopeController.setCurrentUser(with: currentSignedInUser)
+		futureHopSchoolController?.setCurrentUser(with: currentSignedInUser)
 		
 		imageView.layer.cornerRadius = 10
 		
@@ -61,7 +63,7 @@ class MainViewController: UIViewController {
 		aboutMeTextView.layer.cornerRadius = 4
 		
 		
-		futureHopeController.fetchUserImage(with: currentSignedInUser.photoUrl) { data, error in
+		futureHopSchoolController?.fetchUserImage(with: currentSignedInUser.photoUrl) { data, error in
 			if let error = error {
 				NSLog("Error fetching user image: \(error)")
 				return
@@ -70,15 +72,15 @@ class MainViewController: UIViewController {
 			guard let data = data else { return }
 			
 			DispatchQueue.main.async {
-				self.imageView.image = UIImage(data: data)				
+				self.imageView.image = UIImage(data: data)
 			}
 		}
 	}
-
+	
 }
 
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 2
@@ -100,12 +102,25 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 		} else {
 			cell.textLabel?.text = "SingOut"
 		}
-		
-		
-		
 		return cell
 	}
 	
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if indexPath.section == 0 {
+			
+			if indexPath.row == 0 {
+				
+			}
+			
+			
+		} else if indexPath.section == 1 {
+			if indexPath.row == 0 {
+				self.signOutWithFireStore()
+				
+			}
+		}
+	}
 	
 	
 	private func getUserData(with row: Int) -> String? {
@@ -123,16 +138,41 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 		}else if row == 5 {
 			return currentSignedInUser.phoneNumber
 		}
-		
-		
-		
-		
 		return nil
+	}
 	
+	
+	private func signOutWithFireStore() {
+		
+		let ac = UIAlertController(title: "SignOut", message: nil, preferredStyle: .actionSheet)
+		ac.addAction(UIAlertAction(title: "Ok", style: .default){ _ in
+			self.futureHopSchoolController?.signOut{ error in
+				if let error = error {
+					NSLog("Error Signing out: \(error)")
+					return
+				}
+				
+				DispatchQueue.main.async {
+					self.gooToMainView()
+				}
+				
+			}
+		})
+
+		ac.addAction(UIAlertAction(title: "cancel", style: .cancel))
+		present(ac, animated: true)
+	}
+	
+	private func gooToMainView() {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "SignInMainVC") as? UINavigationController else {
+			print("homeVC was not found!")
+			return
+		}
+		
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
 	}
 	
 	
 	
-	
 }
-

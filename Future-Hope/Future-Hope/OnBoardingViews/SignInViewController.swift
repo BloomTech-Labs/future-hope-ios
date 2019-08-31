@@ -20,7 +20,6 @@ class SignInViewController: UIViewController {
 
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
-	
 	var handle: AuthStateDidChangeListenerHandle?
 	
 	deinit {
@@ -33,56 +32,44 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 		setupViews()
     }
-	
-	
-	private func gooToMainView() {
-		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? UINavigationController else {
-			print("homeVC was not found!")
-			return
-		}
-		
-		
-		view.window?.rootViewController = homeVC
-		view.window?.makeKeyAndVisible()
-	}
-	
-	
+
 	private func setupViews() {
 		emailTextField.delegate = self
 		passwordTextField.delegate = self
 		GIDSignIn.sharedInstance()?.presentingViewController = self
 		handleAuthStateDidChange()
-		
-	
-		
 	}
 	
-	/// if user exist segue to app
-	private func checkIfuserExistAndLogin(with uid: String) {
+	private func checkIfuserExistAndLogin(with uid: String, completion: @escaping (Error?) -> ()) {
 		FireStoreController().fetchUser(uuid: uid) { user, error in
 			if let error = error {
 				print("\(error)")
+				completion(error)
 				return
 			}
 			
 			DispatchQueue.main.async {
 				self.gooToMainView()
 			}
+			completion(nil)
 		}
+		
 	}
 	
 	
 	private func handleAuthStateDidChange() {
 		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
 			if let user = user {
-				self.checkIfuserExistAndLogin(with: user.uid)
-			} else {
+				self.checkIfuserExistAndLogin(with: user.uid) { error in
+					if let error = error {
+						print("Error  : \(error)")
+					}
+					return
+				}
 				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
-				self.segueToApp()
 			}
 		})
 	}
-	
 	
 	@IBAction func facebookLogInButtonPressed(_ sender: FBLoginButton) {
 //		LoginManager().logIn(permissions: [.publicProfile], viewController: self) { result in
@@ -108,9 +95,7 @@ class SignInViewController: UIViewController {
 				return
 			}
 			
-			self.segueToApp()
-			print("FaceBook loggedIn with authResult: \(authResult.debugDescription)")
-			
+//			print("FaceBook loggedIn with authResult: \(authResult.debugDescription)")
 			if let user = Auth.auth().currentUser {
 				print("Logged in as: ", user.displayName!)
 			}
@@ -134,20 +119,16 @@ class SignInViewController: UIViewController {
 				self.present(ac, animated: true)
 				return
 			}
-			
-			self.segueToApp()
-			print("signed in with  \(email)")
 		}
 	}
 	
-	private func segueToApp() {
-		// // MARK: segue to app
-		
-		/////
-		
-		///
-		
-		/////
+	private func gooToMainView() {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
+			print("homeVC was not found!")
+			return
+		}
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
 	}
 }
 

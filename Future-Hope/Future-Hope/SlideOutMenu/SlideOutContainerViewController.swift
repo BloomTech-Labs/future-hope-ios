@@ -16,7 +16,7 @@ class SlideOutContainerViewController: UIViewController {
 	}
 	
 	var mainNavigationController: UINavigationController!
-	var mainViewController: MainViewController!
+	var mainViewController: ProfileSettingsViewController!
 //	
 //	var curentState: SlideOutState = .panelCollapsed {
 //		didSet {
