@@ -54,7 +54,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akH-dm-JIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573.913043478261" y="-772.09821428571422"/>
+            <point key="canvasLocation" x="899" y="-640"/>
         </scene>
         <!--Future Hope School-->
         <scene sceneID="tne-QT-ifu">
@@ -93,9 +93,6 @@
                                         <state key="normal" title="Gmail / FaceBook SignUp">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="ef7-sY-hF8" kind="show" id="8au-6q-PZg"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -369,7 +366,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-5X-8kD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1156"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xte-02-a9j" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
@@ -613,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBb-kr-Ue2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1826" y="1"/>
+            <point key="canvasLocation" x="3407" y="120"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uNu-Zd-EPN">
@@ -933,7 +930,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEh-yV-huM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="35"/>
+            <point key="canvasLocation" x="1757" y="-495"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LFw-Dl-1Qs">
