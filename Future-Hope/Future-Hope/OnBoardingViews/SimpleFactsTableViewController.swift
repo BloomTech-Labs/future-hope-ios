@@ -20,12 +20,9 @@ class SimpleFactsTableViewController: UITableViewController {
     }
 	
 	@objc func exitButton() {
-		print("here")
-		
 		navigationController?.popViewController(animated: true)
 	}
 	
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return faqStrings.count
     }
