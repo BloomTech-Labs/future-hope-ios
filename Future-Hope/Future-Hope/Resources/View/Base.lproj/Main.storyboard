@@ -245,9 +245,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <segue destination="ef7-sY-hF8" kind="show" id="U8W-dD-zJx"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -295,6 +292,7 @@
                         <outlet property="tableView" destination="glC-hy-roy" id="ogU-Hb-2Ng"/>
                         <outlet property="userTypeLabel" destination="tqo-4H-A3s" id="JSo-bP-5dd"/>
                         <segue destination="ycz-yh-j5J" kind="show" identifier="FAQsSegue" id="iPQ-G7-jDJ"/>
+                        <segue destination="ef7-sY-hF8" kind="show" identifier="UpdateUserInformationSegue" id="J64-Kj-rWU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgz-qY-SzC" userLabel="First Responder" sceneMemberID="firstResponder"/>

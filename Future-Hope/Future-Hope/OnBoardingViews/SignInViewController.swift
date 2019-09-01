@@ -98,6 +98,7 @@ class SignInViewController: UIViewController {
 			print("homeVC was not found!")
 			return
 		}
+		
 		view.window?.rootViewController = homeVC
 		view.window?.makeKeyAndVisible()
 	}
