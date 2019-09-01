@@ -58,16 +58,22 @@ class SignInViewController: UIViewController {
 	
 	
 	private func handleAuthStateDidChange() {
-		handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
-			if let user = user {
-				self.checkIfuserExistAndLogin(with: user.uid) { error in
-					if let error = error {
-						print("Error  : \(error)")
-					}
-					return
-				}
-				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
+		handle = Auth.auth().addStateDidChangeListener({ (_, _) in
+			DispatchQueue.main.async {
+				self.gooToMainView()				
 			}
+			
+			
+			
+//			if let user = user {
+//				self.checkIfuserExistAndLogin(with: user.uid) { error in
+//					if let error = error {
+//						print("Error  : \(error)")
+//					}
+//					return
+//				}
+//				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
+//			}
 		})
 	}
 	
