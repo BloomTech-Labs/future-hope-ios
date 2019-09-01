@@ -15,6 +15,7 @@
 		E81EB6FB2318DFBE006189FA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FA2318DFBE006189FA /* TabBarViewController.swift */; };
 		E81EB6FD2318DFC5006189FA /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */; };
 		E81EB6FF231A2F4F006189FA /* SimpleFactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FE231A2F4F006189FA /* SimpleFactsTableViewController.swift */; };
+		E81EB70E231B5BD8006189FA /* SignInGmailFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB70D231B5BD8006189FA /* SignInGmailFacebookViewController.swift */; };
 		E84E8BEA23181BDB000165AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84E8BE823181BDB000165AE /* LaunchScreen.storyboard */; };
 		E84E8BEC23181C82000165AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84E8BEB23181C82000165AE /* Assets.xcassets */; };
 		E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86133C423163FDA00F1611B /* FireStoreController.swift */; };
@@ -36,6 +37,7 @@
 		E81EB6FA2318DFBE006189FA /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		E81EB6FE231A2F4F006189FA /* SimpleFactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFactsTableViewController.swift; sourceTree = "<group>"; };
+		E81EB70D231B5BD8006189FA /* SignInGmailFacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGmailFacebookViewController.swift; sourceTree = "<group>"; };
 		E84E8BE923181BDB000165AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../labs15/Research/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		E84E8BEB23181C82000165AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../labs15/Research/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
 		E86133C423163FDA00F1611B /* FireStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				E87C3B42230AFC9E00161EFE /* SignInViewController.swift */,
+				E81EB70D231B5BD8006189FA /* SignInGmailFacebookViewController.swift */,
 				E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */,
 				E81EB6FE231A2F4F006189FA /* SimpleFactsTableViewController.swift */,
 			);
@@ -364,6 +367,7 @@
 				E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */,
 				E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */,
 				E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */,
+				E81EB70E231B5BD8006189FA /* SignInGmailFacebookViewController.swift in Sources */,
 				E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */,
 				E81B6B612315132B00A2BD0A /* SlideOutContainerViewController.swift in Sources */,
 			);

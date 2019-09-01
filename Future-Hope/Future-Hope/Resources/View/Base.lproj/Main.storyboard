@@ -302,16 +302,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgz-qY-SzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072" y="1340"/>
+            <point key="canvasLocation" x="2022" y="1362"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In Gmail Facebook View Controller-->
         <scene sceneID="din-jW-uih">
             <objects>
-                <viewController id="FMM-B3-Kcg" sceneMemberID="viewController">
+                <viewController id="FMM-B3-Kcg" customClass="SignInGmailFacebookViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ik7-Bs-30I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZzA-wc-LvX">
+                                <rect key="frame" x="20" y="138" width="374" height="106"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05j-gr-NGC" customClass="GIDSignInButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="YIe-xg-Hjm"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ai-Br-OTQ" customClass="FBSDKButton">
+                                        <rect key="frame" x="0.0" y="66" width="374" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZzA-wc-LvX" firstAttribute="top" secondItem="zvo-Ao-3zY" secondAttribute="top" constant="50" id="3Mf-eC-jyo"/>
+                            <constraint firstItem="zvo-Ao-3zY" firstAttribute="trailing" secondItem="ZzA-wc-LvX" secondAttribute="trailing" constant="20" id="UKy-Qf-mdH"/>
+                            <constraint firstItem="ZzA-wc-LvX" firstAttribute="leading" secondItem="zvo-Ao-3zY" secondAttribute="leading" constant="20" id="jky-Pv-bSz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zvo-Ao-3zY"/>
                     </view>
                     <connections>
@@ -320,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5R-cI-23T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2590" y="57"/>
+            <point key="canvasLocation" x="2589.8550724637685" y="56.919642857142854"/>
         </scene>
         <!--Gmail Facebook Sign Up View Controller-->
         <scene sceneID="4mP-PQ-CV3">
@@ -911,7 +934,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gA-dl-hbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="3173"/>
+            <point key="canvasLocation" x="1251" y="3494"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="os1-TL-0JJ">
