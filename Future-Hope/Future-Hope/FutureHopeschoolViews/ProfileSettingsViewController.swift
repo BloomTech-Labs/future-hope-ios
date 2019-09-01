@@ -35,7 +35,7 @@ class ProfileSettingsViewController: UIViewController {
 	}
 	
 	private func fetchCurrentAuthUser() {
-		guard let user = futureHopSchoolController?.fetchCurrentAuthenticatedUser() else { return }
+		guard let user = futureHopSchoolController?.fetchCurrentFireAuthenticatedUser() else { return }
 		FireStoreController().fetchUser(uuid: user.uid) { user, error in
 			if let error = error {
 				NSLog("Error: \(error)")
@@ -50,7 +50,7 @@ class ProfileSettingsViewController: UIViewController {
 	private func setupViews() {
 		guard let currentSignedInUser = currentSignedInUser else { return }
 		
-		futureHopSchoolController?.setCurrentUser(with: currentSignedInUser)
+//		futureHopSchoolController?.setCurrentUser(with: currentSignedInUser)
 		
 		imageView.layer.cornerRadius = 10
 		

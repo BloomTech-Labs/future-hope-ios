@@ -245,6 +245,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="ef7-sY-hF8" kind="show" id="U8W-dD-zJx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -551,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBb-kr-Ue2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3561" y="1361"/>
+            <point key="canvasLocation" x="3554" y="1382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uNu-Zd-EPN">
@@ -873,7 +876,7 @@
             </objects>
             <point key="canvasLocation" x="1719" y="-587"/>
         </scene>
-        <!--Item 2-->
+        <!--MySchedule-->
         <scene sceneID="Zge-Nu-TqF">
             <objects>
                 <viewController id="hcn-Er-i8s" sceneMemberID="viewController">
@@ -883,13 +886,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="p06-TC-BEn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="gx8-lw-gzG"/>
+                    <tabBarItem key="tabBarItem" title="MySchedule" id="gx8-lw-gzG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gA-dl-hbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1251" y="3494"/>
         </scene>
-        <!--Item 1-->
+        <!--View Controller-->
         <scene sceneID="os1-TL-0JJ">
             <objects>
                 <viewController id="yHE-4Q-ZbM" sceneMemberID="viewController">
@@ -899,7 +902,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="g2Z-GL-GV6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="mpb-Bk-Kdr"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="mpb-Bk-Kdr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRf-8S-HYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

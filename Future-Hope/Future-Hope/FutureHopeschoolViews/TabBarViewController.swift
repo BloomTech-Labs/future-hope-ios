@@ -34,14 +34,14 @@ class TabBarViewController: UITabBarController {
 	
 	
 	private func getCurrentUser() {
-		guard let user = futureHopSchoolController.fetchCurrentAuthenticatedUser(),
+		guard let user = futureHopSchoolController.fetchCurrentFireAuthenticatedUser(),
 			let fullname = user.displayName,
 			let email = user.email,
 			let photoUrl = user.photoURL else { return }
 		
 		print("\(fullname) - \(email) - \(photoUrl)")
 		
-		
+			
 	}
 	
 

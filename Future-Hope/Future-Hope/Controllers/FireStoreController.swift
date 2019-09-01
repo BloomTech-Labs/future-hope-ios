@@ -16,6 +16,8 @@ struct FireStoreController {
 
 	private static let db = Firestore.firestore()
 	
+	
+	/// Fetch user with uuid from firestore
 	func fetchUser(uuid: String, completion: @escaping (CurrentUser?, Error?) -> ()) {
 		FireStoreController.db.collection(FireStoreController.users)
 			.document(uuid).getDocument { document, error in

@@ -49,7 +49,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 	}
 	
 	private func setupViews() {
-		currentAuthUser = ApplicationController().fetchCurrentAuthenticatedUser()
+		currentAuthUser = ApplicationController().fetchCurrentFireAuthenticatedUser()
 		
 		let displayName = currentAuthUser?.displayName
 		let email  = currentAuthUser?.email

@@ -17,13 +17,8 @@ class ApplicationController {
 	
 	private (set) var currentlyLogedInUser: CurrentUser? {
 		didSet {
-			//fetch image and store in data
+			// do ssome work
 		}
-	}
-	
-	
-	func setCurrentUser(with user: CurrentUser) {
-		currentlyLogedInUser = user
 	}
 	
 	func fetchCurrentUser() {
@@ -57,15 +52,6 @@ class ApplicationController {
 		}.resume()
 	}
 	
-	
-	private func fetchUserImage() {
-		
-		
-		
-	}
-	
-	
-
 }
 
 
@@ -107,22 +93,17 @@ extension ApplicationController {
 		}
 	}
 	
-	
 	/// Will fetch current user that was signed in with email/gmail/Facebook
-	func fetchCurrentAuthenticatedUser() -> User? {
+	func fetchCurrentFireAuthenticatedUser() -> User? {
 		guard let currentUser = Auth.auth().currentUser else { return nil }
 		return currentUser
 	}
-	
-	
 }
 
 
 // MARK: AlertControllers
 
 extension ApplicationController {
-	
-	
 	func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
 		let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
 		ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))

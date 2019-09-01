@@ -32,11 +32,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 		setupViews()
 		
-//		ApplicationController().signOut{ error in
-//			if let error = error {
-//				print("error: \(error)")
-//			}
-//		}
+
 		
     }
 
@@ -66,56 +62,11 @@ class SignInViewController: UIViewController {
 	
 	
 	private func handleAuthStateDidChange() {
-		handle = Auth.auth().addStateDidChangeListener({ (_, user) in
-			
+		handle = Auth.auth().addStateDidChangeListener { _, user in
 			if let _ = user {
-				
 				DispatchQueue.main.async {
 					self.gooToMainView()
 				}
-			}
-			
-			
-			
-//			if let user = user {
-//				self.checkIfuserExistAndLogin(with: user.uid) { error in
-//					if let error = error {
-//						print("Error  : \(error)")
-//					}
-//					return
-//				}
-//				self.performSegue(withIdentifier: "GMailFacebookSegue", sender: nil)
-//			}
-		})
-	}
-	
-	@IBAction func facebookLogInButtonPressed(_ sender: FBLoginButton) {
-//		LoginManager().logIn(permissions: [.publicProfile], viewController: self) { result in
-//			switch result {
-//			case .success(granted: _, declined: _, token: _):
-//				self.firebaseFacebookLogIn()
-//			case .failed(let err):
-//				print("Failed with: \(err)")
-//			case .cancelled:
-//				print("Canceled! ")
-//			}
-//		}
-	}
-	
-	private func firebaseFacebookLogIn() {
-		let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-		
-		Auth.auth().signIn(with: credential) { (authResult, error) in
-			if let error = error {
-				NSLog("Error with facebook Auth: \(error) \n authResult: \(authResult.debugDescription)")
-				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With FaceBool LogIn", message: "Please try Again!")
-				self.present(ac, animated: true)
-				return
-			}
-			
-//			print("FaceBook loggedIn with authResult: \(authResult.debugDescription)")
-			if let user = Auth.auth().currentUser {
-				print("Logged in as: ", user.displayName!)
 			}
 		}
 	}
@@ -125,9 +76,9 @@ class SignInViewController: UIViewController {
 			let password = passwordTextField.text else { return }
 		
 		if email.isEmpty || password.isEmpty {
-				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
-				self.present(ac, animated: true)
-				return
+			let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
+			self.present(ac, animated: true)
+			return
 		}
 		
 		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -148,6 +99,48 @@ class SignInViewController: UIViewController {
 		view.window?.rootViewController = homeVC
 		view.window?.makeKeyAndVisible()
 	}
+	
+	
+	
+}
+
+// Mark : Facebook Login 
+
+extension SignInViewController {
+	
+
+//	@IBAction func facebookLogInButtonPressed(_ sender: FBLoginButton) {
+//		LoginManager().logIn(permissions: [.publicProfile], viewController: self) { result in
+//			switch result {
+//			case .success(granted: _, declined: _, token: _):
+//				self.firebaseFacebookLogIn()
+//			case .failed(let err):
+//				print("Failed with: \(err)")
+//			case .cancelled:
+//				print("Canceled! ")
+//			}
+//		}
+//	}
+	
+//	private func firebaseFacebookLogIn() {
+//		let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+//
+//		Auth.auth().signIn(with: credential) { (authResult, error) in
+//			if let error = error {
+//				NSLog("Error with facebook Auth: \(error) \n authResult: \(authResult.debugDescription)")
+//				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With FaceBool LogIn", message: "Please try Again!")
+//				self.present(ac, animated: true)
+//				return
+//			}
+//
+////			print("FaceBook loggedIn with authResult: \(authResult.debugDescription)")
+//			if let user = Auth.auth().currentUser {
+//				print("Logged in as: ", user.displayName!)
+//			}
+//		}
+//	}
+	
+	
 }
 
 
