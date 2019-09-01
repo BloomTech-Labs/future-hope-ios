@@ -60,7 +60,7 @@ class SignInViewController: UIViewController {
 		
 	}
 	
-	
+	// Will run ones firebase senses a login
 	private func handleAuthStateDidChange() {
 		handle = Auth.auth().addStateDidChangeListener { _, user in
 			if let _ = user {
@@ -71,6 +71,7 @@ class SignInViewController: UIViewController {
 		}
 	}
 	
+	// User is trying to login with email/password
 	@IBAction func logInButtonPressed(_ sender: UIButton) {
 		guard let email = emailTextField.text,
 			let password = passwordTextField.text else { return }
@@ -91,6 +92,7 @@ class SignInViewController: UIViewController {
 		}
 	}
 	
+	// This will take you to the tabbar app
 	private func gooToMainView() {
 		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
 			print("homeVC was not found!")
@@ -99,12 +101,9 @@ class SignInViewController: UIViewController {
 		view.window?.rootViewController = homeVC
 		view.window?.makeKeyAndVisible()
 	}
-	
-	
-	
 }
 
-// Mark : Facebook Login 
+// Mark : Facebook Login
 
 extension SignInViewController {
 	
