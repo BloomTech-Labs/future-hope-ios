@@ -108,12 +108,13 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == 0 {
-			
-			if indexPath.row == 0 {
+			if indexPath.row >= 0 && indexPath.row <= settings.count - 2 {
+				performSegue(withIdentifier: "UpdateUserInformationSegue", sender: self)
+			}else if indexPath.row == settings.count - 1 {
 				
+				// No exit
+				//performSegue(withIdentifier: "FAQsSegue", sender: self)
 			}
-			
-			
 		} else if indexPath.section == 1 {
 			if indexPath.row == 0 {
 				self.signOutWithFireStore()

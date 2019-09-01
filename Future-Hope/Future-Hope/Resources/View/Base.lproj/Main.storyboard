@@ -478,6 +478,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLR-pa-tkP">
+                                                <rect key="frame" x="20" y="908" width="374" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelButtonPressed:" destination="ef7-sY-hF8" eventType="touchUpInside" id="Gfh-jv-ms6"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -502,7 +512,9 @@
                                             <constraint firstItem="JbR-P5-RRt" firstAttribute="top" secondItem="qlg-kI-FqW" secondAttribute="bottom" constant="16" id="Qqa-ri-Vog"/>
                                             <constraint firstItem="hBb-z3-ler" firstAttribute="top" secondItem="k04-GF-aYi" secondAttribute="bottom" constant="16" id="Y5N-Mq-qMZ"/>
                                             <constraint firstItem="sd1-4f-aac" firstAttribute="top" secondItem="gnW-zO-296" secondAttribute="bottom" constant="16" id="ZcR-i3-O1a"/>
+                                            <constraint firstAttribute="bottom" secondItem="GLR-pa-tkP" secondAttribute="bottom" constant="262" id="Ze4-Fw-wTu"/>
                                             <constraint firstAttribute="trailing" secondItem="hBb-z3-ler" secondAttribute="trailing" constant="20" id="dKF-OV-Utp"/>
+                                            <constraint firstAttribute="trailing" secondItem="GLR-pa-tkP" secondAttribute="trailing" constant="20" id="dum-CP-etP"/>
                                             <constraint firstItem="hBb-z3-ler" firstAttribute="leading" secondItem="Xte-02-a9j" secondAttribute="leading" constant="20" id="eJk-5I-15r"/>
                                             <constraint firstItem="hBb-z3-ler" firstAttribute="top" secondItem="k04-GF-aYi" secondAttribute="bottom" constant="16" id="f2c-UK-6NR"/>
                                             <constraint firstItem="pem-6a-bOe" firstAttribute="leading" secondItem="Xte-02-a9j" secondAttribute="leading" constant="20" id="f35-k5-Ldc"/>
@@ -512,9 +524,10 @@
                                             <constraint firstItem="mOo-QU-o6v" firstAttribute="top" secondItem="hBb-z3-ler" secondAttribute="bottom" constant="16" id="le0-gr-aHP"/>
                                             <constraint firstItem="qlg-kI-FqW" firstAttribute="leading" secondItem="Xte-02-a9j" secondAttribute="leading" constant="20" id="mvv-Jf-sRZ"/>
                                             <constraint firstAttribute="trailing" secondItem="JbR-P5-RRt" secondAttribute="trailing" constant="20" id="ncf-8h-jKL"/>
-                                            <constraint firstAttribute="bottom" secondItem="83O-Dh-CpT" secondAttribute="bottom" constant="300" id="qqG-96-9Dh"/>
                                             <constraint firstItem="pem-6a-bOe" firstAttribute="top" secondItem="mOo-QU-o6v" secondAttribute="bottom" constant="16" id="rzX-pS-Z8u"/>
+                                            <constraint firstItem="GLR-pa-tkP" firstAttribute="top" secondItem="83O-Dh-CpT" secondAttribute="bottom" constant="8" id="xEn-5m-Xt7"/>
                                             <constraint firstItem="lVb-1e-yGB" firstAttribute="top" secondItem="JbR-P5-RRt" secondAttribute="bottom" constant="16" id="xFM-ef-yT9"/>
+                                            <constraint firstItem="GLR-pa-tkP" firstAttribute="leading" secondItem="Xte-02-a9j" secondAttribute="leading" constant="20" id="zNx-gX-9Bc"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -552,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBb-kr-Ue2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3554" y="1382"/>
+            <point key="canvasLocation" x="3553.6231884057975" y="1381.4732142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uNu-Zd-EPN">
@@ -785,6 +798,13 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqb-sR-mKx">
+                                                <rect key="frame" x="20" y="1067" width="374" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -800,7 +820,6 @@
                                             <constraint firstAttribute="trailing" secondItem="aPN-J1-VyV" secondAttribute="trailing" constant="20" id="CQo-07-Wly"/>
                                             <constraint firstItem="6bl-XM-46J" firstAttribute="leading" secondItem="RGa-eX-d81" secondAttribute="leading" constant="20" id="DEm-jn-qRb"/>
                                             <constraint firstItem="AIg-TJ-PBa" firstAttribute="top" secondItem="VGl-UE-k09" secondAttribute="bottom" constant="16" id="E1V-eG-hlE"/>
-                                            <constraint firstAttribute="bottom" secondItem="b6O-0k-sfH" secondAttribute="bottom" constant="297" id="FZt-9D-9WJ"/>
                                             <constraint firstItem="yEL-eb-F7t" firstAttribute="top" secondItem="0EJ-MH-ZOG" secondAttribute="bottom" constant="16" id="HBU-dh-vNS"/>
                                             <constraint firstItem="wTY-zD-kB9" firstAttribute="top" secondItem="yEL-eb-F7t" secondAttribute="bottom" constant="16" id="HNe-Nf-XW4"/>
                                             <constraint firstItem="wTY-zD-kB9" firstAttribute="leading" secondItem="RGa-eX-d81" secondAttribute="leading" constant="20" id="HUi-zu-CZ3"/>
@@ -808,12 +827,16 @@
                                             <constraint firstAttribute="trailing" secondItem="615-0O-7dc" secondAttribute="trailing" constant="20" id="IWT-nE-TkW"/>
                                             <constraint firstItem="yEL-eb-F7t" firstAttribute="leading" secondItem="RGa-eX-d81" secondAttribute="leading" constant="16" id="KGB-dh-jj1"/>
                                             <constraint firstItem="615-0O-7dc" firstAttribute="leading" secondItem="RGa-eX-d81" secondAttribute="leading" constant="20" id="LMk-ot-O7J"/>
+                                            <constraint firstAttribute="bottom" secondItem="hqb-sR-mKx" secondAttribute="bottom" constant="259" id="MNt-ru-sID"/>
                                             <constraint firstAttribute="trailing" secondItem="oHf-1q-T1G" secondAttribute="trailing" constant="20" id="NKC-Cp-VRR"/>
                                             <constraint firstAttribute="trailing" secondItem="b6O-0k-sfH" secondAttribute="trailing" constant="20" id="NMX-ZJ-QbE"/>
                                             <constraint firstItem="oHf-1q-T1G" firstAttribute="leading" secondItem="RGa-eX-d81" secondAttribute="leading" constant="20" id="Nln-dD-65h"/>
                                             <constraint firstItem="615-0O-7dc" firstAttribute="top" secondItem="wTY-zD-kB9" secondAttribute="bottom" constant="16" id="OtP-VB-8dx"/>
+                                            <constraint firstAttribute="trailing" secondItem="hqb-sR-mKx" secondAttribute="trailing" constant="20" id="P9A-nP-CTV"/>
                                             <constraint firstItem="53R-4e-arE" firstAttribute="top" secondItem="615-0O-7dc" secondAttribute="bottom" constant="16" id="PQE-ku-RjV"/>
                                             <constraint firstAttribute="trailing" secondItem="AIg-TJ-PBa" secondAttribute="trailing" constant="20" id="SIw-2M-Fsi"/>
+                                            <constraint firstItem="hqb-sR-mKx" firstAttribute="top" secondItem="b6O-0k-sfH" secondAttribute="bottom" constant="8" id="TQP-bW-Icj"/>
+                                            <constraint firstItem="hqb-sR-mKx" firstAttribute="leading" secondItem="RGa-eX-d81" secondAttribute="leading" constant="20" id="WMF-ui-C2c"/>
                                             <constraint firstItem="OIL-yp-ukX" firstAttribute="top" secondItem="RGa-eX-d81" secondAttribute="top" constant="82" id="Zzf-WD-H6B"/>
                                             <constraint firstItem="0EJ-MH-ZOG" firstAttribute="leading" secondItem="RGa-eX-d81" secondAttribute="leading" constant="20" id="a4h-qs-woU"/>
                                             <constraint firstAttribute="trailing" secondItem="6bl-XM-46J" secondAttribute="trailing" constant="20" id="c07-mQ-9Aq"/>
@@ -872,7 +895,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEh-yV-huM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="-587"/>
+            <point key="canvasLocation" x="1718.840579710145" y="-587.27678571428567"/>
         </scene>
         <!--MySchedule-->
         <scene sceneID="Zge-Nu-TqF">

@@ -98,6 +98,9 @@ class GmailFacebookSignUpViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func cancelButtonPressed(_ sender: UIButton) {
+		dismiss(animated: true)
+	}
 }
 
 
