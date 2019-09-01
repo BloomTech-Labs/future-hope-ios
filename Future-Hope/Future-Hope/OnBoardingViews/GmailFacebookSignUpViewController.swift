@@ -39,7 +39,6 @@ class GmailFacebookSignUpViewController: UIViewController {
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		// User tapped backed button. Logout
-		
 		ApplicationController().signOut { error in
 			if let error = error {
 				NSLog("Error Signing Out: \(error)")
@@ -49,19 +48,17 @@ class GmailFacebookSignUpViewController: UIViewController {
 	}
 	
 	private func setupViews() {
-		currentAuthUser = ApplicationController().fetchCurrentAuthenticatedUser()
-		
+		currentAuthUser = ApplicationController().fetchCurrentFireAuthenticatedUser()
 		let displayName = currentAuthUser?.displayName
 		let email  = currentAuthUser?.email
 		let phoneNumber = currentAuthUser?.phoneNumber
-		
 		
 		fullNameTextField?.text = displayName
 		emailTextFields?.text = email
 		phoneNumberTextField?.text = phoneNumber
 	}
 	
-	
+	// User is trying to update their user information on firestore
 	@IBAction func submitButtonPressed(_ sender: MDCButton) {
 		guard let fullName = fullNameTextField.text,
 			let email = emailTextFields.text,
@@ -82,7 +79,6 @@ class GmailFacebookSignUpViewController: UIViewController {
 			return
 		}
 		
-		
 		let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true,
 									   city: citi, country: country, email: email,
 									   fullName: fullName, phoneNumber: phoneNumber,
@@ -98,17 +94,17 @@ class GmailFacebookSignUpViewController: UIViewController {
 				return
 			}
 		
-			self.gooToMainView()
+			self.dismiss(animated: true)
 		}
 	}
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		
+	@IBAction func cancelButtonPressed(_ sender: UIButton) {
+		dismiss(animated: true)
 	}
-	
-	
-	
 }
+
+
+// MARK : Check TextViews for errors
 
 extension GmailFacebookSignUpViewController{
 	
@@ -122,15 +118,5 @@ extension GmailFacebookSignUpViewController{
 			return  false
 		}
 		return true
-	}
-	
-	private func gooToMainView() {
-		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
-			print("homeVC was not found!")
-			return
-		}
-		
-		view.window?.rootViewController = homeVC
-		view.window?.makeKeyAndVisible()
 	}
 }

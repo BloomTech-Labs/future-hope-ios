@@ -15,23 +15,23 @@ enum UserType {
 }
 
 class CurrentUser {
-	let aboutMe: String
+	let aboutMe: String?
 	let awaitingApproval: Bool
-	let city: String
-	let country: String
+	let city: String?
+	let country: String?
 	let email: String
 	let fullName: String
-	let phoneNumber: String
-	let photoUrl: URL
-	let stateProvince: String
+	let phoneNumber: String?
+	let photoUrl: URL?
+	let stateProvince: String?
 	let uid: String
-	let userType: UserType
+	let userType: UserType?
 	
-	let imageData: Data?
+	var imageData: Data?
 	
-	init(aboutMe: String, awaitingApproval: Bool, city: String, country: String,
-		 email: String, fullName: String, phoneNumber: String, photoUrl: URL,
-		 stateProvince: String, uid: String, userType: UserType,
+	init(aboutMe: String? = nil, awaitingApproval: Bool, city: String? = nil, country: String? = nil,
+		 email: String, fullName: String, phoneNumber: String? = nil, photoUrl: URL? = nil,
+		 stateProvince: String? = nil, uid: String, userType: UserType,
 		 imageData: Data? = nil
 		) {
 		self.aboutMe = aboutMe
@@ -57,7 +57,7 @@ class CurrentUser {
 		let fullName = dictionary["fullName"] as! String
 		let phoneNumber = dictionary["phoneNumber"] as! String
 		let photoUrlString = dictionary["photoUrl"] as! String
-		let photoUrl = URL(string: photoUrlString)!
+		let photoUrl = URL(string: photoUrlString)
 		let stateProvince = dictionary["stateProvince"] as! String
 		let uid = dictionary["uid"] as! String
 		let userType: UserType = (dictionary["userType"] as! String) == "mentor" ?  .mentor : .teacher
@@ -69,15 +69,15 @@ class CurrentUser {
 
 	var toDictionary: [String: Any]{
 		return [
-			"aboutMe": aboutMe,
+			"aboutMe": aboutMe ?? "",
 			"awaitingApproval": awaitingApproval,
-			"city": city,
-			"country": country,
+			"city": city ?? "",
+			"country": country ?? "",
 			"email": email,
 			"fullName": fullName,
-			"phoneNumber": phoneNumber,
-			"photoUrl": photoUrl.absoluteString,
-			"stateProvince": stateProvince,
+			"phoneNumber": phoneNumber ?? "",
+			"photoUrl": photoUrl?.absoluteString ?? "",
+			"stateProvince": stateProvince ?? "",
 			"uid": uid,
 			"userType": userType == .mentor ? "mentor" : "teacher"
 			]

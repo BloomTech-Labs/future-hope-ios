@@ -12,9 +12,8 @@ extension ProfileSettingsViewController: FutureHopSchoolControllerProtocol {}
 
 class ProfileSettingsViewController: UIViewController {
 	var futureHopSchoolController: ApplicationController?
-	
-	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province"]
-	var currentSignedInUser: CurrentUser?
+
+	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province", "FAQs"]
 	
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var namelabel: UILabel!
@@ -31,26 +30,28 @@ class ProfileSettingsViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		fetchCurrentAuthUser()
+		setupViews()
 	}
 	
-	private func fetchCurrentAuthUser() {
-		guard let user = futureHopSchoolController?.fetchCurrentAuthenticatedUser() else { return }
-		FireStoreController().fetchUser(uuid: user.uid) { user, error in
-			if let error = error {
-				NSLog("Error: \(error)")
-				return
-			}
-			self.currentSignedInUser = user
-			self.setupViews()
-		}
-	}
+//	private func fetchCurrentAuthUser() {
+//		guard let user = futureHopSchoolController?.fetchCurrentFireAuthenticatedUser() else { return }
+//		FireStoreController().fetchUserFromFireStore(uuid: user.uid) { user, error in
+//			if let error = error {
+//				NSLog("Error: \(error)")
+//				return
+//			}
+//			self.currentSignedInUser = user
+//			self.setupViews()
+//		}
+//	}
 	
 	
 	private func setupViews() {
-		guard let currentSignedInUser = currentSignedInUser else { return }
+		guard let currentSignedInUser = futureHopSchoolController?.currentlyLogedInUser else { return }
 		
-		futureHopSchoolController?.setCurrentUser(with: currentSignedInUser)
+		if let data = currentSignedInUser.imageData {
+			imageView.image = UIImage(data: data)
+		}
 		
 		imageView.layer.cornerRadius = 10
 		
@@ -61,20 +62,6 @@ class ProfileSettingsViewController: UIViewController {
 		aboutMeTextView?.text = currentSignedInUser.aboutMe
 		aboutMeTextView.layer.borderWidth = 1
 		aboutMeTextView.layer.cornerRadius = 4
-		
-		
-		futureHopSchoolController?.fetchUserImage(with: currentSignedInUser.photoUrl) { data, error in
-			if let error = error {
-				NSLog("Error fetching user image: \(error)")
-				return
-			}
-			
-			guard let data = data else { return }
-			
-			DispatchQueue.main.async {
-				self.imageView.image = UIImage(data: data)
-			}
-		}
 	}
 	
 }
@@ -108,12 +95,13 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == 0 {
-			
-			if indexPath.row == 0 {
+			if indexPath.row >= 0 && indexPath.row <= settings.count - 2 {
+				performSegue(withIdentifier: "UpdateUserInformationSegue", sender: self)
+			}else if indexPath.row == settings.count - 1 {
 				
+				// No exit
+				//performSegue(withIdentifier: "FAQsSegue", sender: self)
 			}
-			
-			
 		} else if indexPath.section == 1 {
 			if indexPath.row == 0 {
 				self.signOutWithFireStore()
@@ -124,19 +112,20 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 	
 	
 	private func getUserData(with row: Int) -> String? {
-		guard let currentSignedInUser = currentSignedInUser else { return nil }
+		guard let user = futureHopSchoolController?.currentlyLogedInUser  else { return nil }
+		
 		if row == 0 {
 			return "edit"
 		} else if row == 1 {
-			return currentSignedInUser.awaitingApproval == true ? "awaiting approval" : "approved"
+			return user.awaitingApproval == true ? "awaiting approval" : "approved"
 		} else if row == 2 {
-			return currentSignedInUser.city
+			return user.city
 		} else if row == 3 {
-			return currentSignedInUser.country
+			return user.country
 		}else if row == 4 {
-			return currentSignedInUser.email
+			return user.email
 		}else if row == 5 {
-			return currentSignedInUser.phoneNumber
+			return user.phoneNumber
 		}
 		return nil
 	}
