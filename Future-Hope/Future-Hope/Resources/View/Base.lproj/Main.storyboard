@@ -556,7 +556,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uNu-Zd-EPN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lZl-T2-KTm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SignInMainVC" automaticallyAdjustsScrollViewInsets="NO" id="lZl-T2-KTm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NPy-Nu-LbI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -905,10 +905,10 @@
             </objects>
             <point key="canvasLocation" x="3880" y="2435"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Ze9-zI-Wj2">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="nds-rf-W44" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="nds-rf-W44" customClass="TabBarViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GZm-rE-fhd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

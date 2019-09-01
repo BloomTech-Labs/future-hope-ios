@@ -22,11 +22,24 @@ class ApplicationController {
 	}
 	
 	
-	
 	func setCurrentUser(with user: CurrentUser) {
 		currentlyLogedInUser = user
 	}
 	
+	func fetchCurrentUser() {
+		guard let user = Auth.auth().currentUser else { return }
+		
+		FireStoreController().fetchUser(uuid: user.uid) { currenUser, error in
+			if let error = error {
+				NSLog("Error fetching user from firestore: \(error)")
+				return
+			}
+			
+			guard let currentUser = currenUser else { return }
+			self.currentlyLogedInUser = currentUser
+			print("fetch complete!!!")
+		}
+	}
 	
 	
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {

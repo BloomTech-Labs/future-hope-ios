@@ -31,6 +31,13 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupViews()
+		
+//		ApplicationController().signOut{ error in
+//			if let error = error {
+//				print("error: \(error)")
+//			}
+//		}
+		
     }
 
 	private func setupViews() {
@@ -51,6 +58,7 @@ class SignInViewController: UIViewController {
 			DispatchQueue.main.async {
 				self.gooToMainView()
 			}
+			
 			completion(nil)
 		}
 		
@@ -58,9 +66,13 @@ class SignInViewController: UIViewController {
 	
 	
 	private func handleAuthStateDidChange() {
-		handle = Auth.auth().addStateDidChangeListener({ (_, _) in
-			DispatchQueue.main.async {
-				self.gooToMainView()				
+		handle = Auth.auth().addStateDidChangeListener({ (_, user) in
+			
+			if let _ = user {
+				
+				DispatchQueue.main.async {
+					self.gooToMainView()
+				}
 			}
 			
 			
