@@ -57,7 +57,7 @@ class CurrentUser {
 		let fullName = dictionary["fullName"] as! String
 		let phoneNumber = dictionary["phoneNumber"] as! String
 		let photoUrlString = dictionary["photoUrl"] as! String
-		let photoUrl = URL(string: photoUrlString)!
+		let photoUrl = URL(string: photoUrlString)
 		let stateProvince = dictionary["stateProvince"] as! String
 		let uid = dictionary["uid"] as! String
 		let userType: UserType = (dictionary["userType"] as! String) == "mentor" ?  .mentor : .teacher
@@ -76,7 +76,7 @@ class CurrentUser {
 			"email": email,
 			"fullName": fullName,
 			"phoneNumber": phoneNumber ?? "",
-			"photoUrl": photoUrl!.absoluteString,
+			"photoUrl": photoUrl?.absoluteString ?? "",
 			"stateProvince": stateProvince ?? "",
 			"uid": uid,
 			"userType": userType == .mentor ? "mentor" : "teacher"

@@ -21,14 +21,16 @@ class ApplicationController {
 	// set current user and fetch image
 	func setCurrentlyLogedInUser(with user: CurrentUser) {
 		currentlyLogedInUser = user
-		fetchUserImage(with: self.currentlyLogedInUser!.photoUrl!) { data, error in
-			if let error = error {
-				print(error)
+		if let url = user.photoUrl {
+			fetchUserImage(with: url) { data, error in
+				if let error = error {
+					print(error)
+				}
+				guard let data  =  data,
+					let currentlyLogedInUser = self.currentlyLogedInUser else { return }
+				
+				currentlyLogedInUser.imageData = data
 			}
-			guard let data  =  data,
-				let currentlyLogedInUser = self.currentlyLogedInUser else { return }
-			
-			currentlyLogedInUser.imageData = data
 		}
 	}
 	
