@@ -44,19 +44,19 @@ class SignInViewController: UIViewController {
 	}
 	
 	private func checkIfuserExistAndLogin(with uid: String, completion: @escaping (Error?) -> ()) {
-		FireStoreController().fetchUser(uuid: uid) { user, error in
-			if let error = error {
-				print("\(error)")
-				completion(error)
-				return
-			}
-			
-			DispatchQueue.main.async {
-				self.gooToMainView()
-			}
-			
-			completion(nil)
-		}
+//		FireStoreController().fetchUserFromFireStore(uuid: uid) { user, error in
+//			if let error = error {
+//				print("\(error)")
+//				completion(error)
+//				return
+//			}
+//			
+//			DispatchQueue.main.async {
+//				self.gooToMainView()
+//			}
+//			
+//			completion(nil)
+//		}
 		
 	}
 	

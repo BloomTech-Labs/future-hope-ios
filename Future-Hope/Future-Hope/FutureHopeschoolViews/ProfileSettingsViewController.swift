@@ -31,20 +31,20 @@ class ProfileSettingsViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		fetchCurrentAuthUser()
+//		fetchCurrentAuthUser()
 	}
 	
-	private func fetchCurrentAuthUser() {
-		guard let user = futureHopSchoolController?.fetchCurrentFireAuthenticatedUser() else { return }
-		FireStoreController().fetchUser(uuid: user.uid) { user, error in
-			if let error = error {
-				NSLog("Error: \(error)")
-				return
-			}
-			self.currentSignedInUser = user
-			self.setupViews()
-		}
-	}
+//	private func fetchCurrentAuthUser() {
+//		guard let user = futureHopSchoolController?.fetchCurrentFireAuthenticatedUser() else { return }
+//		FireStoreController().fetchUserFromFireStore(uuid: user.uid) { user, error in
+//			if let error = error {
+//				NSLog("Error: \(error)")
+//				return
+//			}
+//			self.currentSignedInUser = user
+//			self.setupViews()
+//		}
+//	}
 	
 	
 	private func setupViews() {
@@ -63,18 +63,18 @@ class ProfileSettingsViewController: UIViewController {
 		aboutMeTextView.layer.cornerRadius = 4
 		
 		
-		futureHopSchoolController?.fetchUserImage(with: currentSignedInUser.photoUrl) { data, error in
-			if let error = error {
-				NSLog("Error fetching user image: \(error)")
-				return
-			}
-			
-			guard let data = data else { return }
-			
-			DispatchQueue.main.async {
-				self.imageView.image = UIImage(data: data)
-			}
-		}
+//		futureHopSchoolController?.fetchUserImage(with: currentSignedInUser.photoUrl) { data, error in
+//			if let error = error {
+//				NSLog("Error fetching user image: \(error)")
+//				return
+//			}
+//
+//			guard let data = data else { return }
+//
+//			DispatchQueue.main.async {
+//				self.imageView.image = UIImage(data: data)
+//			}
+//		}
 	}
 	
 }

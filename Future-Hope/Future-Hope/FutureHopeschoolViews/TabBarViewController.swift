@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 
 protocol FutureHopSchoolControllerProtocol: AnyObject {
@@ -23,7 +23,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		getCurrentUser()
-		print("here")
+		
 		for childVC in children {
 			if let vc = childVC as? FutureHopSchoolControllerProtocol {
 				vc.futureHopSchoolController = futureHopSchoolController
@@ -34,15 +34,34 @@ class TabBarViewController: UITabBarController {
 	
 	
 	private func getCurrentUser() {
-		guard let user = futureHopSchoolController.fetchCurrentFireAuthenticatedUser(),
-			let fullname = user.displayName,
-			let email = user.email,
-			let photoUrl = user.photoURL else { return }
+		guard let user = futureHopSchoolController.fetchCurrentFireAuthenticatedUser() else { return }
 		
-		print("\(fullname) - \(email) - \(photoUrl)")
+		//check firebase "user" with uid
+		FireStoreController.db.collection(FireStoreController.users)
+			.document(user.uid).getDocument { document, error in
+				if let error = error {
+					NSLog("Error fetching user from firestore: \(error)")
+				}
+				
+				if let doc = document, doc.exists {
+					guard let data  = doc.data() else { return }
+					let dictionary = data as [String: Any]
+					
+					if let currentUser = CurrentUser(dictionary: dictionary) {
+						self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
+					}
+					
+				}else {
+					self.createUser(user)
+				}
+		}
 		
-			
 	}
 	
-
+	
+	
+	
+	private func createUser(_ user: User) {
+		print("Create User: \(user.displayName ?? "")")
+	}
 }

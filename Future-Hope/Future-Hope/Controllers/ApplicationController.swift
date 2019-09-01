@@ -15,38 +15,33 @@ import GoogleSignIn
 
 class ApplicationController {
 	
-	private (set) var currentlyLogedInUser: CurrentUser? {
-		didSet {
-			// do ssome work
-		}
-	}
+	private (set) var currentlyLogedInUser: CurrentUser?
+	private (set) var AllUsers: [CurrentUser] = []
 	
-	func fetchCurrentUser() {
-		guard let user = Auth.auth().currentUser else { return }
-		
-		FireStoreController().fetchUser(uuid: user.uid) { currenUser, error in
+	// set current user and fetch image
+	func setCurrentlyLogedInUser(with user: CurrentUser) {
+		currentlyLogedInUser = user
+		fetchUserImage(with: self.currentlyLogedInUser!.photoUrl) { data, error in
 			if let error = error {
-				NSLog("Error fetching user from firestore: \(error)")
-				return
+				print(error)
 			}
+			guard let data  =  data,
+				let currentlyLogedInUser = self.currentlyLogedInUser else { return }
 			
-			guard let currentUser = currenUser else { return }
-			self.currentlyLogedInUser = currentUser
-			print("fetch complete!!!")
+			currentlyLogedInUser.imageData = data
 		}
 	}
-	
 	
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
 		print(url.absoluteString)
-		
+
 		URLSession.shared.dataTask(with: url) { data, _, error in
 			if let error = error{
 				NSLog("Error fetching image: \(error)")
 				completion(nil, error)
 				return
 			}
-			
+
 			guard let data = data else { return }
 			completion(data, nil)
 		}.resume()

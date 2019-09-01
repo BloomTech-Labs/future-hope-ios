@@ -27,7 +27,7 @@ class CurrentUser {
 	let uid: String
 	let userType: UserType
 	
-	let imageData: Data?
+	var imageData: Data?
 	
 	init(aboutMe: String, awaitingApproval: Bool, city: String, country: String,
 		 email: String, fullName: String, phoneNumber: String, photoUrl: URL,
