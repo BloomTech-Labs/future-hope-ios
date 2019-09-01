@@ -39,21 +39,17 @@ class TabBarViewController: UITabBarController {
 		//check firebase "user" with uid
 		FireStoreController.db.collection(FireStoreController.users)
 			.document(user.uid).getDocument { document, error in
-				if let error = error {
-					NSLog("Error fetching user from firestore: \(error)")
-				}
+			if let error = error {
+				NSLog("Error fetching user from firestore: \(error)")
+			}
 				
-				if let doc = document, doc.exists {
-					guard let data  = doc.data() else { return }
-					let dictionary = data as [String: Any]
-					
-					if let currentUser = CurrentUser(dictionary: dictionary) {
-						self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
-					}
-					
-				}else {
-					self.createUser(user)
+			if let doc = document, doc.exists, let data = doc.data() {
+				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
+					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
 				}
+			}else {
+				self.createUser(user)
+			}
 		}
 		
 	}
