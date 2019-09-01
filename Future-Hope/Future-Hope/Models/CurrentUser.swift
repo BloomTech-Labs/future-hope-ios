@@ -15,23 +15,23 @@ enum UserType {
 }
 
 class CurrentUser {
-	let aboutMe: String
+	let aboutMe: String?
 	let awaitingApproval: Bool
-	let city: String
-	let country: String
+	let city: String?
+	let country: String?
 	let email: String
 	let fullName: String
-	let phoneNumber: String
-	let photoUrl: URL
-	let stateProvince: String
+	let phoneNumber: String?
+	let photoUrl: URL?
+	let stateProvince: String?
 	let uid: String
-	let userType: UserType
+	let userType: UserType?
 	
 	var imageData: Data?
 	
-	init(aboutMe: String, awaitingApproval: Bool, city: String, country: String,
-		 email: String, fullName: String, phoneNumber: String, photoUrl: URL,
-		 stateProvince: String, uid: String, userType: UserType,
+	init(aboutMe: String? = nil, awaitingApproval: Bool, city: String? = nil, country: String? = nil,
+		 email: String, fullName: String, phoneNumber: String? = nil, photoUrl: URL? = nil,
+		 stateProvince: String? = nil, uid: String, userType: UserType,
 		 imageData: Data? = nil
 		) {
 		self.aboutMe = aboutMe
@@ -69,15 +69,15 @@ class CurrentUser {
 
 	var toDictionary: [String: Any]{
 		return [
-			"aboutMe": aboutMe,
+			"aboutMe": aboutMe ?? "",
 			"awaitingApproval": awaitingApproval,
-			"city": city,
-			"country": country,
+			"city": city ?? "",
+			"country": country ?? "",
 			"email": email,
 			"fullName": fullName,
-			"phoneNumber": phoneNumber,
-			"photoUrl": photoUrl.absoluteString,
-			"stateProvince": stateProvince,
+			"phoneNumber": phoneNumber ?? "",
+			"photoUrl": photoUrl!.absoluteString,
+			"stateProvince": stateProvince ?? "",
 			"uid": uid,
 			"userType": userType == .mentor ? "mentor" : "teacher"
 			]

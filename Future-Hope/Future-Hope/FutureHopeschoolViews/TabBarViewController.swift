@@ -54,9 +54,6 @@ class TabBarViewController: UITabBarController {
 		
 	}
 	
-	
-	
-	
 	private func createUser(_ user: User) {
 		print("Create User: \(user.displayName ?? "")")
 	}
