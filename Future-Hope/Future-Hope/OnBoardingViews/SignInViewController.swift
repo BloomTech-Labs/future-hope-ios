@@ -69,10 +69,11 @@ class SignInViewController: UIViewController {
 				self.present(ac, animated: true)
 				return
 			}
+			self.gooToMainView()
 		}
 	}
 	
-	// This will take you to the tabbar app
+	// will take you to the tabbar app
 	private func gooToMainView() {
 		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
 			print("homeVC was not found!")
