@@ -63,6 +63,8 @@ class GmailFacebookSignUpViewController: UIViewController {
 	
 	// User is trying to update their user information on firestore
 	@IBAction func submitButtonPressed(_ sender: MDCButton) {
+		print("here")
+		
 		guard let fullName = fullNameTextField.text,
 			let email = emailTextFields.text,
 			let citi = citiTextField.text,
@@ -75,22 +77,26 @@ class GmailFacebookSignUpViewController: UIViewController {
 				present(ac, animated: true)
 				return
 		}
-			if let	uid = currentAuthUser?.uid,
-				let url = currentAuthUser?.photoUrl {
-				let userType: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
-				
-				if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince,
-									country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
-					let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
-					present(ac, animated: true)
-					return
-				}
-				
-				let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: url, stateProvince: stateOrProvince, uid: uid, userType: userType)
-				addUserToFireBase(with: signedInUser)
-				
-			} else {
-				self.firebaseEmailSignIn()
+		
+		// get user Type
+		
+		let usertype: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
+		
+		
+		// check if signed in with gmail
+		if let	uid = currentAuthUser?.uid, let url = currentAuthUser?.photoUrl {
+			if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
+				present(ac, animated: true)
+				return
+			}
+			
+			let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: url, stateProvince: stateOrProvince, uid: uid, userType: usertype)
+			addUserToFireBase(with: signedInUser)
+			
+		}else {
+			let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: nil, stateProvince: stateOrProvince, uid: UUID().uuidString, userType: usertype)
+			self.firebaseEmailSignUp(with: signedInUser)
 		}
 	}
 	
@@ -106,8 +112,11 @@ class GmailFacebookSignUpViewController: UIViewController {
 		}
 	}
 		
-	private func firebaseEmailSignIn() {
-		
+	private func firebaseEmailSignUp(with user: CurrentUser) {
+		//check that passwords match
+		//log in with fireAuth
+		//send data to fire store
+		print("firebase email Sign up")
 	}
 	
 	@IBAction func cancelButtonPressed(_ sender: UIButton) {
