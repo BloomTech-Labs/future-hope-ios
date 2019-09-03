@@ -113,10 +113,30 @@ class GmailFacebookSignUpViewController: UIViewController {
 	}
 		
 	private func firebaseEmailSignUp(with user: CurrentUser) {
-		//check that passwords match
-		//log in with fireAuth
-		//send data to fire store
-		print("firebase email Sign up")
+		guard let password = passwordTextField.text,
+			let confirmPassword = confirmPasswordTextView.text else {
+				
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Your passwords do not match!", message: nil)
+				present(ac, animated: true)
+				
+				passwordTextField.text = nil
+				confirmPasswordTextView.text = nil
+				return
+		}
+		
+		if password == confirmPassword {
+			Auth.auth().createUser(withEmail: user.email,password: password) { authResult, error in
+				if let error = error {
+					NSLog("Error creating user with password: \(error)")
+					let ac = ApplicationController().simpleActionSheetAllert(with: "Netowrk Error", message: "Please Try again!")
+					self.present(ac, animated: true)
+					return
+				}
+				
+				self.gooToMainView()
+			}
+		}
+		
 	}
 	
 	@IBAction func cancelButtonPressed(_ sender: UIButton) {
@@ -128,7 +148,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 
 // MARK : Check TextViews for errors
 
-extension GmailFacebookSignUpViewController{
+extension GmailFacebookSignUpViewController {
 	
 	private func checkTextIsEmpty(fullName: String, email: String, citi: String, stateOrProvince: String, country: String, phoneNumber: String, aboutMe: String) -> Bool{
 		return fullName.isEmpty || email.isEmpty || citi.isEmpty || stateOrProvince.isEmpty || country.isEmpty || phoneNumber.isEmpty || aboutMe.isEmpty
@@ -140,5 +160,15 @@ extension GmailFacebookSignUpViewController{
 			return  false
 		}
 		return true
+	}
+	
+	private func gooToMainView() {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
+			print("homeVC was not found!")
+			return
+		}
+		
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
 	}
 }
