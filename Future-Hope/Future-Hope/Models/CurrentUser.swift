@@ -64,7 +64,7 @@ class CurrentUser {
 		let userType: UserType = (dictionary["userType"] as! String) == "mentor" ?  .mentor : .teacher
 		
 		self.init(aboutMe: aboutMe, awaitingApproval: awaitingApproval, city: city, country: country,
-				  email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: URL(string: photoUrlString)!,
+				  email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: URL(string: photoUrlString),
 				  stateProvince: stateProvince, uid: uid, userType: userType)
 	}
 

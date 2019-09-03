@@ -38,17 +38,6 @@ class GmailFacebookSignUpViewController: UIViewController {
 		setupViews()
 	}
 	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		// User tapped backed button. Logout
-		ApplicationController().signOut { error in
-			if let error = error {
-				NSLog("Error Signing Out: \(error)")
-				return
-			}
-		}
-	}
-	
 	private func setupViews() {
 		 guard let currentAuthUser = currentAuthUser else { return }
 		fullNameTextField?.text = currentAuthUser.fullName
@@ -63,8 +52,6 @@ class GmailFacebookSignUpViewController: UIViewController {
 	
 	// User is trying to update their user information on firestore
 	@IBAction func submitButtonPressed(_ sender: MDCButton) {
-		print("here")
-		
 		guard let fullName = fullNameTextField.text,
 			let email = emailTextFields.text,
 			let citi = citiTextField.text,
@@ -79,9 +66,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 		}
 		
 		// get user Type
-		
 		let usertype: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
-		
 		
 		// check if signed in with gmail
 		if let	uid = currentAuthUser?.uid, let url = currentAuthUser?.photoUrl {
@@ -133,15 +118,30 @@ class GmailFacebookSignUpViewController: UIViewController {
 					return
 				}
 				
-				self.gooToMainView()
+//				guard let authResult = authResult else { return }
+				
+				guard let thisUser = ApplicationController().fetchCurrentFireAuthenticatedUser() else { return }
+				
+				let uid = thisUser.uid
+				let newUser  = CurrentUser(aboutMe: user.aboutMe, awaitingApproval: user.awaitingApproval, city: user.city, country: user.country, email: user.email, fullName: user.fullName, phoneNumber: user.phoneNumber, photoUrl: user.photoUrl, stateProvince: user.stateProvince, uid: uid, userType: user.userType!, imageData: nil)
+				print(thisUser.uid)
+				DispatchQueue.main.async {
+					self.addUserToFireBase(with: newUser)
+					self.gooToMainView()
+				}
+				
 			}
 		}
 		
 	}
 	
 	@IBAction func cancelButtonPressed(_ sender: UIButton) {
-		dismiss(animated: true)
-		navigationController?.popViewController(animated: true)
+		if let nav = navigationController {
+			nav.popViewController(animated: true)
+		} else {
+			dismiss(animated: true)
+	
+		}
 	}
 }
 
