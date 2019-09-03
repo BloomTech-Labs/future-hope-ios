@@ -44,10 +44,10 @@ class TabBarViewController: UITabBarController {
 			}
 				
 			if let doc = document, doc.exists, let data = doc.data() {
-				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
-					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
-//					print("found account")
-				}
+//				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
+//					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
+////					print("found account")
+//				}
 			}else {
 				self.createUser(user)
 				print("Create an account")
