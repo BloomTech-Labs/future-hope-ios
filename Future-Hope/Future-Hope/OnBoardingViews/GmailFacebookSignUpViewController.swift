@@ -16,7 +16,7 @@ import MaterialComponents.MaterialButtons
 
 class GmailFacebookSignUpViewController: UIViewController {
 
-	var currentAuthUser: User?
+	var currentAuthUser: CurrentUser?
 	
 	@IBOutlet var fullNameTextField: MDCTextField!
 	@IBOutlet var emailTextFields: MDCTextField!
@@ -27,6 +27,8 @@ class GmailFacebookSignUpViewController: UIViewController {
 	@IBOutlet var aboutmeTextView: UITextView!
 	@IBOutlet var userTypeSegmented: UISegmentedControl!
 
+	@IBOutlet var passwordTextField: MDCTextField!
+	@IBOutlet var confirmPasswordTextView: MDCTextField!
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -36,26 +38,16 @@ class GmailFacebookSignUpViewController: UIViewController {
 		setupViews()
 	}
 	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		// User tapped backed button. Logout
-		ApplicationController().signOut { error in
-			if let error = error {
-				NSLog("Error Signing Out: \(error)")
-				return
-			}
-		}
-	}
-	
 	private func setupViews() {
-		currentAuthUser = ApplicationController().fetchCurrentFireAuthenticatedUser()
-		let displayName = currentAuthUser?.displayName
-		let email  = currentAuthUser?.email
-		let phoneNumber = currentAuthUser?.phoneNumber
-		
-		fullNameTextField?.text = displayName
-		emailTextFields?.text = email
-		phoneNumberTextField?.text = phoneNumber
+		 guard let currentAuthUser = currentAuthUser else { return }
+		fullNameTextField?.text = currentAuthUser.fullName
+		emailTextFields?.text = currentAuthUser.email
+		citiTextField?.text = currentAuthUser.city
+		stateOrProvinceTextField?.text = currentAuthUser.stateProvince
+		countryTextField?.text = currentAuthUser.country
+		aboutmeTextView?.text = currentAuthUser.aboutMe
+		userTypeSegmented.selectedSegmentIndex = currentAuthUser.userType! == .mentor ? 0 :  1
+		phoneNumberTextField?.text = currentAuthUser.phoneNumber
 	}
 	
 	// User is trying to update their user information on firestore
@@ -66,47 +58,97 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let stateOrProvince = stateOrProvinceTextField.text,
 			let country = countryTextField.text,
 			let phoneNumber = phoneNumberTextField.text,
-			let aboutme = aboutmeTextView.text,
-			let	uid = currentAuthUser?.uid,
-			let url = currentAuthUser?.photoURL	else  { return }
-		
-		let userType: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
-		
-		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince,
-							country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
-			let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
-			present(ac, animated: true)
-			return
+			let aboutme = aboutmeTextView.text else {
+				// found nothing
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Please feel in all areas", message: nil)
+				present(ac, animated: true)
+				return
 		}
 		
-		let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true,
-									   city: citi, country: country, email: email,
-									   fullName: fullName, phoneNumber: phoneNumber,
-									   photoUrl: url, stateProvince: stateOrProvince,
-									   uid: uid, userType: userType)
+		// get user Type
+		let usertype: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
 		
-
-		FireStoreController().addUserToFireStore(with: signedInUser) { error in
+		// check if signed in with gmail
+		if let	uid = currentAuthUser?.uid, let url = currentAuthUser?.photoUrl {
+			if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
+				present(ac, animated: true)
+				return
+			}
+			
+			let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: url, stateProvince: stateOrProvince, uid: uid, userType: usertype)
+			addUserToFireBase(with: signedInUser)
+			
+		}else {
+			let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: nil, stateProvince: stateOrProvince, uid: UUID().uuidString, userType: usertype)
+			self.firebaseEmailSignUp(with: signedInUser)
+		}
+	}
+	
+	private func addUserToFireBase(with user: CurrentUser) {
+		FireStoreController().addUserToFireStore(with: user) { error in
 			if let error = error {
 				let ac = ApplicationController().simpleActionSheetAllert(with: "Network Error", message: "Please Try Again 🧐")
 				self.present(ac, animated: true)
 				NSLog("Error adding user to firestore: \(error)")
 				return
 			}
-		
 			self.dismiss(animated: true)
 		}
 	}
+		
+	private func firebaseEmailSignUp(with user: CurrentUser) {
+		guard let password = passwordTextField.text,
+			let confirmPassword = confirmPasswordTextView.text else {
+				
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Your passwords do not match!", message: nil)
+				present(ac, animated: true)
+				
+				passwordTextField.text = nil
+				confirmPasswordTextView.text = nil
+				return
+		}
+		
+		if password == confirmPassword {
+			Auth.auth().createUser(withEmail: user.email,password: password) { authResult, error in
+				if let error = error {
+					NSLog("Error creating user with password: \(error)")
+					let ac = ApplicationController().simpleActionSheetAllert(with: "Netowrk Error", message: "Please Try again!")
+					self.present(ac, animated: true)
+					return
+				}
+				
+//				guard let authResult = authResult else { return }
+				
+				guard let thisUser = ApplicationController().fetchCurrentFireAuthenticatedUser() else { return }
+				
+				let uid = thisUser.uid
+				let newUser  = CurrentUser(aboutMe: user.aboutMe, awaitingApproval: user.awaitingApproval, city: user.city, country: user.country, email: user.email, fullName: user.fullName, phoneNumber: user.phoneNumber, photoUrl: user.photoUrl, stateProvince: user.stateProvince, uid: uid, userType: user.userType!, imageData: nil)
+				print(thisUser.uid)
+				DispatchQueue.main.async {
+					self.addUserToFireBase(with: newUser)
+					self.gooToMainView()
+				}
+				
+			}
+		}
+		
+	}
 	
 	@IBAction func cancelButtonPressed(_ sender: UIButton) {
-		dismiss(animated: true)
+		if let nav = navigationController {
+			nav.popViewController(animated: true)
+		} else {
+			dismiss(animated: true)
+	
+		}
 	}
 }
 
 
 // MARK : Check TextViews for errors
 
-extension GmailFacebookSignUpViewController{
+extension GmailFacebookSignUpViewController {
 	
 	private func checkTextIsEmpty(fullName: String, email: String, citi: String, stateOrProvince: String, country: String, phoneNumber: String, aboutMe: String) -> Bool{
 		return fullName.isEmpty || email.isEmpty || citi.isEmpty || stateOrProvince.isEmpty || country.isEmpty || phoneNumber.isEmpty || aboutMe.isEmpty
@@ -118,5 +160,15 @@ extension GmailFacebookSignUpViewController{
 			return  false
 		}
 		return true
+	}
+	
+	private func gooToMainView() {
+		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
+			print("homeVC was not found!")
+			return
+		}
+		
+		view.window?.rootViewController = homeVC
+		view.window?.makeKeyAndVisible()
 	}
 }

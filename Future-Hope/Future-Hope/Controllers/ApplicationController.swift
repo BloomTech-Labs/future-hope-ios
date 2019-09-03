@@ -11,8 +11,6 @@ import Firebase
 import FirebaseCore
 import GoogleSignIn
 
-
-
 class ApplicationController {
 	
 	private (set) var currentlyLogedInUser: CurrentUser?

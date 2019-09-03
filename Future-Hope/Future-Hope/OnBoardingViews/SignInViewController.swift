@@ -31,9 +31,6 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupViews()
-		
-
-		
     }
 
 	private func setupViews() {
@@ -41,23 +38,6 @@ class SignInViewController: UIViewController {
 		passwordTextField.delegate = self
 		GIDSignIn.sharedInstance()?.presentingViewController = self
 		handleAuthStateDidChange()
-	}
-	
-	private func checkIfuserExistAndLogin(with uid: String, completion: @escaping (Error?) -> ()) {
-//		FireStoreController().fetchUserFromFireStore(uuid: uid) { user, error in
-//			if let error = error {
-//				print("\(error)")
-//				completion(error)
-//				return
-//			}
-//			
-//			DispatchQueue.main.async {
-//				self.gooToMainView()
-//			}
-//			
-//			completion(nil)
-//		}
-		
 	}
 	
 	// Will run ones firebase senses a login
@@ -89,10 +69,11 @@ class SignInViewController: UIViewController {
 				self.present(ac, animated: true)
 				return
 			}
+			self.gooToMainView()
 		}
 	}
 	
-	// This will take you to the tabbar app
+	// will take you to the tabbar app
 	private func gooToMainView() {
 		guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
 			print("homeVC was not found!")

@@ -13,7 +13,7 @@ extension ProfileSettingsViewController: FutureHopSchoolControllerProtocol {}
 class ProfileSettingsViewController: UIViewController {
 	var futureHopSchoolController: ApplicationController?
 
-	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province", "FAQs"]
+	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province", "Edit ALL", "FAQs"]
 	
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var namelabel: UILabel!
@@ -33,19 +33,6 @@ class ProfileSettingsViewController: UIViewController {
 		setupViews()
 	}
 	
-//	private func fetchCurrentAuthUser() {
-//		guard let user = futureHopSchoolController?.fetchCurrentFireAuthenticatedUser() else { return }
-//		FireStoreController().fetchUserFromFireStore(uuid: user.uid) { user, error in
-//			if let error = error {
-//				NSLog("Error: \(error)")
-//				return
-//			}
-//			self.currentSignedInUser = user
-//			self.setupViews()
-//		}
-//	}
-	
-	
 	private func setupViews() {
 		guard let currentSignedInUser = futureHopSchoolController?.currentlyLogedInUser else { return }
 		
@@ -63,6 +50,14 @@ class ProfileSettingsViewController: UIViewController {
 		aboutMeTextView.layer.borderWidth = 1
 		aboutMeTextView.layer.cornerRadius = 4
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "UpdateUserInformationSegue" {
+			guard let vc = segue.destination as? GmailFacebookSignUpViewController else { return }
+			vc.currentAuthUser = futureHopSchoolController?.currentlyLogedInUser
+		}
+	}
+	
 	
 }
 
