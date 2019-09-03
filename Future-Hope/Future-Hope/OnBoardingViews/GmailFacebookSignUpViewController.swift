@@ -69,40 +69,50 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let stateOrProvince = stateOrProvinceTextField.text,
 			let country = countryTextField.text,
 			let phoneNumber = phoneNumberTextField.text,
-			let aboutme = aboutmeTextView.text,
-			let	uid = currentAuthUser?.uid,
-			let url = currentAuthUser?.photoUrl	else  { return }
-		
-		let userType: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
-		
-		if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince,
-							country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
-			let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
-			present(ac, animated: true)
-			return
+			let aboutme = aboutmeTextView.text else {
+				// found nothing
+				let ac = ApplicationController().simpleActionSheetAllert(with: "Please feel in all areas", message: nil)
+				present(ac, animated: true)
+				return
 		}
-		
-		let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true,
-									   city: citi, country: country, email: email,
-									   fullName: fullName, phoneNumber: phoneNumber,
-									   photoUrl: url, stateProvince: stateOrProvince,
-									   uid: uid, userType: userType)
-		
-
-		FireStoreController().addUserToFireStore(with: signedInUser) { error in
+			if let	uid = currentAuthUser?.uid,
+				let url = currentAuthUser?.photoUrl {
+				let userType: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
+				
+				if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince,
+									country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
+					let ac = ApplicationController().simpleActionSheetAllert(with: "Your Text field is empty", message: nil)
+					present(ac, animated: true)
+					return
+				}
+				
+				let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: url, stateProvince: stateOrProvince, uid: uid, userType: userType)
+				addUserToFireBase(with: signedInUser)
+				
+			} else {
+				self.firebaseEmailSignIn()
+		}
+	}
+	
+	private func addUserToFireBase(with user: CurrentUser) {
+		FireStoreController().addUserToFireStore(with: user) { error in
 			if let error = error {
 				let ac = ApplicationController().simpleActionSheetAllert(with: "Network Error", message: "Please Try Again 🧐")
 				self.present(ac, animated: true)
 				NSLog("Error adding user to firestore: \(error)")
 				return
 			}
-		
 			self.dismiss(animated: true)
 		}
+	}
+		
+	private func firebaseEmailSignIn() {
+		
 	}
 	
 	@IBAction func cancelButtonPressed(_ sender: UIButton) {
 		dismiss(animated: true)
+		navigationController?.popViewController(animated: true)
 	}
 }
 
