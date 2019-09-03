@@ -16,7 +16,7 @@ import MaterialComponents.MaterialButtons
 
 class GmailFacebookSignUpViewController: UIViewController {
 
-	var currentAuthUser: User?
+	var currentAuthUser: CurrentUser?
 	
 	@IBOutlet var fullNameTextField: MDCTextField!
 	@IBOutlet var emailTextFields: MDCTextField!
