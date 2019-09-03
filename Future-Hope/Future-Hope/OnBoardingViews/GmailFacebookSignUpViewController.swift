@@ -27,6 +27,8 @@ class GmailFacebookSignUpViewController: UIViewController {
 	@IBOutlet var aboutmeTextView: UITextView!
 	@IBOutlet var userTypeSegmented: UISegmentedControl!
 
+	@IBOutlet var passwordTextField: MDCTextField!
+	@IBOutlet var confirmPasswordTextView: MDCTextField!
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -48,14 +50,15 @@ class GmailFacebookSignUpViewController: UIViewController {
 	}
 	
 	private func setupViews() {
-		currentAuthUser = ApplicationController().fetchCurrentFireAuthenticatedUser()
-		let displayName = currentAuthUser?.displayName
-		let email  = currentAuthUser?.email
-		let phoneNumber = currentAuthUser?.phoneNumber
-		
-		fullNameTextField?.text = displayName
-		emailTextFields?.text = email
-		phoneNumberTextField?.text = phoneNumber
+		 guard let currentAuthUser = currentAuthUser else { return }
+		fullNameTextField?.text = currentAuthUser.fullName
+		emailTextFields?.text = currentAuthUser.email
+		citiTextField?.text = currentAuthUser.city
+		stateOrProvinceTextField?.text = currentAuthUser.stateProvince
+		countryTextField?.text = currentAuthUser.country
+		aboutmeTextView?.text = currentAuthUser.aboutMe
+		userTypeSegmented.selectedSegmentIndex = currentAuthUser.userType! == .mentor ? 0 :  1
+		phoneNumberTextField?.text = currentAuthUser.phoneNumber
 	}
 	
 	// User is trying to update their user information on firestore
@@ -68,7 +71,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 			let phoneNumber = phoneNumberTextField.text,
 			let aboutme = aboutmeTextView.text,
 			let	uid = currentAuthUser?.uid,
-			let url = currentAuthUser?.photoURL	else  { return }
+			let url = currentAuthUser?.photoUrl	else  { return }
 		
 		let userType: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
 		

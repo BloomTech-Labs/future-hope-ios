@@ -84,7 +84,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="facebookLogInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9Z-gX-KNf"/>
                                             <segue destination="F0S-ts-cdg" kind="show" identifier="EmailSignUpSegue" id="37y-yV-ifC"/>
                                         </connections>
                                     </button>
@@ -885,9 +884,11 @@
                     <connections>
                         <outlet property="aboutmeTextView" destination="yxQ-Rp-mNa" id="ds5-vi-ORt"/>
                         <outlet property="citiTextField" destination="D6n-bA-kk9" id="KeT-ba-vJ2"/>
+                        <outlet property="confirmPasswordTextView" destination="2gu-QA-ceu" id="uqM-DM-HFU"/>
                         <outlet property="countryTextField" destination="7rE-Oa-N3K" id="BGY-U2-R7J"/>
-                        <outlet property="emailTextFields" destination="odA-tZ-Eir" id="Fnf-T9-5pt"/>
-                        <outlet property="fullNameTextField" destination="DWk-lk-ieB" id="YjL-HV-L13"/>
+                        <outlet property="emailTextFields" destination="odA-tZ-Eir" id="7Vi-YN-nfN"/>
+                        <outlet property="fullNameTextField" destination="DWk-lk-ieB" id="rfy-Ob-pXX"/>
+                        <outlet property="passwordTextField" destination="LdA-07-zgn" id="yct-DF-5j4"/>
                         <outlet property="phoneNumberTextField" destination="QXF-YN-fTk" id="KPQ-2p-R1x"/>
                         <outlet property="stateOrProvinceTextField" destination="LAy-3A-wVW" id="sXW-MD-cNa"/>
                         <outlet property="userTypeSegmented" destination="b1g-oj-OKH" id="lgF-T9-igJ"/>
