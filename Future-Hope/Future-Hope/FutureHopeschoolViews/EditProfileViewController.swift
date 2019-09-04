@@ -50,6 +50,34 @@ class EditProfileViewController: UIViewController {
 	}
 	
 	@IBAction func submitButtonPressed(_ sender: Any) {
+		guard let newEditString = newEditTextField.text,
+			let currentUser = currentUser,
+			let editString = editString else { return }
+		
+		let newUser = currentUser
+		
+		if editString == "name" {
+			newUser.fullName = newEditString
+		} else if editString == "city" {
+			newUser.city = newEditString
+		} else if editString == "state" {
+			newUser.stateProvince = newEditString
+		} else if editString == "phone number" {
+			newUser.phoneNumber = newEditString
+		} else if editString == "about me" {
+			newUser.aboutMe = newEditString
+		}
+		
+		// Just updating current user
+		FireStoreController().addUserToFireStore(with: newUser) { error in
+			if let error = error {
+				print("Error updating firestore: \(error)")
+			}
+			self.dismiss(animated: true)
+			print("success!!!!!!!")
+		}
+		
+		
 	}
 	
 	
