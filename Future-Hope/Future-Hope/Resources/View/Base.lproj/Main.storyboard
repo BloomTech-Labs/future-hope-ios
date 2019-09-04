@@ -155,7 +155,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="3Hd-O4-ylh" id="Csn-f6-nXq"/>
                         <outlet property="passwordTextField" destination="emG-BH-p8C" id="EuW-hm-Hdf"/>
-                        <segue destination="nds-rf-W44" kind="show" identifier="SegueToMainApp" id="kNY-fm-lqH"/>
+                        <segue destination="nds-rf-W44" kind="showDetail" identifier="SegueToMainApp" id="kNY-fm-lqH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -171,17 +171,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gdb-TX-ONS">
-                                <rect key="frame" x="8" y="96" width="398" height="154.5"/>
+                                <rect key="frame" x="8" y="52" width="398" height="198.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ueV-kT-hF5">
-                                        <rect key="frame" x="0.0" y="0.5" width="195" height="154"/>
+                                        <rect key="frame" x="0.0" y="22.5" width="195" height="154"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ueV-kT-hF5" secondAttribute="height" multiplier="195:154" id="x47-ES-LPk"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jYM-ec-Svs">
-                                        <rect key="frame" x="203" y="11" width="195" height="132.5"/>
+                                        <rect key="frame" x="203" y="33" width="195" height="132.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRL-Mx-6YC">
                                                 <rect key="frame" x="0.0" y="0.0" width="195" height="19.5"/>
@@ -292,7 +292,7 @@
                         <outlet property="tableView" destination="glC-hy-roy" id="ogU-Hb-2Ng"/>
                         <outlet property="userTypeLabel" destination="tqo-4H-A3s" id="JSo-bP-5dd"/>
                         <segue destination="ycz-yh-j5J" kind="show" identifier="FAQsSegue" id="iPQ-G7-jDJ"/>
-                        <segue destination="ef7-sY-hF8" kind="show" identifier="UpdateUserInformationSegue" id="J64-Kj-rWU"/>
+                        <segue destination="0uH-y4-tPX" kind="show" identifier="UpdateUserInformationSegue" id="gRM-9M-7Hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgz-qY-SzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-5X-8kD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1156"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xte-02-a9j" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
@@ -565,7 +565,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBb-kr-Ue2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3553.6231884057975" y="1381.4732142857142"/>
+            <point key="canvasLocation" x="5578" y="1412"/>
+        </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="LdS-mc-MPt">
+            <objects>
+                <viewController id="0uH-y4-tPX" customClass="EditProfileViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YO0-hw-I1N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="edit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPc-N4-zXQ">
+                                <rect key="frame" x="20" y="94" width="374" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jp-bg-9iy" customClass="MDCTextField">
+                                <rect key="frame" x="20" y="167" width="374" height="33"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUw-TI-68K" customClass="MDCButton">
+                                <rect key="frame" x="356" y="56" width="30" height="30"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButtonPressed:" destination="0uH-y4-tPX" eventType="touchUpInside" id="NS8-Ic-TiJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD7-eW-dqh" customClass="MDCRaisedButton">
+                                <rect key="frame" x="20" y="220" width="374" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="0uH-y4-tPX" eventType="touchUpInside" id="kFH-7v-Qk5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9510807966" green="0.9510807966" blue="0.9510807966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9jp-bg-9iy" firstAttribute="leading" secondItem="wHF-V8-Lzc" secondAttribute="leading" constant="20" id="2NU-2z-rO9"/>
+                            <constraint firstItem="KD7-eW-dqh" firstAttribute="top" secondItem="9jp-bg-9iy" secondAttribute="bottom" constant="20" id="2Qb-Sl-6HW"/>
+                            <constraint firstItem="wHF-V8-Lzc" firstAttribute="trailing" secondItem="9jp-bg-9iy" secondAttribute="trailing" constant="20" id="BcM-qz-deP"/>
+                            <constraint firstItem="wHF-V8-Lzc" firstAttribute="trailing" secondItem="kPc-N4-zXQ" secondAttribute="trailing" constant="20" id="Ijt-t8-9Eb"/>
+                            <constraint firstItem="9jp-bg-9iy" firstAttribute="top" secondItem="kPc-N4-zXQ" secondAttribute="bottom" constant="40" id="KMi-6Z-rgZ"/>
+                            <constraint firstItem="kPc-N4-zXQ" firstAttribute="leading" secondItem="wHF-V8-Lzc" secondAttribute="leading" constant="20" id="RwX-rR-Rsy"/>
+                            <constraint firstItem="KD7-eW-dqh" firstAttribute="leading" secondItem="wHF-V8-Lzc" secondAttribute="leading" constant="20" id="WKY-fz-0kp"/>
+                            <constraint firstItem="kPc-N4-zXQ" firstAttribute="top" secondItem="yUw-TI-68K" secondAttribute="bottom" constant="8" id="d7L-nQ-toy"/>
+                            <constraint firstItem="wHF-V8-Lzc" firstAttribute="trailing" secondItem="KD7-eW-dqh" secondAttribute="trailing" constant="20" id="iOh-Mg-fDR"/>
+                            <constraint firstItem="wHF-V8-Lzc" firstAttribute="trailing" secondItem="yUw-TI-68K" secondAttribute="trailing" constant="28" id="rvQ-gm-9aP"/>
+                            <constraint firstItem="9jp-bg-9iy" firstAttribute="top" secondItem="kPc-N4-zXQ" secondAttribute="bottom" constant="40" id="si1-Ho-C1W"/>
+                            <constraint firstItem="kPc-N4-zXQ" firstAttribute="top" secondItem="wHF-V8-Lzc" secondAttribute="top" constant="50" id="xoj-F1-8wE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wHF-V8-Lzc"/>
+                    </view>
+                    <connections>
+                        <outlet property="editLabel" destination="kPc-N4-zXQ" id="qV3-jC-7hx"/>
+                        <outlet property="newEditTextField" destination="9jp-bg-9iy" id="j1z-fA-z7K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3UN-NL-qk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2995.6521739130435" y="1363.3928571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uNu-Zd-EPN">
@@ -955,6 +1020,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qf2-5o-ouI"/>
+        <segue reference="iPQ-G7-jDJ"/>
     </inferredMetricsTieBreakers>
 </document>

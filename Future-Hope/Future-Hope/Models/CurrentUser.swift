@@ -15,17 +15,17 @@ enum UserType {
 }
 
 class CurrentUser {
-	let aboutMe: String?
-	let awaitingApproval: Bool
-	let city: String?
-	let country: String?
+	var aboutMe: String?
+	var awaitingApproval: Bool
+	var city: String?
+	var country: String?
 	let email: String
-	let fullName: String
-	let phoneNumber: String?
-	let photoUrl: URL?
-	let stateProvince: String?
-	let uid: String
-	let userType: UserType?
+	var fullName: String
+	var phoneNumber: String?
+	var photoUrl: URL?
+	var stateProvince: String?
+	var uid: String
+	var userType: UserType?
 	
 	var imageData: Data?
 	

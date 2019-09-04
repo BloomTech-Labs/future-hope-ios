@@ -7,10 +7,7 @@
 //
 
 import UIKit
-
 import Firebase
-
-
 import MaterialComponents.MaterialTextFields
 import MaterialComponents.MaterialButtons
 
@@ -146,7 +143,6 @@ class GmailFacebookSignUpViewController: UIViewController {
 			nav.popViewController(animated: true)
 		} else {
 			dismiss(animated: true)
-	
 		}
 	}
 }
