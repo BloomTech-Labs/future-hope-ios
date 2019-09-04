@@ -18,6 +18,7 @@
 		E84E8BEA23181BDB000165AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84E8BE823181BDB000165AE /* LaunchScreen.storyboard */; };
 		E84E8BEC23181C82000165AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84E8BEB23181C82000165AE /* Assets.xcassets */; };
 		E8561461231F8A1E0000AFB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8561460231F8A1E0000AFB5 /* GoogleService-Info.plist */; };
+		E8561463232025FC0000AFB5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8561462232025FC0000AFB5 /* EditProfileViewController.swift */; };
 		E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86133C423163FDA00F1611B /* FireStoreController.swift */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
 		E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* CurrentUser.swift */; };
@@ -39,6 +40,7 @@
 		E84E8BE923181BDB000165AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../labs15/Research/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		E84E8BEB23181C82000165AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../labs15/Research/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
 		E8561460231F8A1E0000AFB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8561462232025FC0000AFB5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E86133C423163FDA00F1611B /* FireStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreController.swift; sourceTree = "<group>"; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E87C3B49230C8EB700161EFE /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				E81EB6FA2318DFBE006189FA /* TabBarViewController.swift */,
 				E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */,
+				E8561462232025FC0000AFB5 /* EditProfileViewController.swift */,
 			);
 			path = FutureHopeschoolViews;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				E81EB6FF231A2F4F006189FA /* SimpleFactsTableViewController.swift in Sources */,
 				E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */,
 				E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */,
+				E8561463232025FC0000AFB5 /* EditProfileViewController.swift in Sources */,
 				E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */,
 				E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */,
 				E81B6B612315132B00A2BD0A /* SlideOutContainerViewController.swift in Sources */,
