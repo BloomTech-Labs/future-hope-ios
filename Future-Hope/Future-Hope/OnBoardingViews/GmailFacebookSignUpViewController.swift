@@ -78,9 +78,12 @@ class GmailFacebookSignUpViewController: UIViewController {
 				present(ac, animated: true)
 				return
 			}
+			print("submit button!")
 			
 			let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: url, stateProvince: stateOrProvince, uid: uid, userType: usertype)
 			addUserToFireBase(with: signedInUser)
+			//pass controller for update ore create delegate
+			navigationController?.popViewController(animated: true)
 			
 		}else {
 			let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: nil, stateProvince: stateOrProvince, uid: UUID().uuidString, userType: usertype)
