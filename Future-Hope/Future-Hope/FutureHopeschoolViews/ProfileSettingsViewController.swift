@@ -13,7 +13,7 @@ extension ProfileSettingsViewController: FutureHopSchoolControllerProtocol {}
 class ProfileSettingsViewController: UIViewController {
 	var futureHopSchoolController: ApplicationController?
 
-	private let settings = ["About Me", "city", "country","email", "phone number", "State/Province", "Edit ALL", "FAQs"]
+	private let settings = ["Edit ALL", "FAQs"]
 	
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var namelabel: UILabel!

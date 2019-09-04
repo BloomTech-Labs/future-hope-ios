@@ -26,9 +26,9 @@ class GmailFacebookSignUpViewController: UIViewController {
 	@IBOutlet var phoneNumberTextField: MDCTextField!
 	@IBOutlet var aboutmeTextView: UITextView!
 	@IBOutlet var userTypeSegmented: UISegmentedControl!
-
 	@IBOutlet var passwordTextField: MDCTextField!
 	@IBOutlet var confirmPasswordTextView: MDCTextField!
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -68,6 +68,9 @@ class GmailFacebookSignUpViewController: UIViewController {
 		// get user Type
 		let usertype: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
 		
+		// FIXME: This!!!
+		
+		
 		// check if signed in with gmail
 		if let	uid = currentAuthUser?.uid, let url = currentAuthUser?.photoUrl {
 			if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutMe: aboutme){
@@ -75,9 +78,12 @@ class GmailFacebookSignUpViewController: UIViewController {
 				present(ac, animated: true)
 				return
 			}
+			print("submit button!")
 			
 			let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: url, stateProvince: stateOrProvince, uid: uid, userType: usertype)
 			addUserToFireBase(with: signedInUser)
+			//pass controller for update ore create delegate
+			navigationController?.popViewController(animated: true)
 			
 		}else {
 			let signedInUser = CurrentUser(aboutMe: aboutme, awaitingApproval: true, city: citi, country: country, email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: nil, stateProvince: stateOrProvince, uid: UUID().uuidString, userType: usertype)
