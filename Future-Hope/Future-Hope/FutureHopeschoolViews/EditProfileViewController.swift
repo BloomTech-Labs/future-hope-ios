@@ -24,6 +24,8 @@ class EditProfileViewController: UIViewController {
 		dismiss(animated: true)
 	}
 	
+	@IBAction func submitButtonPressed(_ sender: Any) {
+	}
 	
 	
 }
