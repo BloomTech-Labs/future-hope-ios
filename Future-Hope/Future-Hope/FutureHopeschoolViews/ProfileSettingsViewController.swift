@@ -57,7 +57,7 @@ class ProfileSettingsViewController: UIViewController {
 				let indexpath = tableView.indexPathForSelectedRow else { return }
 			
 			vc.editString = settings[indexpath.row]
-			
+			vc.currentUser = futureHopSchoolController?.currentlyLogedInUser
 		}
 	}
 	

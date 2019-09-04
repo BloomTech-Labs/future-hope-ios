@@ -27,8 +27,22 @@ class EditProfileViewController: UIViewController {
 	}
 	
 	private func setupViews() {
-		guard let editString = editString else { return }
+		guard let editString = editString, let currentUser = currentUser else { return }
+		
 		editLabel?.text = "\(editString):"
+		
+		if editString == "name" {
+			newEditTextField?.text = currentUser.fullName
+		} else if editString == "city" {
+			newEditTextField?.text = currentUser.city
+		} else if editString == "state" {
+			newEditTextField?.text = currentUser.stateProvince
+		} else if editString == "phone number" {
+			newEditTextField?.text = currentUser.phoneNumber
+		} else if editString == "about me" {
+			newEditTextField?.text = currentUser.aboutMe
+		}
+		
 	}
 	
 	@IBAction func exitButtonPressed(_ sender: Any) {
