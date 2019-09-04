@@ -18,38 +18,39 @@ protocol FutureHopSchoolControllerProtocol: AnyObject {
 class TabBarViewController: UITabBarController {
 	
 	let futureHopSchoolController = ApplicationController()
+	var currentUser: CurrentUser?
+	var uid: String?
 	
-
     override func viewDidLoad() {
         super.viewDidLoad()
-		getCurrentUser()
+		
+		print("uid: \(uid)")
 		
 		for childVC in children {
 			if let vc = childVC as? FutureHopSchoolControllerProtocol {
 				vc.futureHopSchoolController = futureHopSchoolController
 			}
 		}
-		
     }
 	
 	
-	private func getCurrentUser() {
-		guard let user = futureHopSchoolController.fetchCurrentFireAuthenticatedUser() else { return }
+	private func getCurrentUser(_ uid: String) {
+//		guard let user = futureHopSchoolController.fetchCurrentFireAuthenticatedUser() else { return }
 		
 		//check firebase "user" with uid
-		FireStoreController.db.collection(FireStoreController.users).document(user.uid).getDocument { document, error in
+		FireStoreController.db.collection(FireStoreController.users).document(uid).getDocument { document, error in
 			if let error = error {
 				NSLog("Error fetching user from firestore: \(error)")
 				return
 			}
 				
 			if let doc = document, doc.exists, let data = doc.data() {
-//				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
-//					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
-////					print("found account")
-//				}
+				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
+					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
+//					print("found account")
+				}
 			}else {
-				self.createUser(user)
+//				self.createUser(user)
 				print("Create an account")
 			}
 		}

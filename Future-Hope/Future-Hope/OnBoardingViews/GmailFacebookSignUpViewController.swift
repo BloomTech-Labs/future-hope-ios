@@ -26,9 +26,9 @@ class GmailFacebookSignUpViewController: UIViewController {
 	@IBOutlet var phoneNumberTextField: MDCTextField!
 	@IBOutlet var aboutmeTextView: UITextView!
 	@IBOutlet var userTypeSegmented: UISegmentedControl!
-
 	@IBOutlet var passwordTextField: MDCTextField!
 	@IBOutlet var confirmPasswordTextView: MDCTextField!
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -67,6 +67,9 @@ class GmailFacebookSignUpViewController: UIViewController {
 		
 		// get user Type
 		let usertype: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
+		
+		// FIXME: This!!!
+		
 		
 		// check if signed in with gmail
 		if let	uid = currentAuthUser?.uid, let url = currentAuthUser?.photoUrl {
