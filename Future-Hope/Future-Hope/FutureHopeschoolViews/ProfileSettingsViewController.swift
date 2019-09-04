@@ -13,7 +13,7 @@ extension ProfileSettingsViewController: FutureHopSchoolControllerProtocol {}
 class ProfileSettingsViewController: UIViewController {
 	var futureHopSchoolController: ApplicationController?
 
-	private let settings = ["Edit ALL", "FAQs"]
+	private let settings = ["name", "city", "state", "phone number","about me", "FAQs"]
 	
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var namelabel: UILabel!
@@ -53,8 +53,11 @@ class ProfileSettingsViewController: UIViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "UpdateUserInformationSegue" {
-			guard let vc = segue.destination as? GmailFacebookSignUpViewController else { return }
-			vc.currentAuthUser = futureHopSchoolController?.currentlyLogedInUser
+			guard let vc = segue.destination as? EditProfileViewController,
+				let indexpath = tableView.indexPathForSelectedRow else { return }
+			
+			vc.editString = settings[indexpath.row]
+			
 		}
 	}
 	
