@@ -25,6 +25,7 @@
 		E8EE0DF82320F3BC00501E07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8EE0DF62320F3BC00501E07 /* LaunchScreen.storyboard */; };
 		E8EE0DFA2320F3EE00501E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8EE0DF92320F3EE00501E07 /* Assets.xcassets */; };
 		E8EE0DFC2321564C00501E07 /* MySchedualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE0DFB2321564C00501E07 /* MySchedualViewController.swift */; };
+		E8EE0DFE2321BDCF00501E07 /* MyScdualTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE0DFD2321BDCF00501E07 /* MyScdualTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		E8EE0DF72320F3BC00501E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		E8EE0DF92320F3EE00501E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
 		E8EE0DFB2321564C00501E07 /* MySchedualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySchedualViewController.swift; sourceTree = "<group>"; };
+		E8EE0DFD2321BDCF00501E07 /* MyScdualTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScdualTableViewCell.swift; sourceTree = "<group>"; };
 		FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.release.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 				E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */,
 				E81EB6FE231A2F4F006189FA /* SimpleFactsTableViewController.swift */,
 				E8EE0DFB2321564C00501E07 /* MySchedualViewController.swift */,
+				E8EE0DFD2321BDCF00501E07 /* MyScdualTableViewCell.swift */,
 			);
 			path = OnBoardingViews;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				E81EB6FF231A2F4F006189FA /* SimpleFactsTableViewController.swift in Sources */,
 				E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */,
 				E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */,
+				E8EE0DFE2321BDCF00501E07 /* MyScdualTableViewCell.swift in Sources */,
 				E8561463232025FC0000AFB5 /* EditProfileViewController.swift in Sources */,
 				E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */,
 				E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */,
