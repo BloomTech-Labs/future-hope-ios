@@ -9,7 +9,19 @@
 import UIKit
 
 class MyScdualTableViewCell: UITableViewCell {
-
-  
-
+	
+	var currentUser: CurrentUser? {
+		didSet {setupViews()}
+	}
+	
+	@IBOutlet var userImageView: UIImageView!
+	@IBOutlet var nameLabel: UILabel!
+	@IBOutlet var aboutMeTextView: UITextView!
+	@IBOutlet var timeLabel: UILabel!
+	
+	private func setupViews() {
+		
+	}
+	
+	
 }
