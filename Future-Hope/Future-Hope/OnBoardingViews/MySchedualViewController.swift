@@ -15,6 +15,9 @@ class MySchedualViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+		tableView.dataSource = self
+		tableView.delegate = self
+		
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -37,10 +40,5 @@ extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
 		
 		return cell
 	}
-	
-	
-	
-	
-	
 	
 }
