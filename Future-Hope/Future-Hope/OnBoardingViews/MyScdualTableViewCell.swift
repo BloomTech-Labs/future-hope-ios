@@ -15,18 +15,13 @@ class MyScdualTableViewCell: UITableViewCell {
 	}
 	
 	@IBOutlet var userImageView: UIImageView!
-	@IBOutlet var nameLabel: UILabel!
-	@IBOutlet var aboutMeTextView: UITextView!
 	@IBOutlet var timeLabel: UILabel!
+	@IBOutlet var meetingTitle: UILabel!
 	
 	private func setupViews() {
 		guard let user = currentUser, let data = user.imageData else { return }
 		userImageView?.image = UIImage(data: data)
-		nameLabel?.text = user.fullName
-		aboutMeTextView?.text = user.aboutMe
+		meetingTitle?.text = "The title of a meeeting."
 		timeLabel.text = "10:00 Am Tuesday???"
-
 	}
-	
-	
 }
