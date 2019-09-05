@@ -15,15 +15,15 @@
 		E81EB6FB2318DFBE006189FA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FA2318DFBE006189FA /* TabBarViewController.swift */; };
 		E81EB6FD2318DFC5006189FA /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */; };
 		E81EB6FF231A2F4F006189FA /* SimpleFactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FE231A2F4F006189FA /* SimpleFactsTableViewController.swift */; };
-		E84E8BEA23181BDB000165AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84E8BE823181BDB000165AE /* LaunchScreen.storyboard */; };
-		E84E8BEC23181C82000165AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84E8BEB23181C82000165AE /* Assets.xcassets */; };
-		E8561461231F8A1E0000AFB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8561460231F8A1E0000AFB5 /* GoogleService-Info.plist */; };
 		E8561463232025FC0000AFB5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8561462232025FC0000AFB5 /* EditProfileViewController.swift */; };
 		E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86133C423163FDA00F1611B /* FireStoreController.swift */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
 		E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* CurrentUser.swift */; };
 		E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B4E230C99C800161EFE /* ApplicationController.swift */; };
 		E8839EAD230606DB001536AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8839EAB230606DB001536AC /* Main.storyboard */; };
+		E8EE0DF32320F34000501E07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8EE0DF22320F34000501E07 /* GoogleService-Info.plist */; };
+		E8EE0DF82320F3BC00501E07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8EE0DF62320F3BC00501E07 /* LaunchScreen.storyboard */; };
+		E8EE0DFA2320F3EE00501E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8EE0DF92320F3EE00501E07 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +37,6 @@
 		E81EB6FA2318DFBE006189FA /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		E81EB6FE231A2F4F006189FA /* SimpleFactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFactsTableViewController.swift; sourceTree = "<group>"; };
-		E84E8BE923181BDB000165AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../labs15/Research/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
-		E84E8BEB23181C82000165AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../labs15/Research/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
-		E8561460231F8A1E0000AFB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8561462232025FC0000AFB5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E86133C423163FDA00F1611B /* FireStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreController.swift; sourceTree = "<group>"; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +44,9 @@
 		E87C3B4E230C99C800161EFE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		E8839EA4230606DB001536AC /* Future-Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Future-Hope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8839EAC230606DB001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8EE0DF22320F34000501E07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8EE0DF72320F3BC00501E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		E8EE0DF92320F3EE00501E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../labs15/Future-Hope-iOS/Future-Hope/Future-Hope/Assets.xcassets"; sourceTree = "<group>"; };
 		FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.release.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,8 +101,8 @@
 		E87C3B47230C68D700161EFE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E84E8BEB23181C82000165AE /* Assets.xcassets */,
-				E8561460231F8A1E0000AFB5 /* GoogleService-Info.plist */,
+				E8EE0DF92320F3EE00501E07 /* Assets.xcassets */,
+				E8EE0DF22320F34000501E07 /* GoogleService-Info.plist */,
 				E81B6B0E2314742500A2BD0A /* Info.plist */,
 				E87C3B48230C6B3600161EFE /* View */,
 			);
@@ -112,8 +112,8 @@
 		E87C3B48230C6B3600161EFE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E84E8BE823181BDB000165AE /* LaunchScreen.storyboard */,
 				E8839EAB230606DB001536AC /* Main.storyboard */,
+				E8EE0DF62320F3BC00501E07 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,9 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E84E8BEA23181BDB000165AE /* LaunchScreen.storyboard in Resources */,
-				E8561461231F8A1E0000AFB5 /* GoogleService-Info.plist in Resources */,
-				E84E8BEC23181C82000165AE /* Assets.xcassets in Resources */,
+				E8EE0DF32320F34000501E07 /* GoogleService-Info.plist in Resources */,
+				E8EE0DF82320F3BC00501E07 /* LaunchScreen.storyboard in Resources */,
+				E8EE0DFA2320F3EE00501E07 /* Assets.xcassets in Resources */,
 				E8839EAD230606DB001536AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,20 +376,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E84E8BE823181BDB000165AE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E84E8BE923181BDB000165AE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		E8839EAB230606DB001536AC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E8839EAC230606DB001536AC /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8EE0DF62320F3BC00501E07 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8EE0DF72320F3BC00501E07 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
