@@ -20,7 +20,12 @@ class MyScdualTableViewCell: UITableViewCell {
 	@IBOutlet var timeLabel: UILabel!
 	
 	private func setupViews() {
-		
+		guard let user = currentUser, let data = user.imageData else { return }
+		userImageView?.image = UIImage(data: data)
+		nameLabel?.text = user.fullName
+		aboutMeTextView?.text = user.aboutMe
+		timeLabel.text = "10:00 Am Tuesday???"
+
 	}
 	
 	

@@ -33,8 +33,9 @@ extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MySchedualCell", for: indexPath)
+		guard let mySchedualCell = cell as? MyScdualTableViewCell else { return cell }
 		
-		return cell
+		return mySchedualCell
 	}
 	
 }
