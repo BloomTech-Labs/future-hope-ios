@@ -1025,6 +1025,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="frL-Dm-qfk" secondAttribute="height" multiplier="199:133" id="gVe-pK-JUF"/>
+                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
