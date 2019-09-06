@@ -10,16 +10,18 @@ import Foundation
 
 
 class MySchedual {
-	
+	let id: String
 	let title: String
-	let start: String
-	let participantUid: String
+	let start: Date
+	let participantName: String
+	let participantUid: UUID
 	let participant: CurrentUser
 	
-	
-	init(title: String, start: String, participantUid: String, participant: CurrentUser) {
+	init(id: String, title: String, start: Date, participantName: String, participantUid: UUID, participant: CurrentUser) {
+		self.id = id
 		self.title = title
 		self.start = start
+		self.participantName = participantName
 		self.participantUid = participantUid
 		self.participant = participant
 	}
