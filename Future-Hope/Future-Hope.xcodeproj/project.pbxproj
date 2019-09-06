@@ -16,6 +16,7 @@
 		E81EB6FD2318DFC5006189FA /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */; };
 		E81EB6FF231A2F4F006189FA /* SimpleFactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FE231A2F4F006189FA /* SimpleFactsTableViewController.swift */; };
 		E8561463232025FC0000AFB5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8561462232025FC0000AFB5 /* EditProfileViewController.swift */; };
+		E8584EAE232236A1002EBFB0 /* MySchedual.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8584EAD232236A1002EBFB0 /* MySchedual.swift */; };
 		E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86133C423163FDA00F1611B /* FireStoreController.swift */; };
 		E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B42230AFC9E00161EFE /* SignInViewController.swift */; };
 		E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C3B49230C8EB700161EFE /* CurrentUser.swift */; };
@@ -40,6 +41,7 @@
 		E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		E81EB6FE231A2F4F006189FA /* SimpleFactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFactsTableViewController.swift; sourceTree = "<group>"; };
 		E8561462232025FC0000AFB5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		E8584EAD232236A1002EBFB0 /* MySchedual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySchedual.swift; sourceTree = "<group>"; };
 		E86133C423163FDA00F1611B /* FireStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreController.swift; sourceTree = "<group>"; };
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E87C3B49230C8EB700161EFE /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E87C3B49230C8EB700161EFE /* CurrentUser.swift */,
+				E8584EAD232236A1002EBFB0 /* MySchedual.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			files = (
 				E81B6B582314FF1D00A2BD0A /* SlideOutMenuViewController.swift in Sources */,
 				E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */,
+				E8584EAE232236A1002EBFB0 /* MySchedual.swift in Sources */,
 				E81EB6FB2318DFBE006189FA /* TabBarViewController.swift in Sources */,
 				E81EB6FD2318DFC5006189FA /* ProfileSettingsViewController.swift in Sources */,
 				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
