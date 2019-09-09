@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class Meeting {
     let meetingUid: String
@@ -26,9 +26,12 @@ class Meeting {
     
     convenience init? (dictionary: [String: Any]) {
         
-        print(dictionary)
+//        print(dictionary)
         let title = dictionary["title"] as? String ?? ""
-        
+        if let start = dictionary["start"] as? TimeInterval {
+            print(start)
+            
+        }
         
         self.init(meetingUid: "", participantNames: [], participantUids: [], start: Date(), title: title)
     }
