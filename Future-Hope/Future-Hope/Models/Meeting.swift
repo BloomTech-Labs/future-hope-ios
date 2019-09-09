@@ -26,8 +26,10 @@ class Meeting {
     
     convenience init? (dictionary: [String: Any]) {
         
+        print(dictionary)
+        let title = dictionary["title"] as? String ?? ""
         
         
-        self.init(meetingUid: "", participantNames: [], participantUids: [], start: Date(), title: "")
+        self.init(meetingUid: "", participantNames: [], participantUids: [], start: Date(), title: title)
     }
 }

@@ -38,11 +38,14 @@ struct FireStoreController {
             guard let snap = snapShot else { return }
             let documents = snap.documents
             
+            var meetings: [Meeting] = []
+            
             for document in documents {
                 let doc = document.data() as [String: Any]
-                print(doc["title"])
+                print(doc["title"] as! String)
                 
-                
+                let meeting = Meeting(dictionary: doc)
+                //meetings.append(meeting)
             }
             
             
