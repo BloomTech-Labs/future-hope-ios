@@ -36,10 +36,12 @@ struct FireStoreController {
             }
             
             guard let snap = snapShot else { return }
+            let documents = snap.documents
+            let count = documents.count
             
-            print("snap: \(snap)")
+            let document0 = documents[0].data() as [String: Any]
             
-            
+            print("count: \(count) - [\(document0)]")
         }
         
         
