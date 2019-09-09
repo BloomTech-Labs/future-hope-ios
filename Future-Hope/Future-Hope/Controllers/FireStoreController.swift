@@ -14,6 +14,7 @@ import Firebase
 struct FireStoreController {
     
 	static let users = "users"
+    static let meetings = "meetings"
     static let db = Firestore.firestore()
 	
 	func addUserToFireStore(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
@@ -28,7 +29,18 @@ struct FireStoreController {
     
     func fetchMeetingsFromFirestore(with userUid: String, completion: @escaping (Error?) -> ()) {
         
-        
+        Firestore.firestore().collection(FireStoreController.meetings).getDocuments { snapShot, error in
+            if let error =  error {
+                NSLog("Error fetching meetings: \(error)")
+                return
+            }
+            
+            guard let snap = snapShot else { return }
+            
+            print("snap: \(snap)")
+            
+            
+        }
         
         
     }

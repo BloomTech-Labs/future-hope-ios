@@ -32,7 +32,13 @@ class SignInViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		setupViews()
+		
+        FireStoreController().fetchMeetingsFromFirestore(with: "") { _ in
+            
+        }
+        
+        
+        setupViews()
     }
 
 	private func setupViews() {

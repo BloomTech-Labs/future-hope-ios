@@ -24,5 +24,10 @@ class Meeting {
         self.title = title
     }
     
-    
+    convenience init? (dictionary: [String: Any]) {
+        
+        
+        
+        self.init(meetingUid: "", participantNames: [], participantUids: [], start: Date(), title: "")
+    }
 }
