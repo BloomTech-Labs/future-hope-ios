@@ -17,7 +17,8 @@ class SlideOutContainerViewController: UIViewController {
 	
 	var mainNavigationController: UINavigationController!
 	var mainViewController: ProfileSettingsViewController!
-//	
+
+//
 //	var curentState: SlideOutState = .panelCollapsed {
 //		didSet {
 //			let shouldShowShadow = curentState
@@ -33,9 +34,4 @@ class SlideOutContainerViewController: UIViewController {
 //		super.viewDidLoad()
 //		
 //	}
-	
-	
-	
-	
-	
 }

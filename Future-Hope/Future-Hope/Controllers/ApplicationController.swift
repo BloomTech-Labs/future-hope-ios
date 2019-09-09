@@ -21,12 +21,12 @@ class ApplicationController {
 		currentlyLogedInUser = user
 		if let url = user.photoUrl {
 			fetchUserImage(with: url) { data, error in
+                
 				if let error = error {
 					print(error)
 				}
-				guard let data  =  data,
-					let currentlyLogedInUser = self.currentlyLogedInUser else { return }
-				
+                
+				guard let data  =  data, let currentlyLogedInUser = self.currentlyLogedInUser else { return }
 				currentlyLogedInUser.imageData = data
 			}
 		}

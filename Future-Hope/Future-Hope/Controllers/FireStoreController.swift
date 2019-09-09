@@ -12,19 +12,24 @@ import Firebase
 
 
 struct FireStoreController {
+    
 	static let users = "users"
-
-	static let db = Firestore.firestore()
+    static let db = Firestore.firestore()
 	
 	func addUserToFireStore(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
-		Firestore.firestore().collection(FireStoreController.users)
-			.document(user.uid).setData(user.toDictionary) { error in
-				if let error = error {
-					NSLog("Error seting data to firestore: \(error)")
-					completion(error)
-				}
-				completion(nil)
+		Firestore.firestore().collection(FireStoreController.users).document(user.uid).setData(user.toDictionary) { error in
+            if let error = error {
+                NSLog("Error seting data to firestore: \(error)")
+                completion(error)
+            }
+            completion(nil)
 		}
 	}
-
+    
+    func fetchMeetingsFromFirestore(with userUid: String, completion: @escaping (Error?) -> ()) {
+        
+        
+        
+        
+    }
 }
