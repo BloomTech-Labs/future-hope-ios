@@ -1053,6 +1053,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9510807966" green="0.9510807966" blue="0.9510807966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="meetingTitle" destination="CTA-do-eEZ" id="vrb-2H-AeL"/>
+                                            <outlet property="timeLabel" destination="3tK-kf-hWD" id="W8T-7t-x8X"/>
+                                            <outlet property="userImageView" destination="K6u-sk-EkH" id="mNk-Bb-nud"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

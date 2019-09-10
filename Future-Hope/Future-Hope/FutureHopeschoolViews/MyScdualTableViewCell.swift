@@ -21,7 +21,6 @@ class MyScdualTableViewCell: UITableViewCell {
 	private func setupViews() {
         
         guard let meeting = meeting else { return }
-        
         meetingTitle?.text = meeting.title
 
         // setup Date
