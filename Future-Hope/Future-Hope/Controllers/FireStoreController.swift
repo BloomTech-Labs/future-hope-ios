@@ -40,6 +40,8 @@ struct FireStoreController {
             
             var meetings: [Meeting] = []
             
+            print("meetings count: \(documents.count)")
+            
             for document in documents {
                 let doc = document.data() as [String: Any]
                 //print(doc["title"] as! String)

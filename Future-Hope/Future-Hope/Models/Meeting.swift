@@ -33,16 +33,22 @@ class Meeting {
         let title = dictionary["title"] as? String ?? ""
         
         // error with timestamp
-        if let start = dictionary["start"] as? TimeInterval {
-            //let time = NSDate(timeIntervalSinceReferenceDate: start/1000)
-            print("time: \(start)")
+        if let startDouble = dictionary["start"] as? Double {
+            let start = Date(timeIntervalSince1970: startDouble / 1000)
+            print(start)
+            let componenets = Calendar.current.dateComponents([.year, .day, .hour, .minute], from: start)
+            
+            print("\(componenets.year) - \(componenets.day) - \(String(describing: componenets.hour)) - \(componenets.minute)")
+        } else {
+            print("error")
         }
+
 
         let participantNames = dictionary["participantNames"] as? [String] ?? []
         let participantUIDs = dictionary["participantUIDs"] as? [String] ?? []
         
         
-        print("id: \(id) - title: \(title) - participantNames: \(participantNames[0]) - participantUIDs: \(participantUIDs[0])")
+        //print("id: \(id) - title: \(title) - participantNames: \(participantNames[0]) - participantUIDs: \(participantUIDs[0])")
         self.init(id:id, participantNames: participantNames, participantUIDs: participantUIDs, start: Date(), title: title)
         
     }
