@@ -14,7 +14,10 @@ import GoogleSignIn
 class ApplicationController {
 	
 	private (set) var currentlyLogedInUser: CurrentUser?
-	private (set) var AllUsers: [CurrentUser] = []
+
+    private (set) var meetings: [Meeting] = []
+    
+    private (set) var AllUsers: [CurrentUser] = []
 	
 	// set current user and fetch image
 	func setCurrentlyLogedInUser(with user: CurrentUser) {
@@ -47,6 +50,35 @@ class ApplicationController {
 		}.resume()
 	}
 	
+    
+    func fetchMyMeetings() {
+        guard let user = currentlyLogedInUser else { return }
+        
+        FireStoreController().fetchMeetingsFromFirestore{ meetings, error in
+            if let error = error {
+                NSLog("Error fetching my meetings: \(error)")
+            }
+            
+            if let meetings = meetings {
+                for meeting in meetings {
+                    for uid in meeting.participantUIDs {
+                        if uid == user.uid {
+                            self.meetings.append(meeting)
+                        }
+                        
+                    }
+                }
+            }
+            
+        }
+        
+        
+        print(meetings)
+        
+    }
+    
+    
+    
 }
 
 
