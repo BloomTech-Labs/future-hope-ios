@@ -57,6 +57,7 @@ class ApplicationController {
         FireStoreController().fetchMeetingsFromFirestore{ meetings, error in
             if let error = error {
                 NSLog("Error fetching my meetings: \(error)")
+                return
             }
             
             if let meetings = meetings {

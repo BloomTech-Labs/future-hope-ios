@@ -17,6 +17,7 @@ class Meeting {
     let start: Date
     let title: String
     
+    
     init(id: String, participantNames: [String], participantUIDs: [String], start: Date, title: String) {
         self.id = id
         self.participantNames = participantNames
