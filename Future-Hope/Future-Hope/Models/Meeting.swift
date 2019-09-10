@@ -10,29 +10,40 @@ import Foundation
 import UIKit
 
 class Meeting {
-    let meetingUid: String
+    
+    let id: String
     let participantNames: [String]
-    let participantUids: [String]
+    let participantUIDs: [String]
     let start: Date
     let title: String
     
-    init(meetingUid: String, participantNames: [String], participantUids: [String], start: Date, title: String) {
-        self.meetingUid = meetingUid
+    init(id: String, participantNames: [String], participantUIDs: [String], start: Date, title: String) {
+        self.id = id
         self.participantNames = participantNames
-        self.participantUids = participantUids
+        self.participantUIDs = participantUIDs
         self.start = start
         self.title = title
     }
     
     convenience init? (dictionary: [String: Any]) {
         
-//        print(dictionary)
-        let title = dictionary["title"] as? String ?? ""
-        if let start = dictionary["start"] as? TimeInterval {
-            print(start)
-            
-        }
+       // print(dictionary)
         
-        self.init(meetingUid: "", participantNames: [], participantUids: [], start: Date(), title: title)
+        let id = dictionary["id"] as? String ?? ""
+        let title = dictionary["title"] as? String ?? ""
+        
+        // error with timestamp
+        if let start = dictionary["start"] as? TimeInterval {
+            //let time = NSDate(timeIntervalSinceReferenceDate: start/1000)
+            print("time: \(start)")
+        }
+
+        let participantNames = dictionary["participantNames"] as? [String] ?? []
+        let participantUIDs = dictionary["participantUIDs"] as? [String] ?? []
+        
+        
+        print("id: \(id) - title: \(title) - participantNames: \(participantNames[0]) - participantUIDs: \(participantUIDs[0])")
+        self.init(id:id, participantNames: participantNames, participantUIDs: participantUIDs, start: Date(), title: title)
+        
     }
 }

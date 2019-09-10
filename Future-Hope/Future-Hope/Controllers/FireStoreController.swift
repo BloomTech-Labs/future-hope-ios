@@ -42,7 +42,7 @@ struct FireStoreController {
             
             for document in documents {
                 let doc = document.data() as [String: Any]
-                print(doc["title"] as! String)
+                //print(doc["title"] as! String)
                 
                 let meeting = Meeting(dictionary: doc)
                 //meetings.append(meeting)
