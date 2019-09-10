@@ -8,7 +8,10 @@
 
 import UIKit
 
+extension MySchedualViewController: FutureHopSchoolControllerProtocol {}
+
 class MySchedualViewController: UIViewController {
+    var futureHopSchoolController: ApplicationController?
 	@IBOutlet var numberOfMettingsLabel: UILabel!
 	@IBOutlet var tableView: UITableView!
 	
@@ -22,19 +25,31 @@ class MySchedualViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+        futureHopSchoolController?.fetchMyMeetings{ error in
+            if let error = error {
+                NSLog("Error: \(error)")
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        if let user = futureHopSchoolController?.currentlyLogedInUser {
+            print("\(user.uid) - \(user.fullName)")
+        }
 	}
 
 }
 
 extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return futureHopSchoolController?.meetings.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MySchedualCell", for: indexPath)
-		guard let mySchedualCell = cell as? MyScdualTableViewCell else { return cell }
-		
+		guard let mySchedualCell = cell as? MyScdualTableViewCell, let meetings = futureHopSchoolController?.meetings else { return cell }
+		let meeting = meetings[indexPath.row]
+        mySchedualCell.meeting = meeting
 		return mySchedualCell
 	}
 	

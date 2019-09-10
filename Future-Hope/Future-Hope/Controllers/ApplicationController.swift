@@ -51,30 +51,34 @@ class ApplicationController {
 	}
 	
     
-    func fetchMyMeetings() {
+    func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
         guard let user = currentlyLogedInUser else { return }
         
         FireStoreController().fetchMeetingsFromFirestore{ meetings, error in
             if let error = error {
                 NSLog("Error fetching my meetings: \(error)")
+                completion(error)
                 return
             }
             
             if let meetings = meetings {
+                var meetings: [Meeting] = []
+                
                 for meeting in meetings {
                     for uid in meeting.participantUIDs {
                         if uid == user.uid {
-                            self.meetings.append(meeting)
+                            meetings.append(meeting)
                         }
-                        
                     }
+                    
                 }
+                self.meetings = meetings
+                
             }
             
+            completion(nil)
         }
         
-        
-        print(meetings)
         
     }
     
