@@ -33,12 +33,32 @@ class ExploreTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreTableViewCell", for: indexPath)
         guard let exlporeCell = cell as? ExploreTableViewCell,
             let user = futureHopSchoolController?.allUsers[indexPath.row] else { return cell }
-            exlporeCell.currentUser = user
         
+        exlporeCell.currentUser = user
+        loadImage(with: exlporeCell, with: user)
         return exlporeCell
     }
     
-    
+    private func loadImage(with cell: ExploreTableViewCell, with user: CurrentUser){
+        
+        guard let url = user.photoUrl else { return }
+        ApplicationController().fetchUserImage(with: url) { data, error in
+            if let error = error {
+                NSLog("Error wiht applicationcontroller: \(error)")
+                return
+            }
+            guard let data = data else { return }
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.async {
+                cell.userImageView?.image = image
+                self.tableView.reloadData()
+            }
+            
+        }
+        
+        
+    }
     
     
 }

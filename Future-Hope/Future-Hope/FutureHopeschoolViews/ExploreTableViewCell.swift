@@ -30,24 +30,5 @@ class ExploreTableViewCell: UITableViewCell {
             let str: String = type == .mentor ? "Mentor" : "Teacher"
             typeLabel?.text = str
         }
-        
-        setupImage()
-    }
-    
-    private func setupImage() {
-        guard let user = currentUser, let url = user.photoUrl else { return }
-        ApplicationController().fetchUserImage(with: url) { data, error in
-            if let error = error {
-                NSLog("Error wiht applicationcontroller: \(error)")
-                return
-            }
-            guard let data = data else { return }
-            let image = UIImage(data: data)
-            
-            DispatchQueue.main.async {
-                self.userImageView?.image = image
-            }
-            
-        }
     }
 }
