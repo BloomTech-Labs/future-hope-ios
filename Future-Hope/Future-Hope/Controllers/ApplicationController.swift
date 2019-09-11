@@ -33,6 +33,32 @@ class ApplicationController {
             }
             
             guard let allUsers = allUsers else { return }
+            
+            // fetch all image data
+            
+            for user in allUsers {
+                
+                if let url = user.photoUrl {
+                    self.fetchUserImage(with: url, completion: { data, error in
+                        if let error = error {
+                            NSLog("Error fetching image: \(error)")
+                            return
+                        }
+                        
+                        // This is Bad Practice! Implement Cache and implement operations!!
+                        
+                        guard let data = data else { return }
+                        user.imageData = data
+                        
+                    })
+                }
+                
+                
+            }
+            
+            
+            
+            
             self.allUsers = allUsers
 
         }

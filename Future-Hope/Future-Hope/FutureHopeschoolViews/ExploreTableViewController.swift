@@ -15,7 +15,6 @@ class ExploreTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         futureHopSchoolController?.fetchAllUsers()
     }
 
@@ -35,7 +34,7 @@ class ExploreTableViewController: UITableViewController {
             let user = futureHopSchoolController?.allUsers[indexPath.row] else { return cell }
         
         exlporeCell.currentUser = user
-        loadImage(with: exlporeCell, with: user)
+//        loadImage(with: exlporeCell, with: user)
         return exlporeCell
     }
     

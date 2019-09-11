@@ -30,5 +30,9 @@ class ExploreTableViewCell: UITableViewCell {
             let str: String = type == .mentor ? "Mentor" : "Teacher"
             typeLabel?.text = str
         }
+        
+        if let imageData = currentUser.imageData {
+            userImageView?.image = UIImage(data: imageData)
+        }
     }
 }
