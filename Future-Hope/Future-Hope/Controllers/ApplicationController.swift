@@ -21,6 +21,10 @@ class ApplicationController {
     
     
     init() {
+        setupInit()
+    }
+    
+    private func setupInit() {
         FireStoreController().fetchAllUsers { allUsers, error in
             if let error = error {
                 NSLog("Error  \(error)")
@@ -32,8 +36,21 @@ class ApplicationController {
         }
     }
     
-    
-	
+}
+
+// MARK: AlertControllers
+extension ApplicationController {
+    func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
+        
+        return ac
+    }
+}
+
+// MARK: CurrentUser Setup
+extension ApplicationController {
+
 	// set current user and fetch image
 	func setCurrentlyLogedInUser(with user: CurrentUser) {
 		currentlyLogedInUser = user
@@ -54,38 +71,6 @@ class ApplicationController {
 		}
 	}
 	
-    func fetchMyMeeting(with uid: String, completion: @escaping (Error?) -> ()) {
-        guard let user = currentlyLogedInUser else { return }
-
-        
-        //        FireStoreController().fetchMeetingsFromFirestore{ allMeetings, error in
-//            if let error = error {
-//                NSLog("Error fetching my meetings: \(error)")
-//                completion(error)
-//                return
-//            }
-//
-//            var newMeetings: [Meeting] = []
-//
-//            guard let allMettings = allMeetings else { return }
-//
-//            for aMeeting in allMettings {
-//                for participantUID in aMeeting.participantUIDs {
-//                    if participantUID == user.uid {
-//                        newMeetings.append(aMeeting)
-//                    }
-//                }
-//            }
-//
-//            self.meetings = newMeetings
-//
-//            completion(nil)
-//        }
-    }
-
-    
-    
-    
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
 		URLSession.shared.dataTask(with: url) { data, _, error in
 			if let error = error{
@@ -102,7 +87,6 @@ class ApplicationController {
 
 
 // MARK: Fireabse Auth
-
 extension ApplicationController {
 
 	
@@ -147,13 +131,11 @@ extension ApplicationController {
 }
 
 
-// MARK: AlertControllers
 
+
+// MARK: Meetings
 extension ApplicationController {
-	func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
-		let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-		ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
-		
-		return ac
-	}
+    
+    
+    
 }

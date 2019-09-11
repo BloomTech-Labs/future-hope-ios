@@ -25,53 +25,46 @@ struct FireStoreController {
                 completion(error)
                 return
             }
+            
             completion(nil)
 		}
 	}
     
     func fetchAllUsers(completion: @escaping ([CurrentUser]?, Error?) -> ()){
         let collection = FireStoreController.db.collection(FireStoreController.users)
-        collection.getDocuments { snapShot, error in
+        collection.getDocuments { documentsSnapShot, error in
             if let error = error {
                 completion(nil, error)
                 return
             }
             
-            guard let snap = snapShot else { return }
-            let documents = snap.documents
-            print(documents.count)
+            guard let snap = documentsSnapShot else { return }
             
             var users: [CurrentUser] = []
-            
-            for document in documents {
-                let data = document.data() as [String: Any]
-                if let user = CurrentUser(dictionary: data) {
+            for document in snap.documents {
+                let dict = document.data() as [String: Any]
+                if let user = CurrentUser(dictionary: dict) {
                     users.append(user)
                 }
             }
         }
     }
     
-    
     func fetchMeetings(completion: @escaping ([Meeting]?, Error?) -> ()) {
         let collection = FireStoreController.db.collection(FireStoreController.meetings)
-        collection.getDocuments { snapShot, error in
+        collection.getDocuments { documentsSnapShot, error in
             if let error =  error {
                 completion(nil, error)
                 return
             }
             
-            guard let snap = snapShot else { return }
-            let documents = snap.documents
+            guard let snap = documentsSnapShot else { return }
             
             var meetings: [Meeting] = []
-            
-            print("meetings count: \(documents.count)")
-            
-            for document in documents {
-                let doc = document.data() as [String: Any]
+            for document in snap.documents {
+                let dict = document.data() as [String: Any]
                 
-                if let meeting = Meeting(dictionary: doc) {
+                if let meeting = Meeting(dictionary: dict) {
                     meetings.append(meeting)
                 }
             }
@@ -89,9 +82,10 @@ struct FireStoreController {
                 return
             }
             
-            guard let doc = documentSnapShot, let data = doc.data() else { return }
-            let dict = data as [String: Any]
+            guard let doc = documentSnapShot,
+                let data = doc.data() else { return }
             
+            let dict = data as [String: Any]
             if let meeting = Meeting(dictionary: dict) {
                 completion(meeting, nil)
             }
