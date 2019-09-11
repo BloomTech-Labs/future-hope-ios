@@ -49,8 +49,9 @@ class TabBarViewController: UITabBarController {
 					print("Error getting data from fire store!")
 				}
 			}else {
-//				self.createUser(user)
-				print("Create an account")
+                if let user = self.futureHopSchoolController.fetchCurrentFireAuthenticatedUser() {
+                    self.createUser(user)
+                }
 			}
 		}
 		

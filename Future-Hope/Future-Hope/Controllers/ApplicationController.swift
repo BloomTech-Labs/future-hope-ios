@@ -29,22 +29,25 @@ class ApplicationController {
 					print(error)
 				}
                 
-				guard let data  =  data, let currentlyLogedInUser = self.currentlyLogedInUser else { return }
-				currentlyLogedInUser.imageData = data
+				guard let data  =  data,
+                    let currentlyLogedInUser = self.currentlyLogedInUser else { return }
+                
+                DispatchQueue.main.async {
+                    // set image
+                    currentlyLogedInUser.imageData = data
+                }
 			}
 		}
 	}
 	
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
-		print(url.absoluteString)
-
 		URLSession.shared.dataTask(with: url) { data, _, error in
 			if let error = error{
 				NSLog("Error fetching image: \(error)")
 				completion(nil, error)
 				return
 			}
-
+            
 			guard let data = data else { return }
 			completion(data, nil)
 		}.resume()
@@ -53,7 +56,6 @@ class ApplicationController {
     
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
         guard let user = currentlyLogedInUser else { return }
-        
         FireStoreController().fetchMeetingsFromFirestore{ allMeetings, error in
             if let error = error {
                 NSLog("Error fetching my meetings: \(error)")

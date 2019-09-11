@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
-		73CF21502326A21F003772C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73CF214F2326A21F003772C1 /* GoogleService-Info.plist */; };
 		73CF21522326FB93003772C1 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF21512326FB93003772C1 /* Meeting.swift */; };
+		73CF21542328B722003772C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73CF21532328B722003772C1 /* GoogleService-Info.plist */; };
 		E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B002314694900A2BD0A /* AppDelegate.swift */; };
 		E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */; };
 		E81B6B582314FF1D00A2BD0A /* SlideOutMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B572314FF1D00A2BD0A /* SlideOutMenuViewController.swift */; };
@@ -31,8 +31,8 @@
 /* Begin PBXFileReference section */
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73CF214F2326A21F003772C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73CF21512326FB93003772C1 /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
+		73CF21532328B722003772C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E81B6B002314694900A2BD0A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GmailFacebookSignUpViewController.swift; sourceTree = "<group>"; };
 		E81B6B0E2314742500A2BD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			children = (
 				E8EE0DF92320F3EE00501E07 /* Assets.xcassets */,
 				E81B6B0E2314742500A2BD0A /* Info.plist */,
-				73CF214F2326A21F003772C1 /* GoogleService-Info.plist */,
+				73CF21532328B722003772C1 /* GoogleService-Info.plist */,
 				E87C3B48230C6B3600161EFE /* View */,
 			);
 			path = Resources;
@@ -250,8 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8EE0DFA2320F3EE00501E07 /* Assets.xcassets in Resources */,
+				73CF21542328B722003772C1 /* GoogleService-Info.plist in Resources */,
 				E8839EAD230606DB001536AC /* Main.storyboard in Resources */,
-				73CF21502326A21F003772C1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = 97AS6JS382;
 				INFOPLIST_FILE = "$(SRCROOT)/Future-Hope/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,7 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = 97AS6JS382;
 				INFOPLIST_FILE = "$(SRCROOT)/Future-Hope/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
