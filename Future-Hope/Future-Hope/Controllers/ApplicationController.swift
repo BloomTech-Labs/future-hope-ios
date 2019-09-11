@@ -17,7 +17,25 @@ class ApplicationController {
 
     private (set) var meetings: [Meeting] = []
     
-    private (set) var AllUsers: [CurrentUser] = []
+    private (set) var allUsers: [CurrentUser] = []
+    
+    
+    init() {
+        FireStoreController().fetchAllUsersFromFireStore { allUsers, error in
+            if let error = error {
+                NSLog("Error  \(error)")
+                return
+            }
+            
+            guard let allUsers = allUsers else { return }
+            self.allUsers = allUsers
+            
+        }
+        
+        
+    }
+    
+    
 	
 	// set current user and fetch image
 	func setCurrentlyLogedInUser(with user: CurrentUser) {
@@ -33,7 +51,6 @@ class ApplicationController {
                     let currentlyLogedInUser = self.currentlyLogedInUser else { return }
                 
                 DispatchQueue.main.async {
-                    // set image
                     currentlyLogedInUser.imageData = data
                 }
 			}
@@ -43,30 +60,7 @@ class ApplicationController {
     
     func fetchAllUsersFromMeetings(){
         
-        for meeting in meetings{
-            var users: [CurrentUser] = []
-            for uid in meeting.participantUIDs{
-                if uid != currentlyLogedInUser?.uid {
-                    Firestore.firestore().collection(FireStoreController.users).document(uid).getDocument { snapShot, error in
-                        if let error = error {
-                            NSLog("Error fetching user from fire store: \(error)")
-                            return
-                        }
-                        
-                        guard let snap = snapShot else { return }
-                        
-                        if let data = snap.data(),
-                            let user = CurrentUser(dictionary: data) {
-                            users.append(user)
-                        }
-                        
-                    }
-                    
-                }
-                }
-            
-            
-        }
+        
     }
     
     

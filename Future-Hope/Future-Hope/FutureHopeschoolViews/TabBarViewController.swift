@@ -24,10 +24,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FireStoreController().fetchAllUsersFromFireStore { users, _ in
-            NSLog("users: \(users?.count)")
-        }
-        
+        print(futureHopSchoolController.allUsers.count)
 		getCurrentUser()
 		for childVC in children {
 			if let vc = childVC as? FutureHopSchoolControllerProtocol {
