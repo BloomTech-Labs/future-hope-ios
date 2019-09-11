@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
+		73CBC01423296AB9000B8D8C /* ExploreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */; };
+		73CBC01723296AE7000B8D8C /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBC01623296AE7000B8D8C /* ExploreTableViewCell.swift */; };
 		73CF21522326FB93003772C1 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF21512326FB93003772C1 /* Meeting.swift */; };
 		73CF21542328B722003772C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73CF21532328B722003772C1 /* GoogleService-Info.plist */; };
 		E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B002314694900A2BD0A /* AppDelegate.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewController.swift; sourceTree = "<group>"; };
+		73CBC01623296AE7000B8D8C /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
 		73CF21512326FB93003772C1 /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		73CF21532328B722003772C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E81B6B002314694900A2BD0A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				E8561462232025FC0000AFB5 /* EditProfileViewController.swift */,
 				E8EE0DFB2321564C00501E07 /* MySchedualViewController.swift */,
 				E8EE0DFD2321BDCF00501E07 /* MyScdualTableViewCell.swift */,
+				73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */,
+				73CBC01623296AE7000B8D8C /* ExploreTableViewCell.swift */,
 			);
 			path = FutureHopeschoolViews;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 			files = (
 				E81B6B582314FF1D00A2BD0A /* SlideOutMenuViewController.swift in Sources */,
 				E87C3B4A230C8EB700161EFE /* CurrentUser.swift in Sources */,
+				73CBC01423296AB9000B8D8C /* ExploreTableViewController.swift in Sources */,
 				E81EB6FB2318DFBE006189FA /* TabBarViewController.swift in Sources */,
 				E81EB6FD2318DFC5006189FA /* ProfileSettingsViewController.swift in Sources */,
 				E87C3B43230AFC9E00161EFE /* SignInViewController.swift in Sources */,
@@ -335,6 +342,7 @@
 				E8561463232025FC0000AFB5 /* EditProfileViewController.swift in Sources */,
 				E87C3B4F230C99C800161EFE /* ApplicationController.swift in Sources */,
 				E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */,
+				73CBC01723296AE7000B8D8C /* ExploreTableViewCell.swift in Sources */,
 				E81B6B612315132B00A2BD0A /* SlideOutContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

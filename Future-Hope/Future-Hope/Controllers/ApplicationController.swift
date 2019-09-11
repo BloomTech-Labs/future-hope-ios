@@ -21,10 +21,13 @@ class ApplicationController {
     
     
     init() {
-        setupInit()
+        DispatchQueue.main.async {
+            self.fetchAllUsers()
+        }
+        
     }
     
-    private func setupInit() {
+    func fetchAllUsers() {
         FireStoreController().fetchAllUsers { allUsers, error in
             if let error = error {
                 NSLog("Error  \(error)")
@@ -33,9 +36,9 @@ class ApplicationController {
             
             guard let allUsers = allUsers else { return }
             self.allUsers = allUsers
+
         }
     }
-    
 }
 
 // MARK: AlertControllers
@@ -70,7 +73,7 @@ extension ApplicationController {
 			}
 		}
 	}
-	
+	// fetch image with url
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
 		URLSession.shared.dataTask(with: url) { data, _, error in
 			if let error = error{
@@ -95,30 +98,25 @@ extension ApplicationController {
 		let fireAuth = Auth.auth()
 		do{
 			try fireAuth.signOut()
-			//gidSignOut()
-			NSLog("SignOut Success!")
 			completion(nil)
 		}catch {
-			NSLog("Error signing out with :\(error)")
 			completion(error)
 		}
 	}
 
-	private func gidSignOut() {
-		GIDSignIn.sharedInstance().signOut()
-	}
+//    private func gidSignOut() {
+//        GIDSignIn.sharedInstance().signOut()
+//    }
 	
 	
 	/// SignIn With Google credentials
 	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
 		Auth.auth().signIn(with: credentail) { authResult, error in
 			if let error = error {
-				NSLog("\t->>>>>>>>> Error with Auth sign in with credential: \(error)\nauthResult\(authResult.debugDescription)")
 				completion(error)
 				return
 			}
-		
-			NSLog("Auth comple with: \(authResult.debugDescription)")
+            
 			completion(nil)
 		}
 	}
