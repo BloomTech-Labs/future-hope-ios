@@ -47,6 +47,8 @@ struct FireStoreController {
                     users.append(user)
                 }
             }
+            
+            completion(users, nil)
         }
     }
     

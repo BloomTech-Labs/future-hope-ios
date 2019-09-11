@@ -15,8 +15,8 @@ class ExploreTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("here")
-        futureHopSchoolController!.fetchAllUsers()
+        
+        futureHopSchoolController?.fetchAllUsers()
     }
 
     override func viewWillAppear(_ animated: Bool) {

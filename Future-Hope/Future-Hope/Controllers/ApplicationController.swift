@@ -21,13 +21,11 @@ class ApplicationController {
     
     
     init() {
-        DispatchQueue.main.async {
-            self.fetchAllUsers()
-        }
-        
+        fetchAllUsers()
     }
     
     func fetchAllUsers() {
+        print("here1")
         FireStoreController().fetchAllUsers { allUsers, error in
             if let error = error {
                 NSLog("Error  \(error)")
