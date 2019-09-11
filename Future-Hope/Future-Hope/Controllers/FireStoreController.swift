@@ -17,7 +17,12 @@ struct FireStoreController {
     static let meetings = "meetings"
     static let db = Firestore.firestore()
 	
-	func addUserToFireStore(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
+    
+    
+    
+    
+    
+	func addUser(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
 		Firestore.firestore().collection(FireStoreController.users).document(user.uid).setData(user.toDictionary) { error in
             if let error = error {
                 completion(error)
@@ -27,7 +32,7 @@ struct FireStoreController {
 		}
 	}
     
-    func fetchAllUsersFromFireStore(completion: @escaping ([CurrentUser]?, Error?) -> ()){
+    func fetchAllUsers(completion: @escaping ([CurrentUser]?, Error?) -> ()){
         Firestore.firestore().collection(FireStoreController.users).getDocuments { snapShot, error in
             if let error = error {
                 completion(nil, error)
@@ -50,7 +55,7 @@ struct FireStoreController {
     }
     
     
-    func fetchMeetingsFromFirestore(completion: @escaping ([Meeting]?, Error?) -> ()) {
+    func fetchMeetings(completion: @escaping ([Meeting]?, Error?) -> ()) {
         
         Firestore.firestore().collection(FireStoreController.meetings).getDocuments { snapShot, error in
             if let error =  error {

@@ -26,8 +26,9 @@ class CurrentUser {
 	var stateProvince: String?
 	var uid: String
 	var userType: UserType?
-	
 	var imageData: Data?
+    
+    
 	
 	init(aboutMe: String? = nil, awaitingApproval: Bool, city: String? = nil, country: String? = nil,
 		 email: String, fullName: String, phoneNumber: String? = nil, photoUrl: URL? = nil,

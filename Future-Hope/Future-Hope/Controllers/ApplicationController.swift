@@ -21,7 +21,7 @@ class ApplicationController {
     
     
     init() {
-        FireStoreController().fetchAllUsersFromFireStore { allUsers, error in
+        FireStoreController().fetchAllUsers { allUsers, error in
             if let error = error {
                 NSLog("Error  \(error)")
                 return
@@ -29,10 +29,7 @@ class ApplicationController {
             
             guard let allUsers = allUsers else { return }
             self.allUsers = allUsers
-            
         }
-        
-        
     }
     
     
@@ -57,11 +54,35 @@ class ApplicationController {
 		}
 	}
 	
-    
-    func fetchAllUsersFromMeetings(){
+    func fetchMyMeeting(with uid: String, completion: @escaping (Error?) -> ()) {
+        guard let user = currentlyLogedInUser else { return }
+
         
-        
+        //        FireStoreController().fetchMeetingsFromFirestore{ allMeetings, error in
+//            if let error = error {
+//                NSLog("Error fetching my meetings: \(error)")
+//                completion(error)
+//                return
+//            }
+//
+//            var newMeetings: [Meeting] = []
+//
+//            guard let allMettings = allMeetings else { return }
+//
+//            for aMeeting in allMettings {
+//                for participantUID in aMeeting.participantUIDs {
+//                    if participantUID == user.uid {
+//                        newMeetings.append(aMeeting)
+//                    }
+//                }
+//            }
+//
+//            self.meetings = newMeetings
+//
+//            completion(nil)
+//        }
     }
+
     
     
     
@@ -77,39 +98,6 @@ class ApplicationController {
 			completion(data, nil)
 		}.resume()
 	}
-	
-    
-    func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
-        guard let user = currentlyLogedInUser else { return }
-        FireStoreController().fetchMeetingsFromFirestore{ allMeetings, error in
-            if let error = error {
-                NSLog("Error fetching my meetings: \(error)")
-                completion(error)
-                return
-            }
-            
-            var newMeetings: [Meeting] = []
-            
-            guard let allMettings = allMeetings else { return }
-
-            for aMeeting in allMettings {
-                for participantUID in aMeeting.participantUIDs {
-                    if participantUID == user.uid {
-                        newMeetings.append(aMeeting)
-                    }
-                }
-            }
-            
-            self.meetings = newMeetings
-            
-            completion(nil)
-        }
-        
-        
-    }
-    
-    
-    
 }
 
 

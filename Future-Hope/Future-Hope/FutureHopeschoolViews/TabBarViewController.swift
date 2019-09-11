@@ -62,7 +62,7 @@ class TabBarViewController: UITabBarController {
 		guard let name = user.displayName, let email = user.email, let photoUrl = user.photoURL else { return }
 		
 		let currentUser = CurrentUser(aboutMe: "", awaitingApproval: true, city: "", country: "", email: email, fullName: name, phoneNumber: "", photoUrl: photoUrl, stateProvince: "", uid: user.uid, userType: .mentor, imageData: nil)
-		FireStoreController().addUserToFireStore(with: currentUser) { error in
+		FireStoreController().addUser(with: currentUser) { error in
 			if let error = error {
 				NSLog("Error adding using to fireStore: \(error)")
 				return
