@@ -78,12 +78,21 @@ struct FireStoreController {
         }
     }
     
-    func fetchMeeting(with uid: String, completion: @escaping (Error?) -> ()) {
+    func fetchMeeting(with uid: String, completion: @escaping (Meeting?, Error?) -> ()) {
+        let document = FireStoreController.db.collection(FireStoreController.meetings)
         
-        
-        
-        
-        
-        
+        document.document(uid).getDocument { documentSnapShot, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let doc = documentSnapShot else { return }
+            let data = doc.data() as! [String: Any]
+            
+            if let meeting = Meeting(dictionary: data) {
+                completion(meeting, nil)
+            }
+        }
     }
 }

@@ -44,5 +44,4 @@ extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
         mySchedualCell.meeting = meeting
 		return mySchedualCell
 	}
-	
 }
