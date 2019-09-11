@@ -49,23 +49,23 @@ class CurrentUser {
 	}
 	
 	convenience init? (dictionary: [String: Any]) {
-		let aboutMe  = dictionary["aboutMe"] as! String
-		let awaitingApproval = dictionary["awaitingApproval"] as! Bool
-		let city = dictionary["city"] as! String
-		let country = dictionary["country"] as! String
-		let email = dictionary["email"] as! String
-		let fullName = dictionary["fullName"] as! String
-		let phoneNumber = dictionary["phoneNumber"] as! String
+		let aboutMe  = dictionary["aboutMe"] as? String
+		let awaitingApproval = dictionary["awaitingApproval"] as? Bool
+		let city = dictionary["city"] as? String
+		let country = dictionary["country"] as? String
+		let email = dictionary["email"] as? String
+		let fullName = dictionary["fullName"] as? String
+		let phoneNumber = dictionary["phoneNumber"] as? String
 		
-		let photoUrlString = dictionary["photoUrl"] as! String
+		let photoUrlString = dictionary["photoUrl"] as? String
 		
-		let stateProvince = dictionary["stateProvince"] as! String
-		let uid = dictionary["uid"] as! String
-		let userType: UserType = (dictionary["userType"] as! String) == "mentor" ?  .mentor : .teacher
+		let stateProvince = dictionary["stateProvince"] as? String
+		let uid = dictionary["uid"] as? String
+		let userType: UserType = (dictionary["userType"] as? String) == "mentor" ?  .mentor : .teacher
 		
-		self.init(aboutMe: aboutMe, awaitingApproval: awaitingApproval, city: city, country: country,
-				  email: email, fullName: fullName, phoneNumber: phoneNumber, photoUrl: URL(string: photoUrlString),
-				  stateProvince: stateProvince, uid: uid, userType: userType)
+		self.init(aboutMe: aboutMe ?? "", awaitingApproval: awaitingApproval ??  true, city: city ?? "" , country: country,
+				  email: email ?? "", fullName: fullName ?? "", phoneNumber: phoneNumber ?? "", photoUrl: URL(string: photoUrlString ?? "https://lh3.googleusercontent.com/a-/AAuE7mC3gEHLMdtWgx0DwGoYGw_k469Debv38_uqWjP4=s96-c"),
+				  stateProvince: stateProvince, uid: uid ?? "", userType: userType)
 	}
 
 	var toDictionary: [String: Any]{

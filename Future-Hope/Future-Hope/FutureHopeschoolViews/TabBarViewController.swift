@@ -23,6 +23,11 @@ class TabBarViewController: UITabBarController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FireStoreController().fetchAllUsersFromFireStore { users, _ in
+            NSLog("users: \(users?.count)")
+        }
+        
 		getCurrentUser()
 		for childVC in children {
 			if let vc = childVC as? FutureHopSchoolControllerProtocol {
@@ -40,7 +45,6 @@ class TabBarViewController: UITabBarController {
 				return
 			}
 			
-			print("Found!!!!!")
 			if let doc = document, doc.exists, let data = doc.data() {
 				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
 					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)

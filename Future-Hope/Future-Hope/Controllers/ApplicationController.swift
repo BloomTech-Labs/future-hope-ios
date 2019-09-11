@@ -40,6 +40,37 @@ class ApplicationController {
 		}
 	}
 	
+    
+    func fetchAllUsersFromMeetings(){
+        
+        for meeting in meetings{
+            var users: [CurrentUser] = []
+            for uid in meeting.participantUIDs{
+                if uid != currentlyLogedInUser?.uid {
+                    Firestore.firestore().collection(FireStoreController.users).document(uid).getDocument { snapShot, error in
+                        if let error = error {
+                            NSLog("Error fetching user from fire store: \(error)")
+                            return
+                        }
+                        
+                        guard let snap = snapShot else { return }
+                        
+                        if let data = snap.data(),
+                            let user = CurrentUser(dictionary: data) {
+                            users.append(user)
+                        }
+                        
+                    }
+                    
+                }
+                }
+            
+            
+        }
+    }
+    
+    
+    
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
 		URLSession.shared.dataTask(with: url) { data, _, error in
 			if let error = error{
