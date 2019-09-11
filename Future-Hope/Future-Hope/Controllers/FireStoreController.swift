@@ -16,14 +16,10 @@ struct FireStoreController {
 	static let users = "users"
     static let meetings = "meetings"
     static let db = Firestore.firestore()
-	
-    
-    
-    
     
     
 	func addUser(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
-		Firestore.firestore().collection(FireStoreController.users).document(user.uid).setData(user.toDictionary) { error in
+		FireStoreController.db.collection(FireStoreController.users).document(user.uid).setData(user.toDictionary) { error in
             if let error = error {
                 completion(error)
                 return
@@ -33,7 +29,7 @@ struct FireStoreController {
 	}
     
     func fetchAllUsers(completion: @escaping ([CurrentUser]?, Error?) -> ()){
-        Firestore.firestore().collection(FireStoreController.users).getDocuments { snapShot, error in
+       FireStoreController.db.collection(FireStoreController.users).getDocuments { snapShot, error in
             if let error = error {
                 completion(nil, error)
                 return
@@ -57,7 +53,7 @@ struct FireStoreController {
     
     func fetchMeetings(completion: @escaping ([Meeting]?, Error?) -> ()) {
         
-        Firestore.firestore().collection(FireStoreController.meetings).getDocuments { snapShot, error in
+        FireStoreController.db.collection(FireStoreController.meetings).getDocuments { snapShot, error in
             if let error =  error {
                 completion(nil, error)
                 return
@@ -80,6 +76,13 @@ struct FireStoreController {
             
             completion(meetings, nil)
         }
+    }
+    
+    func fetchMeeting(with uid: String, completion: @escaping (Error?) -> ()) {
+        
+        
+        
+        
         
         
     }

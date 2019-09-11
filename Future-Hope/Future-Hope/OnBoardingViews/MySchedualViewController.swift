@@ -25,17 +25,9 @@ class MySchedualViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-        futureHopSchoolController?.fetchMyMeetings{ error in
-            if let error = error {
-                NSLog("Error: \(error)")
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        if let user = futureHopSchoolController?.currentlyLogedInUser {
-            print("\(user.uid) - \(user.fullName)")
-        }
+        
+        tableView.reloadData()
+        
 	}
 
 }
