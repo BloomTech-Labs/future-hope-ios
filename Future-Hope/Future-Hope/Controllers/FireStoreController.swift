@@ -19,7 +19,8 @@ struct FireStoreController {
     
     
 	func addUser(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
-		FireStoreController.db.collection(FireStoreController.users).document(user.uid).setData(user.toDictionary) { error in
+        let document = FireStoreController.db.collection(FireStoreController.users).document(user.uid)
+		document.setData(user.toDictionary) { error in
             if let error = error {
                 completion(error)
                 return
@@ -29,7 +30,8 @@ struct FireStoreController {
 	}
     
     func fetchAllUsers(completion: @escaping ([CurrentUser]?, Error?) -> ()){
-       FireStoreController.db.collection(FireStoreController.users).getDocuments { snapShot, error in
+        let collection = FireStoreController.db.collection(FireStoreController.users)
+        collection.getDocuments { snapShot, error in
             if let error = error {
                 completion(nil, error)
                 return
@@ -52,8 +54,8 @@ struct FireStoreController {
     
     
     func fetchMeetings(completion: @escaping ([Meeting]?, Error?) -> ()) {
-        
-        FireStoreController.db.collection(FireStoreController.meetings).getDocuments { snapShot, error in
+        let collection = FireStoreController.db.collection(FireStoreController.meetings)
+        collection.getDocuments { snapShot, error in
             if let error =  error {
                 completion(nil, error)
                 return
@@ -87,10 +89,10 @@ struct FireStoreController {
                 return
             }
             
-            guard let doc = documentSnapShot else { return }
-            let data = doc.data() as! [String: Any]
+            guard let doc = documentSnapShot, let data = doc.data() else { return }
+            let dict = data as [String: Any]
             
-            if let meeting = Meeting(dictionary: data) {
+            if let meeting = Meeting(dictionary: dict) {
                 completion(meeting, nil)
             }
         }
