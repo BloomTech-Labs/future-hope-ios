@@ -31,8 +31,10 @@ class ExploreTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreTableViewCell", for: indexPath)
+        guard let exlporeCell = cell as? ExploreTableViewCell,
+            let user = futureHopSchoolController?.allUsers[indexPath.row] else { return cell }
+            exlporeCell.currentUser = user
         
-        
-        return cell
+        return exlporeCell
     }
 }

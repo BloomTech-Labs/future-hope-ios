@@ -10,13 +10,25 @@ import UIKit
 
 class ExploreTableViewCell: UITableViewCell {
 
-    
+    var currentUser: CurrentUser? {
+        didSet { setupViews() }
+    }
     
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
+    private func setupViews(){
+        guard let currentUser =  currentUser else { return }
+        
+        nameLabel?.text = currentUser.fullName
+        if let type = currentUser.userType {
+            let str: String = type == .mentor ? "Mentor" : "Teacher"
+            typeLabel?.text = str
+        }
+        
+    }
     
     
 }
