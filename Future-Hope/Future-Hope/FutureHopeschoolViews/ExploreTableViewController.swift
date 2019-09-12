@@ -15,13 +15,6 @@ class ExploreTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        futureHopSchoolController?.fetchAllTeachers{ error in
-            if let error = error {
-                
-                print("ERror: \(error)")
-            }
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -27,7 +27,7 @@ class MySchedualViewController: UIViewController {
 		super.viewWillAppear(animated)
         
         tableView.reloadData()
-        
+        print("\(futureHopSchoolController?.meetings.count)")
 	}
 
 }

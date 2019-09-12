@@ -23,6 +23,23 @@ class ApplicationController {
     init() {
         fetchAllTeachers{ _ in
         }
+        
+        fetchMyMeetings{ _ in
+        }
+    }
+    
+    
+    func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
+        guard let user = currentlyLogedInUser else { return }
+        FireStoreController().fetchMyMeetings(with: user.uid) { myMeetings, error in
+            if let error = error {
+                completion(error)
+            }
+            
+            guard let myMeetings = myMeetings else { return }
+            self.meetings = myMeetings
+        }
+        
     }
     
     
