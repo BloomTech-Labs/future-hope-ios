@@ -25,7 +25,6 @@ class TabBarViewController: UITabBarController {
 		getCurrentUser()
 		for childVC in children {
 			if let vc = childVC as? FutureHopSchoolControllerProtocol {
-                print("found child")
 				vc.futureHopSchoolController = futureHopSchoolController
 			}
 		}

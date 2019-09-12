@@ -11,7 +11,11 @@ import UIKit
 extension MySchedualViewController: FutureHopSchoolControllerProtocol {}
 
 class MySchedualViewController: UIViewController {
-    var futureHopSchoolController: ApplicationController?
+    var futureHopSchoolController: ApplicationController? {
+        didSet {
+            
+        }
+    }
 	@IBOutlet var numberOfMettingsLabel: UILabel!
 	@IBOutlet var tableView: UITableView!
 	
@@ -20,14 +24,24 @@ class MySchedualViewController: UIViewController {
         super.viewDidLoad()
 		tableView.dataSource = self
 		tableView.delegate = self
-		
+        
+        
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
         
-        tableView.reloadData()
-        print("\(futureHopSchoolController?.meetings.count)")
+        futureHopSchoolController!.fetchMyMeetings { error in
+            if let error = error {
+                NSLog("Error with fetchMyMeetings: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                print("here23131")
+                self.tableView.reloadData()
+            }
+        }
+        
 	}
 
 }

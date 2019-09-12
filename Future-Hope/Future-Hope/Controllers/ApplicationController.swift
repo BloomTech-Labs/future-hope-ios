@@ -13,7 +13,7 @@ import GoogleSignIn
 
 class ApplicationController {
 	
-	private (set) var currentlyLogedInUser: CurrentUser?
+    private (set) var currentlyLogedInUser: CurrentUser?
 
     private (set) var meetings: [Meeting] = []
     
@@ -21,10 +21,11 @@ class ApplicationController {
     
     
     init() {
-        fetchAllTeachers{ _ in
-        }
-        
+        print("Init")
         fetchMyMeetings{ _ in
+            
+        }
+        fetchAllTeachers{ _ in
         }
     }
     
@@ -38,6 +39,7 @@ class ApplicationController {
             
             guard let myMeetings = myMeetings else { return }
             self.meetings = myMeetings
+            completion(nil)
         }
         
     }

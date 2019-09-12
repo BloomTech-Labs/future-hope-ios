@@ -12,7 +12,6 @@ import Firebase
 
 
 struct FireStoreController {
-    
 	static let users = "users"
     static let meetings = "meetings"
     static let db = Firestore.firestore()
@@ -57,10 +56,8 @@ struct FireStoreController {
         }
     }
     
-    
     func fetchMyMeetings(with uid: String, completion: @escaping ([Meeting]?, Error?) -> ()) {
         let whereField = meetingsCollectionRef.whereField("participantUIDs", arrayContains: uid)
-        
         whereField.getDocuments { meetingsSnapShot, error in
             if let error = error {
                 completion(nil, error)
@@ -81,7 +78,4 @@ struct FireStoreController {
             completion(myMeetings, nil)
         }
     }
-    
-    
-    
 }
