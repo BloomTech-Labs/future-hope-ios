@@ -18,6 +18,12 @@ struct FireStoreController {
     static let db = Firestore.firestore()
     
     
+    
+    var allusersColectionRef: CollectionReference {
+        return FireStoreController.db.collection(FireStoreController.users)
+    }
+    
+    
 	func addUser(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
         let document = FireStoreController.db.collection(FireStoreController.users).document(user.uid)
 		document.setData(user.toDictionary) { error in
@@ -31,8 +37,7 @@ struct FireStoreController {
 	}
     
     func fetchAllUsers(completion: @escaping ([CurrentUser]?, Error?) -> ()){
-        let collection = FireStoreController.db.collection(FireStoreController.users)
-        collection.getDocuments { documentsSnapShot, error in
+        allusersColectionRef.getDocuments { documentsSnapShot, error in
             if let error = error {
                 completion(nil, error)
                 return
@@ -93,4 +98,18 @@ struct FireStoreController {
             }
         }
     }
+    
+    
+    func fetchAllTeachers(completion: @escaping ([CurrentUser]?, Error?) -> ()) {
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
 }
