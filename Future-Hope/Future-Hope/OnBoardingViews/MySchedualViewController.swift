@@ -38,6 +38,10 @@ class MySchedualViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 print("here23131")
+                
+                let count = self.futureHopSchoolController!.meetings.count
+                
+                self.numberOfMettingsLabel?.text = "\(count) meetings"
                 self.tableView.reloadData()
             }
         }

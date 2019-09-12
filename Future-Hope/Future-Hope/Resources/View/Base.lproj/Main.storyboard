@@ -970,8 +970,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 meetings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fye-hO-jU1">
-                                <rect key="frame" x="20" y="64" width="374" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <rect key="frame" x="20" y="64" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1012,13 +1012,13 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="0eu-eh-Dsl"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPB-Rr-VvH">
                                                             <rect key="frame" x="0.0" y="29" width="334" height="16.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1040,6 +1040,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="meetingTitle" destination="aUv-ot-EXd" id="fTu-a3-aj9"/>
+                                            <outlet property="timeLabel" destination="oCh-vY-ROv" id="gM9-F2-KJ0"/>
+                                            <outlet property="withLabel" destination="cPB-Rr-VvH" id="Cse-Td-zJd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
