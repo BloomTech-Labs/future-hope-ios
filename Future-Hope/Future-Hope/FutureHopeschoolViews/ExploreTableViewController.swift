@@ -15,7 +15,13 @@ class ExploreTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        futureHopSchoolController?.fetchAllUsers()
+        
+        futureHopSchoolController?.fetchAllTeachers{ error in
+            if let error = error {
+                
+                print("ERror: \(error)")
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -24,14 +30,14 @@ class ExploreTableViewController: UITableViewController {
         tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return futureHopSchoolController?.allUsers.count ?? 0
+        return futureHopSchoolController?.teachers.count ?? 0
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreTableViewCell", for: indexPath)
         guard let exlporeCell = cell as? ExploreTableViewCell,
-            let user = futureHopSchoolController?.allUsers[indexPath.row] else { return cell }
+            let user = futureHopSchoolController?.teachers[indexPath.row] else { return cell }
         
         exlporeCell.currentUser = user
 //        loadImage(with: exlporeCell, with: user)

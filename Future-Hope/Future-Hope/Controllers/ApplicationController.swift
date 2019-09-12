@@ -17,52 +17,29 @@ class ApplicationController {
 
     private (set) var meetings: [Meeting] = []
     
-    private (set) var allUsers: [CurrentUser] = []
+    private (set) var teachers: [CurrentUser] = []
     
     
     init() {
-        fetchAllUsers()
+        fetchAllTeachers{ _ in
+        }
     }
     
-    func fetchAllUsers() {
-        print("here1")
-        FireStoreController().fetchAllUsers { allUsers, error in
+    
+    func fetchAllTeachers(completion: @escaping (Error?) -> ()){
+        FireStoreController().fetchAllTeachers { teachers, error in
             if let error = error {
-                NSLog("Error  \(error)")
+                completion(error)
                 return
             }
             
-            guard let allUsers = allUsers else { return }
+            guard let teachers = teachers else { return }
+            self.teachers = teachers
             
-            // fetch all image data
-            
-            for user in allUsers {
-                
-                if let url = user.photoUrl {
-                    self.fetchUserImage(with: url, completion: { data, error in
-                        if let error = error {
-                            NSLog("Error fetching image: \(error)")
-                            return
-                        }
-                        
-                        // This is Bad Practice! Implement Cache and implement operations!!
-                        
-                        guard let data = data else { return }
-                        user.imageData = data
-                        
-                    })
-                }
-                
-                
-            }
-            
-            
-            
-            
-            self.allUsers = allUsers
-
         }
     }
+    
+    
 }
 
 // MARK: AlertControllers

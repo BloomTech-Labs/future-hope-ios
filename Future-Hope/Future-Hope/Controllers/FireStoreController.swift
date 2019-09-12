@@ -99,7 +99,7 @@ struct FireStoreController {
     
     
     func fetchAllTeachers(completion: @escaping ([CurrentUser]?, Error?) -> ()) {
-        let whereField =  meetingsCollectionRef.whereField("userType", isGreaterThan: "teacher")
+        let whereField =  usersColectionRef.whereField("userType", isEqualTo: "teacher")
         whereField.getDocuments { documentsSnapShot, error in
             if let error = error {
                 completion(nil, error)
@@ -108,10 +108,15 @@ struct FireStoreController {
             
             guard let documents = documentsSnapShot else { return }
             print(documents.count)
+            var users: [CurrentUser] = []
+            for doc in documents.documents {
+                let dictioanary = doc.data() as [String: Any]
+                if let user = CurrentUser(dictionary: dictioanary) {
+                    users.append(user)
+                }
+            }
             
-            
-            
-            
+            completion(users, nil)
         }
         
         
