@@ -60,8 +60,6 @@ class ProfileSettingsViewController: UIViewController {
 			vc.currentUser = futureHopSchoolController?.currentlyLogedInUser
 		}
 	}
-	
-	
 }
 
 

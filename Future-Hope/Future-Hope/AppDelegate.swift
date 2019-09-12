@@ -29,7 +29,9 @@ extension AppDelegate: GIDSignInDelegate {
 			NSLog("Error with GidSignIN: \(error)")
 			return
 		}
+        
 		guard let auth = user.authentication else { return }
+        
 		let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
 		
 		Auth.auth().signIn(with: credentials) { _, error in

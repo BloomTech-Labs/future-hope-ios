@@ -13,45 +13,106 @@ import GoogleSignIn
 
 class ApplicationController {
 	
-	private (set) var currentlyLogedInUser: CurrentUser?
-	private (set) var AllUsers: [CurrentUser] = []
-	
+    private (set) var currentlyLogedInUser: CurrentUser?
+
+    private (set) var meetings: [Meeting] = []
+    
+    private (set) var teachers: [CurrentUser] = []
+    
+    
+    init() {
+        fetchAllTeachers{ _ in
+        }
+        
+        fetchMyMeetings{ _ in
+            
+        }
+    }
+    
+    
+    func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
+        guard let user = currentlyLogedInUser else { return }
+        FireStoreController().fetchMyMeetings(with: user.uid) { myMeetings, error in
+            if let error = error {
+                completion(error)
+            }
+            
+            guard let myMeetings = myMeetings else { return }
+            DispatchQueue.main.async {
+                
+                self.meetings = myMeetings
+                completion(nil)
+            }
+        }
+        
+    }
+    
+    
+    func fetchAllTeachers(completion: @escaping (Error?) -> ()){
+        FireStoreController().fetchAllTeachers { teachers, error in
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            guard let teachers = teachers else { return }
+            self.teachers = teachers
+            
+        }
+    }
+    
+    
+}
+
+// MARK: AlertControllers
+extension ApplicationController {
+    func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
+        
+        return ac
+    }
+}
+
+// MARK: CurrentUser Setup
+extension ApplicationController {
+
 	// set current user and fetch image
 	func setCurrentlyLogedInUser(with user: CurrentUser) {
 		currentlyLogedInUser = user
 		if let url = user.photoUrl {
 			fetchUserImage(with: url) { data, error in
+                
 				if let error = error {
 					print(error)
 				}
+                
 				guard let data  =  data,
-					let currentlyLogedInUser = self.currentlyLogedInUser else { return }
-				
-				currentlyLogedInUser.imageData = data
+                    let currentlyLogedInUser = self.currentlyLogedInUser else { return }
+                
+                DispatchQueue.main.async {
+                    currentlyLogedInUser.imageData = data
+                }
 			}
 		}
 	}
-	
+	// fetch image with url
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
-		print(url.absoluteString)
-
 		URLSession.shared.dataTask(with: url) { data, _, error in
 			if let error = error{
 				NSLog("Error fetching image: \(error)")
 				completion(nil, error)
 				return
 			}
-
+            
 			guard let data = data else { return }
 			completion(data, nil)
 		}.resume()
 	}
-	
 }
 
 
 // MARK: Fireabse Auth
-
 extension ApplicationController {
 
 	
@@ -60,30 +121,25 @@ extension ApplicationController {
 		let fireAuth = Auth.auth()
 		do{
 			try fireAuth.signOut()
-			//gidSignOut()
-			NSLog("SignOut Success!")
 			completion(nil)
 		}catch {
-			NSLog("Error signing out with :\(error)")
 			completion(error)
 		}
 	}
 
-	private func gidSignOut() {
-		GIDSignIn.sharedInstance().signOut()
-	}
+//    private func gidSignOut() {
+//        GIDSignIn.sharedInstance().signOut()
+//    }
 	
 	
 	/// SignIn With Google credentials
 	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
 		Auth.auth().signIn(with: credentail) { authResult, error in
 			if let error = error {
-				NSLog("\t->>>>>>>>> Error with Auth sign in with credential: \(error)\nauthResult\(authResult.debugDescription)")
 				completion(error)
 				return
 			}
-		
-			NSLog("Auth comple with: \(authResult.debugDescription)")
+            
 			completion(nil)
 		}
 	}
@@ -95,14 +151,3 @@ extension ApplicationController {
 	}
 }
 
-
-// MARK: AlertControllers
-
-extension ApplicationController {
-	func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
-		let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-		ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
-		
-		return ac
-	}
-}

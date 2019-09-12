@@ -32,7 +32,9 @@ class SignInViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		setupViews()
+		
+        
+        setupViews()
     }
 
 	private func setupViews() {

@@ -8,7 +8,10 @@
 
 import UIKit
 
+extension MySchedualViewController: FutureHopSchoolControllerProtocol {}
+
 class MySchedualViewController: UIViewController {
+    var futureHopSchoolController: ApplicationController? 
 	@IBOutlet var numberOfMettingsLabel: UILabel!
 	@IBOutlet var tableView: UITableView!
 	
@@ -17,25 +20,37 @@ class MySchedualViewController: UIViewController {
         super.viewDidLoad()
 		tableView.dataSource = self
 		tableView.delegate = self
-		
+        
+        
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+        
+        futureHopSchoolController?.fetchMyMeetings{ _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                
+                self.numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Classes"
+            }
+        }
+        
+        tableView.reloadData()
+        
 	}
 
 }
 
 extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return futureHopSchoolController?.meetings.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MySchedualCell", for: indexPath)
-		guard let mySchedualCell = cell as? MyScdualTableViewCell else { return cell }
-		
+		guard let mySchedualCell = cell as? MyScdualTableViewCell, let meetings = futureHopSchoolController?.meetings else { return cell }
+		let meeting = meetings[indexPath.row]
+        mySchedualCell.meeting = meeting
 		return mySchedualCell
 	}
-	
 }

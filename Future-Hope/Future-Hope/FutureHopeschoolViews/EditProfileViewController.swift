@@ -69,7 +69,7 @@ class EditProfileViewController: UIViewController {
 		}
 		
 		// Just updating current user
-		FireStoreController().addUserToFireStore(with: newUser) { error in
+		FireStoreController().addUser(with: newUser) { error in
 			if let error = error {
 				print("Error updating firestore: \(error)")
 			}

@@ -89,7 +89,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 	}
 	
 	private func addUserToFireBase(with user: CurrentUser) {
-		FireStoreController().addUserToFireStore(with: user) { error in
+		FireStoreController().addUser(with: user) { error in
 			if let error = error {
 				let ac = ApplicationController().simpleActionSheetAllert(with: "Network Error", message: "Please Try Again 🧐")
 				self.present(ac, animated: true)

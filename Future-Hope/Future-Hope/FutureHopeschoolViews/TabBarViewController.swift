@@ -14,7 +14,6 @@ protocol FutureHopSchoolControllerProtocol: AnyObject {
 	var futureHopSchoolController: ApplicationController? { set get }
 }
 
-
 class TabBarViewController: UITabBarController {
 	
 	let futureHopSchoolController = ApplicationController()
@@ -24,9 +23,14 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		getCurrentUser()
+        
+        futureHopSchoolController.fetchMyMeetings { _ in
+            print("here")
+        }
 		for childVC in children {
 			if let vc = childVC as? FutureHopSchoolControllerProtocol {
 				vc.futureHopSchoolController = futureHopSchoolController
+                
 			}
 		}
     }
@@ -40,19 +44,21 @@ class TabBarViewController: UITabBarController {
 				return
 			}
 			
-			print("Found!!!!!")
 			if let doc = document, doc.exists, let data = doc.data() {
 				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
 					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
-					print("found account")
 				}else {
 					print("Error getting data from fire store!")
 				}
 			}else {
-//				self.createUser(user)
-				print("Create an account")
+                if let user = self.futureHopSchoolController.fetchCurrentFireAuthenticatedUser() {
+                    self.createUser(user)
+                }
 			}
 		}
+        
+        
+    
 		
 	}
 	
@@ -60,7 +66,7 @@ class TabBarViewController: UITabBarController {
 		guard let name = user.displayName, let email = user.email, let photoUrl = user.photoURL else { return }
 		
 		let currentUser = CurrentUser(aboutMe: "", awaitingApproval: true, city: "", country: "", email: email, fullName: name, phoneNumber: "", photoUrl: photoUrl, stateProvince: "", uid: user.uid, userType: .mentor, imageData: nil)
-		FireStoreController().addUserToFireStore(with: currentUser) { error in
+		FireStoreController().addUser(with: currentUser) { error in
 			if let error = error {
 				NSLog("Error adding using to fireStore: \(error)")
 				return
