@@ -14,7 +14,7 @@ class ExploreTableViewController: UITableViewController {
     var futureHopSchoolController: ApplicationController?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() 
     }
 
     override func viewWillAppear(_ animated: Bool) {

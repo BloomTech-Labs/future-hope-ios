@@ -23,9 +23,14 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		getCurrentUser()
+        
+        futureHopSchoolController.fetchMyMeetings { _ in
+            print("here")
+        }
 		for childVC in children {
 			if let vc = childVC as? FutureHopSchoolControllerProtocol {
 				vc.futureHopSchoolController = futureHopSchoolController
+                
 			}
 		}
     }
@@ -51,6 +56,9 @@ class TabBarViewController: UITabBarController {
                 }
 			}
 		}
+        
+        
+    
 		
 	}
 	

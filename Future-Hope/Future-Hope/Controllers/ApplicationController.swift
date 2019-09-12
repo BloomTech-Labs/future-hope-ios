@@ -21,11 +21,11 @@ class ApplicationController {
     
     
     init() {
-        print("Init")
+        fetchAllTeachers{ _ in
+        }
+        
         fetchMyMeetings{ _ in
             
-        }
-        fetchAllTeachers{ _ in
         }
     }
     
@@ -38,8 +38,11 @@ class ApplicationController {
             }
             
             guard let myMeetings = myMeetings else { return }
-            self.meetings = myMeetings
-            completion(nil)
+            DispatchQueue.main.async {
+                
+                self.meetings = myMeetings
+                completion(nil)
+            }
         }
         
     }
@@ -148,12 +151,3 @@ extension ApplicationController {
 	}
 }
 
-
-
-
-// MARK: Meetings
-extension ApplicationController {
-    
-    
-    
-}
