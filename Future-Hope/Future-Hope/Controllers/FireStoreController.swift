@@ -17,16 +17,17 @@ struct FireStoreController {
     static let meetings = "meetings"
     static let db = Firestore.firestore()
     
-    
-    
-    var allusersColectionRef: CollectionReference {
+    var usersColectionRef: CollectionReference {
         return FireStoreController.db.collection(FireStoreController.users)
+    }
+    
+    var meetingsCollectionRef: CollectionReference {
+        return FireStoreController.db.collection(FireStoreController.meetings)
     }
     
     
 	func addUser(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
-        let document = FireStoreController.db.collection(FireStoreController.users).document(user.uid)
-		document.setData(user.toDictionary) { error in
+        usersColectionRef.document(user.uid).setData(user.toDictionary) { error in
             if let error = error {
                 completion(error)
                 return
@@ -37,7 +38,7 @@ struct FireStoreController {
 	}
     
     func fetchAllUsers(completion: @escaping ([CurrentUser]?, Error?) -> ()){
-        allusersColectionRef.getDocuments { documentsSnapShot, error in
+        usersColectionRef.getDocuments { documentsSnapShot, error in
             if let error = error {
                 completion(nil, error)
                 return
@@ -58,8 +59,7 @@ struct FireStoreController {
     }
     
     func fetchMeetings(completion: @escaping ([Meeting]?, Error?) -> ()) {
-        let collection = FireStoreController.db.collection(FireStoreController.meetings)
-        collection.getDocuments { documentsSnapShot, error in
+       meetingsCollectionRef.getDocuments { documentsSnapShot, error in
             if let error =  error {
                 completion(nil, error)
                 return
@@ -81,9 +81,7 @@ struct FireStoreController {
     }
     
     func fetchMeeting(with uid: String, completion: @escaping (Meeting?, Error?) -> ()) {
-        let document = FireStoreController.db.collection(FireStoreController.meetings)
-        
-        document.document(uid).getDocument { documentSnapShot, error in
+       meetingsCollectionRef.document(uid).getDocument { documentSnapShot, error in
             if let error = error {
                 completion(nil, error)
                 return
@@ -101,9 +99,20 @@ struct FireStoreController {
     
     
     func fetchAllTeachers(completion: @escaping ([CurrentUser]?, Error?) -> ()) {
-        
-        
-        
+        let whereField =  meetingsCollectionRef.whereField("userType", isGreaterThan: "teacher")
+        whereField.getDocuments { documentsSnapShot, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let documents = documentsSnapShot else { return }
+            print(documents.count)
+            
+            
+            
+            
+        }
         
         
         
