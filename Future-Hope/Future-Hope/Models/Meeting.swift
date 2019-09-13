@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Firebase
 class Meeting {
     
     let id: String
@@ -33,16 +33,8 @@ class Meeting {
         let id = dictionary["id"] as? String ?? ""
         let title = dictionary["title"] as? String ?? ""
         
-        // error with timestamp
-        if let startDouble = dictionary["start"] as? Double {
-            let start = Date(timeIntervalSince1970: startDouble / 1000)
-            print(start)
-            let componenets = Calendar.current.dateComponents([.year, .day, .hour, .minute], from: start)
-            
-            print("\(componenets.year) - \(componenets.day) - \(String(describing: componenets.hour)) - \(componenets.minute)")
-        } else {
-            print("error")
-        }
+        
+        let timestamp = dictionary["start"] as? Timestamp
 
 
         let participantNames = dictionary["participantNames"] as? [String] ?? []
@@ -50,7 +42,7 @@ class Meeting {
         
         
         //print("id: \(id) - title: \(title) - participantNames: \(participantNames[0]) - participantUIDs: \(participantUIDs[0])")
-        self.init(id:id, participantNames: participantNames, participantUIDs: participantUIDs, start: Date(), title: title)
+        self.init(id:id, participantNames: participantNames, participantUIDs: participantUIDs, start: date, title: title)
         
     }
 }
