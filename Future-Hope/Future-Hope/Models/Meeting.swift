@@ -27,15 +27,13 @@ class Meeting {
     }
     
     convenience init? (dictionary: [String: Any]) {
-        
-       // print(dictionary)
-        
         let id = dictionary["id"] as? String ?? ""
         let title = dictionary["title"] as? String ?? ""
         
+        guard let timestamp = dictionary["start"] as? Timestamp else { return nil }
+        let date = timestamp.dateValue()
         
-        let timestamp = dictionary["start"] as? Timestamp
-
+        print(date)
 
         let participantNames = dictionary["participantNames"] as? [String] ?? []
         let participantUIDs = dictionary["participantUIDs"] as? [String] ?? []
