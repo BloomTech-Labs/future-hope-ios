@@ -40,6 +40,8 @@ class Meeting {
             let componenets = Calendar.current.dateComponents([.year, .day, .hour, .minute], from: start)
             
             print("\(componenets.year) - \(componenets.day) - \(String(describing: componenets.hour)) - \(componenets.minute)")
+        } else {
+            print("error")
         }
 
 
