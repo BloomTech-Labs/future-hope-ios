@@ -37,7 +37,7 @@ class ApplicationController {
             guard let myMeetings = myMeetings else { return }
             DispatchQueue.main.async {
                 
-                self.meetings = myMeetings
+                self.meetings = myMeetings.sorted(by: {$1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate})
                 completion(nil)
             }
         }
