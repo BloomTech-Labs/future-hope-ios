@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 import Firebase
-class Meeting {
+class Meeting: Equatable {
+    static func == (lhs: Meeting, rhs: Meeting) -> Bool {
+        return lhs.start == rhs.start
+    }
+    
     
     let id: String
     let participantNames: [String]

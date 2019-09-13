@@ -23,10 +23,7 @@ class ApplicationController {
     init() {
         fetchAllTeachers{ _ in
         }
-        
-        fetchMyMeetings{ _ in
-            
-        }
+
     }
     
     
