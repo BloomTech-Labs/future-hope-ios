@@ -53,7 +53,7 @@ class ScheduleViewController: UIViewController {
         
     }
     
-    @IBAction func sceduleMeetingButtonPressed(_ sender: Any) {
+    @IBAction func scheduleMeetingButtonPressed(_ sender: Any) {
         
         
     }

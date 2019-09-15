@@ -11,20 +11,15 @@ import Firebase
 import FirebaseCore
 import GoogleSignIn
 
-class ApplicationController {
+@objc class ApplicationController: NSObject {
 	
     private (set) var currentlyLogedInUser: CurrentUser?
 
-    private (set) var meetings: [Meeting] = []
+    @objc private  (set) dynamic var meetings: [Meeting] = []
     
     private (set) var teachers: [CurrentUser] = []
     
-    
-    init() {
-        fetchAllTeachers{ _ in
-        }
 
-    }
     
     
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
@@ -87,8 +82,13 @@ extension ApplicationController {
 				guard let data  =  data,
                     let currentlyLogedInUser = self.currentlyLogedInUser else { return }
                 
+                self.fetchMyMeetings { _ in
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name.init("MeetingsDownLoaded"), object: nil)
+                }
                 DispatchQueue.main.async {
                     currentlyLogedInUser.imageData = data
+                    
                 }
 			}
 		}

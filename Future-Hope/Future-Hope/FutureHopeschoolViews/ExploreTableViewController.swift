@@ -14,7 +14,16 @@ class ExploreTableViewController: UITableViewController {
     var futureHopSchoolController: ApplicationController?
     
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+        futureHopSchoolController!.fetchAllTeachers { error in
+            if let error = error {
+                NSLog("Error fetching teacher: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
