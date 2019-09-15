@@ -17,7 +17,7 @@ import GoogleSignIn
 import MaterialComponents.MaterialTextFields
 
 class SignInViewController: UIViewController {
-
+    let futureHopSchoolController = ApplicationController()
 	@IBOutlet var emailTextField: MDCTextField!
 	@IBOutlet var passwordTextField: MDCTextField!
 	var handle: AuthStateDidChangeListenerHandle?
@@ -32,8 +32,6 @@ class SignInViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-        
         setupViews()
     }
 
@@ -62,7 +60,7 @@ class SignInViewController: UIViewController {
 			let password = passwordTextField.text else { return }
 		
 		if email.isEmpty || password.isEmpty {
-			let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
+			let ac = self.futureHopSchoolController.simpleActionSheetAllert(with: "Error With email/password", message: "Password/email is empty")
 			self.present(ac, animated: true)
 			return
 		}
@@ -70,7 +68,7 @@ class SignInViewController: UIViewController {
 		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
 			if let error = error {
 				NSLog("Error with Auth Sign In email/password: \(error)\n With authResult: \(authResult.debugDescription)")
-				let ac = ApplicationController().simpleActionSheetAllert(with: "Error With email/password", message: "Please try Again!")
+				let ac = self.futureHopSchoolController.simpleActionSheetAllert(with: "Error With email/password", message: "Please try Again!")
 				self.present(ac, animated: true)
 				return
 			}
@@ -88,7 +86,7 @@ class SignInViewController: UIViewController {
 			guard let vc = segue.destination as? TabBarViewController,
 			 let uid = uid else { return }
 			vc.uid = uid
-			print("here")
+			vc.futureHopSchoolController = futureHopSchoolController
 		}
 	}
 	

@@ -14,7 +14,7 @@ class ExploreTableViewController: UITableViewController {
     var futureHopSchoolController: ApplicationController?
     
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +33,7 @@ class ExploreTableViewController: UITableViewController {
             let user = futureHopSchoolController?.teachers[indexPath.row] else { return cell }
         
         exlporeCell.currentUser = user
-//        loadImage(with: exlporeCell, with: user)
+//      loadImage(with: exlporeCell, with: user)
         return exlporeCell
     }
     
@@ -45,6 +45,7 @@ class ExploreTableViewController: UITableViewController {
                 NSLog("Error wiht applicationcontroller: \(error)")
                 return
             }
+           
             guard let data = data else { return }
             let image = UIImage(data: data)
             
@@ -52,11 +53,16 @@ class ExploreTableViewController: UITableViewController {
                 cell.userImageView?.image = image
                 self.tableView.reloadData()
             }
-            
         }
-        
-        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SchedualMeetingSegue" {
+            guard let vc = segue.destination as? ScheduleViewController,
+                  let indexPath = tableView.indexPathForSelectedRow,
+                  let user = futureHopSchoolController?.teachers[indexPath.row]  else { return }
+            vc.user = user
+        }
+    }
     
 }

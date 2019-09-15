@@ -65,7 +65,7 @@ class CurrentUser {
 		let userType: UserType = (dictionary["userType"] as? String) == "mentor" ?  .mentor : .teacher
 		
 		self.init(aboutMe: aboutMe ?? "", awaitingApproval: awaitingApproval ??  true, city: city ?? "" , country: country,
-				  email: email ?? "", fullName: fullName ?? "", phoneNumber: phoneNumber ?? "", photoUrl: URL(string: photoUrlString ?? "https://lh3.googleusercontent.com/a-/AAuE7mC3gEHLMdtWgx0DwGoYGw_k469Debv38_uqWjP4=s96-c"),
+				  email: email ?? "", fullName: fullName ?? "", phoneNumber: phoneNumber ?? "", photoUrl: URL(string: photoUrlString!),
 				  stateProvince: stateProvince, uid: uid ?? "", userType: userType)
 	}
 

@@ -13,22 +13,16 @@ import GoogleSignIn
 
 class ApplicationController {
 	
-    private (set) var currentlyLogedInUser: CurrentUser?
+    private (set) var currentlyLogedInUser: CurrentUser? {
+        didSet {
+            self.fetchAllTeachers { _ in
+            }
+        }
+    }
 
     private (set) var meetings: [Meeting] = []
     
     private (set) var teachers: [CurrentUser] = []
-    
-    
-    init() {
-        fetchAllTeachers{ _ in
-        }
-        
-        fetchMyMeetings{ _ in
-            
-        }
-    }
-    
     
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
         guard let user = currentlyLogedInUser else { return }
@@ -39,12 +33,10 @@ class ApplicationController {
             
             guard let myMeetings = myMeetings else { return }
             DispatchQueue.main.async {
-                
-                self.meetings = myMeetings
+                self.meetings = myMeetings.sorted(by: {$1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate})
                 completion(nil)
             }
         }
-        
     }
     
     
@@ -54,14 +46,10 @@ class ApplicationController {
                 completion(error)
                 return
             }
-            
             guard let teachers = teachers else { return }
             self.teachers = teachers
-            
         }
     }
-    
-    
 }
 
 // MARK: AlertControllers
@@ -90,8 +78,13 @@ extension ApplicationController {
 				guard let data  =  data,
                     let currentlyLogedInUser = self.currentlyLogedInUser else { return }
                 
+                self.fetchMyMeetings { _ in
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name.init("MeetingsDownLoaded"), object: nil)
+                }
                 DispatchQueue.main.async {
                     currentlyLogedInUser.imageData = data
+                    
                 }
 			}
 		}

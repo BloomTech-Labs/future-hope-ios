@@ -26,19 +26,20 @@ class MySchedualViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-        
-        futureHopSchoolController?.fetchMyMeetings{ _ in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                
-                self.numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Classes"
-            }
-        }
-        
+        notifyWhenmeetingsDownloaded()
         tableView.reloadData()
-        
 	}
 
+    private func notifyWhenmeetingsDownloaded() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadformeetings(n:)), name: NSNotification.Name.init("MeetingsDownLoaded"), object: nil)
+    }
+    
+    @objc func reloadformeetings (n: NSNotification) {
+        print("found new meetings")
+        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Classes"
+        tableView.reloadData()
+    }
+    
 }
 
 extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {

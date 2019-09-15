@@ -16,7 +16,7 @@ protocol FutureHopSchoolControllerProtocol: AnyObject {
 
 class TabBarViewController: UITabBarController {
 	
-	let futureHopSchoolController = ApplicationController()
+    var futureHopSchoolController: ApplicationController?
 	var currentUser: CurrentUser?
 	var uid: String?
 	
@@ -24,7 +24,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 		getCurrentUser()
         
-        futureHopSchoolController.fetchMyMeetings { _ in
+        futureHopSchoolController?.fetchMyMeetings { _ in
             print("here")
         }
 		for childVC in children {
@@ -46,12 +46,12 @@ class TabBarViewController: UITabBarController {
 			
 			if let doc = document, doc.exists, let data = doc.data() {
 				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
-					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
+					self.futureHopSchoolController?.setCurrentlyLogedInUser(with: currentUser)
 				}else {
 					print("Error getting data from fire store!")
 				}
 			}else {
-                if let user = self.futureHopSchoolController.fetchCurrentFireAuthenticatedUser() {
+                if let user = self.futureHopSchoolController?.fetchCurrentFireAuthenticatedUser() {
                     self.createUser(user)
                 }
 			}

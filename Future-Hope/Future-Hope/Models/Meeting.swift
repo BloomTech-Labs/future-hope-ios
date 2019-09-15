@@ -8,8 +8,14 @@
 
 import Foundation
 import UIKit
+import Firebase
 
-class Meeting {
+
+class Meeting: Equatable {
+    static func == (lhs: Meeting, rhs: Meeting) -> Bool {
+        return lhs.start == rhs.start
+    }
+    
     
     let id: String
     let participantNames: [String]
@@ -27,28 +33,20 @@ class Meeting {
     }
     
     convenience init? (dictionary: [String: Any]) {
-        
-       // print(dictionary)
-        
         let id = dictionary["id"] as? String ?? ""
         let title = dictionary["title"] as? String ?? ""
         
-        // error with timestamp
-        if let startDouble = dictionary["start"] as? Double {
-            let start = Date(timeIntervalSince1970: startDouble / 1000)
-            print(start)
-            let componenets = Calendar.current.dateComponents([.year, .day, .hour, .minute], from: start)
-            
-            print("\(componenets.year) - \(componenets.day) - \(String(describing: componenets.hour)) - \(componenets.minute)")
-        }
-
+        guard let timestamp = dictionary["start"] as? Timestamp else { return nil }
+        let date = timestamp.dateValue()
+        
+        print(date)
 
         let participantNames = dictionary["participantNames"] as? [String] ?? []
         let participantUIDs = dictionary["participantUIDs"] as? [String] ?? []
         
         
         //print("id: \(id) - title: \(title) - participantNames: \(participantNames[0]) - participantUIDs: \(participantUIDs[0])")
-        self.init(id:id, participantNames: participantNames, participantUIDs: participantUIDs, start: Date(), title: title)
+        self.init(id:id, participantNames: participantNames, participantUIDs: participantUIDs, start: date, title: title)
         
     }
 }
