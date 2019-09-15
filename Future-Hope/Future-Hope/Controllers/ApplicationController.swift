@@ -11,15 +11,22 @@ import Firebase
 import FirebaseCore
 import GoogleSignIn
 
-@objc class ApplicationController: NSObject {
+class ApplicationController {
 	
     private (set) var currentlyLogedInUser: CurrentUser?
 
-    @objc private  (set) dynamic var meetings: [Meeting] = []
+    private (set) var meetings: [Meeting] = []
     
     private (set) var teachers: [CurrentUser] = []
     
-
+    init() {
+        
+        DispatchQueue.global(qos: .background).async {
+            self.fetchAllTeachers { _ in
+            }
+        }
+        
+    }
     
     
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {

@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 import Firebase
-@objc class Meeting: NSObject {
+
+
+class Meeting: Equatable {
     static func == (lhs: Meeting, rhs: Meeting) -> Bool {
         return lhs.start == rhs.start
     }
