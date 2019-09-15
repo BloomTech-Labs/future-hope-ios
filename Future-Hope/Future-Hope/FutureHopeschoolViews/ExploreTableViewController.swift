@@ -59,4 +59,18 @@ class ExploreTableViewController: UITableViewController {
     }
     
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        print("\(indexPath.row)")
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let segue.identifier == "SchedualMeetingSegue" {
+//            guard let vc = segue.destination as?
+//
+//        }
+    }
+    
 }

@@ -27,15 +27,18 @@ class MySchedualViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
         
-        futureHopSchoolController?.fetchMyMeetings{ _ in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                
-                self.numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Classes"
-            }
-        }
         
-        tableView.reloadData()
+//        DispatchQueue.global(qos: .background).async {
+            self.futureHopSchoolController?.fetchMyMeetings{ _ in
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    
+                    self.numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Classes"
+                    self.tableView.reloadData()
+                }
+            }
+//        }
+        
         
 	}
 
