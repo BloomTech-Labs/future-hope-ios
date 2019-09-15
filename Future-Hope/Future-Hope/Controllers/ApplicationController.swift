@@ -13,19 +13,16 @@ import GoogleSignIn
 
 class ApplicationController {
 	
-    private (set) var currentlyLogedInUser: CurrentUser?
-
-    private (set) var meetings: [Meeting] = []
-    
-    private (set) var teachers: [CurrentUser] = []
-    
-    init() {
-        DispatchQueue.global(qos: .background).async {
+    private (set) var currentlyLogedInUser: CurrentUser? {
+        didSet {
             self.fetchAllTeachers { _ in
             }
         }
     }
+
+    private (set) var meetings: [Meeting] = []
     
+    private (set) var teachers: [CurrentUser] = []
     
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
         guard let user = currentlyLogedInUser else { return }
