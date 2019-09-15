@@ -20,12 +20,10 @@ class ApplicationController {
     private (set) var teachers: [CurrentUser] = []
     
     init() {
-        
         DispatchQueue.global(qos: .background).async {
             self.fetchAllTeachers { _ in
             }
         }
-        
     }
     
     
@@ -38,12 +36,10 @@ class ApplicationController {
             
             guard let myMeetings = myMeetings else { return }
             DispatchQueue.main.async {
-                
                 self.meetings = myMeetings.sorted(by: {$1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate})
                 completion(nil)
             }
         }
-        
     }
     
     
@@ -53,14 +49,10 @@ class ApplicationController {
                 completion(error)
                 return
             }
-            
             guard let teachers = teachers else { return }
             self.teachers = teachers
-            
         }
     }
-    
-    
 }
 
 // MARK: AlertControllers

@@ -26,7 +26,8 @@ class MyScdualTableViewCell: UITableViewCell {
 
         // setup Date
         let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        format.dateStyle = .long
+        format.timeStyle = .medium
         timeLabel?.text = format.string(from: meeting.start)
         withLabel?.text = " with: \(meeting.participantNames[0])"
         
