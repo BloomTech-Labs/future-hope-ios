@@ -67,10 +67,12 @@ class ExploreTableViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let segue.identifier == "SchedualMeetingSegue" {
-//            guard let vc = segue.destination as?
-//
-//        }
+        if segue.identifier == "SchedualMeetingSegue" {
+            guard let vc = segue.destination as? ScheduleViewController,
+                  let indexPath = tableView.indexPathForSelectedRow,
+                  let user = futureHopSchoolController?.teachers[indexPath.row]  else { return }
+            vc.user = user
+        }
     }
     
 }
