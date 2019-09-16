@@ -49,4 +49,16 @@ class Meeting: Equatable {
         self.init(id:id, participantNames: participantNames, participantUIDs: participantUIDs, start: date, title: title)
         
     }
+    
+    var toDictionary: [String: Any] {
+        let timestamp = Timestamp(date: start)
+        return [
+            "id": id,
+            "title": title,
+            "participantNames": participantNames,
+            "participantUIDs": participantUIDs,
+            "start": timestamp
+        ]
+    }
+    
 }

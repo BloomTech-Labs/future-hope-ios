@@ -17,13 +17,11 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var aboutMeTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         datePicker.minimumDate = Date()
         datePicker.minuteInterval = 15
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +37,16 @@ class ScheduleViewController: UIViewController {
         if let data = user.imageData {
             userImageView?.image = UIImage(data: data)
         }
+        
+        // Date
+        let format = DateFormatter()
+        format.calendar = .current
+        format.dateStyle = .long
+        format.timeStyle = .medium
+        let str = format.string(from: Date())
+        startDateLabel?.text = str
+        
+        
     }
     
 
@@ -49,8 +57,6 @@ class ScheduleViewController: UIViewController {
         format.dateStyle = .long
         let str = format.string(from: date)
         startDateLabel?.text = str
-        print(str)
-        
     }
     
     @IBAction func scheduleMeetingButtonPressed(_ sender: Any) {
