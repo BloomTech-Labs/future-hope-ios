@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import Firebase
+
 
 
 class ScheduleViewController: UIViewController {
+    
     var currentUser: CurrentUser?
     var user: CurrentUser?
     @IBOutlet weak var userImageView: UIImageView!
@@ -18,6 +19,16 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var aboutMeTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
+    
+    var format: DateFormatter {
+        let format = DateFormatter()
+        format.calendar = .current
+        format.dateStyle = .long
+        format.timeStyle = .medium
+        return format
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +48,11 @@ class ScheduleViewController: UIViewController {
         guard let user = user else { return }
         nameLabel?.text = user.fullName
         aboutMeTextView?.text = user.aboutMe
+        
         if let data = user.imageData {
             userImageView?.image = UIImage(data: data)
         }
         
-        // Date
-        let format = DateFormatter()
-        format.calendar = .current
-        format.dateStyle = .long
-        format.timeStyle = .medium
         let str = format.string(from: Date())
         startDateLabel?.text = str
         
@@ -55,26 +62,42 @@ class ScheduleViewController: UIViewController {
 
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         let date = sender.date
-        let format = DateFormatter()
-        format.calendar = .current
-        format.dateStyle = .long
-        format.timeStyle = .medium
         let str = format.string(from: date)
         startDateLabel?.text = str
     }
     
+   
+    
     @IBAction func scheduleMeetingButtonPressed(_ sender: Any) {
-        guard let currentUser = currentUser else { return }
-        let date = datePicker.date
+        guard let user = user else { return }
         
-        // check if meeting exist
-        //if not send meeting to firebase
-        // if exist grab meeting and update it
-       // let meeting = Meeting(id: UUID().uuidString, participantNames: [currentUser.fullName], participantUIDs: [currentUser.uid], start: date, title: "")
-       // let dictioanry = meeting.toDictionary
+        let alertController = UIAlertController(title: "Meeting with \(user.fullName)  \(format.string(from: datePicker.date))", message: "Set a title:", preferredStyle: .alert)
+        alertController.addTextField()
         
-        FireStoreController().checkIfmeetingExist(currentUser: currentUser, timestamp: Timestamp(date: date))
-        print("here")
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            if let title = alertController.textFields?[0].text {
+                
+                // create it in the app controller
+                //self.createNewMeeting(with: title)
+                
+                
+            }
+            self.dismiss(animated: true)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+        
+        present(alertController, animated: true)
+        
+    }
+    
+    private func createNewMeeting(with title: String) {
+        
+        guard let currentUser = currentUser, let user = user else { return }
+        let participantName: [String] = [currentUser.fullName, user.fullName]
+        let participantUIDs: [String] = [currentUser.uid, user.uid]
+
+        let _ = Meeting(id: UUID().uuidString, participantNames: participantName, participantUIDs: participantUIDs, start: datePicker.date, title: title)
     }
     
     
