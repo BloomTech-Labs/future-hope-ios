@@ -81,25 +81,37 @@ struct FireStoreController {
         }
     }
     
-    func checkIfmeetingExist(currentUser: CurrentUser, timestamp: Timestamp) {
-        
+    func checkIfmeetingExist(currentUser: CurrentUser, timestamp: Timestamp, completion: @escaping (Meeting?, Error?) -> ()) {
         let whereField = meetingsCollectionRef.whereField("participantUIDs", isEqualTo: currentUser.uid).whereField("start", isEqualTo: timestamp)
         whereField.getDocuments { snapShot, error in
             if let error = error{
-                NSLog("Error with login!: \(error)")
+                completion(nil, error)
                 return
             }
             guard let snapShot = snapShot else { return }
             print(snapShot.documents.count)
-            for meeting in snapShot.documents {
-                let dict = meeting.data() as [String: Any]
-                print("Title: \(dict["title"] as! String)")
-                
-                
-            }
+            let dict = snapShot.documents[0].data() as [String: Any]
+            guard let meeting = Meeting(dictionary: dict) else { return }
+            completion(meeting, nil)
+            
+    
             
         }
-        
     }
+    
+    func addMeeting(with meeting: Meeting, completion: @escaping (Error?) -> ()) {
+        
+        meetingsCollectionRef.addDocument(data: meeting.toDictionary) { error in
+            if let error = error {
+                completion(error)
+                return
+            }
+        }
+        
+        print("sccess adding meeting to db")
+        completion(nil)
+    }
+    
+    
     
 }
