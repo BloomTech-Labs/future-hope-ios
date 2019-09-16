@@ -25,7 +25,7 @@ class ApplicationController {
         let format = DateFormatter()
         format.calendar = .current
         format.dateStyle = .long
-        format.timeStyle = .medium
+        format.timeStyle = .short
         return format
     }
     

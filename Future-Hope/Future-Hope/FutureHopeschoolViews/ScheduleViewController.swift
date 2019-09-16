@@ -59,8 +59,8 @@ class ScheduleViewController: UIViewController {
     
     @IBAction func scheduleMeetingButtonPressed(_ sender: Any) {
         guard let user = user else { return }
-        
-        let alertController = UIAlertController(title: "Meeting with \(user.fullName)  \(futureHopSchoolController?.format.string(from: datePicker.date))", message: "Set a title:", preferredStyle: .alert)
+        let date = futureHopSchoolController!.format.string(from: datePicker.date)
+        let alertController = UIAlertController(title: "With \(user.fullName)\n\(date)", message: "Set a title:", preferredStyle: .alert)
         alertController.addTextField()
         
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in

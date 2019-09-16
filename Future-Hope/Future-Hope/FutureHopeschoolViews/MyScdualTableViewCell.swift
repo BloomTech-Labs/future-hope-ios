@@ -23,12 +23,7 @@ class MyScdualTableViewCell: UITableViewCell {
         
         guard let meeting = meeting else { return }
         meetingTitle?.text = meeting.title
-
-        // setup Date
-        let format = DateFormatter()
-        format.dateStyle = .long
-        format.timeStyle = .medium
-        timeLabel?.text = format.string(from: meeting.start)
+        timeLabel?.text = ApplicationController().format.string(from: meeting.start)
         withLabel?.text = " with: \(meeting.participantNames[0])"
         
         // get first user image
