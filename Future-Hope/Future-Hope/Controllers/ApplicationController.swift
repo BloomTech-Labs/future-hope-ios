@@ -21,6 +21,15 @@ class ApplicationController {
     
     private (set) var teachers: [CurrentUser] = []
     
+    var format: DateFormatter {
+        let format = DateFormatter()
+        format.calendar = .current
+        format.dateStyle = .long
+        format.timeStyle = .medium
+        return format
+    }
+    
+    ///
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
         guard let user = currentlyLogedInUser else { return }
         FireStoreController().fetchMyMeetings(with: user.uid) { myMeetings, error in
@@ -39,6 +48,7 @@ class ApplicationController {
         }
     }
     
+    ///
     func fetchAllTeachers(completion: @escaping (Error?) -> ()){
         FireStoreController().fetchAllTeachers { teachers, error in
             if let error = error {

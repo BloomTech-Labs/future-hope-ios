@@ -8,27 +8,16 @@
 
 import UIKit
 
-
+extension ScheduleViewController: FutureHopSchoolControllerProtocol {}
 
 class ScheduleViewController: UIViewController {
-    
-    var currentUser: CurrentUser?
+    var futureHopSchoolController: ApplicationController?
     var user: CurrentUser?
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var aboutMeTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-    
-    var format: DateFormatter {
-        let format = DateFormatter()
-        format.calendar = .current
-        format.dateStyle = .long
-        format.timeStyle = .medium
-        return format
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +42,7 @@ class ScheduleViewController: UIViewController {
             userImageView?.image = UIImage(data: data)
         }
         
-        let str = format.string(from: Date())
+        let str = futureHopSchoolController?.format.string(from: Date())
         startDateLabel?.text = str
         
         
@@ -62,7 +51,7 @@ class ScheduleViewController: UIViewController {
 
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         let date = sender.date
-        let str = format.string(from: date)
+        let str = futureHopSchoolController?.format.string(from: date)
         startDateLabel?.text = str
     }
     
@@ -71,7 +60,7 @@ class ScheduleViewController: UIViewController {
     @IBAction func scheduleMeetingButtonPressed(_ sender: Any) {
         guard let user = user else { return }
         
-        let alertController = UIAlertController(title: "Meeting with \(user.fullName)  \(format.string(from: datePicker.date))", message: "Set a title:", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Meeting with \(user.fullName)  \(futureHopSchoolController?.format.string(from: datePicker.date))", message: "Set a title:", preferredStyle: .alert)
         alertController.addTextField()
         
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
@@ -79,7 +68,7 @@ class ScheduleViewController: UIViewController {
                 
                 // create it in the app controller
                 //self.createNewMeeting(with: title)
-                
+                print(title)
                 
             }
             self.dismiss(animated: true)
@@ -93,7 +82,7 @@ class ScheduleViewController: UIViewController {
     
     private func createNewMeeting(with title: String) {
         
-        guard let currentUser = currentUser, let user = user else { return }
+        guard let currentUser = futureHopSchoolController?.currentlyLogedInUser, let user = user else { return }
         let participantName: [String] = [currentUser.fullName, user.fullName]
         let participantUIDs: [String] = [currentUser.uid, user.uid]
 
