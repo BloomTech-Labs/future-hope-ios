@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
+
 
 class ScheduleViewController: UIViewController {
-
+    var currentUser: CurrentUser?
     var user: CurrentUser?
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,6 +24,7 @@ class ScheduleViewController: UIViewController {
         
         datePicker.minimumDate = Date()
         datePicker.minuteInterval = 15
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,20 +58,25 @@ class ScheduleViewController: UIViewController {
         let format = DateFormatter()
         format.calendar = .current
         format.dateStyle = .long
+        format.timeStyle = .medium
         let str = format.string(from: date)
         startDateLabel?.text = str
     }
     
     @IBAction func scheduleMeetingButtonPressed(_ sender: Any) {
+        guard let currentUser = currentUser else { return }
+        let date = datePicker.date
+        let meeting = Meeting(id: UUID().uuidString, participantNames: [currentUser.fullName], participantUIDs: [currentUser.uid], start: date, title: "")
+        let dictioanry = meeting.toDictionary
         
-        
+        // check if meeting exist
+        //if not send meeting to firebase
+        // if exist grab meeting and update it
     }
     
     
     @IBAction func exitButtonPressed(_ sender: Any) {
         dismiss(animated: true)
-        
-    
     }
     
     

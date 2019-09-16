@@ -89,6 +89,7 @@ extension ApplicationController {
 			}
 		}
 	}
+    
 	// fetch image with url
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
 		URLSession.shared.dataTask(with: url) { data, _, error in
