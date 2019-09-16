@@ -14,10 +14,7 @@ import GoogleSignIn
 class ApplicationController {
 	
     private (set) var currentlyLogedInUser: CurrentUser? {
-        didSet {
-            self.fetchAllTeachers { _ in
-            }
-        }
+        didSet { self.fetchAllTeachers { _ in } }
     }
 
     private (set) var meetings: [Meeting] = []
@@ -33,12 +30,14 @@ class ApplicationController {
             
             guard let myMeetings = myMeetings else { return }
             DispatchQueue.main.async {
-                self.meetings = myMeetings.sorted(by: {$1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate})
+                self.meetings = myMeetings.sorted(by: {
+                    $1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate
+                })
+                
                 completion(nil)
             }
         }
     }
-    
     
     func fetchAllTeachers(completion: @escaping (Error?) -> ()){
         FireStoreController().fetchAllTeachers { teachers, error in
@@ -57,7 +56,6 @@ extension ApplicationController {
     func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
         let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
-        
         return ac
     }
 }

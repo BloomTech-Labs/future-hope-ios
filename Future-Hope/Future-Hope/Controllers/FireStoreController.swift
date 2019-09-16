@@ -56,6 +56,8 @@ struct FireStoreController {
         }
     }
     
+    // MARK: Meetins
+    
     func fetchMyMeetings(with uid: String, completion: @escaping ([Meeting]?, Error?) -> ()) {
         let whereField = meetingsCollectionRef.whereField("participantUIDs", arrayContains: uid)
         whereField.getDocuments { meetingsSnapShot, error in
@@ -78,4 +80,26 @@ struct FireStoreController {
             completion(myMeetings, nil)
         }
     }
+    
+    func checkIfmeetingExist(currentUser: CurrentUser, timestamp: Timestamp) {
+        
+        let whereField = meetingsCollectionRef.whereField("participantUIDs", isEqualTo: currentUser.uid).whereField("start", isEqualTo: timestamp)
+        whereField.getDocuments { snapShot, error in
+            if let error = error{
+                NSLog("Error with login!: \(error)")
+                return
+            }
+            guard let snapShot = snapShot else { return }
+            print(snapShot.documents.count)
+            for meeting in snapShot.documents {
+                let dict = meeting.data() as [String: Any]
+                print("Title: \(dict["title"] as! String)")
+                
+                
+            }
+            
+        }
+        
+    }
+    
 }

@@ -66,12 +66,15 @@ class ScheduleViewController: UIViewController {
     @IBAction func scheduleMeetingButtonPressed(_ sender: Any) {
         guard let currentUser = currentUser else { return }
         let date = datePicker.date
-        let meeting = Meeting(id: UUID().uuidString, participantNames: [currentUser.fullName], participantUIDs: [currentUser.uid], start: date, title: "")
-        let dictioanry = meeting.toDictionary
         
         // check if meeting exist
         //if not send meeting to firebase
         // if exist grab meeting and update it
+       // let meeting = Meeting(id: UUID().uuidString, participantNames: [currentUser.fullName], participantUIDs: [currentUser.uid], start: date, title: "")
+       // let dictioanry = meeting.toDictionary
+        
+        FireStoreController().checkIfmeetingExist(currentUser: currentUser, timestamp: Timestamp(date: date))
+        print("here")
     }
     
     

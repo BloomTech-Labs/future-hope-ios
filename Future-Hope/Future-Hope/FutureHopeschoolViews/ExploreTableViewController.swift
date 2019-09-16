@@ -62,6 +62,7 @@ class ExploreTableViewController: UITableViewController {
                   let indexPath = tableView.indexPathForSelectedRow,
                   let user = futureHopSchoolController?.teachers[indexPath.row]  else { return }
             vc.user = user
+            vc.currentUser = futureHopSchoolController!.currentlyLogedInUser
         }
     }
     
