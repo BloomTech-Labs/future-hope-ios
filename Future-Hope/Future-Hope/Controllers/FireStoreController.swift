@@ -71,7 +71,7 @@ struct FireStoreController {
             var myMeetings: [Meeting] = []
             for meeting in meetings.documents {
                 let dictioanry = meeting.data() as [String: Any]
-                
+
                 if let meeting = Meeting(dictionary: dictioanry) {
                     myMeetings.append(meeting)
                 }

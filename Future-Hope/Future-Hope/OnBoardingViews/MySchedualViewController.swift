@@ -29,6 +29,7 @@ class MySchedualViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
         notifyWhenmeetingsDownloaded()
+        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
         tableView.reloadData()
 	}
 
@@ -40,7 +41,7 @@ class MySchedualViewController: UIViewController {
         
         myMeetings = futureHopSchoolController?.meetingsSorted
         
-        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Classes"
+        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
         tableView.reloadData()
     }
     
