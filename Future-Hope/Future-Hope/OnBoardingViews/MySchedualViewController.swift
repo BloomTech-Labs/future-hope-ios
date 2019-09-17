@@ -29,7 +29,7 @@ class MySchedualViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
         notifyWhenmeetingsDownloaded()
-        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
+//        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
         tableView.reloadData()
 	}
 
@@ -54,7 +54,7 @@ extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MySchedualCell", for: indexPath)
-		guard let mySchedualCell = cell as? MyScdualTableViewCell, let meetings = futureHopSchoolController?.meetings else { return cell }
+		guard let mySchedualCell = cell as? MyScdualTableViewCell, let meetings = myMeetings else { return cell }
 		let meeting = meetings[indexPath.row]
         mySchedualCell.meeting = meeting
 		return mySchedualCell

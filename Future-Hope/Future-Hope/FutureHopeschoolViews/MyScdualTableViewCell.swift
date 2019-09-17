@@ -31,7 +31,7 @@ class MyScdualTableViewCell: UITableViewCell {
         }
          names += meeting.participantNames[meeting.participantNames.count - 1]
         
-        withLabel?.text = " with: \(names)"
+        withLabel?.text = " Participants: \(names)"
         
         // get first user image
         

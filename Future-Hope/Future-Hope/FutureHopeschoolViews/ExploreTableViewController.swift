@@ -34,14 +34,13 @@ class ExploreTableViewController: UITableViewController {
         
         exlporeCell.currentUser = user
         if user.imageData == nil {
-            print("no image")
             loadImage(with: exlporeCell, with: user)
         }
+        
         return exlporeCell
     }
     
     private func loadImage(with cell: ExploreTableViewCell, with user: CurrentUser){
-        
         guard let url = user.photoUrl else { return }
         ApplicationController().fetchUserImage(with: url) { data, error in
             if let error = error {
