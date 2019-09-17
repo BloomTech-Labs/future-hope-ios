@@ -100,15 +100,13 @@ struct FireStoreController {
     }
     
     func addMeeting(with meeting: Meeting, completion: @escaping (Error?) -> ()) {
-        meetingsCollectionRef.addDocument(data: meeting.toDictionary) { error in
+        meetingsCollectionRef.document(meeting.id).setData(meeting.toDictionary) { error in
             if let error = error {
                 completion(error)
                 return
             }
+
+            completion(nil)
         }
-        completion(nil)
     }
-    
-    
-    
 }
