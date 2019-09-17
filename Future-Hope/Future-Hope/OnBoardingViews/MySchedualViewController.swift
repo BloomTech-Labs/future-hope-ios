@@ -21,7 +21,9 @@ class MySchedualViewController: UIViewController {
 		tableView.dataSource = self
 		tableView.delegate = self
         
-        
+//        let handle = FireStoreController().meetingsCollectionRef.addSnapshotListener { (snapShot, error) in
+//            
+//        }
     }
 	
 	override func viewWillAppear(_ animated: Bool) {

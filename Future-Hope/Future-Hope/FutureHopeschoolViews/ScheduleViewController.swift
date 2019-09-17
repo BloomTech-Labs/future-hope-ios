@@ -65,13 +65,12 @@ class ScheduleViewController: UIViewController {
         
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
             if let title = alertController.textFields?[0].text {
-                
+            
                 // create it in the app controller
-                //self.createNewMeeting(with: title)
+                self.createNewMeeting(with: title)
                 print(title)
                 
             }
-            self.dismiss(animated: true)
         }))
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive))
@@ -86,7 +85,14 @@ class ScheduleViewController: UIViewController {
         let participantName: [String] = [currentUser.fullName, user.fullName]
         let participantUIDs: [String] = [currentUser.uid, user.uid]
 
-        let _ = Meeting(id: UUID().uuidString, participantNames: participantName, participantUIDs: participantUIDs, start: datePicker.date, title: title)
+        let meeting = Meeting(id: UUID().uuidString, participantNames: participantName, participantUIDs: participantUIDs, start: datePicker.date, title: title)
+        futureHopSchoolController?.addMeetingToFirebase(with: meeting, completion: { error in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            self.dismiss(animated: true)
+        })
     }
     
     

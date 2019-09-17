@@ -36,10 +36,10 @@ class SignInViewController: UIViewController {
     }
 
 	private func setupViews() {
-		emailTextField.delegate = self
-		passwordTextField.delegate = self
-		GIDSignIn.sharedInstance()?.presentingViewController = self
-		handleAuthStateDidChange()
+        handleAuthStateDidChange()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
 	}
 	
 	// Will run ones firebase senses a login
