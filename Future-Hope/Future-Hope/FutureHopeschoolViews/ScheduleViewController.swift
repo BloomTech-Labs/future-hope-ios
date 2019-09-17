@@ -85,7 +85,9 @@ class ScheduleViewController: UIViewController {
         let participantName: [String] = [currentUser.fullName, user.fullName]
         let participantUIDs: [String] = [currentUser.uid, user.uid]
 
-        let meeting = Meeting(id: UUID().uuidString, participantNames: participantName, participantUIDs: participantUIDs, start: datePicker.date, title: title)
+        let id = FireStoreController().meetingsCollectionRef.document().documentID
+        
+        let meeting = Meeting(id: id, participantNames: participantName, participantUIDs: participantUIDs, start: datePicker.date, title: title)
         futureHopSchoolController?.addMeetingToFirebase(with: meeting, completion: { error in
             if let error = error {
                 print("Error: \(error)")
