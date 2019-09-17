@@ -14,14 +14,16 @@ class MySchedualViewController: UIViewController {
     var futureHopSchoolController: ApplicationController? 
 	@IBOutlet var numberOfMettingsLabel: UILabel!
 	@IBOutlet var tableView: UITableView!
-	
+    var myMeetings: [Meeting]?
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		tableView.dataSource = self
 		tableView.delegate = self
         
-        
+//        let handle = FireStoreController().meetingsCollectionRef.addSnapshotListener { (snapShot, error) in
+//            
+//        }
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +37,9 @@ class MySchedualViewController: UIViewController {
     }
     
     @objc func reloadformeetings (n: NSNotification) {
-        print("found new meetings")
+        
+        myMeetings = futureHopSchoolController?.meetingsSorted
+        
         numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Classes"
         tableView.reloadData()
     }

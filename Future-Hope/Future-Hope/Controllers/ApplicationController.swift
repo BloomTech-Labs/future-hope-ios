@@ -14,16 +14,31 @@ import GoogleSignIn
 class ApplicationController {
 	
     private (set) var currentlyLogedInUser: CurrentUser? {
-        didSet {
-            self.fetchAllTeachers { _ in
-            }
-        }
+        didSet { self.fetchAllTeachers { _ in } }
     }
 
     private (set) var meetings: [Meeting] = []
     
     private (set) var teachers: [CurrentUser] = []
     
+    var format: DateFormatter {
+        let format = DateFormatter()
+        format.calendar = .current
+        format.dateStyle = .long
+        format.timeStyle = .short
+        return format
+    }
+    
+    var meetingsSorted: [Meeting] {
+        let meetings = self.meetings.sorted(by: {
+            $1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate
+        })
+        return meetings
+    }
+    
+    
+    
+    ///
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
         guard let user = currentlyLogedInUser else { return }
         FireStoreController().fetchMyMeetings(with: user.uid) { myMeetings, error in
@@ -33,13 +48,13 @@ class ApplicationController {
             
             guard let myMeetings = myMeetings else { return }
             DispatchQueue.main.async {
-                self.meetings = myMeetings.sorted(by: {$1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate})
+                self.meetings = myMeetings
                 completion(nil)
             }
         }
     }
     
-    
+    ///
     func fetchAllTeachers(completion: @escaping (Error?) -> ()){
         FireStoreController().fetchAllTeachers { teachers, error in
             if let error = error {
@@ -50,6 +65,26 @@ class ApplicationController {
             self.teachers = teachers
         }
     }
+    
+    
+    
+    
+    /// Add meeting and set
+    
+    func addMeetingToFirebase(with meeting: Meeting, completion: @escaping (Error?) -> ()) {
+        FireStoreController().addMeeting(with: meeting) { error in
+            if let error = error {
+                NSLog("Error adding to firestore: \(error)")
+                completion(error)
+                return
+            }
+            
+            self.meetings.append(meeting)
+            completion(nil)
+        }
+    }
+    
+    
 }
 
 // MARK: AlertControllers
@@ -57,7 +92,6 @@ extension ApplicationController {
     func simpleActionSheetAllert(with title: String, message: String?) -> UIAlertController{
         let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
-        
         return ac
     }
 }
@@ -65,6 +99,8 @@ extension ApplicationController {
 // MARK: CurrentUser Setup
 extension ApplicationController {
 
+    
+    
 	// set current user and fetch image
 	func setCurrentlyLogedInUser(with user: CurrentUser) {
 		currentlyLogedInUser = user
@@ -89,6 +125,7 @@ extension ApplicationController {
 			}
 		}
 	}
+    
 	// fetch image with url
 	func fetchUserImage(with url: URL, completion: @escaping (Data?, Error?) ->()) {
 		URLSession.shared.dataTask(with: url) { data, _, error in
