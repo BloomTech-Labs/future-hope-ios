@@ -59,6 +59,26 @@ class ApplicationController {
             self.teachers = teachers
         }
     }
+    
+    
+    
+    
+    /// Add meeting and set
+    
+    func addMeetingToFirebase(with meeting: Meeting, completion: @escaping (Error?) -> ()) {
+        FireStoreController().addMeeting(with: meeting) { error in
+            if let error = error {
+                NSLog("Error adding to firestore: \(error)")
+                completion(error)
+                return
+            }
+            
+            self.meetings.append(meeting)
+            completion(nil)
+        }
+    }
+    
+    
 }
 
 // MARK: AlertControllers
@@ -73,6 +93,8 @@ extension ApplicationController {
 // MARK: CurrentUser Setup
 extension ApplicationController {
 
+    
+    
 	// set current user and fetch image
 	func setCurrentlyLogedInUser(with user: CurrentUser) {
 		currentlyLogedInUser = user

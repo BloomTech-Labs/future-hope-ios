@@ -100,15 +100,12 @@ struct FireStoreController {
     }
     
     func addMeeting(with meeting: Meeting, completion: @escaping (Error?) -> ()) {
-        
         meetingsCollectionRef.addDocument(data: meeting.toDictionary) { error in
             if let error = error {
                 completion(error)
                 return
             }
         }
-        
-        print("sccess adding meeting to db")
         completion(nil)
     }
     
