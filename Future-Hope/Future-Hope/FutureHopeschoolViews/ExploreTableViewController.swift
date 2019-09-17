@@ -33,7 +33,10 @@ class ExploreTableViewController: UITableViewController {
             let user = futureHopSchoolController?.teachers[indexPath.row] else { return cell }
         
         exlporeCell.currentUser = user
-//      loadImage(with: exlporeCell, with: user)
+        if user.imageData == nil {
+            print("no image")
+            loadImage(with: exlporeCell, with: user)
+        }
         return exlporeCell
     }
     
@@ -47,6 +50,7 @@ class ExploreTableViewController: UITableViewController {
             }
            
             guard let data = data else { return }
+            user.imageData = data
             let image = UIImage(data: data)
             
             DispatchQueue.main.async {
