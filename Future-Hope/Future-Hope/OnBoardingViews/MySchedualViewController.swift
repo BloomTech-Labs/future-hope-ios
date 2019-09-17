@@ -14,7 +14,7 @@ class MySchedualViewController: UIViewController {
     var futureHopSchoolController: ApplicationController? 
 	@IBOutlet var numberOfMettingsLabel: UILabel!
 	@IBOutlet var tableView: UITableView!
-	
+    var myMeetings: [Meeting]?
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,9 @@ class MySchedualViewController: UIViewController {
     }
     
     @objc func reloadformeetings (n: NSNotification) {
-        print("found new meetings")
+        
+        myMeetings = futureHopSchoolController?.meetingsSorted
+        
         numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Classes"
         tableView.reloadData()
     }
