@@ -23,8 +23,8 @@ class MySchedualViewController: UIViewController {
         super.viewDidLoad()
 		tableView.dataSource = self
 		tableView.delegate = self
+        todayScheduleNotification(center: center)
         
-       
         
 //        let handle = FireStoreController().meetingsCollectionRef.addSnapshotListener { (snapShot, error) in
 //            
@@ -51,7 +51,7 @@ class MySchedualViewController: UIViewController {
     }
     
     
-    private func todayScheduleNotification() {
+    private func todayScheduleNotification(center:  UNUserNotificationCenter) {
         
         center.requestAuthorization(options: [.sound, .alert]) { _, error in
             if let error = error {
@@ -61,11 +61,11 @@ class MySchedualViewController: UIViewController {
         }
         
         let content = UNMutableNotificationContent()
-        
+        content.sound = UNNotificationSound.default
         content.title = "title"
         content.body = "body"
         
-        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute], from: Date().addingTimeInterval(10))
+        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: Date().addingTimeInterval(10))
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
@@ -77,6 +77,7 @@ class MySchedualViewController: UIViewController {
             if let error = error {
                 print("\(error)")
             }
+            print("notify")
         }
         
     }
