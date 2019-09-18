@@ -1016,9 +1016,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPB-Rr-VvH">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="participant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPB-Rr-VvH">
                                                             <rect key="frame" x="0.0" y="29" width="334" height="16.5"/>
-                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1166,7 +1166,7 @@
                                     <action selector="scheduleMeetingButtonPressed:" destination="Pso-uB-Jxj" eventType="touchUpInside" id="wLz-WQ-ofT"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KJT-Wh-u7Z">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person-placeholder-image-3" translatesAutoresizingMaskIntoConstraints="NO" id="KJT-Wh-u7Z">
                                 <rect key="frame" x="20" y="44" width="374" height="187"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KJT-Wh-u7Z" secondAttribute="height" multiplier="2:1" id="jQF-0v-vUR"/>
@@ -1190,7 +1190,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-uI-vNb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-uI-vNb">
                                 <rect key="frame" x="20" y="318" width="374" height="80"/>
                                 <color key="backgroundColor" red="0.92513358160621761" green="0.92513358160621761" blue="0.92513358160621761" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1223,7 +1223,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92513358160000003" green="0.92513358160000003" blue="0.92513358160000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="aH8-qE-5FE" firstAttribute="leading" secondItem="8ri-sL-88i" secondAttribute="leading" constant="20" id="0b9-lS-135"/>
                             <constraint firstItem="LZp-tY-3Qe" firstAttribute="top" secondItem="gzg-TB-4iY" secondAttribute="bottom" constant="8" id="1KI-BE-trB"/>

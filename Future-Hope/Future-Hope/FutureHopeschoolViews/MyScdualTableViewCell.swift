@@ -24,7 +24,14 @@ class MyScdualTableViewCell: UITableViewCell {
         guard let meeting = meeting else { return }
         meetingTitle?.text = meeting.title
         timeLabel?.text = ApplicationController().format.string(from: meeting.start)
-        withLabel?.text = " with: \(meeting.participantNames[0])"
+        
+        var names = ""
+        for i in 0..<meeting.participantNames.count - 1 {
+            names += meeting.participantNames[i] + ", "
+        }
+         names += meeting.participantNames[meeting.participantNames.count - 1]
+        
+        withLabel?.text = " Participants: \(names)"
         
         // get first user image
         

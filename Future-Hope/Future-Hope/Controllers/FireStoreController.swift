@@ -71,7 +71,7 @@ struct FireStoreController {
             var myMeetings: [Meeting] = []
             for meeting in meetings.documents {
                 let dictioanry = meeting.data() as [String: Any]
-                
+
                 if let meeting = Meeting(dictionary: dictioanry) {
                     myMeetings.append(meeting)
                 }
@@ -100,15 +100,16 @@ struct FireStoreController {
     }
     
     func addMeeting(with meeting: Meeting, completion: @escaping (Error?) -> ()) {
-        meetingsCollectionRef.addDocument(data: meeting.toDictionary) { error in
+        meetingsCollectionRef.document(meeting.id).setData(meeting.toDictionary) { error in
             if let error = error {
                 completion(error)
                 return
             }
+
+            completion(nil)
         }
-        completion(nil)
+        
+
+        
     }
-    
-    
-    
 }

@@ -12,9 +12,14 @@ extension ExploreTableViewController: FutureHopSchoolControllerProtocol{}
 
 class ExploreTableViewController: UITableViewController {
     var futureHopSchoolController: ApplicationController?
+    var fetchPhotoOperation: [Int: FetchPhotoOperation] = [:]
+    private let photoFetchQueue = OperationQueue()
+    var userImageCache = Cache<Int, Data>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        photoFetchQueue.name = "com.LambdaSchool.Future-Hope"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -33,27 +38,46 @@ class ExploreTableViewController: UITableViewController {
             let user = futureHopSchoolController?.teachers[indexPath.row] else { return cell }
         
         exlporeCell.currentUser = user
-//      loadImage(with: exlporeCell, with: user)
+        loadImage(with: exlporeCell, indexPath: indexPath)
+        
         return exlporeCell
     }
     
-    private func loadImage(with cell: ExploreTableViewCell, with user: CurrentUser){
+    
+    
+    private func loadImage(with cell: ExploreTableViewCell, indexPath: IndexPath){
+        guard let user = futureHopSchoolController?.teachers[indexPath.row], let url = user.photoUrl else { return }
+        //print(url.absoluteURL)
         
-        guard let url = user.photoUrl else { return }
-        ApplicationController().fetchUserImage(with: url) { data, error in
-            if let error = error {
-                NSLog("Error wiht applicationcontroller: \(error)")
-                return
-            }
-           
-            guard let data = data else { return }
-            let image = UIImage(data: data)
-            
-            DispatchQueue.main.async {
-                cell.userImageView?.image = image
-                self.tableView.reloadData()
+        if let imageData = userImageCache.value(for: indexPath.row) {
+            cell.userImageView?.image = UIImage(data: imageData)
+        }
+        
+        let fetchOp = FetchPhotoOperation(userImageUrl: url.absoluteString)
+        
+        let storeToCache = BlockOperation {
+            if let imageData = fetchOp.imageData {
+                self.userImageCache.cache(value: imageData, for: indexPath.row)
             }
         }
+        
+        let cellReUsedCheck = BlockOperation {
+            if self.tableView.indexPath(for: cell) == indexPath {
+                guard let imageData = fetchOp.imageData else { return }
+                cell.userImageView.image = UIImage(data: imageData)
+            }
+        }
+        
+        storeToCache.addDependency(fetchOp)
+        cellReUsedCheck.addDependency(fetchOp)
+        
+        photoFetchQueue.addOperations([fetchOp, storeToCache], waitUntilFinished: false)
+        OperationQueue.main.addOperation(cellReUsedCheck)
+        fetchPhotoOperation[indexPath.row] = fetchOp
+    }
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        fetchPhotoOperation[indexPath.row]?.cancel()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
