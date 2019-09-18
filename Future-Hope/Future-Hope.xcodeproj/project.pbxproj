@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
+		732614FA2331F5E80097D689 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732614F92331F5E80097D689 /* Cache.swift */; };
+		732614FC2331F69C0097D689 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732614FB2331F69C0097D689 /* ConcurrentOperation.swift */; };
+		732614FE2331F75F0097D689 /* FetchPhotoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732614FD2331F75F0097D689 /* FetchPhotoOperation.swift */; };
 		7326250F232A949600BEC7C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7326250E232A949600BEC7C7 /* GoogleService-Info.plist */; };
 		73B73E26232E9CD900699D7A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B73E25232E9CD900699D7A /* ScheduleViewController.swift */; };
 		73CBC01423296AB9000B8D8C /* ExploreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */; };
@@ -34,6 +37,9 @@
 /* Begin PBXFileReference section */
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		732614F92331F5E80097D689 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		732614FB2331F69C0097D689 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		732614FD2331F75F0097D689 /* FetchPhotoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoOperation.swift; sourceTree = "<group>"; };
 		7326250E232A949600BEC7C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73B73E25232E9CD900699D7A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +84,15 @@
 				524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		732614FF2331F7D40097D689 /* Operations  */ = {
+			isa = PBXGroup;
+			children = (
+				732614FB2331F69C0097D689 /* ConcurrentOperation.swift */,
+				732614FD2331F75F0097D689 /* FetchPhotoOperation.swift */,
+			);
+			path = "Operations ";
 			sourceTree = "<group>";
 		};
 		C0E3AD5856A58C6E44C53617 /* Pods */ = {
@@ -137,6 +152,8 @@
 			children = (
 				E87C3B49230C8EB700161EFE /* CurrentUser.swift */,
 				73CF21512326FB93003772C1 /* Meeting.swift */,
+				732614F92331F5E80097D689 /* Cache.swift */,
+				732614FF2331F7D40097D689 /* Operations  */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,6 +358,9 @@
 				E81EB6FF231A2F4F006189FA /* SimpleFactsTableViewController.swift in Sources */,
 				E86133C523163FDA00F1611B /* FireStoreController.swift in Sources */,
 				E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */,
+				732614FE2331F75F0097D689 /* FetchPhotoOperation.swift in Sources */,
+				732614FA2331F5E80097D689 /* Cache.swift in Sources */,
+				732614FC2331F69C0097D689 /* ConcurrentOperation.swift in Sources */,
 				E8EE0DFE2321BDCF00501E07 /* MyScdualTableViewCell.swift in Sources */,
 				73CF21522326FB93003772C1 /* Meeting.swift in Sources */,
 				E8561463232025FC0000AFB5 /* EditProfileViewController.swift in Sources */,

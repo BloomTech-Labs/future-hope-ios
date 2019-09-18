@@ -38,15 +38,10 @@ class Meeting: Equatable {
         guard let timestamp = dictionary["start"] as? Timestamp else { return nil }
         let date = timestamp.dateValue()
         
-        print(date)
-
         let participantNames = dictionary["participantNames"] as? [String] ?? []
         let participantUIDs = dictionary["participantUIDs"] as? [String] ?? []
         
-        
-        //print("id: \(id) - title: \(title) - participantNames: \(participantNames[0]) - participantUIDs: \(participantUIDs[0])")
         self.init(id:id, participantNames: participantNames, participantUIDs: participantUIDs, start: date, title: title)
-        
     }
     
     var toDictionary: [String: Any] {
@@ -59,5 +54,4 @@ class Meeting: Equatable {
             "start": timestamp
         ]
     }
-    
 }
