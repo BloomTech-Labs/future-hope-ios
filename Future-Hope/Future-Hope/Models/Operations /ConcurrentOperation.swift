@@ -9,7 +9,7 @@
 import Foundation
 
 class ConcurrentOperation: Operation {
-    private let stateQueue = DispatchQueue(label: "com.LambdaSchool.FutureHopeSchool.ConcurrentOperationStateQueue")
+    private let stateQueue = DispatchQueue(label: "com.LambdaSchool.Future-Hope.ConcurrentOperationStateQueue")
     
     private var _state = State.isReady
 
