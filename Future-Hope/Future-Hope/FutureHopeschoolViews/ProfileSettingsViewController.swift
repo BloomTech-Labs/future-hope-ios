@@ -37,6 +37,8 @@ class ProfileSettingsViewController: UIViewController {
 		guard let currentSignedInUser = futureHopSchoolController?.currentlyLogedInUser else { return }
 		
 		if let data = currentSignedInUser.imageData {
+            
+            
 			imageView.image = UIImage(data: data)
 		}
 		

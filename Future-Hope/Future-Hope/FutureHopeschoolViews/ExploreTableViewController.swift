@@ -51,6 +51,7 @@ class ExploreTableViewController: UITableViewController {
         
         if let imageData = userImageCache.value(for: indexPath.row) {
             cell.userImageView?.image = UIImage(data: imageData)
+            
         }
         
         let fetchOp = FetchPhotoOperation(userImageUrl: url.absoluteString)
@@ -85,6 +86,12 @@ class ExploreTableViewController: UITableViewController {
             guard let vc = segue.destination as? ScheduleViewController,
                   let indexPath = tableView.indexPathForSelectedRow,
                   let user = futureHopSchoolController?.teachers[indexPath.row]  else { return }
+            
+            
+            if let imageData = userImageCache.value(for: indexPath.row) {
+                user.imageData = imageData
+            }
+            
             vc.user = user
             vc.futureHopSchoolController = futureHopSchoolController
         }

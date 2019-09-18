@@ -12,6 +12,8 @@ import UserNotifications
 extension MySchedualViewController: FutureHopSchoolControllerProtocol {}
 
 class MySchedualViewController: UIViewController {
+    let center = UNUserNotificationCenter.current()
+    
     var futureHopSchoolController: ApplicationController? 
 	@IBOutlet var numberOfMettingsLabel: UILabel!
 	@IBOutlet var tableView: UITableView!
@@ -22,28 +24,7 @@ class MySchedualViewController: UIViewController {
 		tableView.dataSource = self
 		tableView.delegate = self
         
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.sound, .alert]) { _, _ in
-        }
-        
-        let content = UNMutableNotificationContent()
-        content.title = "title"
-        content.body = "body"
-        
-        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute], from: Date().addingTimeInterval(10))
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
-        let uuid = UUID().uuidString
-        
-        let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-        
-        center.add(request) { error in
-            if let error = error {
-                print("\(error)")
-            }
-        }
-        
+       
         
 //        let handle = FireStoreController().meetingsCollectionRef.addSnapshotListener { (snapShot, error) in
 //            
@@ -68,6 +49,38 @@ class MySchedualViewController: UIViewController {
         numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
         tableView.reloadData()
     }
+    
+    
+    private func todayScheduleNotification() {
+        
+        center.requestAuthorization(options: [.sound, .alert]) { _, error in
+            if let error = error {
+                print("error: \(error)")
+                return
+            }
+        }
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "title"
+        content.body = "body"
+        
+        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute], from: Date().addingTimeInterval(10))
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let uuid = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+        
+        center.add(request) { error in
+            if let error = error {
+                print("\(error)")
+            }
+        }
+        
+    }
+    
     
 }
 
