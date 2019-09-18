@@ -17,7 +17,8 @@ class MySchedualViewController: UIViewController {
     var futureHopSchoolController: ApplicationController? 
 	@IBOutlet var numberOfMettingsLabel: UILabel!
 	@IBOutlet var tableView: UITableView!
-    var myMeetings: [Meeting]?
+    var myMeetings: [Meeting] = []
+    var upcomingMeetings: [Meeting] = []
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class MySchedualViewController: UIViewController {
 		tableView.delegate = self
         todayScheduleNotification(center: center)
         
+       
         
 //        let handle = FireStoreController().meetingsCollectionRef.addSnapshotListener { (snapShot, error) in
 //            
@@ -36,6 +38,7 @@ class MySchedualViewController: UIViewController {
         notifyWhenmeetingsDownloaded()
         reloadformeetings()
         
+        
 //        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
         tableView.reloadData()
 	}
@@ -46,7 +49,12 @@ class MySchedualViewController: UIViewController {
     
     @objc func reloadformeetings () {
         
-        myMeetings = futureHopSchoolController?.meetingsSorted
+        myMeetings = futureHopSchoolController!.meetingsSorted
+        
+        
+        upcomingMeetings = futureHopSchoolController!.upcomingSchedule(m: myMeetings)
+        print("upcoming count: \(upcomingMeetings.count)")
+        
         
         numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
         tableView.reloadData()
@@ -88,15 +96,52 @@ class MySchedualViewController: UIViewController {
 }
 
 extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if upcomingMeetings.count >= 1 {
+            
+        }
+        
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if upcomingMeetings.count >= 1 {
+            if section == 0 {
+                return "upcoming Schedule"
+            } else if section == 1 {
+                return "My Schedule"
+            }
+        }
+        
+        return nil
+    }
+    
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return futureHopSchoolController?.meetings.count ?? 0
+        if upcomingMeetings.count >= 1 {
+            if section == 0 {
+                return upcomingMeetings.count
+            }else if section == 1 {
+                return myMeetings.count
+            }
+        
+        }
+        
+        return myMeetings.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MySchedualCell", for: indexPath)
-		guard let mySchedualCell = cell as? MyScdualTableViewCell, let meetings = myMeetings else { return cell }
-		let meeting = meetings[indexPath.row]
-        mySchedualCell.meeting = meeting
-		return mySchedualCell
+		guard let mySchedualCell = cell as? MyScdualTableViewCell else { return cell }
+		
+        if upcomingMeetings.count > 0  && indexPath.section == 0{
+            let meeting = upcomingMeetings[indexPath.row]
+            mySchedualCell.meeting = meeting
+        } else {
+            let meeting = myMeetings[indexPath.row]
+            mySchedualCell.meeting = meeting
+        }
+        
+        return mySchedualCell
 	}
 }

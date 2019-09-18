@@ -91,17 +91,19 @@ extension ApplicationController {
         return meetings
     }
     
-    var upcomingSchedule: [Meeting]  {
+    func upcomingSchedule(m: [Meeting]) -> [Meeting]  {
         var upcomingSchedule: [Meeting] = []
-        for meeting in meetings {
+        
+        for meeting in m {
+//            print("inside upcoming")
             let start = meeting.start
-            
-            if start > Date() && start < Date(timeIntervalSinceReferenceDate: 86400){
+//            print(start < Date(timeIntervalSinceNow: 86400))
+            if start > Date() && start < Date(timeIntervalSinceNow: 86400){
                 upcomingSchedule.append(meeting)
                 print("Todays schedule")
             }
         }
-        
+
         return upcomingSchedule
     }
     
