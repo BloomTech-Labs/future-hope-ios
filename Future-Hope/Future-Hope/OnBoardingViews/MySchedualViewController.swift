@@ -49,14 +49,14 @@ class MySchedualViewController: UIViewController {
     
     @objc func reloadformeetings () {
         
-        myMeetings = futureHopSchoolController!.meetingsSorted
+        myMeetings = futureHopSchoolController!.meetingsAfterToday
         
         
-        upcomingMeetings = futureHopSchoolController!.upcomingSchedule(m: myMeetings)
+        upcomingMeetings = futureHopSchoolController!.upcomingSchedule
         print("upcoming count: \(upcomingMeetings.count)")
         
         
-        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
+        numberOfMettingsLabel.text = "\(myMeetings.count + upcomingMeetings.count) Meetings"
         tableView.reloadData()
     }
     

@@ -85,30 +85,20 @@ extension ApplicationController {
     }
     
     var meetingsSorted: [Meeting] {
-        let meetings = self.meetings.sorted(by: {
+        let meetingsSorted = self.meetings.sorted(by: {
             $1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate
         })
-        return meetings
+        return meetingsSorted
     }
-    
-    func upcomingSchedule(m: [Meeting]) -> [Meeting]  {
-        var upcomingSchedule: [Meeting] = []
-        
-        for meeting in m {
-//            print("inside upcoming")
-            let start = meeting.start
-//            print(start < Date(timeIntervalSinceNow: 86400))
-            if start > Date() && start < Date(timeIntervalSinceNow: 86400){
-                upcomingSchedule.append(meeting)
-                print("Todays schedule")
-            }
-        }
 
-        return upcomingSchedule
+    var meetingsAfterToday: [Meeting] {
+        return meetingsSorted.filter({  $0.start > Date(timeIntervalSinceNow: 86400) })
     }
+
     
-    // maybe a past meetings
-    
+    var upcomingSchedule: [Meeting] {
+        return meetingsSorted.filter({$0.start > Date() && $0.start < Date(timeIntervalSinceNow: 86400)  })
+    }
 }
 
 
