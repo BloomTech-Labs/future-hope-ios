@@ -75,7 +75,6 @@ class ApplicationController {
 
 // MARK: Dates
 extension ApplicationController {
-    
     var format: DateFormatter {
         let format = DateFormatter()
         format.calendar = .current
@@ -84,20 +83,18 @@ extension ApplicationController {
         return format
     }
     
-    var meetingsSorted: [Meeting] {
-        let meetingsSorted = self.meetings.sorted(by: {
+    private var meetingsSorted: [Meeting] {
+        return self.meetings.sorted(by: {
             $1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate
         })
-        return meetingsSorted
     }
 
     var meetingsAfterToday: [Meeting] {
-        return meetingsSorted.filter({  $0.start > Date(timeIntervalSinceNow: 86400) })
+        return meetingsSorted.filter{ $0.start > Date(timeIntervalSinceNow: 86400) }
     }
 
-    
     var upcomingSchedule: [Meeting] {
-        return meetingsSorted.filter({$0.start > Date() && $0.start < Date(timeIntervalSinceNow: 86400)  })
+        return meetingsSorted.filter{ $0.start > Date() && $0.start < Date(timeIntervalSinceNow: 86400) }
     }
 }
 

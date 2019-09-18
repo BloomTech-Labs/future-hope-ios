@@ -56,7 +56,7 @@ class MySchedualViewController: UIViewController {
         print("upcoming count: \(upcomingMeetings.count)")
         
         
-        numberOfMettingsLabel.text = "\(myMeetings.count + upcomingMeetings.count) Meetings"
+        numberOfMettingsLabel.text = "\(myMeetings.count + upcomingMeetings.count) Meetings"
         tableView.reloadData()
     }
     
@@ -108,7 +108,7 @@ extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if upcomingMeetings.count >= 1 {
             if section == 0 {
-                return "upcoming Schedule"
+                return "Upcoming Schedule"
             } else if section == 1 {
                 return "My Schedule"
             }
