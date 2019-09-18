@@ -21,22 +21,7 @@ class ApplicationController {
     
     private (set) var teachers: [CurrentUser] = []
     
-    var format: DateFormatter {
-        let format = DateFormatter()
-        format.calendar = .current
-        format.dateStyle = .long
-        format.timeStyle = .short
-        return format
-    }
-    
-    var meetingsSorted: [Meeting] {
-        let meetings = self.meetings.sorted(by: {
-            $1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate
-        })
-        return meetings
-    }
-    
-    
+  
     
     ///
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
@@ -86,6 +71,48 @@ class ApplicationController {
     
     
 }
+
+
+// MARK: Dates
+extension ApplicationController {
+    
+    var format: DateFormatter {
+        let format = DateFormatter()
+        format.calendar = .current
+        format.dateStyle = .long
+        format.timeStyle = .short
+        return format
+    }
+    
+    var meetingsSorted: [Meeting] {
+        let meetings = self.meetings.sorted(by: {
+            $1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate
+        })
+        return meetings
+    }
+    
+    var upcomingSchedule: [Meeting]  {
+        
+        var upcomingSchedule: [Meeting] = []
+        
+        for meeting in meetings {
+            let start = meeting.start
+            
+            if start > Date() && start < Date(timeIntervalSinceReferenceDate: 86400){
+                upcomingSchedule.append(meeting)
+                print("Todays schedule")
+            }
+        }
+        
+        return upcomingSchedule
+    }
+    
+    
+    //past schedule
+    
+    
+}
+
 
 // MARK: AlertControllers
 extension ApplicationController {
