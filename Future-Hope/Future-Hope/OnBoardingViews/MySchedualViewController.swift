@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 extension MySchedualViewController: FutureHopSchoolControllerProtocol {}
 
@@ -20,6 +21,29 @@ class MySchedualViewController: UIViewController {
         super.viewDidLoad()
 		tableView.dataSource = self
 		tableView.delegate = self
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.sound, .alert]) { _, _ in
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.title = "title"
+        content.body = "body"
+        
+        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute], from: Date().addingTimeInterval(10))
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let uuid = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+        
+        center.add(request) { error in
+            if let error = error {
+                print("\(error)")
+            }
+        }
+        
         
 //        let handle = FireStoreController().meetingsCollectionRef.addSnapshotListener { (snapShot, error) in
 //            
