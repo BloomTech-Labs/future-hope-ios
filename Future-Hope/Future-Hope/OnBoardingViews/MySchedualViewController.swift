@@ -34,15 +34,17 @@ class MySchedualViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
         notifyWhenmeetingsDownloaded()
+        reloadformeetings()
+        
 //        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
         tableView.reloadData()
 	}
 
     private func notifyWhenmeetingsDownloaded() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadformeetings(n:)), name: NSNotification.Name.init("MeetingsDownLoaded"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadformeetings), name: NSNotification.Name.init("MeetingsDownLoaded"), object: nil)
     }
     
-    @objc func reloadformeetings (n: NSNotification) {
+    @objc func reloadformeetings () {
         
         myMeetings = futureHopSchoolController?.meetingsSorted
         

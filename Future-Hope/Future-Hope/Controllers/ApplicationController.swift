@@ -92,9 +92,7 @@ extension ApplicationController {
     }
     
     var upcomingSchedule: [Meeting]  {
-        
         var upcomingSchedule: [Meeting] = []
-        
         for meeting in meetings {
             let start = meeting.start
             
@@ -107,9 +105,7 @@ extension ApplicationController {
         return upcomingSchedule
     }
     
-    
-    //past schedule
-    
+    // maybe a past meetings
     
 }
 
