@@ -93,9 +93,6 @@ struct FireStoreController {
             let dict = snapShot.documents[0].data() as [String: Any]
             guard let meeting = Meeting(dictionary: dict) else { return }
             completion(meeting, nil)
-            
-    
-            
         }
     }
     

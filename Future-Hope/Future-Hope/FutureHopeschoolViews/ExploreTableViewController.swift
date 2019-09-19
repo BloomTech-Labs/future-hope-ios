@@ -43,11 +43,8 @@ class ExploreTableViewController: UITableViewController {
         return exlporeCell
     }
     
-    
-    
     private func loadImage(with cell: ExploreTableViewCell, indexPath: IndexPath){
         guard let user = futureHopSchoolController?.teachers[indexPath.row], let url = user.photoUrl else { return }
-        //print(url.absoluteURL)
         
         if let imageData = userImageCache.value(for: indexPath.row) {
             cell.userImageView?.image = UIImage(data: imageData)
@@ -85,6 +82,12 @@ class ExploreTableViewController: UITableViewController {
             guard let vc = segue.destination as? ScheduleViewController,
                   let indexPath = tableView.indexPathForSelectedRow,
                   let user = futureHopSchoolController?.teachers[indexPath.row]  else { return }
+            
+            
+            if user.imageData == nil, let imageData = userImageCache.value(for: indexPath.row) {
+                user.imageData = imageData
+            }
+            
             vc.user = user
             vc.futureHopSchoolController = futureHopSchoolController
         }

@@ -61,7 +61,9 @@ class ScheduleViewController: UIViewController {
         guard let user = user else { return }
         let date = futureHopSchoolController!.format.string(from: datePicker.date)
         let alertController = UIAlertController(title: "With \(user.fullName)\n\(date)", message: "Set a title:", preferredStyle: .alert)
-        alertController.addTextField()
+        alertController.addTextField{ textField in
+            textField.placeholder = "Meeting Title"
+        }
         
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
             if let title = alertController.textFields?[0].text {
@@ -102,15 +104,5 @@ class ScheduleViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -117,11 +117,11 @@
 			isa = PBXGroup;
 			children = (
 				E81EB6FA2318DFBE006189FA /* TabBarViewController.swift */,
+				E8EE0DFB2321564C00501E07 /* MySchedualViewController.swift */,
+				73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */,
 				E81EB6FC2318DFC5006189FA /* ProfileSettingsViewController.swift */,
 				E8561462232025FC0000AFB5 /* EditProfileViewController.swift */,
-				E8EE0DFB2321564C00501E07 /* MySchedualViewController.swift */,
 				E8EE0DFD2321BDCF00501E07 /* MyScdualTableViewCell.swift */,
-				73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */,
 				73CBC01623296AE7000B8D8C /* ExploreTableViewCell.swift */,
 				73B73E25232E9CD900699D7A /* ScheduleViewController.swift */,
 			);

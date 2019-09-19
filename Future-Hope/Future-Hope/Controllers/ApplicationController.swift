@@ -12,7 +12,6 @@ import FirebaseCore
 import GoogleSignIn
 
 class ApplicationController {
-	
     private (set) var currentlyLogedInUser: CurrentUser? {
         didSet { self.fetchAllTeachers { _ in } }
     }
@@ -21,22 +20,7 @@ class ApplicationController {
     
     private (set) var teachers: [CurrentUser] = []
     
-    var format: DateFormatter {
-        let format = DateFormatter()
-        format.calendar = .current
-        format.dateStyle = .long
-        format.timeStyle = .short
-        return format
-    }
-    
-    var meetingsSorted: [Meeting] {
-        let meetings = self.meetings.sorted(by: {
-            $1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate
-        })
-        return meetings
-    }
-    
-    
+  
     
     ///
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
@@ -86,6 +70,33 @@ class ApplicationController {
     
     
 }
+
+
+// MARK: Dates
+extension ApplicationController {
+    var format: DateFormatter {
+        let format = DateFormatter()
+        format.calendar = .current
+        format.dateStyle = .long
+        format.timeStyle = .short
+        return format
+    }
+    
+    private var meetingsSorted: [Meeting] {
+        return self.meetings.sorted(by: {
+            $1.start.timeIntervalSinceReferenceDate > $0.start.timeIntervalSinceReferenceDate
+        })
+    }
+
+    var meetingsAfterToday: [Meeting] {
+        return meetingsSorted.filter{ $0.start > Date(timeIntervalSinceNow: 86400) }
+    }
+
+    var upcomingSchedule: [Meeting] {
+        return meetingsSorted.filter{ $0.start > Date() && $0.start < Date(timeIntervalSinceNow: 86400) }
+    }
+}
+
 
 // MARK: AlertControllers
 extension ApplicationController {
