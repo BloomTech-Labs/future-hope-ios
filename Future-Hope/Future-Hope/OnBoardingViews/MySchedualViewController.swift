@@ -22,25 +22,22 @@ class MySchedualViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		tableView.dataSource = self
-		tableView.delegate = self
-        todayScheduleNotification(center: center)
         
-       
+        tableView.dataSource = self
+        tableView.delegate = self
         
-//        let handle = FireStoreController().meetingsCollectionRef.addSnapshotListener { (snapShot, error) in
-//            
-//        }
+        center.requestAuthorization(options: [.sound, .badge, .alert]) { _, error in
+            if let error = error {
+                print("error: \(error)")
+                return
+            }
+        }
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
         notifyWhenmeetingsDownloaded()
         reloadformeetings()
-        
-        
-//        numberOfMettingsLabel.text = "\(self.futureHopSchoolController!.meetings.count) Meetings"
-        tableView.reloadData()
 	}
 
     private func notifyWhenmeetingsDownloaded() {
@@ -48,49 +45,40 @@ class MySchedualViewController: UIViewController {
     }
     
     @objc func reloadformeetings () {
-        
         myMeetings = futureHopSchoolController!.meetingsAfterToday
-        
-        
         upcomingMeetings = futureHopSchoolController!.upcomingSchedule
-        print("upcoming count: \(upcomingMeetings.count)")
-        
-        
+        if upcomingMeetings.count > 0 {
+            todayScheduleNotification(meeting: upcomingMeetings[0])
+        }
         numberOfMettingsLabel.text = "\(myMeetings.count + upcomingMeetings.count) Meetings"
         tableView.reloadData()
     }
     
-    
-    private func todayScheduleNotification(center:  UNUserNotificationCenter) {
-        
-        center.requestAuthorization(options: [.sound, .alert]) { _, error in
-            if let error = error {
-                print("error: \(error)")
-                return
-            }
-        }
-        
+    private func todayScheduleNotification(meeting: Meeting) {
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
-        content.title = "title"
-        content.body = "body"
         
-        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: Date().addingTimeInterval(10))
+        content.title = "\(meeting.title)"
+        content.body = "in 5 minutes"
         
+        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: meeting.start)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
-        let uuid = UUID().uuidString
-        
-        let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-        
-        center.add(request) { error in
-            if let error = error {
-                print("\(error)")
-            }
-            print("notify")
-        }
-        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
     }
+    
+//    private func todayScheduleNotification() {
+//        let content = UNMutableNotificationContent()
+//        content.sound = UNNotificationSound.default
+//
+//        content.title = "title"
+//        content.body = "in 5 minutes"
+//        content.badge = 1
+//        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: Date().addingTimeInterval(10))
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+//        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+//        center.add(request)
+//    }
     
     
 }
@@ -99,10 +87,10 @@ extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if upcomingMeetings.count >= 1 {
-            
+            return 2
         }
         
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

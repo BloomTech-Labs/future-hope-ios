@@ -12,7 +12,6 @@ import FirebaseCore
 import GoogleSignIn
 
 class ApplicationController {
-	
     private (set) var currentlyLogedInUser: CurrentUser? {
         didSet { self.fetchAllTeachers { _ in } }
     }
