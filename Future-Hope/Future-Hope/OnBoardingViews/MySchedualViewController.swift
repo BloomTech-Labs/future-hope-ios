@@ -59,7 +59,7 @@ class MySchedualViewController: UIViewController {
         content.sound = UNNotificationSound.default
         
         content.title = "\(meeting.title)"
-        content.body = "in 5 minutes"
+        content.body = " \(futureHopSchoolController!.format.string(from: meeting.start))"
         
         let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: meeting.start)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
