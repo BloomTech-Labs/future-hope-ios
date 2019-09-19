@@ -48,23 +48,39 @@ class MySchedualViewController: UIViewController {
         myMeetings = futureHopSchoolController!.meetingsAfterToday
         upcomingMeetings = futureHopSchoolController!.upcomingSchedule
         if upcomingMeetings.count > 0 {
-            todayScheduleNotification(meeting: upcomingMeetings[0])
+            
+            for m in upcomingMeetings {
+                todayScheduleNotification(meeting: m)
+            }
         }
         numberOfMettingsLabel.text = "\(myMeetings.count + upcomingMeetings.count) Meetings"
         tableView.reloadData()
     }
     
     private func todayScheduleNotification(meeting: Meeting) {
-        let content = UNMutableNotificationContent()
-        content.sound = UNNotificationSound.default
+        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+            print("Number of notifications: ", requests.count)
+            for request in requests {
+                if request.identifier != meeting.id {
+                    
+                    let content = UNMutableNotificationContent()
+                    content.sound = UNNotificationSound.default
+                    
+                    content.title = "\(meeting.title)"
+                    content.body = " \(self.futureHopSchoolController!.format.string(from: meeting.start))"
+                    
+                    let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: meeting.start)
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                    let request = UNNotificationRequest(identifier: meeting.id, content: content, trigger: trigger)
+                    self.center.add(request)
+                }
+            }
+            
+            
+            
+            
+        }
         
-        content.title = "\(meeting.title)"
-        content.body = " \(futureHopSchoolController!.format.string(from: meeting.start))"
-        
-        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: meeting.start)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        center.add(request)
     }
     
 //    private func todayScheduleNotification() {
