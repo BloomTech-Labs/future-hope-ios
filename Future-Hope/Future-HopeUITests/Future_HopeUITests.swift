@@ -17,17 +17,6 @@ class Future_HopeUITests: XCTestCase {
     
     
     func testEmailSignUp() {
-        
-        let app = XCUIApplication()
-        app.buttons["Email SignUp"].tap()
-        app.scrollViews.otherElements.textFields["Name *"].tap()
-        
     }
     
-    override func tearDown() {
-    }
-
-    func testExample() {
-    }
-
 }
