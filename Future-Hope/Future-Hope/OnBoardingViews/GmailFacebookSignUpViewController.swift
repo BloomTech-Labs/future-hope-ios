@@ -120,9 +120,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 					self.present(ac, animated: true)
 					return
 				}
-				
-//				guard let authResult = authResult else { return }
-				
+                
 				guard let thisUser = ApplicationController().fetchCurrentFireAuthenticatedUser() else { return }
 				
 				let uid = thisUser.uid
@@ -134,8 +132,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 				}
 				
 			}
-		}
-		
+		}	
 	}
 	
 	@IBAction func cancelButtonPressed(_ sender: UIButton) {

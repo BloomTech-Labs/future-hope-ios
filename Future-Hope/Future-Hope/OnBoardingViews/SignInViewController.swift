@@ -88,8 +88,6 @@ class SignInViewController: UIViewController {
         
         view.window?.rootViewController = homeVC
         view.window?.makeKeyAndVisible()
-        
-        
 	}
 }
 
