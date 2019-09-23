@@ -78,7 +78,16 @@ class SignInViewController: UIViewController {
 	
 	// will take you to the tabbar app
 	private func gooToMainView() {
-		performSegue(withIdentifier: "SegueToMainApp", sender: self)
+        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? TabBarViewController,
+              let uid = uid  else { return }
+        
+        
+        homeVC.uid = uid
+        homeVC.futureHopSchoolController = futureHopSchoolController
+        
+        view.window?.rootViewController = homeVC
+        view.window?.makeKeyAndVisible()
+        
 	}
 		
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

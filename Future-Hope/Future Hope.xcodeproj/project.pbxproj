@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D7F6768DC3CF5A61D6688B1 /* Pods_Future_Hope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */; };
-		731B526223343D5A0019C676 /* Future_HopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B526123343D5A0019C676 /* Future_HopeUITests.swift */; };
 		731B527E233556390019C676 /* Future_HopeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B527D233556390019C676 /* Future_HopeUnitTests.swift */; };
+		73245E69233955E10053ADD2 /* Future_HopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73245E68233955E10053ADD2 /* Future_HopeUITests.swift */; };
 		732614FA2331F5E80097D689 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732614F92331F5E80097D689 /* Cache.swift */; };
 		732614FC2331F69C0097D689 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732614FB2331F69C0097D689 /* ConcurrentOperation.swift */; };
 		732614FE2331F75F0097D689 /* FetchPhotoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732614FD2331F75F0097D689 /* FetchPhotoOperation.swift */; };
@@ -37,20 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		731B526423343D5A0019C676 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E8839E9C230606DB001536AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E8839EA3230606DB001536AC;
-			remoteInfo = "Future-Hope";
-		};
-		731B5272233548890019C676 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E8839E9C230606DB001536AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E8839EA3230606DB001536AC;
-			remoteInfo = "Future-Hope";
-		};
 		731B5280233556390019C676 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E8839E9C230606DB001536AC /* Project object */;
@@ -58,18 +44,24 @@
 			remoteGlobalIDString = E8839EA3230606DB001536AC;
 			remoteInfo = "Future-Hope";
 		};
+		73245E6B233955E10053ADD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8839E9C230606DB001536AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8839EA3230606DB001536AC;
+			remoteInfo = "Future Hope";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		731B525F23343D5A0019C676 /* Future-HopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Future-HopeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		731B526123343D5A0019C676 /* Future_HopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future_HopeUITests.swift; sourceTree = "<group>"; };
-		731B526323343D5A0019C676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		731B526D233548890019C676 /* Future-HopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Future-HopeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		731B527B233556390019C676 /* Future-HopeUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Future-HopeUnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		731B527B233556390019C676 /* Future HopeUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Future HopeUnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		731B527D233556390019C676 /* Future_HopeUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future_HopeUnitTests.swift; sourceTree = "<group>"; };
 		731B527F233556390019C676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73245E66233955E10053ADD2 /* Future HopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Future HopeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73245E68233955E10053ADD2 /* Future_HopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future_HopeUITests.swift; sourceTree = "<group>"; };
+		73245E6A233955E10053ADD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		732614F92331F5E80097D689 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		732614FB2331F69C0097D689 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 		732614FD2331F75F0097D689 /* FetchPhotoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoOperation.swift; sourceTree = "<group>"; };
@@ -91,7 +83,7 @@
 		E87C3B42230AFC9E00161EFE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E87C3B49230C8EB700161EFE /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		E87C3B4E230C99C800161EFE /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
-		E8839EA4230606DB001536AC /* Future-Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Future-Hope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8839EA4230606DB001536AC /* Future Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Future Hope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8839EAC230606DB001536AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8EE0DF92320F3EE00501E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		E8EE0DFB2321564C00501E07 /* MySchedualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MySchedualViewController.swift; path = ../OnBoardingViews/MySchedualViewController.swift; sourceTree = "<group>"; };
@@ -100,21 +92,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		731B525C23343D5A0019C676 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		731B526A233548890019C676 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		731B5278233556390019C676 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73245E63233955E10053ADD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -140,15 +125,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		731B526023343D5A0019C676 /* Future-HopeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				731B526123343D5A0019C676 /* Future_HopeUITests.swift */,
-				731B526323343D5A0019C676 /* Info.plist */,
-			);
-			path = "Future-HopeUITests";
-			sourceTree = "<group>";
-		};
 		731B527C233556390019C676 /* Future-HopeUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +132,15 @@
 				731B527F233556390019C676 /* Info.plist */,
 			);
 			path = "Future-HopeUnitTests";
+			sourceTree = "<group>";
+		};
+		73245E67233955E10053ADD2 /* Future HopeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				73245E68233955E10053ADD2 /* Future_HopeUITests.swift */,
+				73245E6A233955E10053ADD2 /* Info.plist */,
+			);
+			path = "Future HopeUITests";
 			sourceTree = "<group>";
 		};
 		732614FF2331F7D40097D689 /* Operations  */ = {
@@ -243,8 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				E8839EA6230606DB001536AC /* Future-Hope */,
-				731B526023343D5A0019C676 /* Future-HopeUITests */,
 				731B527C233556390019C676 /* Future-HopeUnitTests */,
+				73245E67233955E10053ADD2 /* Future HopeUITests */,
 				E8839EA5230606DB001536AC /* Products */,
 				C0E3AD5856A58C6E44C53617 /* Pods */,
 				25B0E0DC4B0FE559221D0433 /* Frameworks */,
@@ -254,10 +239,9 @@
 		E8839EA5230606DB001536AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E8839EA4230606DB001536AC /* Future-Hope.app */,
-				731B525F23343D5A0019C676 /* Future-HopeUITests.xctest */,
-				731B526D233548890019C676 /* Future-HopeTests.xctest */,
-				731B527B233556390019C676 /* Future-HopeUnitTests.xctest */,
+				E8839EA4230606DB001536AC /* Future Hope.app */,
+				731B527B233556390019C676 /* Future HopeUnitTests.xctest */,
+				73245E66233955E10053ADD2 /* Future HopeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,45 +273,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		731B525E23343D5A0019C676 /* Future-HopeUITests */ = {
+		731B527A233556390019C676 /* Future HopeUnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 731B526823343D5A0019C676 /* Build configuration list for PBXNativeTarget "Future-HopeUITests" */;
-			buildPhases = (
-				731B525B23343D5A0019C676 /* Sources */,
-				731B525C23343D5A0019C676 /* Frameworks */,
-				731B525D23343D5A0019C676 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				731B526523343D5A0019C676 /* PBXTargetDependency */,
-			);
-			name = "Future-HopeUITests";
-			productName = "Future-HopeUITests";
-			productReference = 731B525F23343D5A0019C676 /* Future-HopeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		731B526C233548890019C676 /* Future-HopeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 731B5274233548890019C676 /* Build configuration list for PBXNativeTarget "Future-HopeTests" */;
-			buildPhases = (
-				731B5269233548890019C676 /* Sources */,
-				731B526A233548890019C676 /* Frameworks */,
-				731B526B233548890019C676 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				731B5273233548890019C676 /* PBXTargetDependency */,
-			);
-			name = "Future-HopeTests";
-			productName = "Future-HopeTests";
-			productReference = 731B526D233548890019C676 /* Future-HopeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		731B527A233556390019C676 /* Future-HopeUnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 731B5282233556390019C676 /* Build configuration list for PBXNativeTarget "Future-HopeUnitTests" */;
+			buildConfigurationList = 731B5282233556390019C676 /* Build configuration list for PBXNativeTarget "Future HopeUnitTests" */;
 			buildPhases = (
 				731B5277233556390019C676 /* Sources */,
 				731B5278233556390019C676 /* Frameworks */,
@@ -338,14 +286,32 @@
 			dependencies = (
 				731B5281233556390019C676 /* PBXTargetDependency */,
 			);
-			name = "Future-HopeUnitTests";
+			name = "Future HopeUnitTests";
 			productName = "Future-HopeUnitTests";
-			productReference = 731B527B233556390019C676 /* Future-HopeUnitTests.xctest */;
+			productReference = 731B527B233556390019C676 /* Future HopeUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E8839EA3230606DB001536AC /* Future-Hope */ = {
+		73245E65233955E10053ADD2 /* Future HopeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8839EB6230606DE001536AC /* Build configuration list for PBXNativeTarget "Future-Hope" */;
+			buildConfigurationList = 73245E6D233955E10053ADD2 /* Build configuration list for PBXNativeTarget "Future HopeUITests" */;
+			buildPhases = (
+				73245E62233955E10053ADD2 /* Sources */,
+				73245E63233955E10053ADD2 /* Frameworks */,
+				73245E64233955E10053ADD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73245E6C233955E10053ADD2 /* PBXTargetDependency */,
+			);
+			name = "Future HopeUITests";
+			productName = "Future HopeUITests";
+			productReference = 73245E66233955E10053ADD2 /* Future HopeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E8839EA3230606DB001536AC /* Future Hope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8839EB6230606DE001536AC /* Build configuration list for PBXNativeTarget "Future Hope" */;
 			buildPhases = (
 				C8020AC5B396AD7F740A24B8 /* [CP] Check Pods Manifest.lock */,
 				E8839EA0230606DB001536AC /* Sources */,
@@ -358,9 +324,9 @@
 			);
 			dependencies = (
 			);
-			name = "Future-Hope";
+			name = "Future Hope";
 			productName = "Future-Hope";
-			productReference = E8839EA4230606DB001536AC /* Future-Hope.app */;
+			productReference = E8839EA4230606DB001536AC /* Future Hope.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -369,20 +335,16 @@
 		E8839E9C230606DB001536AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Hector Steven";
 				TargetAttributes = {
-					731B525E23343D5A0019C676 = {
-						CreatedOnToolsVersion = 10.3;
-						TestTargetID = E8839EA3230606DB001536AC;
-					};
-					731B526C233548890019C676 = {
-						CreatedOnToolsVersion = 10.3;
-						TestTargetID = E8839EA3230606DB001536AC;
-					};
 					731B527A233556390019C676 = {
 						CreatedOnToolsVersion = 10.3;
+						TestTargetID = E8839EA3230606DB001536AC;
+					};
+					73245E65233955E10053ADD2 = {
+						CreatedOnToolsVersion = 11.0;
 						TestTargetID = E8839EA3230606DB001536AC;
 					};
 					E8839EA3230606DB001536AC = {
@@ -395,7 +357,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E8839E9F230606DB001536AC /* Build configuration list for PBXProject "Future-Hope" */;
+			buildConfigurationList = E8839E9F230606DB001536AC /* Build configuration list for PBXProject "Future Hope" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -408,30 +370,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E8839EA3230606DB001536AC /* Future-Hope */,
-				731B525E23343D5A0019C676 /* Future-HopeUITests */,
-				731B526C233548890019C676 /* Future-HopeTests */,
-				731B527A233556390019C676 /* Future-HopeUnitTests */,
+				E8839EA3230606DB001536AC /* Future Hope */,
+				731B527A233556390019C676 /* Future HopeUnitTests */,
+				73245E65233955E10053ADD2 /* Future HopeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		731B525D23343D5A0019C676 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		731B526B233548890019C676 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		731B5279233556390019C676 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73245E64233955E10053ADD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -510,26 +464,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		731B525B23343D5A0019C676 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				731B526223343D5A0019C676 /* Future_HopeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		731B5269233548890019C676 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		731B5277233556390019C676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				731B527E233556390019C676 /* Future_HopeUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73245E62233955E10053ADD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73245E69233955E10053ADD2 /* Future_HopeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,20 +511,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		731B526523343D5A0019C676 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E8839EA3230606DB001536AC /* Future-Hope */;
-			targetProxy = 731B526423343D5A0019C676 /* PBXContainerItemProxy */;
-		};
-		731B5273233548890019C676 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E8839EA3230606DB001536AC /* Future-Hope */;
-			targetProxy = 731B5272233548890019C676 /* PBXContainerItemProxy */;
-		};
 		731B5281233556390019C676 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E8839EA3230606DB001536AC /* Future-Hope */;
+			target = E8839EA3230606DB001536AC /* Future Hope */;
 			targetProxy = 731B5280233556390019C676 /* PBXContainerItemProxy */;
+		};
+		73245E6C233955E10053ADD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8839EA3230606DB001536AC /* Future Hope */;
+			targetProxy = 73245E6B233955E10053ADD2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -593,84 +535,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		731B526623343D5A0019C676 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97AS6JS382;
-				INFOPLIST_FILE = "Future-HopeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hectorstevenvillasano.Future-HopeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Future-Hope";
-			};
-			name = Debug;
-		};
-		731B526723343D5A0019C676 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97AS6JS382;
-				INFOPLIST_FILE = "Future-HopeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hectorstevenvillasano.Future-HopeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Future-Hope";
-			};
-			name = Release;
-		};
-		731B5275233548890019C676 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97AS6JS382;
-				INFOPLIST_FILE = "Future-HopeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hectorstevenvillasano.Future-HopeTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Future-Hope.app/Future-Hope";
-			};
-			name = Debug;
-		};
-		731B5276233548890019C676 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97AS6JS382;
-				INFOPLIST_FILE = "Future-HopeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hectorstevenvillasano.Future-HopeTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Future-Hope.app/Future-Hope";
-			};
-			name = Release;
-		};
 		731B5283233556390019C676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -687,7 +551,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Future-Hope.app/Future-Hope";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Future Hope.app/Future Hope";
 			};
 			name = Debug;
 		};
@@ -707,7 +571,47 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Future-Hope.app/Future-Hope";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Future Hope.app/Future Hope";
+			};
+			name = Release;
+		};
+		73245E6E233955E10053ADD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97AS6JS382;
+				INFOPLIST_FILE = "Future HopeUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hectorstevenvillasano.Future-HopeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Future Hope";
+			};
+			name = Debug;
+		};
+		73245E6F233955E10053ADD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97AS6JS382;
+				INFOPLIST_FILE = "Future HopeUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hectorstevenvillasano.Future-HopeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Future Hope";
 			};
 			name = Release;
 		};
@@ -841,7 +745,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Future-Hope";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Future Hope";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -861,7 +765,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Future-Hope";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Future Hope";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -870,25 +774,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		731B526823343D5A0019C676 /* Build configuration list for PBXNativeTarget "Future-HopeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				731B526623343D5A0019C676 /* Debug */,
-				731B526723343D5A0019C676 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		731B5274233548890019C676 /* Build configuration list for PBXNativeTarget "Future-HopeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				731B5275233548890019C676 /* Debug */,
-				731B5276233548890019C676 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		731B5282233556390019C676 /* Build configuration list for PBXNativeTarget "Future-HopeUnitTests" */ = {
+		731B5282233556390019C676 /* Build configuration list for PBXNativeTarget "Future HopeUnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				731B5283233556390019C676 /* Debug */,
@@ -897,7 +783,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8839E9F230606DB001536AC /* Build configuration list for PBXProject "Future-Hope" */ = {
+		73245E6D233955E10053ADD2 /* Build configuration list for PBXNativeTarget "Future HopeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73245E6E233955E10053ADD2 /* Debug */,
+				73245E6F233955E10053ADD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8839E9F230606DB001536AC /* Build configuration list for PBXProject "Future Hope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E8839EB4230606DE001536AC /* Debug */,
@@ -906,7 +801,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8839EB6230606DE001536AC /* Build configuration list for PBXNativeTarget "Future-Hope" */ = {
+		E8839EB6230606DE001536AC /* Build configuration list for PBXNativeTarget "Future Hope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E8839EB7230606DE001536AC /* Debug */,
