@@ -128,9 +128,7 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 		return nil
 	}
 	
-	
 	private func signOutWithFireStore() {
-		
 		let ac = UIAlertController(title: "SignOut", message: nil, preferredStyle: .actionSheet)
 		ac.addAction(UIAlertAction(title: "Ok", style: .default){ _ in
 			self.futureHopSchoolController?.signOut{ error in
@@ -159,7 +157,4 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 		view.window?.rootViewController = homeVC
 		view.window?.makeKeyAndVisible()
 	}
-	
-	
-	
 }

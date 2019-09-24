@@ -10,7 +10,6 @@ import UIKit
 import MaterialComponents.MaterialTextFields
 
 class EditProfileViewController: UIViewController {
-
 	@IBOutlet var editLabel: UILabel!
 	@IBOutlet var newEditTextField: MDCTextField!
 	var editString: String?
@@ -42,7 +41,6 @@ class EditProfileViewController: UIViewController {
 		} else if editString == "about me" {
 			newEditTextField?.text = currentUser.aboutMe
 		}
-		
 	}
 	
 	@IBAction func exitButtonPressed(_ sender: Any) {
@@ -76,9 +74,5 @@ class EditProfileViewController: UIViewController {
 			self.dismiss(animated: true)
 			print("success!!!!!!!")
 		}
-		
-		
 	}
-	
-	
 }

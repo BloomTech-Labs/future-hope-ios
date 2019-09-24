@@ -56,10 +56,6 @@ class TabBarViewController: UITabBarController {
                 }
 			}
 		}
-        
-        
-    
-		
 	}
 	
 	private func createUser(_ user: User) {

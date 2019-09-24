@@ -65,9 +65,6 @@ class GmailFacebookSignUpViewController: UIViewController {
 		// get user Type
 		let usertype: UserType = userTypeSegmented.selectedSegmentIndex == 0 ? .mentor : .teacher
 		
-		// FIXME: This!!!
-		
-		
 		// check if signed in with gmail
 		if let	uid = currentAuthUser?.uid, let url = currentAuthUser?.photoUrl {
 			if checkTextIsEmpty(fullName: fullName, email: email, citi: citi, stateOrProvince: stateOrProvince, country: country, phoneNumber: phoneNumber, aboutMe: aboutme){

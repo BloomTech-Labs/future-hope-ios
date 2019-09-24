@@ -138,8 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				E87C3B49230C8EB700161EFE /* CurrentUser.swift */,
-				73CF21512326FB93003772C1 /* Meeting.swift */,
 				732614F92331F5E80097D689 /* Cache.swift */,
+				73CF21512326FB93003772C1 /* Meeting.swift */,
 				732614FF2331F7D40097D689 /* Operations  */,
 			);
 			path = Models;
