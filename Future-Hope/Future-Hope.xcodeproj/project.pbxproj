@@ -13,9 +13,11 @@
 		732614FE2331F75F0097D689 /* FetchPhotoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732614FD2331F75F0097D689 /* FetchPhotoOperation.swift */; };
 		7326250F232A949600BEC7C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7326250E232A949600BEC7C7 /* GoogleService-Info.plist */; };
 		73B73E26232E9CD900699D7A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B73E25232E9CD900699D7A /* ScheduleViewController.swift */; };
+		73B87FB3233AB64B00C6F516 /* Future_Hope_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B87FB2233AB64B00C6F516 /* Future_Hope_UnitTests.swift */; };
 		73CBC01423296AB9000B8D8C /* ExploreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */; };
 		73CBC01723296AE7000B8D8C /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBC01623296AE7000B8D8C /* ExploreTableViewCell.swift */; };
 		73CF21522326FB93003772C1 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF21512326FB93003772C1 /* Meeting.swift */; };
+		BB835975332B85F6E97F4F08 /* Pods_Future_Hope_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55E74D5B5AB6CC603B4FFF4 /* Pods_Future_Hope_UnitTests.framework */; };
 		E81B6B012314694900A2BD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B002314694900A2BD0A /* AppDelegate.swift */; };
 		E81B6B032314696600A2BD0A /* GmailFacebookSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */; };
 		E81EB6FB2318DFBE006189FA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EB6FA2318DFBE006189FA /* TabBarViewController.swift */; };
@@ -32,7 +34,18 @@
 		E8EE0DFE2321BDCF00501E07 /* MyScdualTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE0DFD2321BDCF00501E07 /* MyScdualTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		73B87FB5233AB64B00C6F516 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8839E9C230606DB001536AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8839EA3230606DB001536AC;
+			remoteInfo = "Future-Hope";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		083C184BF0C2EC062048FC9A /* Pods-Future-Hope-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope-UnitTests.release.xcconfig"; path = "Target Support Files/Pods-Future-Hope-UnitTests/Pods-Future-Hope-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope/Pods-Future-Hope.debug.xcconfig"; sourceTree = "<group>"; };
 		524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732614F92331F5E80097D689 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -40,9 +53,14 @@
 		732614FD2331F75F0097D689 /* FetchPhotoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoOperation.swift; sourceTree = "<group>"; };
 		7326250E232A949600BEC7C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73B73E25232E9CD900699D7A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		73B87FB0233AB64B00C6F516 /* Future-Hope-UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Future-Hope-UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B87FB2233AB64B00C6F516 /* Future_Hope_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future_Hope_UnitTests.swift; sourceTree = "<group>"; };
+		73B87FB4233AB64B00C6F516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CBC01323296AB9000B8D8C /* ExploreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewController.swift; sourceTree = "<group>"; };
 		73CBC01623296AE7000B8D8C /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
 		73CF21512326FB93003772C1 /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
+		81D9493E7351DC19C3B1633C /* Pods-Future-Hope-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Future-Hope-UnitTests.debug.xcconfig"; path = "Target Support Files/Pods-Future-Hope-UnitTests/Pods-Future-Hope-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E55E74D5B5AB6CC603B4FFF4 /* Pods_Future_Hope_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Future_Hope_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81B6B002314694900A2BD0A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E81B6B022314696600A2BD0A /* GmailFacebookSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GmailFacebookSignUpViewController.swift; sourceTree = "<group>"; };
 		E81B6B0E2314742500A2BD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +81,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		73B87FAD233AB64B00C6F516 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB835975332B85F6E97F4F08 /* Pods_Future_Hope_UnitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E8839EA1230606DB001536AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				524F00BBBA73BE28C5162F54 /* Pods_Future_Hope.framework */,
+				E55E74D5B5AB6CC603B4FFF4 /* Pods_Future_Hope_UnitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,11 +118,22 @@
 			path = "Operations ";
 			sourceTree = "<group>";
 		};
+		73B87FB1233AB64B00C6F516 /* Future-Hope-UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				73B87FB2233AB64B00C6F516 /* Future_Hope_UnitTests.swift */,
+				73B87FB4233AB64B00C6F516 /* Info.plist */,
+			);
+			path = "Future-Hope-UnitTests";
+			sourceTree = "<group>";
+		};
 		C0E3AD5856A58C6E44C53617 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				263C4DA3574090EA256B129F /* Pods-Future-Hope.debug.xcconfig */,
 				FDBA3C00A1A3ECFEFFBF9123 /* Pods-Future-Hope.release.xcconfig */,
+				81D9493E7351DC19C3B1633C /* Pods-Future-Hope-UnitTests.debug.xcconfig */,
+				083C184BF0C2EC062048FC9A /* Pods-Future-Hope-UnitTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -158,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				E8839EA6230606DB001536AC /* Future-Hope */,
+				73B87FB1233AB64B00C6F516 /* Future-Hope-UnitTests */,
 				E8839EA5230606DB001536AC /* Products */,
 				C0E3AD5856A58C6E44C53617 /* Pods */,
 				25B0E0DC4B0FE559221D0433 /* Frameworks */,
@@ -168,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				E8839EA4230606DB001536AC /* Future-Hope.app */,
+				73B87FB0233AB64B00C6F516 /* Future-Hope-UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +238,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		73B87FAF233AB64B00C6F516 /* Future-Hope-UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73B87FB9233AB64B00C6F516 /* Build configuration list for PBXNativeTarget "Future-Hope-UnitTests" */;
+			buildPhases = (
+				9C8D8B8923562387353A89C3 /* [CP] Check Pods Manifest.lock */,
+				73B87FAC233AB64B00C6F516 /* Sources */,
+				73B87FAD233AB64B00C6F516 /* Frameworks */,
+				73B87FAE233AB64B00C6F516 /* Resources */,
+				25D9244F7EC452842BF46BEA /* [CP] Embed Pods Frameworks */,
+				FA7B59A96021590719ECAEE9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73B87FB6233AB64B00C6F516 /* PBXTargetDependency */,
+			);
+			name = "Future-Hope-UnitTests";
+			productName = "Future-Hope-UnitTests";
+			productReference = 73B87FB0233AB64B00C6F516 /* Future-Hope-UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E8839EA3230606DB001536AC /* Future-Hope */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8839EB6230606DE001536AC /* Build configuration list for PBXNativeTarget "Future-Hope" */;
@@ -224,10 +285,14 @@
 		E8839E9C230606DB001536AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Hector Steven";
 				TargetAttributes = {
+					73B87FAF233AB64B00C6F516 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = E8839EA3230606DB001536AC;
+					};
 					E8839EA3230606DB001536AC = {
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
@@ -252,11 +317,19 @@
 			projectRoot = "";
 			targets = (
 				E8839EA3230606DB001536AC /* Future-Hope */,
+				73B87FAF233AB64B00C6F516 /* Future-Hope-UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		73B87FAE233AB64B00C6F516 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E8839EA2230606DB001536AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,6 +343,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		25D9244F7EC452842BF46BEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Future-Hope-UnitTests/Pods-Future-Hope-UnitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Future-Hope-UnitTests/Pods-Future-Hope-UnitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Future-Hope-UnitTests/Pods-Future-Hope-UnitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3C0EB661A0CEDA2759C8E76C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +375,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Future-Hope/Pods-Future-Hope-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C8D8B8923562387353A89C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Future-Hope-UnitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8020AC5B396AD7F740A24B8 /* [CP] Check Pods Manifest.lock */ = {
@@ -309,6 +421,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FA7B59A96021590719ECAEE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Future-Hope-UnitTests/Pods-Future-Hope-UnitTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Future-Hope-UnitTests/Pods-Future-Hope-UnitTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Future-Hope-UnitTests/Pods-Future-Hope-UnitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FFD9D77ED40B86B06CC39B7A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,6 +458,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		73B87FAC233AB64B00C6F516 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B87FB3233AB64B00C6F516 /* Future_Hope_UnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E8839EA0230606DB001536AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +494,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		73B87FB6233AB64B00C6F516 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8839EA3230606DB001536AC /* Future-Hope */;
+			targetProxy = 73B87FB5233AB64B00C6F516 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		E8839EAB230606DB001536AC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -369,6 +514,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		73B87FB7233AB64B00C6F516 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81D9493E7351DC19C3B1633C /* Pods-Future-Hope-UnitTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97AS6JS382;
+				INFOPLIST_FILE = "Future-Hope-UnitTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hectorstevenvillasano.Future-Hope-UnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Future-Hope.app/Future-Hope";
+			};
+			name = Debug;
+		};
+		73B87FB8233AB64B00C6F516 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083C184BF0C2EC062048FC9A /* Pods-Future-Hope-UnitTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97AS6JS382;
+				INFOPLIST_FILE = "Future-Hope-UnitTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hectorstevenvillasano.Future-Hope-UnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Future-Hope.app/Future-Hope";
+			};
+			name = Release;
+		};
 		E8839EB4230606DE001536AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -530,6 +719,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		73B87FB9233AB64B00C6F516 /* Build configuration list for PBXNativeTarget "Future-Hope-UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73B87FB7233AB64B00C6F516 /* Debug */,
+				73B87FB8233AB64B00C6F516 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E8839E9F230606DB001536AC /* Build configuration list for PBXProject "Future-Hope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

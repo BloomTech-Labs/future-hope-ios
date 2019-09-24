@@ -9,13 +9,13 @@
 import Foundation
 import Firebase
 
-
-
 struct FireStoreController {
 	static let users = "users"
     static let meetings = "meetings"
     static let db = Firestore.firestore()
     
+    
+    // MARK:  References
     var usersColectionRef: CollectionReference {
         return FireStoreController.db.collection(FireStoreController.users)
     }
@@ -24,6 +24,8 @@ struct FireStoreController {
         return FireStoreController.db.collection(FireStoreController.meetings)
     }
     
+    
+    /// add user to firestore /users
 	func addUser(with user: CurrentUser, completion: @escaping (Error?) -> ()) {
         usersColectionRef.document(user.uid).setData(user.toDictionary) { error in
             if let error = error {
@@ -34,6 +36,9 @@ struct FireStoreController {
 		}
 	}
 
+    // MARK: Fetch teachers
+    
+    /// fetch all teachers that have been approved
     func fetchAllTeachers(completion: @escaping ([CurrentUser]?, Error?) -> ()) {
         let whereField =  usersColectionRef.whereField("userType", isEqualTo: "teacher")
         whereField.getDocuments { documentsSnapShot, error in
@@ -58,6 +63,7 @@ struct FireStoreController {
     
     // MARK: Meetins
     
+    /// fetch all meetings with my uid
     func fetchMyMeetings(with uid: String, completion: @escaping ([Meeting]?, Error?) -> ()) {
         let whereField = meetingsCollectionRef.whereField("participantUIDs", arrayContains: uid)
         whereField.getDocuments { meetingsSnapShot, error in
@@ -81,6 +87,8 @@ struct FireStoreController {
         }
     }
     
+    
+    /// if the meeting exist returns the first one
     func checkIfmeetingExist(currentUser: CurrentUser, timestamp: Timestamp, completion: @escaping (Meeting?, Error?) -> ()) {
         let whereField = meetingsCollectionRef.whereField("participantUIDs", isEqualTo: currentUser.uid).whereField("start", isEqualTo: timestamp)
         whereField.getDocuments { snapShot, error in
@@ -88,14 +96,16 @@ struct FireStoreController {
                 completion(nil, error)
                 return
             }
+            
             guard let snapShot = snapShot else { return }
-            print(snapShot.documents.count)
-            let dict = snapShot.documents[0].data() as [String: Any]
-            guard let meeting = Meeting(dictionary: dict) else { return }
+            let dictionary = snapShot.documents[0].data() as [String: Any]
+            guard let meeting = Meeting(dictionary: dictionary) else { return }
+            
             completion(meeting, nil)
         }
     }
     
+    /// add a meeting to firestore /meetings
     func addMeeting(with meeting: Meeting, completion: @escaping (Error?) -> ()) {
         meetingsCollectionRef.document(meeting.id).setData(meeting.toDictionary) { error in
             if let error = error {

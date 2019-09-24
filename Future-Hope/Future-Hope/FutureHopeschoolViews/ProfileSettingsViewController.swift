@@ -34,7 +34,7 @@ class ProfileSettingsViewController: UIViewController {
 	}
 	
 	private func setupViews() {
-		guard let currentSignedInUser = futureHopSchoolController?.currentlyLogedInUser else { return }
+		guard let currentSignedInUser = futureHopSchoolController?.currentUser else { return }
 		
 		if let data = currentSignedInUser.imageData {
             
@@ -59,7 +59,7 @@ class ProfileSettingsViewController: UIViewController {
 				let indexpath = tableView.indexPathForSelectedRow else { return }
 			
 			vc.editString = settings[indexpath.row]
-			vc.currentUser = futureHopSchoolController?.currentlyLogedInUser
+			vc.currentUser = futureHopSchoolController?.currentUser
 		}
 	}
 }
@@ -110,7 +110,7 @@ extension ProfileSettingsViewController: UITableViewDelegate, UITableViewDataSou
 	
 	
 	private func getUserData(with row: Int) -> String? {
-		guard let user = futureHopSchoolController?.currentlyLogedInUser  else { return nil }
+		guard let user = futureHopSchoolController?.currentUser  else { return nil }
 		
 		if row == 0 {
 			return "edit"
