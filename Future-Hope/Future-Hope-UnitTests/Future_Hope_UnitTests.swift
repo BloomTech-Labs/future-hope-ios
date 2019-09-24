@@ -14,11 +14,14 @@
 
 import XCTest
 import UIKit
+
+
 class Future_Hope_UnitTests: XCTestCase {
     let uuid = UUID().uuidString
+    let firecontrol = FireStoreController()
     
     var testMetting: Meeting {
-        return Meeting(id: uuid, participantNames: ["Hecotr", "Thomas"], participantUIDs: [UUID().uuidString, UUID().uuidString], start: Date(), title: "This is a meeting")
+        return Meeting(id: uuid, participantNames: ["Hector", "Thomas"], participantUIDs: [UUID().uuidString, UUID().uuidString], start: Date(), title: "This is a meeting")
     }
     
     
@@ -30,11 +33,18 @@ class Future_Hope_UnitTests: XCTestCase {
     func testFirestoreReference() {
         XCTAssertTrue(FireStoreController.users == "users")
         XCTAssertTrue(FireStoreController.meetings == "meetings")
-        
-        
+    }
+
+    
+    func testFetchingmettings() {
+        firecontrol.fetchMyMeetings(with: "") { _, error in
+            if let error = error {
+                XCTAssert(false, error.localizedDescription)
+            }
+        }
         
         
     }
-
+    
 
 }
