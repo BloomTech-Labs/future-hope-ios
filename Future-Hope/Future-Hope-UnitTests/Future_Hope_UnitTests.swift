@@ -20,7 +20,7 @@ class Future_Hope_UnitTests: XCTestCase {
     let hectorVillAccountUID = "iDh1XGoJ6EM36wK8SyQSOuOjDwH3" // from firestore
     let meetingUID = "ohrbvzOZ8SX1uZFxKTUg" // from firestore
     let firecontrol = FireStoreController()
-    
+    var appController: FireStoreController?
     
     
     override func setUp() {
@@ -46,6 +46,10 @@ class Future_Hope_UnitTests: XCTestCase {
                 XCTAssert(false, error.localizedDescription)
             }
         }
+    }
+    
+    func testApplicationControllerfetch() {
+        
     }
     
     

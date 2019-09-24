@@ -12,10 +12,12 @@ import FirebaseCore
 import GoogleSignIn
 
 class ApplicationController {
+    private let fireStoreController = FireStoreController()
+    
     private (set) var currentUser: CurrentUser? {
         didSet { self.fetchAllTeachers { _ in } }
     }
-
+    
     private (set) var meetings: [Meeting] = []
     
     private (set) var teachers: [CurrentUser] = []
@@ -30,7 +32,7 @@ class ApplicationController {
     /// fetch meetings from firebase from Firestorecontroller
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
         guard let user = currentUser else { return }
-        FireStoreController().fetchMyMeetings(with: user.uid) { myMeetings, error in
+        fireStoreController.fetchMyMeetings(with: user.uid) { myMeetings, error in
             if let error = error {
                 completion(error)
             }
@@ -45,7 +47,7 @@ class ApplicationController {
     
     /// fetch all teachers that have been approved from firebase
     func fetchAllTeachers(completion: @escaping (Error?) -> ()){
-        FireStoreController().fetchAllTeachers { teachers, error in
+        fireStoreController.fetchAllTeachers { teachers, error in
             if let error = error {
                 completion(error)
                 return
@@ -61,7 +63,7 @@ class ApplicationController {
     /// Add meeting and set
     
     func addMeetingToFirebase(with meeting: Meeting, completion: @escaping (Error?) -> ()) {
-        FireStoreController().addMeeting(with: meeting) { error in
+        fireStoreController.addMeeting(with: meeting) { error in
             if let error = error {
                 NSLog("Error adding to firestore: \(error)")
                 completion(error)
@@ -172,11 +174,6 @@ extension ApplicationController {
 			completion(error)
 		}
 	}
-
-//    private func gidSignOut() {
-//        GIDSignIn.sharedInstance().signOut()
-//    }
-	
 	
 	/// SignIn With Google credentials
 	func signInWithCredentials(credentail: AuthCredential, completion: @escaping (Error?) -> Void) {
@@ -197,3 +194,18 @@ extension ApplicationController {
 	}
 }
 
+// MARK: Unit test Helpers
+
+extension ApplicationController {
+    func fetchUser(with uid: String, completion: @escaping (CurrentUser?) -> ()) {
+        
+        let docRef = fireStoreController.meetingsCollectionRef.document(uid)
+        docRef.getDocument { documentSnapshot, _ in
+            
+            guard let data = documentSnapshot?.data() else { return }
+            let user = CurrentUser(dictionary: data)
+            completion(user)
+        }
+        
+    }
+}
