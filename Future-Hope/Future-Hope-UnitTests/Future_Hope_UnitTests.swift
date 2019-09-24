@@ -17,12 +17,9 @@ import UIKit
 
 
 class Future_Hope_UnitTests: XCTestCase {
-    let uuid = UUID().uuidString
+    let hectorVillAccountUID = "iDh1XGoJ6EM36wK8SyQSOuOjDwH3"
+    let meetingUID = "ohrbvzOZ8SX1uZFxKTUg" // from firebase
     let firecontrol = FireStoreController()
-    
-    var testMetting: Meeting {
-        return Meeting(id: uuid, participantNames: ["Hector", "Thomas"], participantUIDs: [UUID().uuidString, UUID().uuidString], start: Date(), title: "This is a meeting")
-    }
     
     
     
@@ -35,16 +32,22 @@ class Future_Hope_UnitTests: XCTestCase {
         XCTAssertTrue(FireStoreController.meetings == "meetings")
     }
 
-    
-    func testFetchingmettings() {
-        firecontrol.fetchMyMeetings(with: "") { _, error in
+    func testFirestorefetchMeetings() {
+        firecontrol.fetchMyMeetings(with: hectorVillAccountUID) { _, error in
             if let error = error {
                 XCTAssert(false, error.localizedDescription)
             }
         }
-        
-        
     }
+    
+    func testFirestoreFetchAllTeachers() {
+        firecontrol.fetchAllTeachers { _, error in
+            if let error = error {
+                XCTAssert(false, error.localizedDescription)
+            }
+        }
+    }
+    
     
 
 }
