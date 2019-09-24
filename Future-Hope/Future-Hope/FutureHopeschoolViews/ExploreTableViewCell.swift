@@ -17,7 +17,6 @@ class ExploreTableViewCell: UITableViewCell {
         didSet { setupViews() }
     }
     
-    
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -30,6 +29,5 @@ class ExploreTableViewCell: UITableViewCell {
             let str: String = type == .mentor ? "Mentor" : "Teacher"
             typeLabel?.text = str
         }
-        
     }
 }

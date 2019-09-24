@@ -57,6 +57,9 @@ class MySchedualViewController: UIViewController {
         tableView.reloadData()
     }
     
+    
+    
+    // Check all pending notifications with meeting UID, if it does note exist then create
     private func todayScheduleNotification(meeting: Meeting) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
             print("Number of notifications: ", requests.count)
@@ -75,28 +78,8 @@ class MySchedualViewController: UIViewController {
                     self.center.add(request)
                 }
             }
-            
-            
-            
-            
         }
-        
     }
-    
-//    private func todayScheduleNotification() {
-//        let content = UNMutableNotificationContent()
-//        content.sound = UNNotificationSound.default
-//
-//        content.title = "title"
-//        content.body = "in 5 minutes"
-//        content.badge = 1
-//        let dateComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: Date().addingTimeInterval(10))
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-//        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-//        center.add(request)
-//    }
-    
-    
 }
 
 extension MySchedualViewController: UITableViewDataSource, UITableViewDelegate {

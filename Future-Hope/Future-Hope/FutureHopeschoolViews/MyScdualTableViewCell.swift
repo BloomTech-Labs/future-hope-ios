@@ -20,7 +20,6 @@ class MyScdualTableViewCell: UITableViewCell {
 	
     @IBOutlet weak var withLabel: UILabel!
     private func setupViews() {
-        
         guard let meeting = meeting else { return }
         meetingTitle?.text = meeting.title
         timeLabel?.text = ApplicationController().format.string(from: meeting.start)
@@ -31,13 +30,6 @@ class MyScdualTableViewCell: UITableViewCell {
         }
          names += meeting.participantNames[meeting.participantNames.count - 1]
         
-        withLabel?.text = " Participants: \(names)"
-        
-        // get first user image
-        
+        withLabel?.text = " Participants: \(names)"        
 	}
-    
-    
-
-    
 }

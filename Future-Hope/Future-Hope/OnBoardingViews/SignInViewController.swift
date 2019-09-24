@@ -78,44 +78,17 @@ class SignInViewController: UIViewController {
 	
 	// will take you to the tabbar app
 	private func gooToMainView() {
-		performSegue(withIdentifier: "SegueToMainApp", sender: self)
-	}
 		
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "SegueToMainApp" {
-			guard let vc = segue.destination as? TabBarViewController,
-			 let uid = uid else { return }
-			vc.uid = uid
-			vc.futureHopSchoolController = futureHopSchoolController
-		}
+        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? TabBarViewController,
+              let uid = uid  else { return }
+        
+        
+        homeVC.uid = uid
+        homeVC.futureHopSchoolController = futureHopSchoolController
+        
+        view.window?.rootViewController = homeVC
+        view.window?.makeKeyAndVisible()
 	}
-	
-	
-//	private func getCurrentUser(_ uid: String) {
-//		//		guard let user = futureHopSchoolController.fetchCurrentFireAuthenticatedUser() else { return }
-//
-//		//check firebase "user" with uid
-//		FireStoreController.db.collection(FireStoreController.users).document(uid).getDocument { document, error in
-//			if let error = error {
-//				NSLog("Error fetching user from firestore: \(error)")
-//				return
-//			}
-//
-//			if let doc = document, doc.exists, let data = doc.data() {
-//				if let currentUser = CurrentUser(dictionary: data as [String: Any]) {
-////					self.futureHopSchoolController.setCurrentlyLogedInUser(with: currentUser)
-//					print("found account")
-//				}
-//			}else {
-//				//				self.createUser(user)
-//				print("Create an account")
-//			}
-//		}
-//
-//	}
-	
-	
-	
 }
 
 // Mark : Facebook Login
