@@ -9,10 +9,10 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FacebookCore
-import FacebookLogin
-import FBSDKLoginKit
-import FBSDKCoreKit
+//import FacebookCore
+//import FacebookLogin
+//import FBSDKLoginKit
+//import FBSDKCoreKit
 import GoogleSignIn
 import MaterialComponents.MaterialTextFields
 
