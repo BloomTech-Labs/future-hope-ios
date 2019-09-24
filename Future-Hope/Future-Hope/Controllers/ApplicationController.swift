@@ -197,15 +197,18 @@ extension ApplicationController {
 // MARK: Unit test Helpers
 
 extension ApplicationController {
-    func fetchUser(with uid: String, completion: @escaping (CurrentUser?) -> ()) {
+    func fetchUser(with uid: String, completion: @escaping (CurrentUser?, Error?) -> ()) {
         
         let docRef = fireStoreController.meetingsCollectionRef.document(uid)
-        docRef.getDocument { documentSnapshot, _ in
+        docRef.getDocument { documentSnapshot, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
             
             guard let data = documentSnapshot?.data() else { return }
             let user = CurrentUser(dictionary: data)
-            completion(user)
+            completion(user, nil)
         }
-        
     }
 }
