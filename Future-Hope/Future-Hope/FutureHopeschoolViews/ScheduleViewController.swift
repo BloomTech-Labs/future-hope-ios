@@ -83,7 +83,7 @@ class ScheduleViewController: UIViewController {
     
     private func createNewMeeting(with title: String) {
         
-        guard let currentUser = futureHopSchoolController?.currentlyLogedInUser, let user = user else { return }
+        guard let currentUser = futureHopSchoolController?.currentUser, let user = user else { return }
         let participantName: [String] = [currentUser.fullName, user.fullName]
         let participantUIDs: [String] = [currentUser.uid, user.uid]
 

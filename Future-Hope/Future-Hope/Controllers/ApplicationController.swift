@@ -12,7 +12,7 @@ import FirebaseCore
 import GoogleSignIn
 
 class ApplicationController {
-    private (set) var currentlyLogedInUser: CurrentUser? {
+    private (set) var currentUser: CurrentUser? {
         didSet { self.fetchAllTeachers { _ in } }
     }
 
@@ -20,11 +20,16 @@ class ApplicationController {
     
     private (set) var teachers: [CurrentUser] = []
     
-  
+    init(currentUser: CurrentUser? = nil) {
+        self.currentUser = currentUser
+    }
     
-    ///
+    
+    // MARK: Fetch methods
+    
+    /// fetch meetings from firebase from Firestorecontroller
     func fetchMyMeetings(completion: @escaping (Error?) -> ()) {
-        guard let user = currentlyLogedInUser else { return }
+        guard let user = currentUser else { return }
         FireStoreController().fetchMyMeetings(with: user.uid) { myMeetings, error in
             if let error = error {
                 completion(error)
@@ -38,7 +43,7 @@ class ApplicationController {
         }
     }
     
-    ///
+    /// fetch all teachers that have been approved from firebase
     func fetchAllTeachers(completion: @escaping (Error?) -> ()){
         FireStoreController().fetchAllTeachers { teachers, error in
             if let error = error {
@@ -114,7 +119,7 @@ extension ApplicationController {
     
 	// set current user and fetch image
 	func setCurrentlyLogedInUser(with user: CurrentUser) {
-		currentlyLogedInUser = user
+		currentUser = user
 		if let url = user.photoUrl {
 			fetchUserImage(with: url) { data, error in
                 
@@ -123,7 +128,7 @@ extension ApplicationController {
 				}
                 
 				guard let data  =  data,
-                    let currentlyLogedInUser = self.currentlyLogedInUser else { return }
+                    let currentlyLogedInUser = self.currentUser else { return }
                 
                 self.fetchMyMeetings { _ in
                     

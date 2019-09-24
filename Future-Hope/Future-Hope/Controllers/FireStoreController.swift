@@ -16,6 +16,8 @@ struct FireStoreController {
     static let meetings = "meetings"
     static let db = Firestore.firestore()
     
+    
+    // MARK:  Ref
     var usersColectionRef: CollectionReference {
         return FireStoreController.db.collection(FireStoreController.users)
     }
@@ -34,6 +36,7 @@ struct FireStoreController {
 		}
 	}
 
+    // MARK: Fetch teachers
     func fetchAllTeachers(completion: @escaping ([CurrentUser]?, Error?) -> ()) {
         let whereField =  usersColectionRef.whereField("userType", isEqualTo: "teacher")
         whereField.getDocuments { documentsSnapShot, error in
