@@ -21,3 +21,7 @@ end
 target 'Future-Hope-UnitTests' do
   common_pods
 end
+
+target 'Future-Hope-UITests' do
+  common_pods
+end
