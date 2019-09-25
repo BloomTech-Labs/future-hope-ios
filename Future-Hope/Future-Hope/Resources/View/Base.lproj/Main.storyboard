@@ -283,7 +283,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HS0-3J-1r4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="pLd-N6-ity"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="baseline_person_black_18dp" id="pLd-N6-ity"/>
                     <navigationItem key="navigationItem" id="Li0-zO-8QW"/>
                     <connections>
                         <outlet property="aboutMeTextView" destination="oRr-aj-dZv" id="UTI-tP-cle"/>
@@ -1050,7 +1050,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p06-TC-BEn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MySchedule" id="gx8-lw-gzG"/>
+                    <tabBarItem key="tabBarItem" title="MySchedule" image="baseline_calendar_today_black_18dp" id="gx8-lw-gzG">
+                        <color key="badgeColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="numberOfMettingsLabel" destination="Fye-hO-jU1" id="ixQ-3h-kGt"/>
                         <outlet property="tableView" destination="bo7-kE-JUX" id="CFK-5N-87D"/>
@@ -1060,7 +1062,7 @@
             </objects>
             <point key="canvasLocation" x="2995.6521739130435" y="2106.6964285714284"/>
         </scene>
-        <!--Explore-->
+        <!--Teachers-->
         <scene sceneID="8U5-HG-bL8">
             <objects>
                 <tableViewController id="2hm-bS-wPI" customClass="ExploreTableViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
@@ -1124,7 +1126,9 @@
                             <outlet property="delegate" destination="2hm-bS-wPI" id="R4Q-3G-qNY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Explore" id="Q5S-j6-pkM"/>
+                    <tabBarItem key="tabBarItem" title="Teachers" image="baseline_supervisor_account_black_18dp" id="Q5S-j6-pkM">
+                        <color key="badgeColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLd-Jr-Goy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1276,7 +1280,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bdL-3g-t58"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" id="sX2-el-f4u"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="baseline_message_black_18dp" id="sX2-el-f4u">
+                        <color key="badgeColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEd-zz-lmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1304,6 +1310,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="baseline_calendar_today_black_18dp" width="36" height="36"/>
+        <image name="baseline_message_black_18dp" width="36" height="36"/>
+        <image name="baseline_person_black_18dp" width="36" height="36"/>
+        <image name="baseline_supervisor_account_black_18dp" width="36" height="36"/>
         <image name="person-placeholder-image-3" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
