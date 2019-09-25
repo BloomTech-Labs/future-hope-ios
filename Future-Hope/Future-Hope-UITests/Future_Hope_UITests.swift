@@ -10,6 +10,16 @@ import XCTest
 
 class Future_Hope_UITests: XCTestCase {
 
+    
+    
+    var app: XCUIApplication {
+        return XCUIApplication()
+    }
+    var profileButton: XCUIElement {
+        return app.tabBars.buttons["Profile"]
+    }
+    
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -22,14 +32,24 @@ class Future_Hope_UITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    
+    func testGoogleSignIN() {
+        
+    }
+    
+    
+    
+    func testSigningOut() {
+        XCTAssert(profileButton.waitForExistence(timeout: 5))
+        profileButton.tap()
+        
+        XCTAssert(app.tables.staticTexts["SingOut"].waitForExistence(timeout: 5))
+        app.tables.staticTexts["SingOut"].tap()
+        
+        XCTAssert(app.sheets["SignOut"].scrollViews.otherElements.buttons["Ok"].waitForExistence(timeout: 5))
+        app.sheets["SignOut"].scrollViews.otherElements.buttons["Ok"].tap()
     }
 
     func testLaunchPerformance() {
