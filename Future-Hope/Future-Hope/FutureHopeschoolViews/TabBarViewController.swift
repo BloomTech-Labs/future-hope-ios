@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-//import MaterialComponents.MDCTabBar
+
 
 protocol FutureHopSchoolControllerProtocol: AnyObject {
 	var futureHopSchoolController: ApplicationController? { set get }
@@ -23,6 +23,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		getCurrentUser()
+
         
         futureHopSchoolController?.fetchMyMeetings { _ in
             print("here")

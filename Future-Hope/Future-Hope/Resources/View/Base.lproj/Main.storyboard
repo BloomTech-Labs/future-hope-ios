@@ -13,7 +13,7 @@
             <objects>
                 <tableViewController id="ycz-yh-j5J" customClass="SimpleFactsTableViewController" customModule="Future_Hope" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xsb-nR-cjB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1055,6 +1055,6 @@
         <image name="person-placeholder-image-3" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qf2-5o-ouI"/>
+        <segue reference="iPQ-G7-jDJ"/>
     </inferredMetricsTieBreakers>
 </document>
