@@ -23,6 +23,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		getCurrentUser()
+
         
         futureHopSchoolController?.fetchMyMeetings { _ in
             print("here")

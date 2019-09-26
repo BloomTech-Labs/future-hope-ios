@@ -23,7 +23,7 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         
         datePicker.minimumDate = Date()
-        datePicker.minuteInterval = 15
+        //datePicker.minuteInterval = 15
         
     }
     
@@ -44,8 +44,7 @@ class ScheduleViewController: UIViewController {
         
         let str = futureHopSchoolController?.format.string(from: Date())
         startDateLabel?.text = str
-        
-        
+
     }
     
 
