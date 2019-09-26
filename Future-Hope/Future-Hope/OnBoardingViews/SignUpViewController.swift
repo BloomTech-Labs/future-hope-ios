@@ -11,7 +11,7 @@ import Firebase
 import MaterialComponents.MaterialTextFields
 import MaterialComponents.MaterialButtons
 
-class GmailFacebookSignUpViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
 	var currentAuthUser: CurrentUser?
 	
@@ -144,7 +144,7 @@ class GmailFacebookSignUpViewController: UIViewController {
 
 // MARK : Check TextViews for errors
 
-extension GmailFacebookSignUpViewController {
+extension SignUpViewController {
 	
 	private func checkTextIsEmpty(fullName: String, email: String, citi: String, stateOrProvince: String, country: String, phoneNumber: String, aboutMe: String) -> Bool{
 		return fullName.isEmpty || email.isEmpty || citi.isEmpty || stateOrProvince.isEmpty || country.isEmpty || phoneNumber.isEmpty || aboutMe.isEmpty

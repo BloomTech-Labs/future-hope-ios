@@ -12,6 +12,7 @@ def common_pods
   pod 'GoogleSignIn'
   pod 'MaterialComponents/TextFields'
   pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Tabs'
 end
 
 target 'Future-Hope' do
